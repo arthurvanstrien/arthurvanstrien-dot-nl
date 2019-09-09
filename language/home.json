@@ -1,0 +1,33 @@
+{
+	"tabTitle": {
+		"nl": "Home",
+		"en": "Home"
+	},
+	"fields": [
+		{
+			"name": "lang_pageTitle",
+			"nl": "Hoofdpagina",
+			"en": "Main Page"
+		},
+		{
+			"name": "lang_menuProjects",
+			"nl": "Projecten",
+			"en": "Projects"
+		},
+		{
+			"name": "lang_menuPhotography",
+			"nl": "Fotografie",
+			"en": "Photography"
+		},
+		{
+			"name": "lang_menuAboutme",
+			"nl": "Persoonlijk",
+			"en": "About me"
+		},	
+		{
+			"name": "lang_pageDescription",
+			"nl": "Welkom op deze website. Mijn naam is Arthur van Strien en op deze website is een kijk op mijn projecten te vinden.",
+			"en": "Welcome, this website displays my projects and a story about me."
+		}
+	]
+}
