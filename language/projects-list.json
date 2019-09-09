@@ -1,0 +1,66 @@
+{
+	"projects": [
+		{
+			"projectId": "1fr2vl",
+			"title": 
+			{
+				"nl": "arthurvanstrien.nl",
+				"en": "arthurvanstrien.nl"
+			},
+			"year": "2019",
+			"type": 
+			{
+				"nl": "Website",
+				"en": "Website"
+			},
+			"programming-languages": "Javascript, JQuery, HTML, CSS",
+			"used-tools": "Notepad++, Adobe Lightroom",
+			"school_boolean": 
+			{
+				"nl": "Nee",
+				"en": "No"
+			},
+			"version_control": 
+			{
+				"nl": "Geen, dit project begon op een vakantiedag als een demo",
+				"en": "None, this project started on a holiday as a small demo"
+			},
+			"process_framework": 
+			{
+				"nl": "Geen, dit is een hobby-project met één programmeur",
+				"en": "None, this is a hobby-project with just one programmer"
+			},
+			"built-by": 
+			{
+				"nl": "Door mijzelf met ontwerp-feedback van Sanne Hartmans",
+				"en": "By myself with some feedback about the design by Sanne Hartmans"
+			},
+			"text": [
+				{
+					"type": "paragraph",
+					"nl": "De website van dit project is de website waar je nu op rondkijkt. Ik begin begonnen deze website te maken op een dag in de zomervakantie in 2019. De website is volledig front-end en de logica is geheel gemaakt in Javascript en JQuery. De opbouw en styling van de website is gemaakt met HTML en CSS.",
+					"en": ""
+				},
+				{
+					"type": "paragraph",
+					"nl": "Toen ik aan de website begon bedacht ik mijzelf dat het wel een uitdaging was de website zo te maken dat er tijdens gebruik geen pagina herladen hoeft te worden. Dat doen meer websites dus het is niet een wereldwonder maar toch weer even leuk om te maken. De opbouw begint met een HTML bestand die de basis opbouw van de pagina bevat samen met de titel, het menu en de footer. Vervolgens wordt er door middel van de .load() functie van JQuery een HTML bestand ingeladen in de div met classe content. Dit bestand bevat geen HTML of Body tags maar puur de HTML die in het middelste witte vlak weergeven wordt. Als de pagina veranderd wordt, wordt deze HTML vervangen door weer nieuwe HTML uit een ander bestand. De titel, het menu en de footer veranderen dus niet en de pagina hoeft niet herladen te worden. Om dit te laten werken heb ik zelf een stuk logica gemaakt wat zorgt dat de juiste HTML ingeladen wordt, maar ook dat de juiste pagina in de URL parameters weergeven wordt. Dit houd dus ook in dat als iemand een URL met pagina parameter doorstuurt die persoon direct de juiste pagina ziet en niet eerst de hoofdpagina te zien krijgt. ",
+					"en": ""
+				},
+				{
+					"type": "paragraph", 
+					"nl": "Daarnaast is een stuk interessante logica van deze website het talen systeem. Alles op de website kan namelijk in verschillende talen weergeven te worden door op de vlaggen bovenin te klikken. De website heeft geen database aangezien er bijvoorbeeld geen reacties geplaatst kunnen worden op deze website. Hierdoor ben ik de enige die de inhoud van deze website aanpast en dit heeft voor mij geen mooie interface nodig om iets aan te passen. Alles in de HTML uittikken zou een boel werk zijn dus ik heb gekozen om de inhoud in JSON bestanden op te slaan. In deze JSON bestanden staat de naam van het HTML veld, bijvoorbeeld: lang_pageTitle en vervolgens daaronder de waarden in de verschillende talen. Voor iedere pagina is er een apart JSON bestand. Wanneer de pagina veranderd wordt het juiste JSON bestand opgehaald vanaf de server en door mijn logica wordt vervolgens de HTML gevuld met de data uit het JSON bestand. Hoewel ik dus alles in de HTML uit had kunnen programmeren is met deze logica de inhoud makkelijker te onderhouden en is het uiteindelijk minder werk.",
+					"en": ""
+				},
+				{
+					"type": "paragraph",
+					"nl": "Ik ben blij met het resultaat van dit project, de website heeft een naar mijn mening prettige opmaak gekregen en ik de achterliggende logica maakt onderhoud gemakkelijk.",
+					"en": ""
+				}
+			],
+			"pictures": [
+				"",
+				""
+			]
+		}
+	]
+}

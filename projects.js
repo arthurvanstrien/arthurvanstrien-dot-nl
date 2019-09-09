@@ -1,5 +1,10 @@
 function loadProjectsFunction(langFile) {
 	
+	getJSONFile("projects-list", displayProjects, null, null);
+}
+
+function displayProjects(langFile) {
+	
 	for(var i = 0; i < Object.keys(langFile.projects).length; i++) {
 		
 		var html = "";
