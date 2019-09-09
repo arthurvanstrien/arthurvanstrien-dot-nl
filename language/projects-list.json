@@ -15,22 +15,22 @@
 			},
 			"programming-languages": "Javascript, JQuery, HTML, CSS",
 			"used-tools": "Notepad++, Adobe Lightroom",
-			"school_boolean": 
+			"school-boolean": 
 			{
 				"nl": "Nee",
 				"en": "No"
 			},
-			"version_control": 
+			"versionControl": 
 			{
 				"nl": "Geen, dit project begon op een vakantiedag als een demo",
 				"en": "None, this project started on a holiday as a small demo"
 			},
-			"process_framework": 
+			"processFramework": 
 			{
 				"nl": "Geen, dit is een hobby-project met één programmeur",
 				"en": "None, this is a hobby-project with just one programmer"
 			},
-			"built-by": 
+			"builtBy": 
 			{
 				"nl": "Door mijzelf met ontwerp-feedback van Sanne Hartmans",
 				"en": "By myself with some feedback about the design by Sanne Hartmans"
