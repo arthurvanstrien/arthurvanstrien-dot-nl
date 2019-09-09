@@ -1,0 +1,26 @@
+<!Doctype HTML>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	
+	<body>
+		<div class="container">
+			<p>Value to hash: </p>
+			<input type="text" id="hashField"/>
+			<button onClick="makeHash()">Generate hash</button>
+			
+			<p>Hash result: </p>
+			<input onClick="this.setSelectionRange(0, this.value.length)" id="hashResult" readonly/><span id="hashResultCopy"></span>
+			<button onClick="copyToClipboard('hashResult')">Copy to clipboard</button>
+			
+			<p>Hex result: </p>
+			<input onClick="this.setSelectionRange(0, this.value.length)" id="hexResult"readonly/><span id="hexResultCopy"></span>
+			<button onClick="copyToClipboard('hexResult')">Copy to clipboard</button>
+		</div>
+	</body>
+</html>

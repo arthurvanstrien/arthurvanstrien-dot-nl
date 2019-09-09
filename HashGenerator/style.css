@@ -1,0 +1,47 @@
+.container
+{
+	margin-top: 40px;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 0px;
+}
+
+span
+{
+	display: block;
+	height: 20px;
+}
+
+input
+{
+	width: 50%;
+}
+
+button
+{
+	display: block;
+	margin-top: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 40px;
+}
+
+#hashResult
+{
+	color: blue;
+}
+
+#hashResultCopy 
+{
+	color: green;
+}
+
+#hexResult
+{
+	color: blue;
+}
+
+#hexResultCopy
+{
+	color: green;
+}
