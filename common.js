@@ -157,8 +157,8 @@ function getURLAdditional() {
 function changeLanguage(lang) {
 	
 	language = lang;
-	displayLanguage(commonLanguageFile, false);
-	displayLanguage(languageFile, true);
+	displayLanguageFields(commonLanguageFile, false);
+	displayLanguageFields(languageFile, true);
 	changeURLLanguage();
 }
 
@@ -179,12 +179,12 @@ function changeURLLanguage() {
 
 function getLanguageFile(optionalSuccesFunction) {
 	
-	getJSONFile(page, displayLanguage, true, optionalSuccesFunction);
+	getJSONFile(page, displayLanguageFields, true, optionalSuccesFunction);
 }
 
 function getCommonLanguageFile() {
 
-	getJSONFile("common", displayLanguage, false, null);
+	getJSONFile("common", displayLanguageFields, false, null);
 }
 
 function getErrorMessageLanguageFile() {
@@ -197,16 +197,10 @@ function setErrorMessageLanguageFile(langFile) {
 	errorMessagesLanguageFile = langFile;
 }
 
-function displayLanguage(langFile, changeTitle) {
+function displayLanguageFields(langFile, changeTitle) {
 	
-	//In case the onload failed another attempt is made when the language is switched.
-	if(loadedSuccesfull == false) {
+	if(typeof langFile === 'object') {
 		
-		log("ERROR: Loaded successfull was false. Loading default page instead.");
-		changePage(page); //Start process from beginning in case the user changed the page name. This will check if the page name exists and load defaults if not.
-	}
-	else {
-	
 		var fieldName;
 		var fields = langFile.fields;
 		
@@ -223,6 +217,11 @@ function displayLanguage(langFile, changeTitle) {
 			else if(language == "en")
 				$(document).prop("title", langFile.tabTitle.en);
 		}
+	}
+	else {
+		
+		log("ERROR: There was a problem loading the language file.");
+		//TODO open ERROR page.
 	}
 }
 
