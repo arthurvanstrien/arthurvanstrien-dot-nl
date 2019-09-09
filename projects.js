@@ -3,12 +3,12 @@ function loadProjectsFunction(langFile) {
 	getJSONFile("projects-list", displayProjects, null, null);
 }
 
-function displayProjects(langFile) {
+function displayProjects(projectsListLangFile) {
 	
-	for(var i = 0; i < Object.keys(langFile.projects).length; i++) {
+	for(var i = 0; i < Object.keys(projectsListLangFile.projects).length; i++) {
 		
 		var html = "";
-		var project = langFile.projects[i];
+		var project = projectsListLangFile.projects[i];
 		
 		//Add "" around the projectId and page so Javascript will interpret the value as a string instead as a variable.
 		var page = '"' + "project-detail" + '"';
@@ -18,8 +18,8 @@ function displayProjects(langFile) {
 		html = html + 
 		"<span onClick='changePage(" + page + ", " + projectId + ")' class='projectsMenu-container'>" + 
 		"<h2 id='lang_project-title'>" + getFieldLanguage(project.title) + "</h2>" +
-		"<p><span class='projectsMenu-th' id='lang_projectsMenu-year'>Year: </span><span>" + project.year + "</span></p>" +
-		"<p><span class='projectsMenu-th' id='lang_projectsMenu-type'>Type: </span><span>" + getFieldLanguage(project.type) + "</span></p>";
+		"<p><span class='projectsMenu-th' id='lang_projectsMenuYear'></span><span>" + project.year + "</span></p>" +
+		"<p><span class='projectsMenu-th' id='lang_projectsMenuType'></span><span>" + getFieldLanguage(project.type) + "</span></p>";
 
 		var numPictures = Object.keys(project.pictures).length;
 		
@@ -38,4 +38,6 @@ function displayProjects(langFile) {
 		
 		$(html).insertAfter("#projects-list-anker");
 	}
+	
+	displayLanguageFields(projectsListLangFile, false); 
 }
