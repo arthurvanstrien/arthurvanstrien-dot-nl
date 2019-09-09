@@ -1,4 +1,16 @@
 {
+	"fields": [
+		{
+			"name": "lang_projectsMenuYear",
+			"nl": "Jaar:",
+			"en": "Year:"
+		},
+		{
+			"name": "lang_projectsMenuType",
+			"nl": "Soort:",
+			"en": "Type:"
+		}	
+	],
 	"projects": [
 		{
 			"projectId": "1fr2vl",
