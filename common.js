@@ -2,297 +2,317 @@
 var page;
 var language;
 var errorMessagesLanguageFile;
+var loadedSuccesfull = false;
 var defaultPage = "home";
 var defaultLanguage = "nl";
 
 $( document ).ready(function() {
 	
-	language = com_getURLLanguage();
-	
-	//The change page must be run before other functions.
-	page = com_getURLPage();
-	com_changePage(page);
-	
-	com_getCommonLanguageFile();
-	com_getErrorMessageLanguageFile();
-	
-	com_setURL(page, language, com_getURLAdditional());
-	
-	com_updateFooterYear();
+	common.firstLoad();
 });
 
-/*--Functions for the variables and URL----------------------------------------------------*/
-//Below here two important common functions that are likely to be changed when pages are added.
-
-function com_setURL(page, lang, additional) {
+var common = (function() {
 	
-	var url = new URL(window.location.href);
+	//This variable will contain the public methods that are returned and can be accessed.
+	var common = {};
 	
-	url.searchParams.delete("lang");
-	url.searchParams.delete("page");
+	/*--ALL public methods in common:------------------------------------------------------------*/
+	common.firstLoad = function() { firstLoad(); };
+	common.changePage = function(newPage, additionalParameter) { changePage(newPage, additionalParameter); };
+	common.changeLanguage = function(lang) { changeLanguage(lang); };
+	common.getFieldLanguage = function(field) { return getFieldLanguage(field); };
+	common.log = function(text) { log(text); };
+	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); };
 	
-	if(url.searchParams.get("additional"))
-		url.searchParams.delete("additional");
 	
-	url.searchParams.append("lang", lang);
-	url.searchParams.append("page", page);
+	/*--Functions for the variables and URL----------------------------------------------------*/
+	//Below here are import private functions used extensively in this javascript file.
 	
-	if(additional != null)
-		url.searchParams.append("additional", additional);
-	
-	history.pushState("Page", "Page", url);
-}
-
-function com_getJSONFile(jsonFileName, functionToCall, functionToCallOptionalValue, optionalFunctionToCall) {
-	
-	$.ajax({ 
-	url:  'language/' +  jsonFileName + '.json', 
-	dataType: 'json', async: true, dataType: 'json', 
-	success: function (file) { 
-		com_log("language file: " + jsonFileName + " retrieved.");
+	var firstLoad = function() {
 		
-		functionToCall(file, functionToCallOptionalValue);
+		language = getURLLanguage();
+	
+		//The change page must be run before other functions.
+		page = getURLPage();
+		changePage(page);
 		
-		if(optionalFunctionToCall != null)
-			optionalFunctionToCall(file);
+		getCommonLanguageFile();
+		getErrorMessageLanguageFile();
 		
-	},
-	error: function (jqXHR, textStatus, errorThrown) {
-		log("An error occured retrieving the language file: " + jsonFileName + ".");
-		log(textStatus);
-		log(errorThrown);
+		setURL(page, language, getURLAdditional());
 		
-		com_displayErrorMessage(errorMessagesLanguageFile, "json-load-failed");
+		updateFooterYear();
 	}
-	});
-}
-
-
-/*--Functions for changing the page----------------------------------------------------*/
-//This function will start the process of changing the page.
-//First it will retrieve the URL and remove the page parameter.
-//Second it will append the page parameter in the URL with the loaded page.
-//Third it will check if the page exist and load the corresponding HTML file into the .content div.
-//Final this function will call a function for the retrieval of the language files corresponding to this page.
-function com_changePage(newPage, additionalParameter) {
 	
-	page = newPage;
-	
-	if(page == "home") {
-		com_setURL(page, language, null);
-		$('#content').load("home.html");
-		com_getLanguageFile(null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
-	}
-	else if(page == "projects") {
-		com_setURL(page, language, null);
-		$('#content').load("projects.html");
-		com_getLanguageFile(loadProjectsFunction); //pass the loadProjects function to call after the JSON has loaded.
-	}
-	else if(page == "project-detail") {
-		com_setURL(page, language, additionalParameter);
-		$('#content').load("project-detail.html");
-		com_getLanguageFile(loadProjectdetailFunction);
-	}
-	else if(page == "photography") {
-		com_setURL(page, language, null);
-		$('#content').load("photography.html");
-		com_getLanguageFile(null);
-	}
-	else if(page == "aboutme") {
-		com_setURL(page, language, null);
-		$('#content').load("aboutme.html");
-		com_getLanguageFile(null);
-	}
-	else if(page == "gallery") {
-		com_setURL(page, language, null);
-		$('#content').load("gallery.html");
-		com_getLanguageFile(null);
-	}
-	else if(page == "ti") {
-		com_setURL(page, language, null);
-		$('#content').load("ti.html");
-		com_getLanguageFile(null);
-	}
-	else {
-		page = defaultPage;
-		com_setURL(page, language, null);
-		$('#content').load(defaultPage + ".html");
-		com_getLanguageFile(null);
-	}
-}
 
-//This function gets the value of the lang parameter from the URL.
-function com_getURLPage() {
+	var setURL = function(page, lang, additional) {
 		
-	var url = new URL(window.location.href);
-	
-	if(url.searchParams.get("page"))
-		return url.searchParams.get("page");
-	else
-		return defaultPage;
-}
-
-function com_getURLAdditional() {
+		var url = new URL(window.location.href);
 		
-	var url = new URL(window.location.href);
-	
-	if(url.searchParams.get("additional"))
-		return url.searchParams.get("additional");
-	else
-		return null;
-}
-
-
-/*---Functions for changing the language----------------------------------------------------*/
-//This function is the main function to start the process of changing the language on a page.
-//This function should NOT be called when a page loads.
-function com_changeLanguage(lang) {
-	
-	language = lang;
-	com_displayLanguageFields(commonLanguageFile, false);
-	com_displayLanguageFields(languageFile, true);
-	com_changeURLLanguage();
-}
-
-function com_getURLLanguage() {
+		url.searchParams.delete("lang");
+		url.searchParams.delete("page");
 		
-	var url = new URL(window.location.href);
-	
-	if(url.searchParams.get("language"))
-		return url.searchParams.get("language");
-	else
-		return defaultLanguage;
-}
-
-function com_changeURLLanguage() {
-	
-	com_setURL(page, language, getURLAdditional());
-}
-
-function com_getLanguageFile(optionalSuccesFunction) {
-	
-	com_getJSONFile(page, com_displayLanguageFields, true, optionalSuccesFunction);
-}
-
-function com_getCommonLanguageFile() {
-
-	com_getJSONFile("common", com_displayLanguageFields, false, null);
-}
-
-function com_getErrorMessageLanguageFile() {
-	
-	com_getJSONFile("errorMessages", com_setErrorMessageLanguageFile, false, null);
-}
-
-function com_setErrorMessageLanguageFile(langFile) {
-	
-	errorMessagesLanguageFile = langFile;
-}
-
-function com_displayLanguageFields(langFile, changeTitle) {
-	
-	if(typeof langFile === 'object') {
+		if(url.searchParams.get("additional"))
+			url.searchParams.delete("additional");
 		
-		var fieldName;
-		var fields = langFile.fields;
+		url.searchParams.append("lang", lang);
+		url.searchParams.append("page", page);
 		
-		for(var i = 0; i < Object.keys(langFile.fields).length; i++) {
+		if(additional != null)
+			url.searchParams.append("additional", additional);
+		
+		history.pushState("Page", "Page", url);
+	}
+
+	var getJSONFile = function(jsonFileName, functionToCall, functionToCallOptionalValue, optionalFunctionToCall) {
+		
+		$.ajax({ 
+		url:  'language/' +  jsonFileName + '.json', 
+		dataType: 'json', async: true, dataType: 'json', 
+		success: function (file) { 
+			log("language file: " + jsonFileName + " retrieved.");
+			loadedSuccesfull = true;
 			
-			fieldName = "#" + fields[i].name;
-			$(fieldName).text(com_getFieldLanguage(fields[i]));
+			functionToCall(file, functionToCallOptionalValue);
+			
+			if(optionalFunctionToCall != null)
+				optionalFunctionToCall(file);
+			
+		},
+		error: function (jqXHR, textStatus, errorThrown) {
+			log("An error occured retrieving the language file: " + jsonFileName + ".");
+			log(textStatus);
+			log(errorThrown);
+			loadedSuccesfull = false;
+			
+			displayErrorMessage(errorMessagesLanguageFile, "json-load-failed");
 		}
+		});
+	}
+
+
+	/*--Functions for changing the page----------------------------------------------------*/
+	//This function will start the process of changing the page.
+	//First it will retrieve the URL and remove the page parameter.
+	//Second it will append the page parameter in the URL with the loaded page.
+	//Third it will check if the page exist and load the corresponding HTML file into the .content div.
+	//Final this function will call a function for the retrieval of the language files corresponding to this page.
+	var changePage = function(newPage, additionalParameter) {
+
+		page = newPage;
 		
-		if(changeTitle) {
-			
-			if(language == "nl")
-				$(document).prop("title", langFile.tabTitle.nl);
-			else if(language == "en")
-				$(document).prop("title", langFile.tabTitle.en);
+		if(page == "home") {
+			setURL(page, language, null);
+			$('#content').load("home.html");
+			getLanguageFile(null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
+		}
+		else if(page == "projects") {
+			setURL(page, language, null);
+			$('#content').load("projects.html");
+			getLanguageFile(loadProjectsFunction); //pass the loadProjects function to call after the JSON has loaded.
+		}
+		else if(page == "project-detail") {
+			setURL(page, language, additionalParameter);
+			$('#content').load("project-detail.html");
+			getLanguageFile(loadProjectdetailFunction);
+		}
+		else if(page == "photography") {
+			setURL(page, language, null);
+			$('#content').load("photography.html");
+			getLanguageFile(null);
+		}
+		else if(page == "aboutme") {
+			setURL(page, language, null);
+			$('#content').load("aboutme.html");
+			getLanguageFile(null);
+		}
+		else if(page == "gallery") {
+			setURL(page, language, null);
+			$('#content').load("gallery.html");
+			getLanguageFile(null);
+		}
+		else if(page == "ti") {
+			setURL(page, language, null);
+			$('#content').load("ti.html");
+			getLanguageFile(null);
+		}
+		else {
+			page = defaultPage;
+			setURL(page, language, null);
+			$('#content').load(defaultPage + ".html");
+			getLanguageFile(null);
 		}
 	}
-	else {
-		
-		com_log("ERROR: There was a problem loading the language file.");
-		//TODO open ERROR page.
-	}
-}
 
-//This function gets the selected language from the field in the JSON. 
-//This function also checks if the field is empty and will return a default value when it is.
-function com_getFieldLanguage(field) {
-	
-	if(language == "nl") {
-		
-		if(field.nl == "")
-			return "Er is op dit moment geen Nederlandse vertaling beschikbaar.";
-		else
-			return field.nl;
-	}
-	else if(language == "en") {
-		
-		if(field.en == "")
-			return "There is currently no English translation available.";
-		else
-			return field.en;
-	}
-	else {
-		com_log("ERROR: loading the requested language. The requested language does not exist! Loading default language instead.");
-		com_changeLanguage(defaultLanguage);
-	}
-}
-
-/*---Common functions--------------------------------------------------------------*/
-
-function com_updateFooterYear() {
-	
-	$("#year_footer").text(com_getYearString());
-}
-
-function com_getYearString() {
-	
-	var date = new Date();
-	return date.getFullYear().toString();
-}
-
-function com_log(text) {
-	
-	console.log(text);
-}
-
-function com_displayErrorMessage(file, fieldName) {
-	
-	com_log("ERROR: " + fieldName);
-	/*
-	errorMessagesLanguageFile = file;
-	
-	com_log("fieldname: " + fieldName);
-	
-	var message;
-	
-	if(typeof errorMessagesLanguageFile === 'object') {
-		
-		var match = false;
-		
-		for(var i = 0; i < Object.keys(errorMessagesLanguageFile).length; i++) {
+	//This function gets the value of the lang parameter from the URL.
+	var getURLPage = function() {
 			
-			if(errorMessageLanguageFile.i.name == fieldName) {
-				com_log("FieldJson: " +  errorMessageLanguageFile.i.name);
-				message = com_getYearString(errorMessagesLanguageFile.i);
-				match = true;
+		var url = new URL(window.location.href);
+		
+		if(url.searchParams.get("page"))
+			return url.searchParams.get("page");
+		else
+			return defaultPage;
+	}
+
+	var getURLAdditional = function() {
+			
+		var url = new URL(window.location.href);
+		
+		if(url.searchParams.get("additional"))
+			return url.searchParams.get("additional");
+		else
+			return null;
+	}
+
+
+	/*---Functions for changing the language----------------------------------------------------*/
+	//This function is the main function to start the process of changing the language on a page.
+	//This function should NOT be called when a page loads.
+	var changeLanguage = function(lang) {
+		
+		language = lang;
+		displayLanguage(commonLanguageFile, false);
+		displayLanguage(languageFile, true);
+		changeURLLanguage();
+	}
+	
+	var displayLanguage = function(langFile, changeTitle) {
+		
+		//In case the onload failed another attempt is made when the language is switched.
+		if(loadedSuccesfull == false) {
+			
+			log("ERROR: Loaded successfull was false. Loading default page instead.");
+			changePage(page); //Start process from beginning in case the user changed the page name. This will check if the page name exists and load defaults if not.
+		}
+		else {
+		
+			var fieldName;
+			var fields = langFile.fields;
+			
+			for(var i = 0; i < Object.keys(langFile.fields).length; i++) {
+				
+				fieldName = "#" + fields[i].name;
+				$(fieldName).text(getFieldLanguage(fields[i]));
+			}
+			
+			if(changeTitle) {
+				
+				if(language == "nl")
+					$(document).prop("title", langFile.tabTitle.nl);
+				else if(language == "en")
+					$(document).prop("title", langFile.tabTitle.en);
 			}
 		}
-		
-		if(match == false)
-			com_log("Error message not found. Something went wrong but the error could not be displayed.");
 	}
-	else {
+
+	//This function gets the selected language from the field in the JSON. 
+	//This function also checks if the field is empty and will return a default value when it is.
+	var getFieldLanguage = function(field) {
 		
-		com_log("Empty so get file");
-		com_getJSONFile("errorMessages", displayErrorMessage, fieldName, null);
+		if(language == "nl") {
+			
+			if(field.nl == "")
+				return "Er is op dit moment geen Nederlandse vertaling beschikbaar.";
+			else
+				return field.nl;
+		}
+		else if(language == "en") {
+			
+			if(field.en == "")
+				return "There is currently no English translation available.";
+			else
+				return field.en;
+		}
+		else {
+			log("ERROR: loading the requested language. The requested language does not exist! Loading default language instead.");
+			changeLanguage(defaultLanguage);
+		}
+	}
+
+	var getURLLanguage = function() {
+			
+		var url = new URL(window.location.href);
+		
+		if(url.searchParams.get("language"))
+			return url.searchParams.get("language");
+		else
+			return defaultLanguage;
+	}
+
+	var changeURLLanguage = function() {
+		
+		setURL(page, language, getURLAdditional());
+	}
+
+	var getLanguageFile = function(optionalSuccesFunction) { getJSONFile(page, displayLanguage, true, optionalSuccesFunction) };
+
+	var getCommonLanguageFile = function() { getJSONFile("common", displayLanguage, false, null) };
+
+	var getErrorMessageLanguageFile = function() { getJSONFile("errorMessages", setErrorMessageLanguageFile, false, null) };
+
+	var setErrorMessageLanguageFile = function(langFile) { errorMessagesLanguageFile = langFile };
+
+
+	/*---Other private functions--------------------------------------------------------------*/
+
+	var updateFooterYear = function() {
+		
+		$("#year_footer").text(getYearString());
+	}
+
+	var getYearString = function() {
+		
+		var date = new Date();
+		return date.getFullYear().toString();
 	}
 	
-	$("#content").html("<p id='errorMessage'>" + message + "</p>");
-	com_log(message);
-	*/
-}
+	
+	/*---Other public functions---------------------------------------------------------------*/
 
+	var log = function(text) {
+		
+		console.log(text);
+	}
+
+	var displayErrorMessage = function(file, fieldName) {
+		
+		log("ERROR: " + fieldName);
+		/*
+		errorMessagesLanguageFile = file;
+		
+		log("fieldname: " + fieldName);
+		
+		var message;
+		
+		if(typeof errorMessagesLanguageFile === 'object') {
+			
+			var match = false;
+			
+			for(var i = 0; i < Object.keys(errorMessagesLanguageFile).length; i++) {
+				
+				if(errorMessageLanguageFile.i.name == fieldName) {
+					log("FieldJson: " +  errorMessageLanguageFile.i.name);
+					message = getYearString(errorMessagesLanguageFile.i);
+					match = true;
+				}
+			}
+			
+			if(match == false)
+				log("Error message not found. Something went wrong but the error could not be displayed.");
+		}
+		else {
+			
+			log("Empty so get file");
+			getJSONFile("errorMessages", displayErrorMessage, fieldName, null);
+		}
+		
+		$("#content").html("<p id='errorMessage'>" + message + "</p>");
+		log(message);
+		*/
+	}
+	
+	
+	//After all methods are added, return the public ones.
+	return common;
+})();
