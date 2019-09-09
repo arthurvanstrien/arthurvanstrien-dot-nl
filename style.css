@@ -1,0 +1,187 @@
+html
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: Calibri;
+}
+
+body
+{
+	padding: 0px;
+	margin: 0px;
+	background-color: #fafafa;
+}	
+
+.innerBody
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 10%;
+	margin-right: 0px;
+	width: 79%;
+	min-height: 100vh;
+	background-color: white;
+}
+
+.innerBody h1
+{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-top: -5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	background-color: #00E5EE;
+	width: calc(100% - 80px);
+	display: inline-block;
+}
+
+.content
+{
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+}
+
+.footer
+{
+	background-color: #00E5EE;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 10%;
+	margin-right: 0px;
+	bottom: 0;
+	width: 75%;
+	position: inherit;
+	text-align: center;
+}
+
+.menu
+{
+	margin: 0px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	width: calc(100% - 80px);
+	background-color: #00C5CD;
+	display: inline-block;
+}
+
+.menu span
+{
+	margin: 0px;
+	display: inline-block;
+}
+
+.menu span:hover
+{
+	cursor: pointer;
+}
+
+.menuItems
+{
+	width: calc(100% - 180px);
+	float: left;
+}
+
+.menuItem
+{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	height: 20px;
+}
+
+.menuItem:hover
+{
+	background-color: #00E5EE;
+}
+
+.menuFlags
+{
+	width: 175px;
+	margin: 0px;
+	padding: 0px;
+	height: 50px;
+	float: right;
+}
+
+.menuFlag
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	height: 40px;
+}
+
+.menuFlag img
+{
+	padding: 0px;
+	height: 40px;
+}
+
+.banner
+{
+	width: 100%;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 0px;
+}
+
+#homeButton-container
+{
+	width: 100%;
+	border-top: 1px solid black;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 20px;
+	padding: 0px;
+}
+
+#homeButton
+{
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	padding: 10px;
+	display: inline-block;
+	border: 1px solid black;
+}
+
+#homeButton:hover
+{
+	background-color: #00E5EE;
+	cursor: pointer;
+}
+
+#errorMessage
+{
+	margin-left: 40px;
+	margin-top: 40px;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	padding: 0px;
+	color: red;
+}
+
+
