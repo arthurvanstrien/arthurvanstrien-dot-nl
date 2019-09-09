@@ -1,0 +1,16 @@
+.aboutme-container
+{
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	padding: 0px;
+}
+
+.aboutme-container p
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
