@@ -51,7 +51,7 @@ function setURL(page, lang, additional) {
 function getJSONFile(jsonFileName, functionToCall, functionToCallOptionalValue, optionalFunctionToCall) {
 	
 	$.ajax({ 
-	url:  '/language/' +  jsonFileName + '.json', 
+	url:  'language/' +  jsonFileName + '.json', 
 	dataType: 'json', async: true, dataType: 'json', 
 	success: function (file) { 
 		log("language file: " + jsonFileName + " retrieved.");
