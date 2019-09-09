@@ -1,0 +1,18 @@
+{
+	"tabTitle": {
+		"nl": "Afbeeldingen Galerij",
+		"en": "Gallery"
+	},
+	"fields": [
+		{
+			"name": "lang_pageTitle",
+			"nl": "Afbeeldingen Galerij",
+			"en": "Gallery"
+		},
+		{
+			"name": "lang_paragraph-1",
+			"nl": "Door de jaren heen heb ik veel foto's gemaakt. Sommigen zijn gelukt, anderen helaas niet. Op deze pagina heb ik een aantal foto's geplaatst die ik zelf het mooist vind.",
+			"en": "After years and years of taking pictures, I grew quite a collection. Most of the pictures that I have taken failed but some worked out great and this page displays the pictures that I like the most. Enjoy!"
+		}
+	]
+}
