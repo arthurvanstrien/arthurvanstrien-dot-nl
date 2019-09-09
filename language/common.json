@@ -1,0 +1,39 @@
+{
+	"fields": [
+		{
+			"name": "lang_footer",
+			"nl": "Website gemaakt door Arthur van Strien",
+			"en": "Website build by Arthur van Strien"
+		},
+		{
+			"name": "lang_menuHome",
+			"nl": "Home",
+			"en": "Home"
+		},
+		{
+			"name": "lang_menuProjects",
+			"nl": "Projecten",
+			"en": "Projects"
+		},
+		{
+			"name": "lang_menuPhotography",
+			"nl": "Fotografie",
+			"en": "Photography"
+		},
+		{
+			"name": "lang_menuGallery",
+			"nl": "Afbeeldingen Galerij",
+			"en": "Picture Gallery"
+		},
+		{
+			"name": "lang_menuTi",
+			"nl": "Technische Informatica",
+			"en": "Applied Computer Science"
+		},
+		{
+			"name": "lang_menuAboutme",
+			"nl": "Persoonlijk",
+			"en": "About me"
+		}
+	]
+}
