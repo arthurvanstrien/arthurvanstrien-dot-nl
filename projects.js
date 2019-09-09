@@ -11,10 +11,10 @@ function loadProjectsFunction(langFile) {
 		
 		//Build the HTML for a project menu and fill it with JSON.
 		html = html + 
-		"<span onClick='com_changePage(" + page + ", " + projectId + ")' class='projectsMenu-container'>" + 
-		"<h2 id='lang_project-title'>" + com_getFieldLanguage(project.title) + "</h2>" +
+		"<span onClick='changePage(" + page + ", " + projectId + ")' class='projectsMenu-container'>" + 
+		"<h2 id='lang_project-title'>" + getFieldLanguage(project.title) + "</h2>" +
 		"<p><span class='projectsMenu-th' id='lang_projectsMenu-year'>Year: </span><span>" + project.year + "</span></p>" +
-		"<p><span class='projectsMenu-th' id='lang_projectsMenu-type'>Type: </span><span>" + com_getFieldLanguage(project.type) + "</span></p>";
+		"<p><span class='projectsMenu-th' id='lang_projectsMenu-type'>Type: </span><span>" + getFieldLanguage(project.type) + "</span></p>";
 
 		var numPictures = Object.keys(project.pictures).length;
 		
