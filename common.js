@@ -2,7 +2,6 @@
 var page;
 var language;
 var errorMessagesLanguageFile;
-var loadedSuccesfull = false;
 var defaultPage = "home";
 var defaultLanguage = "nl";
 
@@ -24,10 +23,6 @@ $( document ).ready(function() {
 
 /*--Functions for the variables and URL----------------------------------------------------*/
 //Below here two important common functions that are likely to be changed when pages are added.
-function resetVariables() {
-	
-	loadedSuccesfull = false;
-}
 
 function setURL(page, lang, additional) {
 	
@@ -55,7 +50,6 @@ function getJSONFile(jsonFileName, functionToCall, functionToCallOptionalValue, 
 	dataType: 'json', async: true, dataType: 'json', 
 	success: function (file) { 
 		log("language file: " + jsonFileName + " retrieved.");
-		loadedSuccesfull = true;
 		
 		functionToCall(file, functionToCallOptionalValue);
 		
@@ -67,7 +61,6 @@ function getJSONFile(jsonFileName, functionToCall, functionToCallOptionalValue, 
 		log("An error occured retrieving the language file: " + jsonFileName + ".");
 		log(textStatus);
 		log(errorThrown);
-		loadedSuccesfull = false;
 		
 		displayErrorMessage(errorMessagesLanguageFile, "json-load-failed");
 	}
