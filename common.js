@@ -44,7 +44,6 @@ var common = (function() {
 		updateFooterYear();
 	}
 	
-
 	var setURL = function(page, lang, additional) {
 		
 		var url = new URL(window.location.href);
@@ -143,6 +142,59 @@ var common = (function() {
 			getLanguageFile(null);
 		}
 	}
+
+	var getHTMLElement = function(content, elementName, elementId, elementClass, elementOnclick) {
+		
+		var elem = "";
+		var elemId = "";
+		var elemClass = "";
+		var elemOnClick = "";
+		
+		if(elementId != null)
+			elemId = " id='" + elementId + "'";
+		
+		if(elementClass != null)
+			elemClass = " class='" + elementClass + "'";
+		
+		if(elementOnclick != null)
+			elemOnClick = " onClick='" + elementOnclick + "'";
+		
+		
+		
+		if(elementName == "div-parent")
+			elem = "<div" + elemId + elemClass + elemOnClick + ">" + getNestedElements(content) + "</div>";
+		else if(elementName == "span-parent")
+			elem = "<span" + elemId + elemClass + elemOnClick + ">" + getNestedElements(content) + "</span>";
+		else if(elementName == "div")
+			elem = "<div" + elemId + elemClass + elemOnClick + ">" + content + "</div>";
+		else if(elementName == "span")
+			elem = "<span" + elemId + elemClass + elemOnClick + ">" + content + "</span>";
+		else if(elementName == "paragraph")
+			elem = "<p" + elemId + elemClass + elemOnClick + ">" + content + "</p>";
+		else if(elementName == "image")
+			elem = "<img" + elemId + elemClass + elemOnClick + " src='" + content + "'/>";
+		else if(elementName == "header1")
+			elem = "<h1" + elemId + elemClass + elemOnClick + ">" + content + "</h1>";
+		else if(elementName == "header2")
+			elem = "<h2>" + elemId + elemClass + elemOnClick + ">" + content + "</h2>";
+		else if(elementName == "header3")
+			elem = "<h3" + elemId + elemClass + elemOnClick + ">" + content + "</h3>";
+		
+		return elem;
+	}
+	
+	var getNestedElements = function(content) {
+		
+		var elem = "";
+			
+		for(var i = 0; i < Object.keys(content).length; i++) {
+			
+			elem = elmem + getHTMLElement(content[i]);
+		}
+		
+		return elem;
+	}
+	
 
 	//This function gets the value of the lang parameter from the URL.
 	var getURLPage = function() {
