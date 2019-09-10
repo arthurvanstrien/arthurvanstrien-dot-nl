@@ -13,8 +13,8 @@ function loadProjectsFunction(langFile) {
 		html = html + 
 		"<span onClick='common.changePage(" + page + ", " + projectId + ")' class='projectsMenu-container'>" + 
 		"<h2 id='lang_project-title'>" + common.getFieldLanguage(project.title) + "</h2>" +
-		"<p><span class='projectsMenu-th' id='lang_projectsMenu-year'>Year: </span><span>" + project.year + "</span></p>" +
-		"<p><span class='projectsMenu-th' id='lang_projectsMenu-type'>Type: </span><span>" + common.getFieldLanguage(project.type) + "</span></p>";
+		"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-year'>Year: </span><span>" + project.year + "</span></span>" +
+		"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-type'>Type: </span><span>" + common.getFieldLanguage(project.type) + "</span></span>";
 
 		var numPictures = Object.keys(project.pictures).length;
 		
