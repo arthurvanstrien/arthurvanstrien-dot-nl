@@ -20,6 +20,7 @@ var common = (function() {
 	common.firstLoad = function() { firstLoad(); };
 	common.changePage = function(newPage, additionalParameter) { changePage(newPage, additionalParameter); };
 	common.changeLanguage = function(lang) { changeLanguage(lang); };
+	common.generateHTMLElements = function(content) { return generateHTMLElements{content); };
 	common.getFieldLanguage = function(field) { return getFieldLanguage(field); };
 	common.log = function(text) { log(text); };
 	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); };
