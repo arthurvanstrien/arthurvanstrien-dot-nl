@@ -143,7 +143,20 @@ var common = (function() {
 			getLanguageFile(null);
 		}
 	}
-
+	
+		
+	var generateHTMLElements = function(content) {
+		
+		var generatedHTML = "";
+		
+		for(var i = 0; i < Object.keys(content).length; i++) {
+			
+			generatedHTML = generatedHTML + getHTMLElement(content[i]);
+		}
+		
+		return generatedHTML;
+	}
+	
 	var getHTMLElement = function(content, elementName, elementId, elementClass, elementOnclick) {
 		
 		var elem = "";
