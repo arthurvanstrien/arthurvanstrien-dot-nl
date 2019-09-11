@@ -129,7 +129,7 @@ var common = (function() {
 		else if(page == "gallery") {
 			setURL(page, language, null);
 			$('#content').load("gallery.html");
-			getLanguageFile(null);
+			loadPageContent("gallery-anchor", null);
 		}
 		else if(page == "ti") {
 			setURL(page, language, null);
