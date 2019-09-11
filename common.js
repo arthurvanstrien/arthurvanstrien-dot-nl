@@ -20,7 +20,7 @@ var common = (function() {
 	common.firstLoad = function() { firstLoad(); };
 	common.changePage = function(newPage, additionalParameter) { changePage(newPage, additionalParameter); };
 	common.changeLanguage = function(lang) { changeLanguage(lang); };
-	common.generateHTMLElements = function(content) { return generateHTMLElements{content); };
+	common.displayContent = function(content, idToAppento) { displayContent(content, idToAppento); };
 	common.getFieldLanguage = function(field) { return getFieldLanguage(field); };
 	common.log = function(text) { log(text); };
 	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); };
@@ -144,55 +144,76 @@ var common = (function() {
 		}
 	}
 	
+	var loadPageContent = function(idToAppento, optionalSuccesFunction) { 
+	
+		getJSONFile(page, displayContent, idToAppento, optionalSuccesFunction); 
+	}
+	
 		
-	var generateHTMLElements = function(content) {
+	var displayContent = function(langFile, idToAppento) {
 		
 		var generatedHTML = "";
+		var content = langFile.content;
+		
+		//Display default elements first.
+		if(language == "nl") {
+			$("#lang_pageTitle").text(langFile.pageTitle.nl);
+			$(document).prop("title", langFile.tabTitle.nl);
+		}
+		else if(language == "en") {
+			$("#lang_pageTitle").text(langFile.pageTitle.en);
+			$(document).prop("title", langFile.tabTitle.en);
+		}
+				
+		//Loop through the content, generate HTML and display the HTML after the anchor.
 		
 		for(var i = 0; i < Object.keys(content).length; i++) {
 			
+			common.log(content[i]);
 			generatedHTML = generatedHTML + getHTMLElement(content[i]);
 		}
 		
-		return generatedHTML;
+		$(generatedHTML).insertAfter("#" + idToAppento);
 	}
 	
-	var getHTMLElement = function(content, elementName, elementId, elementClass, elementOnclick) {
+	var getHTMLElement = function(content) {
 		
 		var elem = "";
-		var elemId = "";
-		var elemClass = "";
-		var elemOnClick = "";
+		var elementType = content.type;
+		var elemId = content.id;
+		var elemClass = content.class;
+		var elemOnClick = content.onClick;
 		
-		if(elementId != null)
-			elemId = " id='" + elementId + "'";
+		if(elemId != "")
+			elemId = " id='" + elemId + "'";
 		
-		if(elementClass != null)
-			elemClass = " class='" + elementClass + "'";
+		if(elemClass != "")
+			elemClass = " class='" + elemClass + "'";
 		
-		if(elementOnclick != null)
-			elemOnClick = " onClick='" + elementOnclick + "'";
+		if(elemOnClick != "")
+			elemOnClick = " onClick='" + elemOnClick + "'";
 		
 		
-		
-		if(elementName == "div-parent")
+		if(elementType == "div-parent")
 			elem = "<div" + elemId + elemClass + elemOnClick + ">" + getNestedElements(content) + "</div>";
-		else if(elementName == "span-parent")
+		else if(elementType == "span-parent")
 			elem = "<span" + elemId + elemClass + elemOnClick + ">" + getNestedElements(content) + "</span>";
-		else if(elementName == "div")
-			elem = "<div" + elemId + elemClass + elemOnClick + ">" + content + "</div>";
-		else if(elementName == "span")
-			elem = "<span" + elemId + elemClass + elemOnClick + ">" + content + "</span>";
-		else if(elementName == "paragraph")
-			elem = "<p" + elemId + elemClass + elemOnClick + ">" + content + "</p>";
-		else if(elementName == "image")
-			elem = "<img" + elemId + elemClass + elemOnClick + " src='" + content + "'/>";
-		else if(elementName == "header1")
-			elem = "<h1" + elemId + elemClass + elemOnClick + ">" + content + "</h1>";
-		else if(elementName == "header2")
-			elem = "<h2>" + elemId + elemClass + elemOnClick + ">" + content + "</h2>";
-		else if(elementName == "header3")
-			elem = "<h3" + elemId + elemClass + elemOnClick + ">" + content + "</h3>";
+		else if(elementType == "div")
+			elem = "<div" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</div>";
+		else if(elementType == "span")
+			elem = "<span" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
+		else if(elementType == "paragraph")
+			elem = "<p" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
+		else if(elementType == "image")
+			elem = "<img" + elemId + elemClass + elemOnClick + " src='" + content.path + "'/>";
+		else if(elementType == "header1")
+			elem = "<h1" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
+		else if(elementType == "header2")
+			elem = "<h2>" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
+		else if(elementType == "header3")
+			elem = "<h3" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
+		
+		common.log(elem);
 		
 		return elem;
 	}
