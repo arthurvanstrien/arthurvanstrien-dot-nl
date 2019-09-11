@@ -19,12 +19,12 @@ var common = (function() {
 	var common = {};
 	
 	/*--ALL public methods in common:------------------------------------------------------------*/
-	common.firstLoad = function() { firstLoad(); };
-	common.changePage = function(newPage, additionalParameter) { changePage(newPage, additionalParameter); };
-	common.changeLanguage = function(lang) { changeLanguage(lang); };
-	common.getFieldLanguage = function(field) { return getFieldLanguage(field); };
-	common.log = function(text) { log(text); };
-	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); };
+	common.firstLoad = function() { firstLoad(); }
+	common.changePage = function(newPage, additionalParameter) { changePage(newPage, additionalParameter); }
+	common.changeLanguage = function(lang) { changeLanguage(lang); }
+	common.getFieldLanguage = function(field) { return getFieldLanguage(field); }
+	common.log = function(text) { log(text); }
+	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); }
 	
 	
 	/*--Functions for the variables and URL----------------------------------------------------*/
