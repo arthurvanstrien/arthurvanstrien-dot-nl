@@ -210,28 +210,6 @@ var common = (function() {
 	}
 	
 
-	//This function gets the value of the lang parameter from the URL.
-	var getURLPage = function() {
-			
-		var url = new URL(window.location.href);
-		
-		if(url.searchParams.get("page"))
-			return url.searchParams.get("page");
-		else
-			return defaultPage;
-	}
-
-	var getURLAdditional = function() {
-			
-		var url = new URL(window.location.href);
-		
-		if(url.searchParams.get("additional"))
-			return url.searchParams.get("additional");
-		else
-			return null;
-	}
-
-
 	/*---Functions for changing the language----------------------------------------------------*/
 	//This function is the main function to start the process of changing the language on a page.
 	//This function should NOT be called when a page loads.
@@ -320,7 +298,7 @@ var common = (function() {
 	var setErrorMessageLanguageFile = function(langFile) { errorMessagesLanguageFile = langFile };
 
 
-	/*---Other private functions--------------------------------------------------------------*/
+	/*---Other functions---------------------------------------------------------------------------------------------------*/
 
 	var updateFooterYear = function() {
 		
@@ -333,8 +311,25 @@ var common = (function() {
 		return date.getFullYear().toString();
 	}
 	
-	
-	/*---Other public functions---------------------------------------------------------------*/
+	var getURLPage = function() {
+			
+		var url = new URL(window.location.href);
+		
+		if(url.searchParams.get("page"))
+			return url.searchParams.get("page");
+		else
+			return defaultPage;
+	}
+
+	var getURLAdditional = function() {
+			
+		var url = new URL(window.location.href);
+		
+		if(url.searchParams.get("additional"))
+			return url.searchParams.get("additional");
+		else
+			return null;
+	}
 
 	var log = function(text) {
 		
