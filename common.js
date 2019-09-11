@@ -107,7 +107,7 @@ var common = (function() {
 		else if(page == "projects") {
 			setURL(page, language, null);
 			$('#content').load("projects.html");
-			loadPageContent(null, loadProjectsFunction); //pass the loadProjects function to call after the JSON has loaded.
+			loadPageContent(null, projects.load); //pass the loadProjects function to call after the JSON has loaded.
 		}
 		else if(page == "project-detail") {
 			setURL(page, language, additionalParameter);
