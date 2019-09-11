@@ -1,6 +1,8 @@
 
 var page;
 var language;
+var languageFile;
+var commonLanguageFile;
 var errorMessagesLanguageFile;
 var loadedSuccesfull = false;
 var defaultPage = "home";
@@ -20,7 +22,6 @@ var common = (function() {
 	common.firstLoad = function() { firstLoad(); };
 	common.changePage = function(newPage, additionalParameter) { changePage(newPage, additionalParameter); };
 	common.changeLanguage = function(lang) { changeLanguage(lang); };
-	common.displayContent = function(content, idToAppento) { displayContent(content, idToAppento); };
 	common.getFieldLanguage = function(field) { return getFieldLanguage(field); };
 	common.log = function(text) { log(text); };
 	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); };
@@ -36,12 +37,8 @@ var common = (function() {
 		//The change page must be run before other functions.
 		page = getURLPage();
 		changePage(page);
-		
-		getCommonLanguageFile();
-		getErrorMessageLanguageFile();
-		
+		getUniversalLanguageFiles();
 		setURL(page, language, getURLAdditional());
-		
 		updateFooterYear();
 	}
 	
@@ -94,9 +91,10 @@ var common = (function() {
 	/*--Functions for changing the page----------------------------------------------------*/
 	//This function will start the process of changing the page.
 	//First it will retrieve the URL and remove the page parameter.
-	//Second it will append the page parameter in the URL with the loaded page.
+	//Second it will append the page parameter in the URL with the new page.
 	//Third it will check if the page exist and load the corresponding HTML file into the .content div.
-	//Final this function will call a function for the retrieval of the language files corresponding to this page.
+	//Final this function will call a function for the retrieval of the language files corresponding to this page 
+	//and that function will display the data in it.
 	var changePage = function(newPage, additionalParameter) {
 
 		page = newPage;
@@ -104,27 +102,27 @@ var common = (function() {
 		if(page == "home") {
 			setURL(page, language, null);
 			$('#content').load("home.html");
-			getLanguageFile(null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
+			loadPageContent(null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
 		}
 		else if(page == "projects") {
 			setURL(page, language, null);
 			$('#content').load("projects.html");
-			getLanguageFile(loadProjectsFunction); //pass the loadProjects function to call after the JSON has loaded.
+			loadPageContent(null, loadProjectsFunction); //pass the loadProjects function to call after the JSON has loaded.
 		}
 		else if(page == "project-detail") {
 			setURL(page, language, additionalParameter);
 			$('#content').load("project-detail.html");
-			getLanguageFile(loadProjectdetailFunction);
+			loadPageContent(null, loadProjectdetailFunction);
 		}
 		else if(page == "photography") {
 			setURL(page, language, null);
 			$('#content').load("photography.html");
-			getLanguageFile(null);
+			loadPageContent(null, null);
 		}
 		else if(page == "aboutme") {
 			setURL(page, language, null);
 			$('#content').load("aboutme.html");
-			getLanguageFile(null);
+			loadPageContent(null, null);
 		}
 		else if(page == "gallery") {
 			setURL(page, language, null);
@@ -134,58 +132,69 @@ var common = (function() {
 		else if(page == "ti") {
 			setURL(page, language, null);
 			$('#content').load("ti.html");
-			getLanguageFile(null);
+			loadPageContent(null, null);
 		}
 		else {
 			page = defaultPage;
 			setURL(page, language, null);
 			$('#content').load(defaultPage + ".html");
-			getLanguageFile(null);
+			loadPageContent(null, null);
 		}
 	}
 	
-	var loadPageContent = function(idToAppento, optionalSuccesFunction) { 
+	var loadPageContent = function(idToAppendContentTo, optionalSuccesFunction) { 
 	
-		getJSONFile(page, displayContent, idToAppento, optionalSuccesFunction); 
+		getJSONFile(page, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunction); 
 	}
-	
 		
-	var displayContent = function(langFile, idToAppento) {
+	var generateAndDisplayContent = function(langFile, idToAppendContentTo) {
 		
+		languageFile = langFile;
 		var generatedHTML = "";
 		var content = langFile.content;
 		
-		//Display default elements first.
-		if(language == "nl") {
-			$("#lang_pageTitle").text(langFile.pageTitle.nl);
-			$(document).prop("title", langFile.tabTitle.nl);
-		}
-		else if(language == "en") {
-			$("#lang_pageTitle").text(langFile.pageTitle.en);
-			$(document).prop("title", langFile.tabTitle.en);
-		}
+		
+		//Display the default elements first.
+		if(typeof langFile.tabTitle !== 'undefined')
+			$(document).prop("title", getFieldLanguage(langFile.tabTitle));
+		
+		if(typeof langFile.pageTitle !== 'undefined')
+			$("#lang_pageTitle").text(getFieldLanguage(langFile.pageTitle));
 				
 		//Loop through the content, generate HTML and display the HTML after the anchor.
-		
-		for(var i = 0; i < Object.keys(content).length; i++) {
+		if(typeof langFile.content !== 'undefined') {
 			
-			common.log(content[i]);
-			generatedHTML = generatedHTML + getHTMLElement(content[i]);
+			for(var i = 0; i < Object.keys(content).length; i++) {
+				
+				generatedHTML = generatedHTML + getHTMLElement(content[i], i);
+			}
 		}
 		
-		$(generatedHTML).insertAfter("#" + idToAppento);
+		//Fill the already present fields in the HTML file with data.
+		//NOTE: this MUST be done AFTER the content is looped and the HTML is generated.
+		//This is because during the generation of the HTML, elements with default field values can be added to the HTML.
+		if(typeof langFile.fields !== 'undefined') {
+			
+			var fields = langFile.fields;
+			
+			for(var i = 0; i < Object.keys(fields).length; i++) {
+					
+				fieldName = "#" + fields[i].name;
+				$(fieldName).text(getFieldLanguage(fields[i]));
+			}
+		}
+		
+		$(generatedHTML).insertAfter("#" + idToAppendContentTo);
 	}
 	
-	var getHTMLElement = function(content) {
+	var getHTMLElement = function(content, elemCounter) {
 		
 		var elem = "";
 		var elementType = content.type;
-		var elemId = content.id;
 		var elemClass = content.class;
 		var elemOnClick = content.onClick;
 		
-		if(elemId != "")
-			elemId = " id='" + elemId + "'";
+		var id = " id='" + getElementId(elemCounter) + "'";
 		
 		if(elemClass != "")
 			elemClass = " class='" + elemClass + "'";
@@ -195,41 +204,46 @@ var common = (function() {
 		
 		
 		if(elementType == "div-parent")
-			elem = "<div" + elemId + elemClass + elemOnClick + ">" + getNestedElements(content) + "</div>";
+			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</div>";
 		else if(elementType == "span-parent")
-			elem = "<span" + elemId + elemClass + elemOnClick + ">" + getNestedElements(content) + "</span>";
+			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</span>";
 		else if(elementType == "div")
-			elem = "<div" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</div>";
+			elem = "<div" + id + "'" + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</div>";
 		else if(elementType == "span")
-			elem = "<span" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
+			elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
 		else if(elementType == "paragraph")
-			elem = "<p" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
+			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
 		else if(elementType == "image")
-			elem = "<img" + elemId + elemClass + elemOnClick + " src='" + content.path + "'/>";
+			elem = "<img" + id + elemClass + elemOnClick + " src='" + content.path + "'/>";
 		else if(elementType == "header1")
-			elem = "<h1" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
+			elem = "<h1" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
 		else if(elementType == "header2")
-			elem = "<h2>" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
+			elem = "<h2>" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
 		else if(elementType == "header3")
-			elem = "<h3" + elemId + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
-		
-		common.log(elem);
+			elem = "<h3" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
 		
 		return elem;
 	}
 	
-	var getNestedElements = function(content) {
+	var getNestedElements = function(content, elemId) {
 		
 		var elem = "";
+		var id = "";
 			
 		for(var i = 0; i < Object.keys(content).length; i++) {
 			
-			elem = elmem + getHTMLElement(content[i]);
+			id = elemId + "_" + i;
+			elem = elem + getHTMLElement(content[i], id);
 		}
 		
 		return elem;
 	}
 	
+	var getElementId = function(elemId) {
+		
+		return "lang_" + page + "_" + elemId;
+	}
+
 
 	/*---Functions for changing the language----------------------------------------------------*/
 	//This function is the main function to start the process of changing the language on a page.
@@ -237,40 +251,62 @@ var common = (function() {
 	var changeLanguage = function(lang) {
 		
 		language = lang;
-		displayLanguage(commonLanguageFile, false);
-		displayLanguage(languageFile, true);
+		
+		displayLanguage(commonLanguageFile);
+		displayLanguage(languageFile);
 		changeURLLanguage();
 	}
 	
-	var displayLanguage = function(langFile, changeTitle) {
+	var displayLanguage = function(langFile) {
 		
-		//In case the onload failed another attempt is made when the language is switched.
-		if(loadedSuccesfull == false) {
+		if(typeof langFile.tabTitle !== 'undefined')
+			$(document).prop("title", getFieldLanguage(langFile.tabTitle));
+		
+		if(typeof langFile.pageTitle !== 'undefined')
+			$("#lang_pageTitle").text(getFieldLanguage(langFile.pageTitle));
+		
+		if(typeof langFile.content !== 'undefined')
+			displayContent(langFile.content);
+		
+		if(typeof langFile.fields !== 'undefined') {
 			
-			log("ERROR: Loaded successfull was false. Loading default page instead.");
-			changePage(page); //Start process from beginning in case the user changed the page name. This will check if the page name exists and load defaults if not.
-		}
-		else {
-		
-			var fieldName;
 			var fields = langFile.fields;
 			
-			for(var i = 0; i < Object.keys(langFile.fields).length; i++) {
-				
+			for(var i = 0; i < Object.keys(fields).length; i++) {
+					
 				fieldName = "#" + fields[i].name;
 				$(fieldName).text(getFieldLanguage(fields[i]));
 			}
-			
-			if(changeTitle) {
-				
-				if(language == "nl")
-					$(document).prop("title", langFile.tabTitle.nl);
-				else if(language == "en")
-					$(document).prop("title", langFile.tabTitle.en);
-			}
 		}
 	}
-
+	
+	var displayContent = function(content) {
+		
+		var elem;
+		
+		for(var i = 0; i < Object.keys(content).length; i++) {
+			
+			displayElement(content[i], i);
+		}
+	}
+	
+	var displayElement = function(elem, id) {
+			
+		if(elem.type == "div-parent" || elem.type == "span-parent") {
+			
+			for(var j = 0; j < Object.keys(elem.content).length; j++) {
+				
+				displayElement(elem.content[j], (id + "_" + j));
+			}
+		}
+		else if(elem.type == "image") {
+			//Do Nothing images are not different in other languages...
+		}
+		else {
+			$(("#" + getElementId(id))).text(getFieldLanguage(elem));
+		}	
+	}
+	
 	//This function gets the selected language from the field in the JSON. 
 	//This function also checks if the field is empty and will return a default value when it is.
 	var getFieldLanguage = function(field) {
@@ -309,14 +345,15 @@ var common = (function() {
 		
 		setURL(page, language, getURLAdditional());
 	}
-
-	var getLanguageFile = function(optionalSuccesFunction) { getJSONFile(page, displayLanguage, true, optionalSuccesFunction) };
-
-	var getCommonLanguageFile = function() { getJSONFile("common", displayLanguage, false, null) };
-
-	var getErrorMessageLanguageFile = function() { getJSONFile("errorMessages", setErrorMessageLanguageFile, false, null) };
-
-	var setErrorMessageLanguageFile = function(langFile) { errorMessagesLanguageFile = langFile };
+	
+	var getUniversalLanguageFiles = function() {
+		
+		getJSONFile("common", setCommonLanguageFile, null, displayLanguage);
+		getJSONFile("errorMessages", setErrorMessagesLanguageFile, languageFile, null);
+	}
+	
+	var setCommonLanguageFile = function(langFile) { commonLanguageFile = langFile; }
+	var setErrorMessagesLanguageFile = function(langFile) { errorMessageLanguageFile = langFile; }
 
 
 	/*---Other functions---------------------------------------------------------------------------------------------------*/
