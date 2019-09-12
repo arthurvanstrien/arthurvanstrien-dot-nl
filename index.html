@@ -10,10 +10,12 @@
 		<link rel="stylesheet" type="text/css" href="photography-gallery.css">
 		<link rel="stylesheet" type="text/css" href="aboutme.css">
 		<link rel="stylesheet" type="text/css" href="gallery.css">
+		
 		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
 		<script type="text/javascript" src="common.js"></script>
 		<script type="text/javascript" src="projects.js"></script>
 		<script type="text/javascript" src="project-detail.js"></script>
+		
 		<title>Home</title>
 	</head>
 	
@@ -22,21 +24,21 @@
 			
 			<div class="menu">
 				<div class="menuItems">
-					<span class="menuItem" id="lang_menuHome" onClick="changePage('home')">Home</span>
-					<span class="menuItem" id="lang_menuProjects" onClick="changePage('projects')">Projecten</span>
-					<span class="menuItem" id="lang_menuPhotography" onClick="changePage('photography')">Fotografie</span>
-					<span class="menuItem" id="lang_menuGallery" onClick="changePage('gallery')">Afbeeldingen Galerij</span>
-					<span class="menuItem" id="lang_menuTi" onClick="changePage('ti')">Technische Informatica</span>
-					<span class="menuItem" id="lang_menuAboutme" onClick="changePage('aboutme')">Persoonlijk</span>
+					<span class="menuItem" id="lang_menuHome" onClick="common.changePage('home')">Home</span>
+					<span class="menuItem" id="lang_menuProjects" onClick="common.changePage('projects')">Projecten</span>
+					<span class="menuItem" id="lang_menuPhotography" onClick="common.changePage('photography')">Fotografie</span>
+					<span class="menuItem" id="lang_menuGallery" onClick="common.changePage('gallery')">Afbeeldingen Galerij</span>
+					<span class="menuItem" id="lang_menuTi" onClick="common.changePage('ti')">Technische Informatica</span>
+					<span class="menuItem" id="lang_menuAboutme" onClick="common.changePage('aboutme')">Persoonlijk</span>
 				</div>
 				
 				<div class="menuFlags">
-					<span class="menuFlag" onclick="changeLanguage('en')"><img src="pic_common/british.jpg" alt="English"></span>
-					<span class="menuFlag" onclick="changeLanguage('nl')"><img src="pic_common/dutch.jpg" alt="Dutch"></span>
+					<span class="menuFlag" onclick="common.changeLanguage('en')"><img src="pic_common/british.jpg" alt="English"></span>
+					<span class="menuFlag" onclick="common.changeLanguage('nl')"><img src="pic_common/dutch.jpg" alt="Dutch"></span>
 				</div>
 			</div>
 		
-			<h1 id="lang_pageTitle">Home</h1>
+			<h1 id="lang_pageTitle">Title</h1>
 			
 			<div class="content" id="content">
 				<p>Gelieve javascript in uw browser aan te zetten om gebruik te kunnen maken van deze website.</p>
