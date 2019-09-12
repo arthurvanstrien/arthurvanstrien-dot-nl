@@ -18,6 +18,15 @@
 			"name": "lang_paragraph-2",
 			"nl": "Als je een project bouwt is het bijna altijd aan te raden iets van versiebeheer te gebruiken, dit probeer ik dan ook altijd te doen. Toch komt het voor dat je als programmeur op een dag even snel een demo in elkaar tikt voor grap. Veel plezier later is het project opeens een serieuze vorm aan gaan nemen zonder plan vooraf, dat gebeurt soms gewoon. Een voorbeeld is deze website wat begon met een klein voorbeeld en is uitgegroeid tot wat je nu ziet.",
 			"en": ""
-		}
+		},
+		{
+			"name": "lang_projectsMenu-year",
+			"nl": "Jaar:",
+			"en": "Year:"
+		},
+			"name": "lang_projectsMenu-type",
+			"nl": "Soort:",
+			"en": "Type:"
+		}		
 	]
 }
