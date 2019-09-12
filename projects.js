@@ -13,7 +13,7 @@ var projects = (function() {
 			var project = langFile.projects[i];
 			
 			//Add "" around the projectId and page so Javascript will interpret the value as a string instead as a variable.
-			var page = '"' + "project-detail" + '"';
+			var page = '"' + "projectDetail" + '"';
 			var projectId = '"' + project.projectId + '"'; 
 			
 			//Build the HTML for a project menu and fill it with JSON.
