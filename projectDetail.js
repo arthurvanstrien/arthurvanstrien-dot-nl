@@ -45,7 +45,7 @@ var projectDetail = (function() {
 		
 		if(found == false) {
 			
-			displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
+			common.displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
 		}
 	}
 	
@@ -54,17 +54,19 @@ var projectDetail = (function() {
 		//The previous page was not projects and therefore the projectData is NOT passed directly to this page.
 		//Instead we still have to load the list with projects and get the data for this project from that.
 		
+		var url = new URL(window.location.href);
+		
 		if(url.searchParams.get("additional")) {
 			var id = url.searchParams.get("additional");
 			getJSONFile("projects-list", projectDetail.getProjectFromListAndDisplay, id, null, null);
 		}
 		else
-			displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
+			common.displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
 	}
 	
 	var displayProjectDetail = function(project) {
 		
-		console.log("displayProjectDetail");
+		var generatedHTML = "";
 	}
 	
 	return projDetail;
