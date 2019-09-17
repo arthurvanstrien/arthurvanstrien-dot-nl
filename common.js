@@ -102,49 +102,50 @@ var common = (function() {
 		if(page == "home") {
 			setURL(page, language, null);
 			$('#content').load("home.html");
-			loadPageContent(null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
+			loadPageContent("home", null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
 		}
 		else if(page == "projects") {
 			setURL(page, language, null);
 			$('#content').load("projects.html");
-			loadPageContent(null, projects.load); //pass the loadProjects function to call after the JSON has loaded.
+			loadPageContent("projects", null, null); //pass the loadProjects function to call after the JSON has loaded.
+			loadPageContent("projectsList", null, projects.load);
 		}
-		else if(page == "project-detail") {
+		else if(page == "projectDetail") {
 			setURL(page, language, additionalParameter);
 			$('#content').load("project-detail.html");
-			loadPageContent(null, loadProjectdetailFunction);
+			loadPageContent("projectDetail", null, loadProjectdetailFunction);
 		}
 		else if(page == "photography") {
 			setURL(page, language, null);
 			$('#content').load("photography.html");
-			loadPageContent(null, null);
+			loadPageContent("photography", null, null);
 		}
 		else if(page == "aboutme") {
 			setURL(page, language, null);
 			$('#content').load("aboutme.html");
-			loadPageContent(null, null);
+			loadPageContent("aboutme", null, null);
 		}
 		else if(page == "gallery") {
 			setURL(page, language, null);
 			$('#content').load("gallery.html");
-			loadPageContent("gallery-anchor", null);
+			loadPageContent("gallery", "gallery-anchor", null);
 		}
 		else if(page == "ti") {
 			setURL(page, language, null);
 			$('#content').load("ti.html");
-			loadPageContent(null, null);
+			loadPageContent("ti", null, null);
 		}
 		else {
 			page = defaultPage;
 			setURL(page, language, null);
 			$('#content').load(defaultPage + ".html");
-			loadPageContent(null, null);
+			loadPageContent(page, null, null);
 		}
 	}
 	
-	var loadPageContent = function(idToAppendContentTo, optionalSuccesFunction) { 
+	var loadPageContent = function(file, idToAppendContentTo, optionalSuccesFunction) { 
 	
-		getJSONFile(page, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunction); 
+		getJSONFile(file, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunction); 
 	}
 		
 	var generateAndDisplayContent = function(langFile, idToAppendContentTo) {
