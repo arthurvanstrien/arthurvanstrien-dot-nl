@@ -312,23 +312,30 @@ var common = (function() {
 	//This function also checks if the field is empty and will return a default value when it is.
 	var getFieldLanguage = function(field) {
 		
-		if(language == "nl") {
+		if(field == 'undefined' || field == null) {
 			
-			if(field.nl == "")
-				return "Er is op dit moment geen Nederlandse vertaling beschikbaar.";
-			else
-				return field.nl;
-		}
-		else if(language == "en") {
-			
-			if(field.en == "")
-				return "There is currently no English translation available.";
-			else
-				return field.en;
+			displayErrorMessage(errorMessageLanguageFile, "something-unexpected-happened");
 		}
 		else {
-			log("ERROR: loading the requested language. The requested language does not exist! Loading default language instead.");
-			changeLanguage(defaultLanguage);
+			
+			if(language == "nl") {
+				
+				if(field.nl == "")
+					return "Er is op dit moment geen Nederlandse vertaling beschikbaar.";
+				else
+					return field.nl;
+			}
+			else if(language == "en") {
+				
+				if(field.en == "")
+					return "There is currently no English translation available.";
+				else
+					return field.en;
+			}
+			else {
+				log("ERROR: loading the requested language. The requested language does not exist! Loading default language instead.");
+				changeLanguage(defaultLanguage);
+			}
 		}
 	}
 
