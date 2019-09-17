@@ -30,7 +30,7 @@ var projectDetail = (function() {
 	
 	var getProjectFromListAndDisplay = function(langFile, projectId) {
 		
-		console.log("getProjectFromListAndDisplay");
+		var found = false;
 		
 		for(var i = 0; i < Object.keys(langFile.projects).length; i++) {
 			
@@ -39,7 +39,13 @@ var projectDetail = (function() {
 			if(project.projectId == projectId) {
 				
 				displayProjectDetail(project);
+				found = true;
 			}
+		}
+		
+		if(found == false) {
+			
+			displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
 		}
 	}
 	
