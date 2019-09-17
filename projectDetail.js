@@ -7,24 +7,24 @@ var projectDetail = (function() {
 	projDetail.getProjectFromListAndDisplay = function(langFile, projectId) { getProjectFromListAndDisplay(langFile, projectId); }
 
 	var load = function(langFile, project) {
-	
-		var url = new URL(window.location.href);
 		
-		if(project.projectId === 'undefined' || project.projectId === null) {
+		//Check if the recieved data is usefull, if not get the projectsList.
+		if(typeof project === 'object') {
+	
+			var url = new URL(window.location.href);
 			
-			//The previous page was not projects and therefore the projectData is NOT passed directly to this page.
-			//Instead we still have to load the list with projects and get the data for this project from that.
-			
-			if(url.searchParams.get("additional")) {
-				var id = url.searchParams.get("additional");
-				getJSONFile("projects-list", projectDetail.getProjectFromListAndDisplay, id, null, null);
+			if(project.projectId === 'undefined' || project.projectId === null) {
+
+				getProjectsList();
 			}
-			else
-				displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
+			else {
+				
+				displayProjectDetail(project);
+			}
 		}
 		else {
 			
-			displayProjectDetail(project);
+			getProjectsList();
 		}
 	}
 	
@@ -41,6 +41,19 @@ var projectDetail = (function() {
 				displayProjectDetail(project);
 			}
 		}
+	}
+	
+	var getProjectsList = function() {
+		
+		//The previous page was not projects and therefore the projectData is NOT passed directly to this page.
+		//Instead we still have to load the list with projects and get the data for this project from that.
+		
+		if(url.searchParams.get("additional")) {
+			var id = url.searchParams.get("additional");
+			getJSONFile("projects-list", projectDetail.getProjectFromListAndDisplay, id, null, null);
+		}
+		else
+			displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
 	}
 	
 	var displayProjectDetail = function(project) {
