@@ -1,6 +1,11 @@
 {
 	"fields": [
 		{
+			"name": "lang_projectsMenu-overview",
+			"nl": "Overzicht",
+			"en": "Summary"
+		},
+		{
 			"name": "lang_projectsMenu-year",
 			"nl": "Jaar:",
 			"en": "Year:"
