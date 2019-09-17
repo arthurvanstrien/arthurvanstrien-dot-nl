@@ -26,7 +26,7 @@ var projects = (function() {
 			"<span onClick='projects.gotoProjectDetail(" + i + ")' class='projectsMenu-container'>" + 
 			"<h2 id='lang_project-title'>" + common.getFieldLanguage(project.title) + "</h2>" +
 			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-year'>Year: </span><span>" + project.year + "</span></span>" +
-			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-type'>Type: </span><span>" + common.getFieldLanguage(project.type) + "</span></span>";
+			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-category'>Type: </span><span>" + common.getFieldLanguage(project.category) + "</span></span>";
 
 			var numPictures = Object.keys(project.pictures).length;
 			
