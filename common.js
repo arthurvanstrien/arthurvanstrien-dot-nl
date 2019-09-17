@@ -20,7 +20,7 @@ var common = (function() {
 	
 	/*--ALL public methods in common:------------------------------------------------------------*/
 	common.firstLoad = function() { firstLoad(); }
-	common.changePage = function(newPage, additionalParameter) { changePage(newPage, additionalParameter); }
+	common.changePage = function(newPage, additionalURLParam, additionalData) { changePage(newPage, additionalURLParam, additionalData); }
 	common.changeLanguage = function(lang) { changeLanguage(lang); }
 	common.getFieldLanguage = function(field) { return getFieldLanguage(field); }
 	common.log = function(text) { log(text); }
@@ -61,7 +61,7 @@ var common = (function() {
 		history.pushState("Page", "Page", url);
 	}
 
-	var getJSONFile = function(jsonFileName, functionToCall, functionToCallOptionalValue, optionalFunctionToCall) {
+	var getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
 		
 		$.ajax({ 
 		url:  'language/' +  jsonFileName + '.json', 
@@ -70,10 +70,10 @@ var common = (function() {
 			log("language file: " + jsonFileName + " retrieved.");
 			loadedSuccesfull = true;
 			
-			functionToCall(file, functionToCallOptionalValue);
+			funcToCall(file, funcToCallOptionalParam);
 			
-			if(optionalFunctionToCall != null)
-				optionalFunctionToCall(file);
+			if(optionalFuncToCall != null)
+				optionalFuncToCall(file, optionalFuncToCallOptionalParam);
 			
 		},
 		error: function (jqXHR, textStatus, errorThrown) {
@@ -95,57 +95,57 @@ var common = (function() {
 	//Third it will check if the page exist and load the corresponding HTML file into the .content div.
 	//Final this function will call a function for the retrieval of the language files corresponding to this page 
 	//and that function will display the data in it.
-	var changePage = function(newPage, additionalParameter) {
-
+	var changePage = function(newPage, additionalURLParam, additionalData) {
+		
 		page = newPage;
 		
 		if(page == "home") {
 			setURL(page, language, null);
 			$('#content').load("home.html");
-			loadPageContent("home", null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
+			loadPageContent("home", null, null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
 		}
 		else if(page == "projects") {
 			setURL(page, language, null);
 			$('#content').load("projects.html");
-			loadPageContent("projects", null, null); //pass the loadProjects function to call after the JSON has loaded.
-			loadPageContent("projectsList", null, projects.load);
+			loadPageContent("projects", null, null, null); 
+			loadPageContent("projectsList", null, projects.load, null); //pass the loadProjects function to call after the JSON has loaded.
 		}
 		else if(page == "projectDetail") {
-			setURL(page, language, additionalParameter);
-			$('#content').load("project-detail.html");
-			loadPageContent("projectDetail", null, loadProjectdetailFunction);
+			setURL(page, language, additionalURLParam);
+			$('#content').load("projectDetail.html");
+			loadPageContent("projectDetail", "projectDetail-anchor", projectDetail.load, additionalData);
 		}
 		else if(page == "photography") {
 			setURL(page, language, null);
 			$('#content').load("photography.html");
-			loadPageContent("photography", null, null);
+			loadPageContent("photography", null, null, null);
 		}
 		else if(page == "aboutme") {
 			setURL(page, language, null);
 			$('#content').load("aboutme.html");
-			loadPageContent("aboutme", null, null);
+			loadPageContent("aboutme", null, null, null);
 		}
 		else if(page == "gallery") {
 			setURL(page, language, null);
 			$('#content').load("gallery.html");
-			loadPageContent("gallery", "gallery-anchor", null);
+			loadPageContent("gallery", "gallery-anchor", null, null);
 		}
 		else if(page == "ti") {
 			setURL(page, language, null);
 			$('#content').load("ti.html");
-			loadPageContent("ti", null, null);
+			loadPageContent("ti", null, null, null);
 		}
 		else {
 			page = defaultPage;
 			setURL(page, language, null);
 			$('#content').load(defaultPage + ".html");
-			loadPageContent(page, null, null);
+			loadPageContent(page, null, null, null);
 		}
 	}
 	
-	var loadPageContent = function(file, idToAppendContentTo, optionalSuccesFunction) { 
+	var loadPageContent = function(file, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncParam) { 
 	
-		getJSONFile(file, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunction); 
+		getJSONFile(file, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncParam); 
 	}
 		
 	var generateAndDisplayContent = function(langFile, idToAppendContentTo) {
@@ -349,8 +349,8 @@ var common = (function() {
 	
 	var getUniversalLanguageFiles = function() {
 		
-		getJSONFile("common", setCommonLanguageFile, null, displayLanguage);
-		getJSONFile("errorMessages", setErrorMessagesLanguageFile, languageFile, null);
+		getJSONFile("common", setCommonLanguageFile, null, displayLanguage, null);
+		getJSONFile("errorMessages", setErrorMessagesLanguageFile, languageFile, null, null);
 	}
 	
 	var setCommonLanguageFile = function(langFile) { commonLanguageFile = langFile; }
@@ -424,7 +424,7 @@ var common = (function() {
 		else {
 			
 			log("Empty so get file");
-			getJSONFile("errorMessages", displayErrorMessage, fieldName, null);
+			getJSONFile("errorMessages", displayErrorMessage, fieldName, null, null);
 		}
 		
 		$("#content").html("<p id='errorMessage'>" + message + "</p>");
