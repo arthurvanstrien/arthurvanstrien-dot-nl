@@ -1,17 +1,17 @@
 {
 	"fields": [
 		{
-			"name": "lang_projectsMenuYear",
+			"name": "lang_projectsMenu-year",
 			"nl": "Jaar:",
 			"en": "Year:"
 		},
 		{
-			"name": "lang_projectsMenuType",
+			"name": "lang_projectsMenu-category",
 			"nl": "Soort:",
 			"en": "Type:"
 		},
 		{
-			"name": "lang_projectsMenu-programming-languages:",
+			"name": "lang_projectsMenu-programming-languages",
 			"nl": "Programmeertalen:",
 			"en": "Programming languages:"
 		},
@@ -26,7 +26,7 @@
 			"en": "Why the project was made:"
 		},
 		{
-			"name": "lang_projectMenu=version-control",
+			"name": "lang_projectMenu-version-control",
 			"nl": "Versiebeheer:",
 			"en": "Version control:"
 		},
