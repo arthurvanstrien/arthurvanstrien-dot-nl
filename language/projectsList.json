@@ -9,7 +9,37 @@
 			"name": "lang_projectsMenuType",
 			"nl": "Soort:",
 			"en": "Type:"
-		}	
+		},
+		{
+			"name": "lang_projectsMenu-programming-languages:",
+			"nl": "Programmeertalen:",
+			"en": "Programming languages:"
+		},
+		{
+			"name": "lang_projectsMenu-used-tools",
+			"nl": "Gebruikte hulpmiddelen:",
+			"en": "Tools used:"
+		},
+		{
+			"name": "lang_projectsMenu-motive",
+			"nl": "Beweegreden:",
+			"en": "Why the project was made:"
+		},
+		{
+			"name": "lang_projectMenu=version-control",
+			"nl": "Versiebeheer:",
+			"en": "Version control:"
+		},
+		{
+			"name": "lang_projectsMenu-process-framework",
+			"nl": "Ontwikkelmethode:",
+			"en": "Process framework:"
+		},
+		{
+			"name": "lang_projectsMenu-built-by",
+			"nl": "Dit project is gemaakt door:",
+			"en": "This project is build by:"
+		}
 	],
 	"projects": [
 		{
@@ -27,10 +57,10 @@
 			},
 			"programming-languages": "Javascript, JQuery, HTML, CSS",
 			"used-tools": "Notepad++, Adobe Lightroom",
-			"school-boolean": 
+			"motive": 
 			{
-				"nl": "Nee",
-				"en": "No"
+				"nl": "Project gebouwd uit eigen beweging",
+				"en": "I built this project "
 			},
 			"versionControl": 
 			{
