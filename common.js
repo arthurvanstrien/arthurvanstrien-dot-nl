@@ -143,9 +143,9 @@ var common = (function() {
 		}
 	}
 	
-	var loadPageContent = function(file, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncParam) { 
+	var loadPageContent = function(file, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncData) { 
 	
-		getJSONFile(file, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncParam); 
+		getJSONFile(file, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncData); 
 	}
 		
 	var generateAndDisplayContent = function(langFile, idToAppendContentTo) {
