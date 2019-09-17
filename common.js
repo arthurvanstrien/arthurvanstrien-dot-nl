@@ -25,6 +25,7 @@ var common = (function() {
 	common.getFieldLanguage = function(field) { return getFieldLanguage(field); }
 	common.log = function(text) { log(text); }
 	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); }
+	common.getHTMLElement = function(content, elemCounter) { getHTMLElement(content, elemCounter); }
 	
 	
 	/*--Functions for the variables and URL----------------------------------------------------*/
