@@ -1,11 +1,16 @@
 
+var projectsList;
+
 var projects = (function() {
 	
 	var projectsMethods = {};
 	
 	projectsMethods.load = function(langFile) { load(langFile); }
+	projectsMethods.gotoProjectDetail = function(projectCounter) { gotoProjectDetail(projectCounter); }
 
 	var load = function(langFile) {
+		
+		projectsList = langFile.projects;
 		
 		for(var i = 0; i < Object.keys(langFile.projects).length; i++) {
 			
@@ -18,7 +23,7 @@ var projects = (function() {
 			
 			//Build the HTML for a project menu and fill it with JSON.
 			html = html + 
-			"<span onClick='common.changePage(" + page + ", " + projectId + ")' class='projectsMenu-container'>" + 
+			"<span onClick='projects.gotoProjectDetail(" + i + ")' class='projectsMenu-container'>" + 
 			"<h2 id='lang_project-title'>" + common.getFieldLanguage(project.title) + "</h2>" +
 			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-year'>Year: </span><span>" + project.year + "</span></span>" +
 			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-type'>Type: </span><span>" + common.getFieldLanguage(project.type) + "</span></span>";
@@ -40,6 +45,12 @@ var projects = (function() {
 			
 			$(html).insertAfter("#projects-list-anker");
 		}
+	}
+	
+	
+	var gotoProjectDetail = function(projectCounter) {
+		
+		common.changePage("projectDetail", projectsList[projectCounter].projectId, projectsList[projectCounter]);
 	}
 	
 	return projectsMethods;
