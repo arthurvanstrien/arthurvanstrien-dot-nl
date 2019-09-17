@@ -145,12 +145,11 @@ var common = (function() {
 	
 	var loadPageContent = function(file, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncData) { 
 	
-		getJSONFile(file, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncData); 
+		getJSONFile(file, setLanguageFileAndDisplayContent, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncData); 
 	}
 		
 	var generateAndDisplayContent = function(langFile, idToAppendContentTo) {
 		
-		languageFile = langFile;
 		var generatedHTML = "";
 		var content = langFile.content;
 		
@@ -351,6 +350,12 @@ var common = (function() {
 		
 		getJSONFile("common", setCommonLanguageFile, null, displayLanguage, null);
 		getJSONFile("errorMessages", setErrorMessagesLanguageFile, languageFile, null, null);
+	}
+	
+	var setLanguageFileAndDisplayContent = function(langFile, idToAppendContentTo) { 
+		
+		languageFile = langFile;
+		generateAndDisplayContent(langFile, idToAppendContentTo); 	
 	}
 	
 	var setCommonLanguageFile = function(langFile) { commonLanguageFile = langFile; }
