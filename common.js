@@ -140,6 +140,9 @@ var common = (function() {
 		}
 	}
 	
+	//The function loadPageContent is made to load the content in the default JSON file that belongs to the page.
+	//This function can not be used to load additional JSON files with content.
+	//For loading additional JSON files, please use the getJSONFile function and displayContent function.
 	var loadPageContent = function(file, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncData) { 
 	
 		getJSONFile(file, generateAndDisplayContent, idToAppendContentTo, optionalSuccesFunc, optionalSuccesFuncData); 

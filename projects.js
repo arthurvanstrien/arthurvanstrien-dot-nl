@@ -5,9 +5,11 @@ var projects = (function() {
 	
 	var projectsMethods = {};
 	
+	
 	/*--ALL public methods in the projects.js file----------------------------------------------------*/
 	projectsMethods.load = function(langFile) { load(langFile); }
 	projectsMethods.gotoProjectDetail = function(projectCounter) { gotoProjectDetail(projectCounter); }
+
 
 	var load = function(langFile) {
 		
