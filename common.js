@@ -411,9 +411,7 @@ var common = (function() {
 	var updateFooterYear = function() {
 		
 		var date = new Date();
-		return date.getFullYear().toString();
-		
-		$("#year_footer").text(getYearString());
+		$("#year_footer").text(date.getFullYear().toString());
 	}
 
 	var log = function(text) {
