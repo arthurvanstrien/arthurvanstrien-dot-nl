@@ -37,9 +37,11 @@ var common = (function() {
 	
 		//The change page must be run before other functions.
 		page = getURLPage();
-		changePage(page);
+		
+		//When the page is set, the URL is also changed.
+		changePage(page, getURLAdditional(), null);
+		
 		getUniversalLanguageFiles();
-		setURL(page, language, getURLAdditional());
 		updateFooterYear();
 	}
 	
