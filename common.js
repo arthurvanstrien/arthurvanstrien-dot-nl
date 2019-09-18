@@ -39,11 +39,11 @@ var common = (function() {
 	
 	var firstLoad = function() {
 		
+		//Call the functions that get the language and page from the URL or return their default values.
 		language = getURLLanguage();
-	
-		//The change page must be run before other functions.
 		page = getURLPage();
 		
+		//The change page must be run before other functions.
 		//When the page is set, the URL is also changed.
 		changePage(page, getURLAdditional(), null);
 		
