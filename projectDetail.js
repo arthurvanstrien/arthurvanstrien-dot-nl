@@ -56,7 +56,7 @@ var projectDetail = (function() {
 		
 		if(url.searchParams.get("additional")) {
 			var id = url.searchParams.get("additional");
-			getJSONFile("projects-list", projectDetail.getProjectFromListAndDisplay, id, null, null);
+			common.getJSONFile("projectsList", projectDetail.getProjectFromListAndDisplay, id, null, null);
 		}
 		else
 			common.displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
