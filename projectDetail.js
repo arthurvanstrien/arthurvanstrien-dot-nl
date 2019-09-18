@@ -9,11 +9,9 @@ var projectDetail = (function() {
 	var load = function(langFile, project) {
 		
 		//Check if the recieved data is usefull, if not get the projectsList.
-		if(typeof project === 'object') {
-	
-			var url = new URL(window.location.href);
+		if(typeof project == 'object' && project != null) {
 			
-			if(project.projectId === 'undefined' || project.projectId === null) {
+			if(project.projectId == 'undefined' || project.projectId == null) {
 
 				getProjectsList();
 			}
