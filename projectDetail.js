@@ -3,6 +3,7 @@ var projectDetail = (function() {
 	
 	var projDetail = {};
 	
+	/*--ALL public methods in the projectDetail.js file----------------------------------------------------*/
 	projDetail.load = function(langFile, project) { load(langFile, project); }
 	projDetail.getProjectFromListAndDisplay = function(langFile, projectId) { getProjectFromListAndDisplay(langFile, projectId); }
 
