@@ -46,6 +46,8 @@ var projects = (function() {
 			
 			$(html).insertAfter("#projects-list-anker");
 		}
+		
+		common.displayContent(langFile);
 	}
 	
 	
