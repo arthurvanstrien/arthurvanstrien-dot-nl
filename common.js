@@ -148,9 +148,7 @@ var common = (function() {
 	var generateAndDisplayContent = function(langFile, idToAppendContentTo) {
 		
 		languageFile = langFile;
-		var generatedHTML = "";
 		var content = langFile.content;
-		
 		
 		//Display the default elements first.
 		if(typeof langFile.tabTitle !== 'undefined')
@@ -160,16 +158,20 @@ var common = (function() {
 			$("#lang_pageTitle").text(getFieldLanguage(langFile.pageTitle));
 				
 		//Loop through the content, generate HTML and display the HTML after the anchor.
-		if(typeof langFile.content !== 'undefined') {
+		if(typeof langFile.content != 'undefined') {
+			
+			var generatedHTML = "";
 			
 			for(var i = 0; i < Object.keys(content).length; i++) {
 				
 				generatedHTML = generatedHTML + getHTMLElement(content[i], i);
 			}
+			
+			$(generatedHTML).insertAfter("#" + idToAppendContentTo);
 		}
 		
 		//Fill the already present fields in the HTML file with data.
-		//NOTE: this MUST be done AFTER the content is looped and the HTML is generated.
+		//NOTE: this MUST be done AFTER the content is looped and the HTML is inserted!
 		//This is because during the generation of the HTML, elements with default field values can be added to the HTML.
 		if(typeof langFile.fields !== 'undefined') {
 			
@@ -181,8 +183,6 @@ var common = (function() {
 				$(fieldName).text(getFieldLanguage(fields[i]));
 			}
 		}
-		
-		$(generatedHTML).insertAfter("#" + idToAppendContentTo);
 	}
 	
 	var getHTMLElement = function(content, elemCounter) {
