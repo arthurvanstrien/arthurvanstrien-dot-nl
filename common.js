@@ -26,6 +26,9 @@ var common = (function() {
 	common.log = function(text) { log(text); }
 	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); }
 	common.getHTMLElement = function(content, elemCounter) { getHTMLElement(content, elemCounter); }
+	common.getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
+		getJSONFile(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam);
+	}
 	
 	
 	/*--Functions for the variables and URL----------------------------------------------------*/
