@@ -6,7 +6,6 @@ var projectDetail = (function() {
 	
 	/*--ALL public methods in the projectDetail.js file----------------------------------------------------*/
 	projDetail.load = function(langFile, project) { load(langFile, project); }
-	//projDetail.getProjectFromListAndDisplay = function(langFile, projectId) { getProjectFromListAndDisplay(langFile, projectId); }
 
 
 	var load = function(langFile, project) {
@@ -81,7 +80,6 @@ var projectDetail = (function() {
 		$("#projectDetail-version-control").text(common.getFieldLanguage(project.versionControl));
 		$("#projectDetail-process-framework").text(common.getFieldLanguage(project.processFramework));
 		$("#projectDetail-built-by").text(common.getFieldLanguage(project.builtBy));
-		
 		
 		for(var i = 0; i < Object.keys(textContent).length; i++) {
 		
