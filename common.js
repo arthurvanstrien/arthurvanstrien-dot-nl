@@ -110,7 +110,7 @@ var common = (function() {
 		else if(page == "projectDetail") {
 			setURL(page, language, additionalURLParam);
 			$('#content').load("projectDetail.html");
-			loadPageContent("projectDetail", "projectDetail-anchor", projectDetail.load, additionalData);
+			loadPageContent("projectDetail", null, projectDetail.load, additionalData);
 		}
 		else if(page == "photography") {
 			setURL(page, language, null);
