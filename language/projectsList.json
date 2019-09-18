@@ -8,12 +8,12 @@
 		{
 			"name": "lang_projectsMenu-year",
 			"nl": "Jaar:",
-			"en": "Year:"
+			"en": "Year1999:"
 		},
 		{
 			"name": "lang_projectsMenu-category",
-			"nl": "Soort:",
-			"en": "Type:"
+			"nl": "Categorie:",
+			"en": "Category:"
 		},
 		{
 			"name": "lang_projectsMenu-programming-languages",
