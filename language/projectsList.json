@@ -82,7 +82,7 @@
 				"nl": "Door mijzelf met ontwerp-feedback van Sanne Hartmans",
 				"en": "By myself with some feedback about the design by Sanne Hartmans"
 			},
-			"text": [
+			"content": [
 				{
 					"type": "header3",
 					"class": "projectDetail-h3",
