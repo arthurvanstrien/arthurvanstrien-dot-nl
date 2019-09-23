@@ -3,12 +3,11 @@
 		"nl": "Projecten",
 		"en": "Projects"
 	},
+	"title": {
+		"nl": "Projecten",
+		"en": "Projects"
+	},
 	"fields": [
-		{
-			"name": "lang_pageTitle",
-			"nl": "Projecten",
-			"en": "Projects"
-		},
 		{
 			"name": "lang_paragraph-1",
 			"nl": "Iets maken is veel leuker dan spullen doelloos slopen. Daarom ben ik graag aan het knutselen aan projecten. Hier is een overzicht te zien van de projecten die ik gemaakt heb en leuk zijn om te delen, maak ze gerust na! Sommige projecten zijn weekend-projectjes terwijl anderen serieuzere projecten zijn die ik met meerdere mensen gemaakt heb, vaak dan door ook een ontwikkelmethode en versiebeheer te gebruiken. Veel van de projecten wil ik graag delen en bij deze projecten is dan ook een link naar de bijbehorende Github pagina te vinden.",
