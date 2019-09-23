@@ -6,7 +6,6 @@ var commonLanguageFile;
 var additionalLanguageFile;
 var customLanguageFunction;
 var errorMessagesLanguageFile;
-var loadedSuccesfull = false;
 var defaultPage = "home";
 var defaultLanguage = "nl";
 
@@ -70,7 +69,6 @@ var common = (function() {
 		dataType: 'json', async: true, dataType: 'json', 
 		success: function (file) { 
 			log("language file: " + jsonFileName + " retrieved.");
-			loadedSuccesfull = true;
 			
 			funcToCall(file, funcToCallOptionalParam);
 			
@@ -82,7 +80,6 @@ var common = (function() {
 			log("An error occured retrieving the language file: " + jsonFileName + ".");
 			log(textStatus);
 			log(errorThrown);
-			loadedSuccesfull = false;
 			
 			displayErrorMessage(errorMessagesLanguageFile, "json-load-failed");
 		}
