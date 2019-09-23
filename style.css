@@ -23,7 +23,7 @@ body
 	margin-left: 10%;
 	margin-right: 0px;
 	width: 79%;
-	min-height: 100vh;
+	min-height: calc(100vh - 59px);
 	background-color: white;
 }
 
@@ -62,7 +62,6 @@ body
 	margin-bottom: 0px;
 	margin-left: 10%;
 	margin-right: 0px;
-	bottom: 0;
 	width: 75%;
 	position: inherit;
 	text-align: center;
