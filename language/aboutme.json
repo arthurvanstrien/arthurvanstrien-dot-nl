@@ -3,12 +3,11 @@
 		"nl": "Persoonlijk",
 		"en": "About me"
 	},
+	"title": {
+		"nl": "Persoonlijk",
+		"en": "About me"
+	},
 	"fields": [
-		{
-			"name": "lang_pageTitle",
-			"nl": "Persoonlijk",
-			"en": "About me"
-		},
 		{
 			"name": "lang_paragraph-1",
 			"nl": "Mijn naam is Arthur van Strien, ik heb een voorliefde voor techniek en vindt alles van software programma’s tot waterstaatkundige werken dan ook zeer interessant. Mijn beroep is programmeur en ik heb hierbij één van mijn technische hobby’s om kunnen zetten in mijn beroep. Andere hobby’s zijn fotograferen (zie hiervoor de fotografie pagina’s op deze website) en fietsen. ",
