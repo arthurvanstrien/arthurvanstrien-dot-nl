@@ -6,6 +6,8 @@ var projectDetail = (function() {
 	
 	/*--ALL public methods in the projectDetail.js file----------------------------------------------------*/
 	projDetail.load = function(langFile, project) { load(langFile, project); }
+	projDetail.changeLanguage = function(langFile) { changeLanguage(langFile); }
+	projDetail.displayProjectDetail = function(langFile, projectId) { displayProjectDetail(langFile, projectId); }
 
 
 	var load = function(langFile, project) {
@@ -19,7 +21,7 @@ var projectDetail = (function() {
 			}
 			else {
 				
-				displayProjectDetail(langFile, project);
+				displayProjectDetail(common.getAdditionalLanguageFile(), project.projectId);
 			}
 		}
 		else {
@@ -28,9 +30,7 @@ var projectDetail = (function() {
 		}
 	}
 	
-	var getProjectFromListAndDisplay = function(langFile, projectId) {
-		
-		var found = false;
+	var getProjectFromList = function(langFile, projectId) {
 		
 		for(var i = 0; i < Object.keys(langFile.projects).length; i++) {
 			
@@ -38,15 +38,11 @@ var projectDetail = (function() {
 			
 			if(project.projectId == projectId) {
 				
-				displayProjectDetail(langFile, project);
-				found = true;
+				return project;
 			}
 		}
 		
-		if(found == false) {
-			
-			common.displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
-		}
+		common.displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
 	}
 	
 	var getProjectsList = function() {
@@ -54,22 +50,23 @@ var projectDetail = (function() {
 		//The previous page was not projects and therefore the projectData is NOT passed directly to this page.
 		//Instead we still have to load the list with projects and get the data for this project from that.
 		
-		var url = new URL(window.location.href);
-		
-		if(url.searchParams.get("additional")) {
-			var id = url.searchParams.get("additional");
-			common.getJSONFile("projectsList", common.displayContent, id, getProjectFromListAndDisplay, id);
+		if(common.getURLAdditional() != null) {
+			var id = common.getURLAdditional();
+			common.getJSONFile("projectsList", common.displayContent, id, projectDetail.displayProjectDetail, id);
 		}
 		else
 			common.displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
 	}
 	
-	var displayProjectDetail = function(langFile, project) {
+	var displayProjectDetail = function(langFile, projectId) {
+		
+		//Set the additional language file so the language can be changed.
+		common.setAdditionalLanguageFile(langFile);
+		
+		var project = getProjectFromList(langFile, projectId);
 		
 		var generatedHTML = "";
-		var textContent = project.text;
-		
-		console.log("displayProjectDetail");
+		var textContent = project.content;
 		
 		$("#lang_pageTitle").text(common.getFieldLanguage(project.title));
 		$("#projectDetail-year").text(project.year);
@@ -91,6 +88,32 @@ var projectDetail = (function() {
 		//Display the varlues from the default fields from the JSON file in the HTML.
 		//THe displayContent function already does that so we dont have to build a custom function here.
 		common.displayContent(langFile);
+	}
+	
+	//Custom function for changing the custom JSON parts used by the projectDetail page.
+	//Displays a single project.
+	var changeLanguage = function(langFile) {
+		
+		var projectId = common.getURLAdditional();
+		var project = getProjectFromList(langFile, projectId);
+		
+		if(project == null || project == "") {
+			
+			commmon.displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
+		}
+		else {
+		
+			$("#projectDetail-year").text(project.year);
+			$("#projectDetail-category").text(common.getFieldLanguage(project.category));
+			$("#projectDetail-programming-languages").text(project.programmingLanguages);
+			$("#projectDetail-used-tools").text(project.usedTools);
+			$("#projectDetail-motive").text(common.getFieldLanguage(project.motive));
+			$("#projectDetail-version-control").text(common.getFieldLanguage(project.versionControl));
+			$("#projectDetail-process-framework").text(common.getFieldLanguage(project.processFramework));
+			$("#projectDetail-built-by").text(common.getFieldLanguage(project.builtBy));
+			
+			common.displayContent(project);
+		}
 	}
 	
 	return projDetail;

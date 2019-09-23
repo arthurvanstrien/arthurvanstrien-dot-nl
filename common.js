@@ -3,6 +3,8 @@ var page;
 var language;
 var languageFile;
 var commonLanguageFile;
+var additionalLanguageFile;
+var customLanguageFunction;
 var errorMessagesLanguageFile;
 var loadedSuccesfull = false;
 var defaultPage = "home";
@@ -30,6 +32,11 @@ var common = (function() {
 	common.getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
 		getJSONFile(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam);
 	}
+	
+	common.setAdditionalLanguageFile = function(langFile) { setAdditionalLanguageFile(langFile); }
+	common.getAdditionalLanguageFile = function() { return getAdditionalLanguageFile(); }
+	
+	common.getURLAdditional = function() { return getURLAdditional(); }
 	
 	
 	
@@ -85,13 +92,26 @@ var common = (function() {
 
 
 
-	/*--Functions for changing the page----------------------------------------------------*/
+	/*--Functions for changing the page------------------------------------------------------------------------------------------------------------*/
 	//This function will start the process of changing the page.
 	//First it will retrieve the URL and remove the page parameter.
 	//Second it will append the page parameter in the URL with the new page.
 	//Third it will check if the page exist and load the corresponding HTML file into the .content div.
 	//Final this function will call a function for the retrieval of the language files corresponding to this page 
 	//and that function will display the data in it.
+	//
+	//This function wil also set all the options for the page, this includes:
+	// - If the URL should contain an additional URL parameter.
+	// - What HTML file should be loaded in the content div.
+	// - What page content should be loaded with the following parameters:
+	//	1. The name of the JSON file (without .json)
+	//	2. The ID of the HTML element where the JSON content element data should be appended to.
+	//	3. An optional function that is called when the JSON file is loaded.
+	//	4. The option to pass addional data to the optional function from above.
+	// - Optional: Some pages need to load an additional JSON file, code contains another loadPageContent or getJSONFile.
+	// - customLanguageFunction, if the JSON file contains data that cannot be displayed with the universal functions, 
+	//	 a custom function can be set here. This function should be located in the js file corresponding with the page and be called "changeLanguage".
+	
 	var changePage = function(newPage, additionalURLParam, additionalData) {
 		
 		page = newPage;
@@ -100,22 +120,26 @@ var common = (function() {
 			setURL(page, language, null);
 			$('#content').load("home.html");
 			loadPageContent("home", null, null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
+			customLanguageFunction = null;
 		}
 		else if(page == "projects") {
 			setURL(page, language, null);
 			$('#content').load("projects.html");
 			loadPageContent("projects", null, null, null); 
 			getJSONFile("projectsList", projects.load, null, null, null); //pass the loadProjects function to call after the JSON has loaded.
+			customLanguageFunction = projects.changeLanguage;
 		}
 		else if(page == "projectDetail") {
 			setURL(page, language, additionalURLParam);
 			$('#content').load("projectDetail.html");
 			loadPageContent("projectDetail", null, projectDetail.load, additionalData);
+			customLanguageFunction = projectDetail.changeLanguage;
 		}
 		else if(page == "photography") {
 			setURL(page, language, null);
 			$('#content').load("photography.html");
 			loadPageContent("photography", null, null, null);
+			customLanguageFunction = null;
 		}
 		else if(page == "aboutme") {
 			setURL(page, language, null);
@@ -259,8 +283,8 @@ var common = (function() {
 		if(typeof langFile.tabTitle !== 'undefined')
 			$(document).prop("title", getFieldLanguage(langFile.tabTitle));
 		
-		if(typeof langFile.pageTitle !== 'undefined')
-			$("#lang_pageTitle").text(getFieldLanguage(langFile.pageTitle));
+		if(typeof langFile.title !== 'undefined')
+			$("#lang_pageTitle").text(getFieldLanguage(langFile.title));
 		
 		if(typeof langFile.content !== 'undefined') {
 			
@@ -311,6 +335,13 @@ var common = (function() {
 		
 		displayContent(commonLanguageFile);
 		displayContent(languageFile);
+		
+		//The customLanguageFunction is a function that changes the language from a custom JSON part.
+		//This function is set in the changePage function and the custom function should be located in the js file corresponding with the page name.
+		if(customLanguageFunction != null && customLanguageFunction != "") {
+			customLanguageFunction(additionalLanguageFile);
+		}
+		
 		setURL(page, language, getURLAdditional());
 	}
 	
@@ -348,6 +379,8 @@ var common = (function() {
 	//The functions below are setters for the shared variables that contain the language files that are used on every page.
 	var setCommonLanguageFile = function(langFile) { commonLanguageFile = langFile; }
 	var setErrorMessagesLanguageFile = function(langFile) { errorMessageLanguageFile = langFile; }
+	var setAdditionalLanguageFile = function(langFile) { additionalLanguageFile = langFile; }
+	var getAdditionalLanguageFile = function() { return additionalLanguageFile; }
 	
 	
 	
