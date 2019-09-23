@@ -1,0 +1,177 @@
+{
+	"fields": [
+		{
+			"name": "lang_projectsMenu-overview",
+			"nl": "Overzicht",
+			"en": "Summary"
+		},
+		{
+			"name": "lang_projectsMenu-year",
+			"nl": "Jaar:",
+			"en": "Year:"
+		},
+		{
+			"name": "lang_projectsMenu-category",
+			"nl": "Categorie:",
+			"en": "Category:"
+		},
+		{
+			"name": "lang_projectsMenu-programming-languages",
+			"nl": "Programmeertalen:",
+			"en": "Programming languages:"
+		},
+		{
+			"name": "lang_projectsMenu-used-tools",
+			"nl": "Gebruikte hulpmiddelen:",
+			"en": "Tools used:"
+		},
+		{
+			"name": "lang_projectsMenu-motive",
+			"nl": "Beweegreden:",
+			"en": "Why the project was made:"
+		},
+		{
+			"name": "lang_projectMenu-version-control",
+			"nl": "Versiebeheer:",
+			"en": "Version control:"
+		},
+		{
+			"name": "lang_projectsMenu-process-framework",
+			"nl": "Ontwikkelmethode:",
+			"en": "Process framework:"
+		},
+		{
+			"name": "lang_projectsMenu-built-by",
+			"nl": "Dit project is gemaakt door:",
+			"en": "This project is build by:"
+		}
+	],
+	"projects": [
+		{
+			"projectId": "1fr2vl",
+			"title": 
+			{
+				"nl": "arthurvanstrien.nl",
+				"en": "arthurvanstrien.nl"
+			},
+			"year": "2019",
+			"category": 
+			{
+				"nl": "Website",
+				"en": "Website"
+			},
+			"programmingLanguages": "Javascript, JQuery, HTML, CSS",
+			"usedTools": "Notepad++, Adobe Lightroom",
+			"motive": 
+			{
+				"nl": "Project gebouwd uit eigen beweging",
+				"en": "I built this project "
+			},
+			"versionControl": 
+			{
+				"nl": "Geen, dit project begon op een vakantiedag als een demo",
+				"en": "None, this project started on a holiday as a small demo"
+			},
+			"processFramework": 
+			{
+				"nl": "Geen, dit is een hobby-project met één programmeur",
+				"en": "None, this is a hobby-project with just one programmer"
+			},
+			"builtBy": 
+			{
+				"nl": "Door mijzelf met ontwerp-feedback en illustraties van Sanne Hartmans",
+				"en": "By myself with some feedback about the design and illustrations by Sanne Hartmans"
+			},
+			"content": [
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Inleiding",
+					"en": "Introduction"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "De website van dit project is de website waar je nu op rondkijkt. Ik begin begonnen deze website te maken op een dag in de zomervakantie in 2019. De website is volledig front-end en de logica is geheel gemaakt in Javascript en JQuery. De opbouw en styling van de website is gemaakt met HTML en CSS. Het doel van de website is om te dienen als mijn online portofolio, het delen van hobby's en om kennis te delen over technische dingen die ik interessant vind. Fotografie is een hobby die ik op de fotografie en galerij pagina mooi weer heb kunnen geven. Een andere hobby, computers komt op de meer technische pagina's goed naar voren. Mijn hobby fietsen komt niet terug op deze website, dit is anders dan fotografie en computers gewoon lastiger visueel weer te geven waardoor hierover vertellen maar een saaie boel wordt.",
+					"en": ""
+				},
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Website structuur",
+					"en": "Website structure"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Toen ik aan de website begon bedacht ik mijzelf dat het wel een uitdaging was de website zo te maken dat er tijdens gebruik geen pagina geladen hoeft te worden. Dat doen meer websites dus het is niet een wereldwonder maar toch een leuke uitdaging. De opbouw begint met een HTML bestand die de basis opbouw van de pagina bevat samen met de titel, het menu en de footer. Vervolgens wordt er door middel van de .load() functie van JQuery een HTML bestand ingeladen in de div met classe content. Dit bestand bevat geen HTML of Body tags maar puur de HTML die in het middelste witte vlak weergeven wordt. Als de pagina veranderd wordt, wordt deze HTML vervangen door weer nieuwe HTML uit een ander bestand. De titel, het menu en de footer veranderen dus niet en de pagina hoeft niet herladen te worden. Om dit te laten werken heb ik zelf een stuk logica gemaakt wat zorgt dat de juiste HTML ingeladen wordt, maar ook dat de juiste pagina in de URL parameters weergeven wordt. Dit houd dus ook in dat als iemand een URL met pagina parameter doorstuurt die persoon direct de juiste pagina ziet en niet eerst de hoofdpagina te zien krijgt. ",
+					"en": ""
+				},
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Data opslag",
+					"en": "Data storage"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Deze website heeft geen database. Dit heb ik besloten omdat ik de website logica geheel front-end wilde maken. Het is heel makkelijk om bij een gehele front-end website een database te gebruiken maar dan moet er een web-api gebouwd worden tussen de front-end en de database. Dit kost tijd om te maken en kan problemen opleveren met het beveiligen van de data. Ik wilde geen reactie systeem op deze website dus de opslag van de inhoud kan gewoon in vaste bestanden. Ik had alles gewoon uit kunnen tikken in HTML bestanden maar dit is gruwelijk veel werk en dat is ook helemaal niet leuk, daarom heb ik voor en andere oplossing gekozen: deze website heeft zijn data opgeslagen staan in JSON bestanden. Voor iedere pagina is er een apart JSON bestand, enkele pagina's delen een ander bestand samen waardoor er voor die pagina twee bestanden geladen worden (bij de projecten en project-details bijvoorbeeld).",
+					"en": ""
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Een standaard JSON bestand voor een pagina bevat een aantal vaste elementen: tabTitle, pageTitle, fields en content. Zodra het JSON bestand is opgehaald van de server wordt het aan een functie gegeven die het gaat weergeven. Die functie zal de waarde van tabTitle plaatsen in het vak bovenin het tabblad van de browser en de waarde van pageTitle waar de titel van de pagina staat. De fields zijn een lijst van vaste elementen op de pagina, de functie zal ieder element uit de lijst pakken en op de pagina zoeken naar een element met hetzelfde ID. Vervolgens plaats de functie de waarde van dat element in het element met hetzelfde ID in de HTML. Tot slot is er nog de content, dit is ook een lijst met elementen maar anders dan de fields staan deze nog niet in de HTML. De functie pakt een element uit de lijst en geeft deze aan een functie die er HTML van gaat maken. Deze HTML maak functie pakt waarde 'type' van dat element en weet daardoor wat voor HTML element het moet worden. Bijvoorbeeld een element met 'type': 'paragraph' wordt in de HTML een P element. Deze gemaakte HTML wordt vervolgens door de functie in de HTML geplakt achter een element in de vaste HTML die hetzelfde ID heeft. Dit gebeurt op volgorde dus als je in het JSON bestand een titel neerzet en dan een paragraph dan plaatst de functie netjes een titel met daarachter een paragraph op de pagina. Op deze manier is dus de opslag structuur opgebouwd, ik heb echter een detail nog niet uitgelegt: hoe ik meerdere talen opsla. Dat is heel simpel, ieder object in de JSON lijst, of het nu de pageTitle is of een object in de content lijst, heeft een opslag plek voor iedere taal. Bijvoorbeeld: nl: [tekst], ieder object wat geladen wordt uit de JSON bestanden wordt aan een functie gegeven die de waarde uit dat object haalt die hoort bij de taal die op dat moment actief is op de website.",
+					"en": ""
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "De JSON bestanden slaan alleen teksten op, de afbeeldingen op deze website worden simpel opgeslagen op deze website in mappen. Voor iedere pagina is er een aparte map om afbeeldingen in op te slaan zodat het overzichtlijk blijft welke afbeeldingen bij welke pagina horen. Er is ook een algemene map voor afbeeldingen die op iedere pagina gebruikt worden, hier zijn onder andere the vlaggen te vinden om de talen te wisselen.",
+					"en": ""
+				},
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Ontwikkeling",
+					"en": "Development"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "",
+					"en": ""
+				},
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Resultaat",
+					"en": "Result"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Ik ben blij met het resultaat van dit project, de website heeft een, naar mijn mening, prettige opmaak gekregen en de achterliggende logica maakt onderhoud gemakkelijk. Het talen systeem was ingewikkeld om te maken maar nu het er is is het zeer makkelijk om dinggen toe te voegen en deze in meerdere talen te laten weergeven. Ook het toevoegen van een geheel nieuwe taal is, behalve dat alle bestaande content vertaald moet worden, makkelijk te realiseren. Het was een leuk project om te maken en ik heb er best veel van geleerd.",
+					"en": ""
+				}
+			],
+			"pictures": [
+				"",
+				""
+			]
+		}
+	]
+}

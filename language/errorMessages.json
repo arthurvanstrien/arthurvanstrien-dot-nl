@@ -6,7 +6,12 @@
 	},
 	{
 		"name": "project-id-not-found",
-		"nl": "Het project wat u probeert te weergeven bestaat niet. Controleer in de URL of het juiste project id bevat. Als het project id klopt, dan is het mogelijk dat het project verwijderdt is van de website.",
+		"nl": "Het project wat u probeert te weergeven bestaat niet. Controleer in de URL of het juiste project id bevat. Als het project id klopt, dan is het mogelijk dat het project verwijderd is van de website.",
 		"en": "The project with the requested id does not exist. Please check if the URL contains the correct id. If the URL contains the correct id, the project might be removed."
+	},
+	{
+		"name": "something-unexpected-happened",
+		"nl": "Er ging onverwacht iets mis. Herlaad de pagina astublieft, excuses voor het ongemak.",
+		"en": "Something unexpected happened. Please reload the page. Our apologies."
 	}
 ]
