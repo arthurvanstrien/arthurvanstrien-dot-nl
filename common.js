@@ -1,20 +1,20 @@
 
 var page;
-var language;
-var languageFile;
-var commonLanguageFile;
-var additionalLanguageFile;
-var customLanguageFunction;
-var errorMessagesLanguageFile;
-var defaultPage = "home";
-var defaultLanguage = "nl";
-
 $( document ).ready(function() {
 	
 	common.firstLoad();
 });
 
 var common = (function() {
+	
+	var language;
+	var languageFile;
+	var commonLanguageFile;
+	var additionalLanguageFile;
+	var customLanguageFunction;
+	var errorMessagesLanguageFile;
+	var defaultPage = "home";
+	var defaultLanguage = "nl";
 	
 	//This variable will contain the public methods that are returned and can be accessed.
 	var common = {};
