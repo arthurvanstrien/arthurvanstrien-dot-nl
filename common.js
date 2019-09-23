@@ -148,10 +148,10 @@ var common = (function() {
 			$('#content').load("gallery.html");
 			loadPageContent("gallery", "gallery-anchor", null, null);
 		}
-		else if(page == "ti") {
+		else if(page == "engineer-tech") {
 			setURL(page, language, null);
-			$('#content').load("ti.html");
-			loadPageContent("ti", null, null, null);
+			$('#content').load("engineer-tech.html");
+			loadPageContent("engineer-tech", null, null, null);
 		}
 		else {
 			page = defaultPage;

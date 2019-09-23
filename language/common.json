@@ -26,9 +26,9 @@
 			"en": "Picture Gallery"
 		},
 		{
-			"name": "lang_menuTi",
-			"nl": "Technische Informatica",
-			"en": "Applied Computer Science"
+			"name": "lang_menuEngineerTech",
+			"nl": "Techniek & Informatica",
+			"en": "Engineering & Technology"
 		},
 		{
 			"name": "lang_menuAboutme",
