@@ -3,12 +3,11 @@
 		"nl": "Home",
 		"en": "Home"
 	},
+	"title": {
+		"nl": "Hoofdpagina",
+		"en": "Main Page"
+	},
 	"fields": [
-		{
-			"name": "lang_pageTitle",
-			"nl": "Hoofdpagina",
-			"en": "Main Page"
-		},
 		{
 			"name": "lang_menuProjects",
 			"nl": "Projecten",

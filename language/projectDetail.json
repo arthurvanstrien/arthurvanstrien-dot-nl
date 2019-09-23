@@ -3,11 +3,11 @@
 		"nl": "Project",
 		"en": "Project"
 	},
+	"title": {
+		"nl": "Project",
+		"en": "Project"
+	},
 	"fields": [
-		{
-			"name": "lang_pageTitle",
-			"nl": "Project",
-			"en": "Project"
-		}
+
 	]
 }

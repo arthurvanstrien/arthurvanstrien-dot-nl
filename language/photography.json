@@ -3,12 +3,11 @@
 		"nl": "Fotografie",
 		"en": "Photography"
 	},
+	"title": {
+		"nl": "Fotografie",
+		"en": "Photography"
+	},
 	"fields": [
-		{
-			"name": "lang_pageTitle",
-			"nl": "Fotografie",
-			"en": "Photography"
-		},
 		{
 			"name": "lang_title-edit",
 			"nl": "Foto's Bewerken",
