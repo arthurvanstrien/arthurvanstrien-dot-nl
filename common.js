@@ -178,8 +178,8 @@ var common = (function() {
 		if(typeof langFile.tabTitle !== 'undefined')
 			$(document).prop("title", getFieldLanguage(langFile.tabTitle));
 		
-		if(typeof langFile.pageTitle !== 'undefined')
-			$("#lang_pageTitle").text(getFieldLanguage(langFile.pageTitle));
+		if(typeof langFile.title !== 'undefined')
+			$("#lang_pageTitle").text(getFieldLanguage(langFile.title));
 				
 		//Loop through the content, generate HTML and display the HTML after the anchor.
 		if(typeof langFile.content != 'undefined') {
