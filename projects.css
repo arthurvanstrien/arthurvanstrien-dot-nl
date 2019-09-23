@@ -55,18 +55,19 @@
 	margin-right: 0.5%;
 }
 
-.projectsMenu-container p
+.projectsMenu-th
 {
 	padding: 0px;
 	margin-bottom: 5px;
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-left: 0px;
+	display: block;
 }
 
-.projectsMenu-th
+.projectsMenu-td
 {
-	width: 50px;
+	width: 75px;
 	margin: 0px;
 	padding: 0px;
 	display: inline-block;
