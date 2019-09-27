@@ -153,11 +153,14 @@ var common = (function() {
 			$('#content').load("engineer-tech.html");
 			loadPageContent("engineer-tech", null, null, null);
 		}
-		else {
-			page = defaultPage;
+		else if(page == "404") {
 			setURL(page, language, null);
-			$('#content').load(defaultPage + ".html");
+			$('#content').load("404.html");
 			loadPageContent(page, null, null, null);
+		}
+		else
+		{
+			changePage("404", null, null);
 		}
 	}
 	
