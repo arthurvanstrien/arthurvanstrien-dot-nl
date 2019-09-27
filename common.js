@@ -3,6 +3,14 @@ var page;
 $( document ).ready(function() {
 	
 	common.firstLoad();
+	
+	//This event listener detects an URL change when for example the browser back button is pressed.
+	window.addEventListener('popstate', function(event) {
+		// The popstate event is fired each time when the current history entry changes.
+		
+		common.changePage(common.getURLPage(), common.getURLLanguage(), common.getURLAdditional());
+
+	}, false);
 });
 
 var common = (function() {
@@ -35,6 +43,8 @@ var common = (function() {
 	common.setAdditionalLanguageFile = function(langFile) { setAdditionalLanguageFile(langFile); }
 	common.getAdditionalLanguageFile = function() { return getAdditionalLanguageFile(); }
 	
+	common.getURLPage = function() { return getURLPage(); }
+	common.getURLLanguage = function() { return getURLLanguage(); }
 	common.getURLAdditional = function() { return getURLAdditional(); }
 	
 	
