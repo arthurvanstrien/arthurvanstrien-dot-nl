@@ -402,19 +402,27 @@ var common = (function() {
 		
 		var url = new URL(window.location.href);
 		
-		url.searchParams.delete("lang");
-		url.searchParams.delete("page");
+		if(getURLPage() == page && getURLLanguage() == lang && getURLAdditional() == additional) {
+			
+			//Do nothing, the URL is already the same URL as the new URL.
+			//This can happen when the browser back and forward buttons are used because they already change the URL.
+		}
+		else {
 		
-		if(url.searchParams.get("additional"))
-			url.searchParams.delete("additional");
-		
-		url.searchParams.append("lang", lang);
-		url.searchParams.append("page", page);
-		
-		if(additional != null)
-			url.searchParams.append("additional", additional);
-		
-		history.pushState("Page", "Page", url);
+			url.searchParams.delete("lang");
+			url.searchParams.delete("page");
+			
+			if(url.searchParams.get("additional"))
+				url.searchParams.delete("additional");
+			
+			url.searchParams.append("lang", lang);
+			url.searchParams.append("page", page);
+			
+			if(additional != null)
+				url.searchParams.append("additional", additional);
+			
+			history.pushState("Page", page, url);
+		}
 	}
 	
 	var getURLLanguage = function() {
