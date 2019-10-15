@@ -37,6 +37,8 @@
 	display: block;
 }
 
+/*---Styling for the pictures-----------------------------------------------------------------------------------------------------------------------*/
+
 .shared-content-pictureWide
 {
 	margin-left: 40px;
@@ -66,4 +68,48 @@
 	width: calc(49% - 40px);
 	padding: 0px;
 	float: right;
+}
+
+/*---Styling for the hyperlinks----------------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-inlineLinkRed
+{
+	color: #ff0000;
+	text-decoration: none;
+	margin-left: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.shared-content-inlineLinkRed:hover
+{
+	color: #c70000;
+}
+
+/*---Styling for the youtube videos-------------------------------------------------------------------------------------------------------------------*/
+/*This must be an ID instead of a class because the Youtube frame already has a class for styling*/
+#shared-content-youtubeVideoHalf
+{
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	display: inline-block;
+	width: calc(50% - 61px);
+	height: 350px;
+	padding: 0px;
+	min-width: 300px;
+}
+
+#shared-content-youtubeVideoFull
+{
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	display: inline-block;
+	width: calc(100% - 80px);
+	height: 700px;
+	padding: 0px;
+	min-width: 300px;
 }
