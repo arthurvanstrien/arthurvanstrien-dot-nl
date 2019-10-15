@@ -21,7 +21,7 @@ var projectDetail = (function() {
 			}
 			else {
 				
-				displayProjectDetail(common.getAdditionalLanguageFile(), project.projectId);
+				displayProjectDetail(common.getAdditionalLanguageFile(), project.projectId, project);
 			}
 		}
 		else {
@@ -58,12 +58,13 @@ var projectDetail = (function() {
 			common.displayErrorMessage(errorMessagesLanguageFile, "project-id-not-found");
 	}
 	
-	var displayProjectDetail = function(langFile, projectId) {
+	var displayProjectDetail = function(langFile, projectId, project) {
 		
 		//Set the additional language file so the language can be changed.
 		common.setAdditionalLanguageFile(langFile);
 		
-		var project = getProjectFromList(langFile, projectId);
+		if(project.projectId == 'undefined' || project.projectId == null)
+			project = getProjectFromList(langFile, projectId);
 		
 		var generatedHTML = "";
 		var textContent = project.content;

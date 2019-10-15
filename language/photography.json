@@ -9,119 +9,244 @@
 	},
 	"fields": [
 		{
-			"name": "lang_title-edit",
-			"nl": "Foto's Bewerken",
-			"en": "Edititing Photographs"
-		},
-		{
-			"name": "lang_title-panorama",
-			"nl": "Panorama's",
-			"en": "Panoramas"
-		},
-		{
-			"name": "lang_title-timelapses",
-			"nl": "Timelapses",
-			"en": "Timelapses"
-		},
-		{
-			"name": "lang_title-mygear",
-			"nl": "Mijn Fototoestel",
-			"en": "My Gear"
-		},
-		{
-			"name": "lang_title-cropfactor",
-			"nl": "Cropfactor",
-			"en": "Cropfactor"
-		},
-		{
-			"name": "lang_title-conclusion",
-			"nl": "Conclusie",
-			"en": "Conclusion"
-		},
-		{
 			"name": "lang_title-gallery",
 			"nl": "Beeldengalerij",
 			"en": "Gallery"
+		}
+	],
+	"content": [
+		{
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Eén van mijn hobby’s is fotografie. Het mooie aan fotografie is dat je een moment in tijd kan bevriezen voor altijd. Meestal maak ik foto’s van architectuur, landschappen en natuur. De wereld heeft veel mooie plekken en ik ben vaak gepassioneerd bezig om die vast te leggen. Hierbij probeer ik het maximale uit mijn apparatuur te halen. Dit omdat ik hiervan erg veel leer en dit verassende resultaten oplevert.",
+			"en": "One of my hobbies is photography. The beautiful thing about photography is that you can freeze a moment forever. Mostly I take pictures from architecture, landscapes and nature. The world has many beautiful places and  I enjoy photographing them. I like trying to push the limits of my camera. This is because I learn a lot from it and the results can be surprising."
+		},
+		
+		
+		
+		{
+			"type": "header2",
+			"class": "",
+			"onClick": "",
+			"nl": "Bewerken",
+			"en": "Photo editing"
 		},
 		{
-			"name": "lang_main-paragraph-1",
-			"nl": "Eén van mijn hobby’s is fotografie. Het mooie aan fotografie is dat je een moment in tijd kan bevriezen voor altijd. Meestal maak ik foto’s van architectuur, landschappen en natuur. Voor foto’s van andere mensen ben ik meestal wat te verlegen. De wereld is mooi en ik ben op vakantie of andere wandelingen vaak gepassioneerd bezig om de mooie dingen vast te leggen. Hierbij probeer ik het maximale uit mijn apparatuur te halen, ook omdat ik de techniek achter de digitale camera’s heel erg interessant vind en natuurlijk ook omdat het kan.",
-			"en": ""
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Wanneer een camera een foto maakt interpreteert de camera het moment en legt dit vast. Deze interpretatie kan afwijken van wat ik op dat moment zie of hoe ik dat moment geïnterpreteerd heb. Daarom bewerk ik, beter gezegd, corrigeer ik mijn foto’s. Zo kan ik een te donker uitgevallen foto weer bijlichten zodat hij is zoals ik de foto bedoeld had. Ook komt het weleens voor dat bijvoorbeeld de foto niet helemaal horizontaal genomen is en dan kan ik achteraf de foto rechttrekken. Het bewerken van mijn foto’s doe ik met Adobe Lightroom maar er zijn ook vele alternatieve beschikbaar die hetzelfde resultaat leveren.",
+			"en": "When my camera takes a picture, the camera interprets the data and makes an image from that. This interpretation can be different from how your own eyes saw the same view. Therefore I edit, better said correct, my photographs. For example, I can make a picture more bright that my camera interpreted too dark. Also when I align the photograph incorrectly I can correct the alignment afterwards. I use Adobe Lightroom for editing. This is my personal choice because it is only one of many programs out there that provide excellent results."
 		},
 		{
-			"name": "lang_edit-paragraph-1",
-			"nl": "Wanneer een camera een foto maakt interpreteert de camera het moment en legt dit vast. Deze interpretatie kan afwijken van wat jij op dat moment ziet of hoe jij dat moment geïnterpreteerd hebt. Daarom bewerkt ik, beter gezegd, corrigeer ik mijn foto’s met Adobe Lightroom. Zo kan ik een te donker uitgevallen foto weer bijlichten zodat hij is zoals ik de foto bedoeld had",
-			"en": ""
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Hieronder een paar voorbeelden van bewerkte foto’s:",
+			"en": "A few examples of corrected photographs below:"
 		},
 		{
-			"name": "lang_edit-paragraph-2",
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_photography/unedited-1.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_photography/edited-1.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_photography/IMGP1839_Wolwevershaven-1.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_photography/IMGP1839_Wolwevershaven-2.jpg"
+		},
+		
+		
+		
+		{
+			"type": "header2",
+			"class": "",
+			"onClick": "",
+			"nl": "Panorama",
+			"en": "Panorama"
+		},
+		{
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Tijdens wandelingen kom ik weleens op punten met prachtig uitzicht. Soms is het uitzicht zo breed dat het niet in één foto vast te leggen is. Op andere momenten is het uitzicht zo mooi dat ik er later misschien wel een print van aan de muur wil hangen, hiervoor zijn foto’s met een hoge resolutie een sleutelrol in afdruk van goede kwaliteit. Om een hoge resolutie foto te maken stel ik mij op locatie een oppervlakte voor wat ik vast wil leggen. Vervolgens begin in stroken foto’s te nemen tot ik het hele oppervlakte gefotografeerd heb. Thuis plak ik al deze RAW foto bestanden aan elkaar en het eindresultaat is een hoge resolutie JPG bestand. ",
+			"en": "Whilst hiking I pass beautiful views from time to time. Often the view is wider than the viewing angles from my camera. Also sometimes I want to hang an extra-large photograph on the wall. In both cases, a high-resolution photograph is needed. At first, I determine the surface I want to photograph. Secondly, I start taking rows of photographs until the whole surface is captured. Back home I'll add the photographs together in one large high-resolution JPG image."
+		},
+		{
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
 			"nl": "Hieronder een paar voorbeelden:",
 			"en": "A few examples below here:"
 		},
 		{
-			"name": "lang_panorama-paragraph-1",
-			"nl": "Tijdens wandelingen kom ik weleens op punten met prachtig uitzicht. Soms ik het uitzicht zo breed dat het niet in één foto vast te leggen is. Op andere momenten is het uitzicht zo mooi dat ik er later misschien wel een print van aan de muur wil hangen, hiervoor zijn foto’s met een hoge resolutie een sleutelrol in een goede kwaliteit afdruk. Om dit te bereiken stel ik mij op locatie een oppervlakte voor wat ik vast wil leggen en begin ik vervolgens in stroken foto’s te nemen tot ik het hele oppervlakte gefotografeerd heb. Thuis plek ik al deze RAW foto bestanden met Adobe Lightroom aan elkaar (er zijn zeer veel alternatieven) het eindresultaat is een hoge resolutie JPG.",
-			"en": ""
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_photography/panorama-2.jpg"
 		},
 		{
-			"name": "lang_panorama-paragraph-2",
-			"nl": "Hieronder een paar voorbeelden:",
-			"en": "A few examples below:"
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_photography/panorama-4.jpg"
 		},
 		{
-			"name": "lang_timelapse-paragraph-1",
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_photography/panorama-3.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_photography/panorama-1.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_photography/panorama-5.jpg"
+		},
+		
+		
+		
+		{
+			"type": "header2",
+			"class": "",
+			"onClick": "",
+			"nl": "Timelapses",
+			"en": "Timelapses"
+		},
+		{
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
 			"nl": "Bij een Timelapse wordt een opname van foto’s of video versneld afgespeeld. Dit laat de kijker de opname anders ervaren en er vallen dan ook andere dingen op. Als je een uur lang naar een zakkende zonsondergang kijkt met een paar wolkjes aan de lucht zie je misschien her en der nog een vliegtuig voorbij komen. Als je dezelfde opname in een minuut bekijkt gaan je andere dingen opvallen, zoals bijvoorbeeld de manier hoe de wolken bewegen en hoe het licht van de zonsondergang veranderd.",
-			"en": ""
+			"en": "A timelapse is a series of photographs that are displayed faster than the time it took to take them. This lets people experience a recording in a very different way than in realtime. For example, when looking at sunset for an hour, the occasional passing aeroplane would be something noticeable. When you look at that same recording in one minute the movent of the clouds and the changing light is suddenly interesting to look at."
 		},
 		{
-			"name": "lang_timelapse-paragraph-2",
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
 			"nl": "Tot nu toe heb ik een aantal Timelapses gemaakt door mijn camera iedere seconde een foto te laten maken. Achteraf wanneer ik er een video van maak kan ik kiezen of ik de video 30, 60 of 120 keer zo snel als de echte opname wil maken. Dit omdat video vaak 30 of 60 beelden, hier dus foto’s, per seconde bevat. Bij 120 keer zo snel gebruik je dus maar de helft of een kwart van de gemaakte foto’s.",
-			"en": ""
+			"en": "So far, I made a few timelapses where my camera took a photograph every second. In the edit, I could choose at what speed I wanted to play the timelapse. Usually a Youtube video is 30 or 60 frames, so in this case, photographs a second. When I choose to make my video 30 frames per second, the video is 30 times faster than the original recording. When choosing 60, it is 60 times faster. I could even go faster than this, for example, 120 times but this means I would only be using half of the photographs I took. In that case, I should have chosen to let the camera take a photograph every two seconds. Although there is some flexibility in the edit, choosing the right settings on the spot is very importnant."
 		},
 		{
-			"name": "lang_timelapse-paragraph-3",
-			"nl": "Het maken van Timelapses kan nog best lastig zijn, het is erg belangrijk om alle instellingen van de camera precies goed te krijgen. Ik ben een keer vergeten de belichting vast te zetten waardoor de camera toen het donkerder werd automatisch de belichting aanpaste. Hierdoor mislukte de Timelapse omdat dit een knipperend effect in het beeld geeft wanneer je het versnelt afspeelt. Toch blijft het leuk om te experimenteren met Timelapses.",
-			"en": ""
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Het maken van Timelapses kan nog best lastig zijn, het is erg belangrijk om alle instellingen van de camera precies goed te krijgen. Ik ben een keer vergeten de belichting vast te zetten waardoor de camera toen het donkerder werd automatisch de belichting aanpaste. Hierdoor mislukte de Timelapse omdat dit een knipperend effect in het beeld geeft wanneer je het versnelt afspeelt. Toch blijft het interessant om te experimenteren met Timelapses.",
+			"en": "Making timelapses is tricky and they won't always become what you imagened. For example, I once messed up the settings of a sunset timelapse because I forgot to lock the exposure of the camera. On the spot nothing seems wrong, the camera is taking photographs, but in the edit, it became clear all my work was for nothing. When the sun was going down, the camera was stepping up the exposure automatically resulting in sudden changes in the brightness between pictures. Speed up at 30 times faster in the edit, this resulted in the image flickering, not great to watch. Failure won't stop me from trying though."
 		},
 		{
-			"name": "lang_timelapse-paragraph-4",
-			"nl": "Er zijn ook zeker wel een aantal Timelapses gelukt en deze zet ik dan ook op",
-			"en": ""
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Er zijn ook zeker wel een aantal Timelapses gelukt en deze zet ik dan ook op <a href='https://www.youtube.com/user/arthurvanstrien/videos' class='shared-content-inlineLinkRed'>Youtube</a>: ",
+			"en": "The timelapses that did work out brilliantly can be found on my <a href='https://www.youtube.com/user/arthurvanstrien/videos' class='shared-content-inlineLinkRed'>Youtube channel</a>:"
 		},
 		{
-			"name": "lang_mygear-paragraph-1",
-			"nl": "Mijn toestel is een Panasonic Lumix G7. De G7 heeft een Micro-Four-Thirds sensor van 16 megapixel. Ik heb gekozen voor het Micro-Four-Thirds platform omdat dit platform kleiner is dan camera’s met een full-frame sensor. Zo zijn de camera’s lichter en vooral de lenzen lichter. Dit maakt het makkelijker om de camera mee te sjouwen bij een wandeling door de natuur, er kan immers ieder moment een dier om de hoek staan dus je wilt hem grijpbaar om je schouder hebben hangen.",
-			"en": ""
+			"type": "youtubeVideo",
+			"id": "shared-content-youtubeVideoHalf",
+			"videoId": "92P-BQc-V2M"
+		},
+		
+		
+		
+		{
+			"type": "header2",
+			"class": "",
+			"onClick": "",
+			"nl": "Mijn Toestel",
+			"en": "My Gear"
 		},
 		{
-			"name": "lang_mygear-paragraph-2",
-			"nl": "Ook was de Lumix G7 een interessante koop door het aanbod met relatief goede kitlenzen. Namelijk de  14-42mm f3.5-5.6 en de 45-150mm f4.0-5.6. Toen ik de camera kocht was ik nog student en dit was het maximale van mijn budget. Als ik voor een Fullframe camera had gekozen had ik nieuw waarschijnlijk niet eens budget gehad voor lenzen en tweedehands misschien maar één lens gehad. De camera heeft een uitstekende prijs kwaliteit verhouding. Voor deze prijs krijg je een camera die foto’s kan nemen in RAW formaat met resolutie van 4592x3448, dit is meer dan een 4K / UHD scherm en ook zat om foto’s uitvergroot aan de muur te hangen. Mocht ik toch een hele grote foto op de muur willen hangen dan maak ik panorama van meerdere foto’s. Het hebben van meer pixels zou in de praktijk vooral veel meer opslag in nemen en geen echt voordeel hebben. De camera heeft ook uitstekende video capaciteiten en kan video opnemen in 4K met 30fps of 1080p met 60fps, hierdoor is deze camera en zijn grote broer de GH4 ook zeer populair onder Youtubers. De populariteit onder Youtubers wordt versterkt door de mogelijkheid om via een 3.5mm jack een externe microfoon aan te sluiten. Uiteraard heeft de camera de mogelijkheid om in standen als manueel te fotograferen / filmen en geeft volle controle over de aperture, sluitertijd en focus. Tot slot maakt wordt het afgemaakt met een draai en klapbaar touch-screen wat bijvoorbeeld het focus punt wijzigen zeer makkelijk maakt. Dit alles maakt de camera zeer geschikt voor verschillende taken, of het nu vakantiefoto’s schieten is tijdens een bergwandeling of het opnemen van een elevator-pitch voor een schoolopdracht, deze camera kan het. ",
-			"en": ""
+			"type": "image",
+			"class": "shared-content-pictureHalfLeftWrap",
+			"onClick": "",
+			"path": "pic_photography/camera.jpg"
 		},
 		{
-			"name": "lang_mygear-paragraph-3",
-			"nl": "Maar als deze camera dan zo geweldig is, waarom heeft niet iedere fotograaf zo’n Lumix G7 of andere camera van het Micro-Four-Thirds platform? Er is inderdaad een addertje onder het gras, de Micro-Four-Thirds sensor is fysiek kleiner dan die van een full-frame camera. Dit heeft een één nadeel, een kleinere sensor betekend minder oppervlakte om licht op te nemen. Hoewel deze camera verbluffend goed is bij weinig licht zal een goede full-frame camera altijd winnen dankzij zijn grotere sensor oppervlakte. Micro-Four-Thirds sensoren zijn hier een kantelpunt, als je een kleinere sensor kiest dan Micro-Four-Thirds gaan de kwaliteiten bij weinig licht hard omlaag maar bij Micro-Four-Thirds is de sensor nog net groot genoeg om zonder problemen een mooie zonsondergang te fotograferen. ",
-			"en": ""
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Mijn toestel is een Panasonic Lumix G7. De G7 heeft een Micro-Four-Thirds sensor van 16 megapixel. Ik heb gekozen voor het Micro-Four-Thirds platform omdat dit platform kleiner is dan camera’s met een full-frame sensor. Zo zijn de camera’s lichter en vooral de lenzen lichter. Dit maakt het makkelijker om de camera mee te sjouwen bij een wandeling door de natuur. Er kan immers ieder moment een dier om de hoek staan dus je wilt hem grijpbaar om je schouder hebben hangen.",
+			"en": "My camera is a Panasonic Lumix G7. The G7 has a 16 megapixel Micro-Four-Thirds sensor. The reason I choose the Micro-Four-Thirds platform is that the smaller sensor size also means smaller and lighter lenses. This makes the camera very portable and it even fits in the pocket of my jacket. Especially when hiking the lightweight of the camera and lenses make a great difference. You want to have your camera available all the time of course because a wild animal or beautiful view can be around any corner."
 		},
 		{
-			"name": "lang_mygear-paragraph-4",
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Ook was de Lumix G7 een interessante koop door het aanbod met relatief goede kitlenzen. Namelijk de  14-42mm f3.5-5.6 en de 45-150mm f4.0-5.6. Toen ik de camera kocht was ik nog student en dit was het maximale van mijn budget. Als ik voor een Fullframe camera had gekozen had ik nieuw waarschijnlijk niet eens budget gehad voor lenzen en tweedehands misschien maar één lens gehad. De camera heeft een uitstekende prijs kwaliteit verhouding. Voor deze prijs krijg je een camera die foto’s kan nemen in RAW formaat met resolutie van 4592x3448, dit is meer dan een 4K / UHD scherm en ook zat om foto’s uitvergroot aan de muur te hangen. Mocht ik een keer een foto heel groot op willen hangen, dan kan ik altijd een paar foto’s aan elkaar plakken. Het constant nemen van hogere resolutie foto’s zou ook op den duur veel te veel opslagruimte in gaan nemen. De camera heeft ook uitstekende video capaciteiten en kan video opnemen in 4K met 30 beelden per seconde of 1080p full HD met 60 beelden per seconde. Tevens is het mogelijk een externe microfoon met 3,5mm jack aan te sluiten. Hierdoor zijn deze camera en zijn grote broer de GH4 ook zeer populair onder Youtubers. Uiteraard heeft de camera de mogelijkheid om in standen als manueel te fotograferen / filmen en geeft volle controle over de apertuur, sluitertijd en focus. Tot slot maakt wordt het afgemaakt met een draai en klapbaar touch-screen wat bijvoorbeeld het focus punt wijzigen zeer makkelijk maakt. Dit alles maakt de camera zeer geschikt voor verschillende taken, van vakantiefoto’s tot een elevator pitch, deze camera kan het. ",
+			"en": "Another reason I choose the Lumix G7 is because of its price-performance ratio. I bought the G7 with two excellent kit lenses, the 14-42mm f3.5-5.6 and the 45-150mm f4.0-5.6. If I had bought a full-frame camera at the time with the same budget, I wouldn't had money to spare for lenses at all. Second-Hand full-frame cameras are still price and for my budget, I wouldn't able to afford a body with two lenses either. But it doesn't stop there. This camera can take pictures in RAW format with a maximum resolution of 4592x3448, this is higher than the resolution of a 4K or UHD screen. This is ample for a medium-size image on the wall. And for the few occasions when this amount is not enough, I can always merge multiple pictures together. Besides, you are going to use a lot more storage fast when the resolution is higher. Further, the G7 has excellent video recording capabilities. It can record in 4k with 30 frames per second and 60 frames per second in 1080p full HD. Therefore the G7 and its big brother the GH4 are very popular among YouTubers. The amazing thing is that it doesn't compromise on the photography capabilities for its video capabilities. The G7 has a manual mode and full control over the aperture, shutter speed and focus. The finishing touch is its fold and tilt touch screen that makes changing the focus point a simple tap. From holiday photography to recording an elevator pitch, this camera can do it."
+		},
+		{
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Maar als deze camera dan zo geweldig is, waarom heeft niet iedere fotograaf zo’n Lumix G7 of andere camera van het Micro-Four-Thirds platform? Er is inderdaad een addertje onder het gras, de Micro-Four-Thirds sensor is fysiek kleiner dan die van een full-frame camera. Dit heeft een één echt nadeel, een kleinere sensor betekend minder oppervlakte om licht op te nemen. Hoewel deze camera verbluffend goed is bij weinig licht zal een goede full-frame camera altijd winnen dankzij zijn grotere sensor oppervlakte. Micro-Four-Thirds sensoren zijn hier een kantelpunt, als je een kleinere sensor kiest dan Micro-Four-Thirds gaan de kwaliteiten bij weinig licht hard omlaag maar bij Micro-Four-Thirds is de sensor nog net groot genoeg om zonder problemen een mooie zonsondergang te fotograferen. ",
+			"en": "But if this camera is so great, why doesn't every photographer use it? Well, there is a bit of a twist. The Micro-Four-Thirds sensor is physically smaller than a full-frame sensor. This has one, but critical downside, it has less surface to collect light on. The low light results of this camera are excellent though, but it will never win from a good full-frame sensor camera. The size of the Micro-Four-Thirds sensor is at the edge of a tipping point. When you go any smaller the low light performance drops significantly, but Micro-Four-Thirds is still big enough to capture a sunset without trouble."
+		},
+		{
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
 			"nl": "Naast de prestaties bij weinig licht is er nog een nadeel en voordeel te gelijk: de cropfactor.",
-			"en": ""
+			"en": "Just like the low light performance, there is another big difference in the sensor size: the crop factor."
+		},
+		
+		{
+			"type": "header3",
+			"class": "",
+			"onClick": "",
+			"nl": "Cropfactor",
+			"en": "Cropfactor"
 		},
 		{
-			"name": "lang_cropfactor-paragraph-1",
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
 			"nl": "Als een sensor kleiner is dan het full-frame formaat krijg je te maken met een crop factor. Bij Micro-Four-Thirds is de cropfactor 2 wat het heel makkelijk rekenen maakt. Bij een crop factor gedraagt de afstand van een lens zich namelijk anders, als je een 50mm lens op een full-frame camera zet dan is het een 50mm lens, zet je die zelfde lens op een Micro-Four-Thirds camera (met dus die cropfactor van 2) gedraagt de lens zich als een 100mm lens. Als je dus een full-frame camera met een 50mm lens en een Micro-Four-Thirds camera naast elkaar zet dan moet de Micro-Four-Thirds camera dus een 25mm lens hebben om precies hetzelfde in beeld te krijgen.",
-			"en": ""
+			"en": "When a camera sensor is smaller than a full-frame sensor you get an effect known as the crop factor. The Micro-Four-Thirds crop factor is 2 which makes calculations with it easy. The lens from a camera behaves differently with a crop factor. For example, if you place a 50mm lens on a full-frame sensor camera and you would put the same 50mm lens on a Micro-Four-Thirds camera, the lens behaves itself as a 100mm lens. If you would place a full-frame camera with a 50mm lens and a micro-four-thirds sensor on the same spot the Micro-Four-Thirds camera needs to have a 25mm lens to frame the same picture."
 		},
 		{
-			"name": "lang_cropfactor-paragraph-2",
-			"nl": "Er zijn mensen die dit nog veel beter uit kunnen leggen dan ik en er zijn genoeg artikelen en videos hierover op het internet te vinden. Echter nu we het effect van de cropfactor begrijpen kunnen we ook kijken naar de nadelen en voordelen. Mocht je namelijk een close-up foto van een gebouw willen nemen dan is het lastiger het gebouw in beeld te krijgen met Micro-Four-Thirds camera. Als een full-frame camera met een 25mm lens het gebouw net in beeld zou krijgen, een maat die nog vrij standaard is bij betaalbare kitlenzen, dan heb je bij de Micro-Four-Thirds camera al een 12,5 mm lens nodig om hetzelfde beeld te krijgen. Een 12,5 mm lens of een lens die bijvoorbeeld 12-24mm is zijn geen standaard kit-lens maten en het kost vaak aardig wat geld om een extra lens te kopen die zo ver kan uitzoomen. De cropfactor heeft dus een nadeel bij uitzoomen. Daar staat dan weer tegenover dat het een groot voordeel heeft bij inzoomen. Stel je voor dat je een foto neemt met een full-frame camera met een 400mm lens, deze 400mm lens heeft best wat geld gekost om zo ver in te kunnen zoomen en is al aardig groot en zwaar. De kitlens die bij de Lumix G7 komt gaat tot 200mm en gedraagt zicht dus als een 400mm lens, de kitlens bij de Lumix G7 kan dus al dezelfde foto maken dan de dure 400mm full-frame lens. Wil je nog verder zoomen, dan wordt het voordeel alleen nog maar groter. Een 350mm lens is namelijk nog best goed betaalbaar en een 400mm breekt de bank nog niet helemaal. Daarboven ga je enorme bedragen neertellen voor lenzen. Met het Micro-Four-Thirds platform kan je dus vrij betaalbaar 700mm of 800mm ver zoomen terwijl je bij een full-frame lens van 700 of 800mm een erg dure en zware lens in handen hebt. Er moet wel altijd rekening mee gehouden worden dat de full-frame lenzen iets meer licht doorlaten en daardoor beter zullen presteren in het laatste licht als de zon onder gaat. Het is dus niet zo dat je voor al dat extra geld niets zou krijgen, echter je legt veel extra geld neer voor dat voordeel.",
-			"en": ""
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Er zijn mensen die dit nog veel beter uit kunnen leggen dan ik en er zijn genoeg artikelen en video’s op het internet te vinden. Echter nu we het effect van de cropfactor begrijpen kunnen we ook kijken naar de nadelen en voordelen. Mocht je namelijk een close-up foto van een gebouw willen nemen dan is het lastiger het gebouw in beeld te krijgen met Micro-Four-Thirds camera. Als een full-frame camera met een 25mm lens het gebouw net in beeld zou krijgen, een maat die nog vrij standaard is bij betaalbare kitlenzen, dan heb je bij de Micro-Four-Thirds camera al een 12,5 mm lens nodig om hetzelfde beeld te krijgen. Een 12,5 mm lens of een lens die bijvoorbeeld 12-24mm is zijn geen standaard kit-lens maten en het kost vaak aardig wat geld om een extra lens te kopen die zo ver kan uitzoomen. De cropfactor heeft dus een nadeel bij uitzoomen. Daar staat dan weer tegenover dat het een groot voordeel heeft bij inzoomen. Stel je voor dat je een foto neemt met een full-frame camera met een 300mm lens. Deze lens heeft best wat geld gekost en is al aardig groot en zwaar. De kitlens die bij de Lumix G7 komt gaat tot 150mm en gedraagt zicht dus als een 300mm lens. Kortom, de kitlens bij de Lumix G7 kan dus al dezelfde foto maken dan de dure 300mm full-frame lens. Wil je nog verder zoomen, dan wordt het voordeel alleen nog maar groter. Een 300mm lens is namelijk nog best goed betaalbaar en een 400mm breekt de bank nog niet helemaal. Daarboven ga je enorme bedragen neertellen voor lenzen. Met het Micro-Four-Thirds platform kan je dus vrij betaalbaar 700mm of 800mm ver zoomen terwijl je bij een full-frame lens van 700 of 800mm een erg dure en zware lens in handen hebt. Helemaal perfect is het niet. Er moet rekening mee gehouden worden dat de full-frame lenzen meer licht doorlaten. Hierdoor is een kortere sluitertijd mogelijk wat bij bewegende objecten en matige lichtomstandigheden een groot verschil kan maken. ",
+			"en": "There are a lot of experts that know a lot more about this or that can explain this even better. But now we know how the effect works, we can look to the advantage and disadvantage. The disadvantage that the Micro-Four-Thirds by two crop factor has is that it is harder to get a large object on close range into view. For example, a 50mm lens, which is a commonly used size, needs to be as small as 25mm on Micro-Four-Thirds. When you go any size smaller the price of a lens goes up fast. Full frame lenses are commonly more expensive than Micro-Four-Thirds but the uncommon lens sizes are still more expensive. However, if your goal is to zoom in on your object on a budget, Micro-Four-Thirds might be what you are looking for. The crop factor doubles the zoom remember? That makes the big advantage of the Micro-Four-Thirds crop factor. For example, an affordable 150mm lens behaves like a more expensive 300mm lens. And the more expensive, still below 500$ 300mm lens behaves like a several 1000$ full-frame lens. There is a notable difference however, the Full-frame lenses are a lot heavier but let trough more light than their Micro-Four-Thirds alternatives. The amount of light that goes through the lens impacts the shutter speed in low light situations. This can make a large difference when shooting photographs of moving targets in the morning or evening."
+		},
+		
+		{
+			"type": "header3",
+			"class": "",
+			"onClick": "",
+			"nl": "Mijn Conclusie",
+			"en": "My Conclusion"
 		},
 		{
-			"name": "lang_conclusion-paragraph-1",
-			"nl": "Iedereen moet dus zijn eigen afweging maken of de cropfactor een probleem is voor zijn of haar doeleinden. Mijn eigen conclusie is dat het Micro-Four-Thirds platform en mijn Lumix G7 mij een ontzettend goede prijs-kwaliteit verhouding hebben gegeven en zou deze ook zeker aanraden aan anderen. Als budget geen restrictie was had ik nog steeds voor het Micro-Four-Thirds platform en de Lumix G7 gegaan omdat het hebben van een lichtere camera en lenzen bij wandelingen voor mij een groot voordeel is. Ook valt er over de bouwkwaliteit niets te klagen aangezien mijn Lumix G7 al op vele (berg) wandelingen aan mijn schouder heeft gehangen en tot nu toe nog stevig in elkaar zit.",
-			"en": ""
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Iedereen moet zijn eigen afweging maken of de cropfactor een probleem is voor zijn of haar doeleinden. Zelf vind ik dat het Micro-Four-Thirds platform en mijn Lumix G7 mij een ontzettend goede prijs-kwaliteit verhouding hebben gegeven en zou deze ook zeker aanraden aan anderen. Als budget geen restrictie was had ik nog steeds voor het Micro-Four-Thirds platform en de Lumix G7 gegaan. Het hebben van een lichtere camera en lenzen bij wandelingen voor mij een groot voordeel is. Ook is het mogelijk om lichtsterke lenzen van het full-frame platform van Canon door middel van een actieve adapter aan het Micro-Four-Thirds platform te koppelen. Een kleine, lichtgewicht, Micro-Four-Thirds lens kan andersom niet aan een camera van het Canon full-frame platform gekoppeld worden. Tot slot valt er over de bouwkwaliteit niets te klagen aangezien mijn Lumix G7 al op vele (berg) wandelingen aan mijn schouder heeft gehangen en tot nu toe nog stevig in elkaar zit.",
+			"en": "I can't tell you what you should buy and neither if the crop factor is going to benefit your needs or not. My conclusion is that the Micro-Four-Thirds platform with my Lumix G7 has provided me with excellent value for money. Therefore I like to recommend the platform even when you have a large budget. This at first because the platform is very portable but also because of its flexibility. You can't put the small lenses from the Micro-Four-Thirds platform on a full-frame platform from for example Canon. However, the other way around, you can connect Canon full-frame platform lenses with their excellent light capacity on the Micro-Four-Thirds platform trough an active adapter. At last, I like to point out that the 'cheap' Micro-Four-Thirds platform does not hand in on the build quality."
 		}
 	]
 }
