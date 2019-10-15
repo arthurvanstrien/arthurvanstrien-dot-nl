@@ -7,14 +7,24 @@
 		"nl": "Persoonlijk",
 		"en": "About me"
 	},
-	"fields": [
+	"content": [
 		{
-			"name": "lang_paragraph-1",
+			"type": "image",
+			"class": "shared-content-pictureThirdRightWrap",
+			"onClick": "",
+			"path": "pic_aboutme/P1870745.jpg"
+		},
+		{
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
 			"nl": "Mijn naam is Arthur van Strien, ik heb een voorliefde voor techniek en vindt alles van software programma’s tot waterstaatkundige werken dan ook zeer interessant. Mijn beroep is programmeur en ik heb hierbij één van mijn technische hobby’s om kunnen zetten in mijn beroep. Andere hobby’s zijn fotograferen (zie hiervoor de fotografie pagina’s op deze website) en fietsen. ",
 			"en": ""
 		},
 		{
-			"name": "lang_paragraph-2",
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
 			"nl": "Om van mijn hobby een beroep te maken heb ik twee opleidingen gevolgd, Applicatieontwikkeling en Technische Informatica. De laatste heb ik helaas niet af kunnen maken maar ik ben met de stof nog wel beroeps en hobbymatig bezig. Daarom is er ook een speciaal Technisch Informatica onderdeel op deze website met als doel mensen op weg te helpen en enthousiast te maken in de stof.",
 			"en": ""
 		}
