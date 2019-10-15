@@ -63,7 +63,7 @@ var projectDetail = (function() {
 		//Set the additional language file so the language can be changed.
 		common.setAdditionalLanguageFile(langFile);
 		
-		if(project.projectId == 'undefined' || project.projectId == null)
+		if(project == 'undefined' || project == null || project == "")
 			project = getProjectFromList(langFile, projectId);
 		
 		var generatedHTML = "";
