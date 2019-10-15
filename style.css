@@ -51,6 +51,15 @@ body
 	margin: 0px;
 }
 
+.contentOverflowStop
+{
+	margin: 0px;
+	padding: 0px;
+	height: 0px;
+	Width: 100%;
+	display: inline-block;
+}
+
 .footer
 {
 	background-color: #00E5EE;
@@ -65,6 +74,7 @@ body
 	width: 75%;
 	position: inherit;
 	text-align: center;
+	display: inline-block;
 }
 
 .menu
