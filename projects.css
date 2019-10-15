@@ -1,10 +1,13 @@
 .projects-container
 {
 	margin-top: 0px;
-	margin-bottom: 50px;
+	margin-bottom: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
-	padding: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
 }
 
 .projects-container #projects-list-anker
