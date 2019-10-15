@@ -126,32 +126,32 @@ var common = (function() {
 		if(page == "home") {
 			setURL(page, language, null);
 			$('#content').load("home.html");
-			loadPageContent("home", null, null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
+			loadPageContent("home", "home-anchor", null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
 			customLanguageFunction = null;
 		}
 		else if(page == "projects") {
 			setURL(page, language, null);
 			$('#content').load("projects.html");
-			loadPageContent("projects", null, null, null); 
+			loadPageContent("projects", "projects-anchor", null, null); 
 			getJSONFile("projectsList", projects.load, null, null, null); //pass the loadProjects function to call after the JSON has loaded.
 			customLanguageFunction = projects.changeLanguage;
 		}
 		else if(page == "projectDetail") {
 			setURL(page, language, additionalURLParam);
 			$('#content').load("projectDetail.html");
-			loadPageContent("projectDetail", null, projectDetail.load, additionalData);
+			loadPageContent("projectDetail", "projectDetail-anchor", projectDetail.load, additionalData);
 			customLanguageFunction = projectDetail.changeLanguage;
 		}
 		else if(page == "photography") {
 			setURL(page, language, null);
 			$('#content').load("photography.html");
-			loadPageContent("photography", null, null, null);
+			loadPageContent("photography", "photography-anchor", null, null);
 			customLanguageFunction = null;
 		}
 		else if(page == "aboutme") {
 			setURL(page, language, null);
 			$('#content').load("aboutme.html");
-			loadPageContent("aboutme", null, null, null);
+			loadPageContent("aboutme", "aboutme-anchor", null, null);
 		}
 		else if(page == "gallery") {
 			setURL(page, language, null);
@@ -161,12 +161,12 @@ var common = (function() {
 		else if(page == "engineer-tech") {
 			setURL(page, language, null);
 			$('#content').load("engineer-tech.html");
-			loadPageContent("engineer-tech", null, null, null);
+			loadPageContent("engineer-tech", "engineer-tech-anchor", null, null);
 		}
 		else if(page == "404") {
 			setURL(page, language, null);
 			$('#content').load("404.html");
-			loadPageContent(page, null, null, null);
+			loadPageContent(page, "404-anchor", null, null);
 		}
 		else
 		{
