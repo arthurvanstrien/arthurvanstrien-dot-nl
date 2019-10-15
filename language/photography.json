@@ -94,6 +94,36 @@
 			"nl": "Hieronder een paar voorbeelden:",
 			"en": "A few examples below here:"
 		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_photography/panorama-2.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_photography/panorama-4.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_photography/panorama-3.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_photography/panorama-1.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_photography/panorama-5.jpg"
+		},
 		
 		
 		
