@@ -3,6 +3,14 @@ var page;
 $( document ).ready(function() {
 	
 	common.firstLoad();
+	
+	//This event listener detects an URL change when for example the browser back button is pressed.
+	window.addEventListener('popstate', function(event) {
+		// The popstate event is fired each time when the current history entry changes.
+		
+		common.changePage(common.getURLPage(), common.getURLLanguage(), common.getURLAdditional());
+
+	}, false);
 });
 
 var common = (function() {
@@ -35,6 +43,8 @@ var common = (function() {
 	common.setAdditionalLanguageFile = function(langFile) { setAdditionalLanguageFile(langFile); }
 	common.getAdditionalLanguageFile = function() { return getAdditionalLanguageFile(); }
 	
+	common.getURLPage = function() { return getURLPage(); }
+	common.getURLLanguage = function() { return getURLLanguage(); }
 	common.getURLAdditional = function() { return getURLAdditional(); }
 	
 	
@@ -153,11 +163,14 @@ var common = (function() {
 			$('#content').load("engineer-tech.html");
 			loadPageContent("engineer-tech", null, null, null);
 		}
-		else {
-			page = defaultPage;
+		else if(page == "404") {
 			setURL(page, language, null);
-			$('#content').load(defaultPage + ".html");
+			$('#content').load("404.html");
 			loadPageContent(page, null, null, null);
+		}
+		else
+		{
+			changePage("404", null, null);
 		}
 	}
 	
@@ -389,19 +402,27 @@ var common = (function() {
 		
 		var url = new URL(window.location.href);
 		
-		url.searchParams.delete("lang");
-		url.searchParams.delete("page");
+		if(getURLPage() == page && getURLLanguage() == lang && getURLAdditional() == additional) {
+			
+			//Do nothing, the URL is already the same URL as the new URL.
+			//This can happen when the browser back and forward buttons are used because they already change the URL.
+		}
+		else {
 		
-		if(url.searchParams.get("additional"))
-			url.searchParams.delete("additional");
-		
-		url.searchParams.append("lang", lang);
-		url.searchParams.append("page", page);
-		
-		if(additional != null)
-			url.searchParams.append("additional", additional);
-		
-		history.pushState("Page", "Page", url);
+			url.searchParams.delete("lang");
+			url.searchParams.delete("page");
+			
+			if(url.searchParams.get("additional"))
+				url.searchParams.delete("additional");
+			
+			url.searchParams.append("lang", lang);
+			url.searchParams.append("page", page);
+			
+			if(additional != null)
+				url.searchParams.append("additional", additional);
+			
+			history.pushState("Page", page, url);
+		}
 	}
 	
 	var getURLLanguage = function() {
