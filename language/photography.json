@@ -178,6 +178,12 @@
 			"en": "My Gear"
 		},
 		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeftWrap",
+			"onClick": "",
+			"path": "pic_photography/camera.jpg"
+		},
+		{
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
