@@ -249,7 +249,7 @@ var common = (function() {
 		else if(elementType == "paragraph")
 			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
 		else if(elementType == "image")
-			elem = "<img" + id + elemClass + elemOnClick + " src='" + content.path + "'/>";
+			elem = "<img" + elemClass + elemOnClick + " src='" + content.path + "'/>";
 		else if(elementType == "header1")
 			elem = "<h1" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
 		else if(elementType == "header2")
