@@ -81,6 +81,28 @@
 	float: left;
 }
 
+.shared-content-pictureThirdRightWrap
+{
+	margin-left: 20px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width: calc(33% - 40px);
+	padding: 0px;
+	float: right;
+}
+
+.shared-content-pictureThirdLeftWrap
+{
+	margin-left: 40px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width: calc(33% - 40px);
+	padding: 0px;
+	float: left;
+}
+
 .shared-content-pictureHalfRightWrap
 {
 	margin-left: 20px;
