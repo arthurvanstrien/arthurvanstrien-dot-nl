@@ -256,6 +256,13 @@ var common = (function() {
 			elem = "<h2" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
 		else if(elementType == "header3")
 			elem = "<h3" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
+		else if(elementType == "youtubeVideo") {
+			
+			var id = "id='" + content.id + "'";
+			var youtubeSource = "src='https://www.youtube-nocookie.com/embed/" + content.videoId + "?controls=0'";
+			var youtubeSettings = "allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'";
+			elem = "<iframe " + id + " " + youtubeSource + " frameborder='0' " + youtubeSettings + " allowfullscreen></iframe>";
+		}
 		
 		return elem;
 	}
