@@ -71,6 +71,7 @@ var projectDetail = (function() {
 		
 		$("#lang_pageTitle").text(common.getFieldLanguage(project.title));
 		$("#projectDetail-year").text(project.year);
+		$("#projectDetail-version").text(project.version);
 		$("#projectDetail-category").text(common.getFieldLanguage(project.category));
 		$("#projectDetail-programming-languages").text(project.programmingLanguages);
 		$("#projectDetail-used-tools").text(project.usedTools);
@@ -105,6 +106,7 @@ var projectDetail = (function() {
 		else {
 		
 			$("#projectDetail-year").text(project.year);
+			$("#projectDetail-version").text(project.version);
 			$("#projectDetail-category").text(common.getFieldLanguage(project.category));
 			$("#projectDetail-programming-languages").text(project.programmingLanguages);
 			$("#projectDetail-used-tools").text(project.usedTools);

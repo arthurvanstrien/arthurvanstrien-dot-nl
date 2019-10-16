@@ -11,6 +11,11 @@
 			"en": "Year:"
 		},
 		{
+			"name": "lang_projectsMenu-version",
+			"nl": "Versie:",
+			"en": "Version:"
+		},
+		{
 			"name": "lang_projectsMenu-category",
 			"nl": "Categorie:",
 			"en": "Category:"
@@ -55,6 +60,7 @@
 				"en": "arthurvanstrien.nl"
 			},
 			"year": "2019",
+			"version": "1.0",
 			"category": 
 			{
 				"nl": "Website",
