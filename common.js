@@ -23,6 +23,7 @@ var common = (function() {
 	var errorMessagesLanguageFile;
 	var defaultPage = "home";
 	var defaultLanguage = "nl";
+	var errorLoopDetection = false;
 	
 	//This variable will contain the public methods that are returned and can be accessed.
 	var common = {};
@@ -33,7 +34,7 @@ var common = (function() {
 	common.changeLanguage = function(lang) { changeLanguage(lang); }
 	common.getFieldLanguage = function(field) { return getFieldLanguage(field); }
 	common.log = function(text) { log(text); }
-	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); }
+	common.displayErrorMessage = function(fieldName) { displayErrorMessage(fieldName); }
 	common.getHTMLElement = function(content, elemCounter) { return getHTMLElement(content, elemCounter); }
 	common.displayContent = function(langFile) { displayContent(langFile); }
 	common.getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
@@ -91,7 +92,7 @@ var common = (function() {
 			log(textStatus);
 			log(errorThrown);
 			
-			displayErrorMessage(errorMessagesLanguageFile, "json-load-failed");
+			displayErrorMessage("json-load-failed");
 		}
 		});
 	}
@@ -462,7 +463,7 @@ var common = (function() {
 		
 		if(field == 'undefined' || field == null) {
 			
-			displayErrorMessage(errorMessageLanguageFile, "something-unexpected-happened");
+			displayErrorMessage("something-unexpected-happened");
 		}
 		else {
 			
@@ -489,7 +490,7 @@ var common = (function() {
 	
 	//The functions below are setters for the shared variables that contain the language files that are used on every page.
 	var setCommonLanguageFile = function(langFile) { commonLanguageFile = langFile; }
-	var setErrorMessagesLanguageFile = function(langFile) { errorMessageLanguageFile = langFile; }
+	var setErrorMessagesLanguageFile = function(langFile) { errorMessagesLanguageFile = langFile; }
 	var setAdditionalLanguageFile = function(langFile) { additionalLanguageFile = langFile; }
 	var getAdditionalLanguageFile = function() { return additionalLanguageFile; }
 	
@@ -574,41 +575,48 @@ var common = (function() {
 		console.log(text);
 	}
 
-	var displayErrorMessage = function(file, fieldName) {
+	var displayErrorMessage = function(fieldName) {
 		
 		log("ERROR: " + fieldName);
-		/*
-		errorMessagesLanguageFile = file;
-		
-		log("fieldname: " + fieldName);
 		
 		var message;
+		var match = false;
 		
-		if(typeof errorMessagesLanguageFile === 'object') {
+		if(errorMessagesLanguageFile != null && errorMessagesLanguageFile != "") {
 			
-			var match = false;
-			
-			for(var i = 0; i < Object.keys(errorMessagesLanguageFile).length; i++) {
+			for(var i = 0; i < Object.keys(errorMessagesLanguageFile.errors).length; i++) {
 				
-				if(errorMessageLanguageFile.i.name == fieldName) {
-					log("FieldJson: " +  errorMessageLanguageFile.i.name);
-					message = getYearString(errorMessagesLanguageFile.i);
+				if(errorMessagesLanguageFile.errors[i].name == fieldName) {
+					message = getFieldLanguage(errorMessagesLanguageFile.errors[i]);
 					match = true;
 				}
 			}
-			
-			if(match == false)
-				log("Error message not found. Something went wrong but the error could not be displayed.");
 		}
 		else {
 			
-			log("Empty so get file");
 			getJSONFile("errorMessages", displayErrorMessage, fieldName, null, null);
 		}
 		
+		if(match == false)
+			message = "Something went wrong, if this happens again, please contact the administator at arthur@arthurvanstrien.nl";
+		
 		$("#content").html("<p id='errorMessage'>" + message + "</p>");
 		log(message);
-		*/
+	}
+	
+	var errorMessagesFileLoaded = function(errorMessagesLanguageFile, fieldName) {
+		
+		errorMessagesLanguageFile = errorMessagesLanguageFile;
+		
+		if(errorLoopDetection == false) {
+			
+			errorLoopDetection = true;
+			//Try again after displaying the previous load failed.
+			displayErrorMessage(fieldName);
+			
+			//Reset when displaying was succesfull.
+			errorLoopDetection = false;
+		}
 	}
 	
 	
