@@ -1,4 +1,13 @@
-/*---Below here is the shared styling for the generated HTML elements------------------------------------------------------------------------------*/
+/*---Below here is the shared styling for the generated HTML elements-------------------------------------------------------------------------------*/
+
+.shared-content-div
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
 
 .shared-content-h2
 {

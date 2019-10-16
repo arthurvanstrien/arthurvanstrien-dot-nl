@@ -231,23 +231,35 @@ var common = (function() {
 		
 		var id = " id='" + getElementId(elemCounter) + "'";
 		
-		if(elemClass != "")
-			elemClass = " class='" + elemClass + "'";
-		
 		if(elemOnClick != "")
 			elemOnClick = " onClick='" + elemOnClick + "'";
 		
 		
-		if(elementType == "div-parent")
+		if(elementType == "div-parent") {
+			
+			elemClass = " class='" + elemClass + "'";
 			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</div>";
-		else if(elementType == "span-parent")
+		}
+		else if(elementType == "span-parent") {
+			
+			elemClass = " class='" + elemClass + "'";
 			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</span>";
-		else if(elementType == "div")
+		}
+		else if(elementType == "div") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = "class='shared-content-div' ";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
 			elem = "<div" + id + "'" + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</div>";
+		}
 		else if(elementType == "span") {
 			
 			if(elemClass == "" || elemClass == null)
 				elemClass = "class='shared-content-span' ";
+			else
+				elemClass = " class='" + elemClass + "'";
 			
 			elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
 		}
@@ -255,6 +267,8 @@ var common = (function() {
 			
 			if(elemClass == "" || elemClass == null)
 				elemClass = "class='shared-content-paragraph' ";
+			else
+				elemClass = " class='" + elemClass + "'";
 			
 			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
 		}
@@ -262,6 +276,8 @@ var common = (function() {
 			
 			if(elemClass == "" || elemClass == null)
 				elemClass = "class='shared-content-pictureHalfLeft' ";
+			else
+				elemClass = " class='" + elemClass + "'";
 			
 			elem = "<img" + elemClass + elemOnClick + " src='" + content.path + "'/>";
 		}
@@ -269,6 +285,8 @@ var common = (function() {
 			
 			if(elemClass == "" || elemClass == null)
 				elemClass = "class='shared-content-h1' ";
+			else
+				elemClass = " class='" + elemClass + "'";
 			
 			elem = "<h1" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
 		}
@@ -276,6 +294,8 @@ var common = (function() {
 			
 			if(elemClass == "" || elemClass == null)
 				elemClass = "class='shared-content-h2' ";
+			else
+				elemClass = " class='" + elemClass + "'";
 			
 			elem = "<h2" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
 		}
@@ -285,6 +305,8 @@ var common = (function() {
 			
 			if(elemClass == "" || elemClass == null)
 				elemClass = "class='shared-content-h3' ";
+			else
+				elemClass = " class='" + elemClass + "'";
 			
 			elem = "<h3" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
 		}
@@ -292,6 +314,8 @@ var common = (function() {
 			
 			if(elemClass == "" || elemClass == null)
 				elemClass = "class='shared-content-listItem' ";
+			else
+				elemClass = " class='" + elemClass + "'";
 			
 			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
 		}
