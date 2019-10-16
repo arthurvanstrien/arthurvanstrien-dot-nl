@@ -301,8 +301,6 @@ var common = (function() {
 		}
 		else if(elementType == "header3") {
 			
-			console.log(elemClass);
-			
 			if(elemClass == "" || elemClass == null)
 				elemClass = "class='shared-content-h3' ";
 			else
