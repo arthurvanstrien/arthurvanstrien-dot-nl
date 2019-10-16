@@ -244,7 +244,11 @@ var common = (function() {
 			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</span>";
 		else if(elementType == "div")
 			elem = "<div" + id + "'" + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</div>";
-		else if(elementType == "span")
+		else if(elementType == "span") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = "class='shared-content-span' ";
+			
 			elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
 		else if(elementType == "paragraph")
 			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
