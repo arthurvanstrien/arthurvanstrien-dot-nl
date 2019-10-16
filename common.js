@@ -271,7 +271,12 @@ var common = (function() {
 				elemClass = "class='shared-content-h1' ";
 			
 			elem = "<h1" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
-		else if(elementType == "header2")
+		}
+		else if(elementType == "header2") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = "class='shared-content-h2' ";
+			
 			elem = "<h2" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
 		else if(elementType == "header3")
 			elem = "<h3" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
