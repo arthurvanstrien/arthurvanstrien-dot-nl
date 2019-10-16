@@ -84,6 +84,7 @@
 	margin: 0px;
 }
 
+
 /*---Styling for the pictures-----------------------------------------------------------------------------------------------------------------------*/
 
 .shared-content-pictureWide
@@ -128,13 +129,13 @@
 	float: left;
 }
 
-.shared-content-pictureThirdRightWrap
+.shared-content-pictureHalfRightWrap
 {
 	margin-left: 20px;
 	margin-right: 40px;
 	margin-bottom: 20px;
 	margin-top: 20px;
-	width: calc(33% - 40px);
+	width: calc(49% - 40px);
 	padding: 0px;
 	float: right;
 }
@@ -150,16 +151,17 @@
 	float: left;
 }
 
-.shared-content-pictureHalfRightWrap
+.shared-content-pictureThirdRightWrap
 {
 	margin-left: 20px;
 	margin-right: 40px;
 	margin-bottom: 20px;
 	margin-top: 20px;
-	width: calc(49% - 40px);
+	width: calc(33% - 40px);
 	padding: 0px;
 	float: right;
 }
+
 
 /*---Styling for the hyperlinks----------------------------------------------------------------------------------------------------------------------*/
 
@@ -178,6 +180,7 @@
 {
 	color: #c70000;
 }
+
 
 /*---Styling for the youtube videos-------------------------------------------------------------------------------------------------------------------*/
 /*This must be an ID instead of a class because the Youtube frame already has a class for styling*/
