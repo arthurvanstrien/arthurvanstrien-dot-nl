@@ -341,7 +341,6 @@ var common = (function() {
 			for(var i = 0; i < Object.keys(content.rowData).length; i++) {
 				
 				elem = elem + "<tr>";
-				console.log(getFieldLanguage(content.rowData[i][0]));
 				
 				for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
 					
