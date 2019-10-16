@@ -37,6 +37,16 @@
 	display: block;
 }
 
+.shared-content-listItem
+{
+	margin-left: 70px;
+	margin-right: 40px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	padding: 0px;
+	display: block;
+}
+
 /*---Styling for the pictures-----------------------------------------------------------------------------------------------------------------------*/
 
 .shared-content-pictureWide
