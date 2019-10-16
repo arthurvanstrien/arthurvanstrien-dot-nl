@@ -67,7 +67,11 @@
 				"en": "Website"
 			},
 			"programmingLanguages": "Javascript, JQuery, HTML, CSS",
-			"usedTools": "Notepad++, Adobe Lightroom",
+			"usedTools": 
+			{
+				"nl": "Notepad++, Adobe Lightroom",
+				"en": "Notepad++, Adobe Lightroom"
+			},
 			"motive": 
 			{
 				"nl": "Project gebouwd uit eigen beweging",
