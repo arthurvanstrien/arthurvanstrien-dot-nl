@@ -18,15 +18,87 @@
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
-			"nl": "Mijn naam is Arthur van Strien, ik heb een voorliefde voor techniek en vindt alles van software programma’s tot waterstaatkundige werken dan ook zeer interessant. Mijn beroep is programmeur en ik heb hierbij één van mijn technische hobby’s om kunnen zetten in mijn beroep. Andere hobby’s zijn fotograferen (zie hiervoor de fotografie pagina’s op deze website) en fietsen. ",
-			"en": ""
+			"nl": "Mijn naam is Arthur van Strien. Ik heb een brede interesse in techniek, van software tot waterstaatkundige werken. Als programmeur ben ik beroepsmatig bezig met mijn hobby. Verder ben ik in mijn vrije tijd bezig met fotografie (zie hiervoor de fotografie pagina), reizen en fietsen. Ik knutsel graag, van houtbewerking tot solderen. Hiermee creëer ik een praktische oplossing voor ieder project.  ",
+			"en": "My name is Arthur van Strien. I have a broad interest in technology, from software to hydraulic engineering works. As a programmer, I am professionally involved in my hobby. In my spare time I am also busy with photography (see the photography page), travelling and cycling. I like to do crafts, from woodworking to soldering. With these skills I create a practical solution for every project."
 		},
 		{
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
-			"nl": "Om van mijn hobby een beroep te maken heb ik twee opleidingen gevolgd, Applicatieontwikkeling en Technische Informatica. De laatste heb ik helaas niet af kunnen maken maar ik ben met de stof nog wel beroeps en hobbymatig bezig. Daarom is er ook een speciaal Technisch Informatica onderdeel op deze website met als doel mensen op weg te helpen en enthousiast te maken in de stof.",
-			"en": ""
+			"nl": "Om van mijn ICT hobby een beroep te maken heb ik twee opleidingen gevolgd:",
+			"en": "I followed two training courses to turn my ICT hobby into my profession:"
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Applicatieontwikkeling (MBO-4):  Tijdens deze opleiding heb ik een basis geleerd van de ICT. Daar onder valt: het kunnen onderhouden en aanleggen van simpele computernetwerken, het bouwen en onderhouden van computers en samenwerken en communiceren met collega’s en klanten. Denk hierbij aan Scrum en  e-mailcommunicatie. De opleiding heeft mij meer diepgaande kennis geleerd over het bouwen van websites, webapplicaties en web-api’s. Tijdens deze opleiding heb ik er voor gekozen om een aantal jaar mijn reguliere lestijd te besteden in een leerwerkbedrijf. In dit leerwerkbedrijf werkte ik aan projecten die in de praktijk echt gebruikt worden. Dit heeft mij een goede ervaring op de werkvloer opgeleverd. Ik heb deze opleiding afgerond en een diploma ontvangen.",
+			"en": "Application development (MBO-4 / Community College / Further Education Colleges): During this course, I learned the basics of IT.  This includes constructing and maintaining basic computer networks, constructing and maintaining computer and communication with co-workers and customers. For example the process framework Scrum and proper communication by email. The course has taught me a more profound knowledge about websites, web applications and web-API. For a few years, I worked on projects in an apprenticeship company within the course. This was instead of the usual lessons. This was an educational and interesting experience because the projects were made to be used and not just for practice. This meant that there was contact with real customers and has given me a good experience on the work floor."
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Technische Informatica (HBO-Bachelor): Tijdens deze opleiding ben ik mij gaan verdiepen in programmeren op hardware niveau. Ook heb ik meer geleerd over de processen om software te ontwikkelen in teamverband. Deze opleiding heb ik niet af kunnen maken. Maar ik ben met de stof nog wel beroeps- en hobbymatig bezig. Daarom bevat deze website veel informatie die met Technische Informatica te maken heeft.",
+			"en": "Applied Computer Science (HBO-Bachelor / University of Applied Sciences-Undergraduate): During this course, I started to study programming at the hardware level. Further, I broadened my knowledge about the processes used by developing software in teams. I did not finish the course, but I did not forget what I learned and still use this knowledge for professional and personal projects. That's why this website contains a lot of information related to Applied Computer Science."
+		},
+		{
+			"type": "header3",
+			"class": "",
+			"onClick": "",
+			"nl": "Contact:",
+			"en": "Contact information:"
+		},
+		{
+			"type": "table",
+			"class": "",
+			"onClick": "",
+			"rowHeaders": [
+
+			],
+			"rowData": [
+				[
+					{
+						"nl": "E-mail:",
+						"en": "Email:"
+					},
+					{
+						"nl": "arthur@arthurvanstrien.nl",
+						"en": "arthur@arthurvanstrien.nl"
+					}
+					
+				],
+				[
+					{
+						"nl": "Linkedin:",
+						"en": "Linkedin:"
+					},
+					{
+						"nl": "https://www.linkedin.com/in/arthur-van-strien-2b7a06158/",
+						"en": "https://www.linkedin.com/in/arthur-van-strien-2b7a06158/"
+					}
+				],
+								[
+					{
+						"nl": "Github:",
+						"en": "Github:"
+					},
+					{
+						"nl": "https://github.com/arthurvanstrien",
+						"en": "https://github.com/arthurvanstrien"
+					}
+				],
+								[
+					{
+						"nl": "Youtube:",
+						"en": "Youtube:"
+					},
+					{
+						"nl": "https://www.youtube.com/channel/UCOfR0UHPyuNp4WcoqbyF1Zw ",
+						"en": "https://www.youtube.com/channel/UCOfR0UHPyuNp4WcoqbyF1Zw "
+					}
+				]
+			]
 		}
 	]
 }
