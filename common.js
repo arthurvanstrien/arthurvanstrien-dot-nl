@@ -250,7 +250,12 @@ var common = (function() {
 				elemClass = "class='shared-content-span' ";
 			
 			elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
-		else if(elementType == "paragraph")
+		}
+		else if(elementType == "paragraph") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = "class='shared-content-paragraph' ";
+			
 			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
 		else if(elementType == "image")
 			elem = "<img" + elemClass + elemOnClick + " src='" + content.path + "'/>";
