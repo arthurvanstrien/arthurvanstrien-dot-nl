@@ -287,6 +287,14 @@ var common = (function() {
 				elemClass = "class='shared-content-h3' ";
 			
 			elem = "<h3" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
+		}
+		else if(elementType == "listItem") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = "class='shared-content-listItem' ";
+			
+			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
+		}
 		else if(elementType == "youtubeVideo") {
 			
 			var id = "id='" + content.id + "'";
