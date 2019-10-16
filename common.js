@@ -317,6 +317,40 @@ var common = (function() {
 			
 			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
 		}
+		else if(elementType == "table") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = "class='shared-content-table' ";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<table " + elemClass + elemOnClick + ">";
+			
+			if(content.rowHeaders != null && content.rowHeaders != "") {
+				
+				elem = elem + "<tr>"; 
+				
+				for(var i = 0; i < Object.keys(content.rowHeaders).length; i++) {
+					
+					elem = elem + "<th>" + getFieldLanguage(content.rowHeaders[i]) + "</th>";
+				}
+				
+				elem = elem + "</tr>";
+			}
+			
+			for(var i = 0; i < Object.keys(content.rowData).length; i++) {
+				
+				elem = elem + "<tr>";
+				console.log(getFieldLanguage(content.rowData[i][0]));
+				
+				for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
+					
+					elem = elem + "<td>" + getFieldLanguage(content.rowData[i][j]) + "</td>";
+				}
+				
+				elem = elem + "<tr>";
+			}
+		}
 		else if(elementType == "youtubeVideo") {
 			
 			var id = "id='" + content.id + "'";
