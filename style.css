@@ -192,3 +192,55 @@ body
 	padding: 0px;
 	color: red;
 }
+
+/*---Size specific CSS code---------------------------------------------------------------------------------------------------------------------------------*/
+/*NOTE: This MUST be at the END of the file. This because it overwrites the default code. */
+/*In case the media tags wont work in a specific browser, the default style will still be active. */
+
+@media screen and (max-width: 1000px) and (orientation: portrait) 
+{
+	.innerBody
+	{
+		margin-left: 0px;
+		width: 100%;
+	}
+	
+	.footer
+	{
+		margin-left: 0px;
+		width: 100%;
+	}
+	
+	
+}
+
+@media screen and (max-width: 1000px) and (orientation: landscape) 
+{
+	.innerBody
+	{
+		margin-left: 5%;
+		width: 89%;
+	}
+	
+	.footer
+	{
+		margin-left: 5%;
+		width: 89%%;
+	}
+}
+
+@media screen and (max-width: 750px) and (orientation: landscape) 
+{
+	.innerBody
+	{
+		margin-left: 0px;;
+		width: 100%;
+	}
+	
+	.footer
+	{
+		margin-left: 0px;
+		width: 100%;
+	}
+}
+
