@@ -264,7 +264,12 @@ var common = (function() {
 				elemClass = "class='shared-content-pictureHalfLeft' ";
 			
 			elem = "<img" + elemClass + elemOnClick + " src='" + content.path + "'/>";
-		else if(elementType == "header1")
+		}
+		else if(elementType == "header1") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = "class='shared-content-h1' ";
+			
 			elem = "<h1" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
 		else if(elementType == "header2")
 			elem = "<h2" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
