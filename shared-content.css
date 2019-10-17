@@ -181,6 +181,21 @@
 	color: #c70000;
 }
 
+.shared-content-inlineLinkBlue
+{
+	color: #00C5CD;
+	text-decoration: none;
+	margin-left: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.shared-content-inlineLinkBlue:hover
+{
+	color: #00E5EE;
+}
 
 /*---Styling for the youtube videos-------------------------------------------------------------------------------------------------------------------*/
 /*This must be an ID instead of a class because the Youtube frame already has a class for styling*/
