@@ -530,59 +530,84 @@ var common = (function() {
 	
 	var setURL = function(page, lang, additional) {
 		
-		var url = new URL(window.location.href);
+		var url = window.location.href;
 		
-		if(getURLPage() == page && getURLLanguage() == lang && getURLAdditional() == additional) {
+		/*if(getURLPage() == page && getURLLanguage() == lang && getURLAdditional() == additional) {
 			
 			//Do nothing, the URL is already the same URL as the new URL.
 			//This can happen when the browser back and forward buttons are used because they already change the URL.
 		}
-		else {
+		else {*/
 		
-			url.searchParams.delete("lang");
-			url.searchParams.delete("page");
+			var baseUrl = url.split("?")[0];
 			
-			if(url.searchParams.get("additional"))
-				url.searchParams.delete("additional");
-			
-			url.searchParams.append("lang", lang);
-			url.searchParams.append("page", page);
+			url = baseUrl + "?lang=" + lang + "&page=" + page;
 			
 			if(additional != null)
-				url.searchParams.append("additional", additional);
+				url = url + "&additional=" + additional;
 			
 			history.pushState("Page", page, url);
-		}
+		//}
 	}
 	
 	var getURLLanguage = function() {
-			
-		var url = new URL(window.location.href);
 		
-		if(url.searchParams.get("language"))
-			return url.searchParams.get("language");
+		var language = null;
+		
+		var str = window.location.href;
+		var splitStr = str.split("?");
+		var paramArray = splitStr[1].split("&");
+		
+		for(var i = 0; i < paramArray.length; i++) {
+			
+			var param = paramArray[i].split("=");
+			if(param[0] == "lang")
+				language = param[1];
+		}
+		
+		if(language != null)
+			return language;
 		else
 			return defaultLanguage;
 	}
 	
 	var getURLPage = function() {
-			
-		var url = new URL(window.location.href);
 		
-		if(url.searchParams.get("page"))
-			return url.searchParams.get("page");
+		var page = null;
+		
+		var str = window.location.href;
+		var splitStr = str.split("?");
+		var paramArray = splitStr[1].split("&");
+		
+		for(var i = 0; i < paramArray.length; i++) {
+			
+			var param = paramArray[i].split("=");
+			if(param[0] == "page")
+				page = param[1];
+		}
+		
+		if(page != null)
+			return page;
 		else
 			return defaultPage;
 	}
 
 	var getURLAdditional = function() {
-			
-		var url = new URL(window.location.href);
 		
-		if(url.searchParams.get("additional"))
-			return url.searchParams.get("additional");
-		else
-			return null;
+		var additional = null;
+		
+		var str = window.location.href;
+		var splitStr = str.split("?");
+		var paramArray = splitStr[1].split("&");
+		
+		for(var i = 0; i < paramArray.length; i++) {
+			
+			var param = paramArray[i].split("=");
+			if(param[0] == "additional")
+				additional = param[1];
+		}
+		
+		return additional; //Will return null if additional is not found in the URL as specified.
 	}
 
 
