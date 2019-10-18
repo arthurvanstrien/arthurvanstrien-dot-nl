@@ -208,7 +208,7 @@ body
 	.footer
 	{
 		margin-left: 0px;
-		width: 100%;
+		width: 96%; /*Footer has 2% padding on all sides, 96% + 4% = 100%*/
 	}
 	
 	
@@ -225,7 +225,7 @@ body
 	.footer
 	{
 		margin-left: 5%;
-		width: 89%;
+		width: 85%; /*Footer has 2% padding on all sides, 89% + 4% = 89%*/
 	}
 }
 
@@ -233,14 +233,14 @@ body
 {
 	.innerBody
 	{
-		margin-left: 0px;;
+		margin-left: 0px;
 		width: 100%;
 	}
 	
 	.footer
 	{
 		margin-left: 0px;
-		width: 100%;
+		width: 96%; /*Footer has 2% padding on all sides, 96% + 4% = 100%*/
 	}
 }
 
