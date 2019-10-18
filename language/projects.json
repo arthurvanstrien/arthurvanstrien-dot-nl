@@ -10,13 +10,8 @@
 	"fields": [
 		{
 			"name": "lang_paragraph-1",
-			"nl": "Iets maken is veel leuker dan spullen doelloos slopen. Daarom ben ik graag aan het knutselen aan projecten. Hier is een overzicht te zien van de projecten die ik gemaakt heb en leuk zijn om te delen, maak ze gerust na! Sommige projecten zijn weekend-projectjes terwijl anderen serieuzere projecten zijn die ik met meerdere mensen gemaakt heb, vaak dan door ook een ontwikkelmethode en versiebeheer te gebruiken. Veel van de projecten wil ik graag delen en bij deze projecten is dan ook een link naar de bijbehorende Github pagina te vinden.",
-			"en": ""
-		},
-		{
-			"name": "lang_paragraph-2",
-			"nl": "Als je een project bouwt is het bijna altijd aan te raden iets van versiebeheer te gebruiken, dit probeer ik dan ook altijd te doen. Toch komt het voor dat je als programmeur op een dag even snel een demo in elkaar tikt voor grap. Veel plezier later is het project opeens een serieuze vorm aan gaan nemen zonder plan vooraf, dat gebeurt soms gewoon. Een voorbeeld is deze website wat begon met een klein voorbeeld en is uitgegroeid tot wat je nu ziet.",
-			"en": ""
-		}	
+			"nl": "Iets maken is veel leuker dan spullen doelloos slopen. Daarom ben ik graag aan het knutselen aan projecten. Hier is een overzicht te zien van de projecten die ik gemaakt heb en leuk zijn om te delen. Sommige projecten zijn weekend-projectjes terwijl anderen serieuzere projecten zijn die ik met meerdere mensen gemaakt heb, vaak dan door ook een ontwikkelmethode en versiebeheer te gebruiken. Veel van de projecten wil ik graag delen en bij deze projecten is dan ook een link naar de bijbehorende Github pagina te vinden. ",
+			"en": "Making something is much more fun than aimlessly demolishing things. That's why I enjoy tinkering with projects. Here is an overview of the projects I have made and are fun to share. Some projects are weekend projects while others are more serious projects that I have made with several people, often by using a development method and versioning. If available the project has a link to the corresponding Github page."
+		}
 	]
 }
