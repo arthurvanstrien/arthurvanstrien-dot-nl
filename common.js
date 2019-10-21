@@ -344,7 +344,7 @@ var common = (function() {
 			else
 				elemClass = " class='" + elemClass + "'";
 			
-			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
+			elem = "<table class='shared-content-listItemWrapper'><tr><td class='shared-content-listItemDash'>-</td><td" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</td></tr></table>";
 		}
 		else if(elementType == "table") {
 			
