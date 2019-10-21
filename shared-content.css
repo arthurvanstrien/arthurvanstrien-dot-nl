@@ -46,15 +46,39 @@
 	display: block;
 }
 
+/*---Styling for the listItem----------------------------------------------------------------------------------------------------------------------*/
+
 .shared-content-listItem
 {
-	margin-left: 70px;
-	margin-right: 40px;
-	margin-top: 20px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
 	margin-bottom: 0px;
 	padding: 0px;
-	display: block;
 }
+
+.shared-content-listItemWrapper
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 20px;
+	maring-bottom: 0px;
+	width: auto;
+}
+
+.shared-content-listItemDash
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	width: 30px;
+	vertical-align: text-top;
+	text-align: center;
+}
+
+/*---Styling for the table--------------------------------------------------------------------------------------------------------------------------*/
 
 .shared-content-table
 {
