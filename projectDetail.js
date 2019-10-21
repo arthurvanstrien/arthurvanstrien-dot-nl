@@ -84,10 +84,10 @@ var projectDetail = (function() {
 			$("#projectDetail-version").text(project.version);
 			$("#projectDetail-category").text(common.getFieldLanguage(project.category));
 			$("#projectDetail-programming-languages").text(project.programmingLanguages);
-			$("#projectDetail-used-tools").text(common.getFieldLanguage(project.usedTools));
+			$("#projectDetail-used-tools").html(common.getFieldLanguage(project.usedTools));
 			$("#projectDetail-used-materials").text(common.getFieldLanguage(project.usedMaterials));
 			$("#projectDetail-motive").text(common.getFieldLanguage(project.motive));
-			$("#projectDetail-version-control").text(common.getFieldLanguage(project.versionControl));
+			$("#projectDetail-version-control").html(common.getFieldLanguage(project.versionControl));
 			$("#projectDetail-process-framework").text(common.getFieldLanguage(project.processFramework));
 			$("#projectDetail-built-by").text(common.getFieldLanguage(project.builtBy));
 			
@@ -121,10 +121,10 @@ var projectDetail = (function() {
 			$("#projectDetail-version").text(project.version);
 			$("#projectDetail-category").text(common.getFieldLanguage(project.category));
 			$("#projectDetail-programming-languages").text(project.programmingLanguages);
-			$("#projectDetail-used-tools").text(common.getFieldLanguage(project.usedTools));
+			$("#projectDetail-used-tools").html(common.getFieldLanguage(project.usedTools));
 			$("#projectDetail-used-materials").text(common.getFieldLanguage(project.usedMaterials));
 			$("#projectDetail-motive").text(common.getFieldLanguage(project.motive));
-			$("#projectDetail-version-control").text(common.getFieldLanguage(project.versionControl));
+			$("#projectDetail-version-control").html(common.getFieldLanguage(project.versionControl));
 			$("#projectDetail-process-framework").text(common.getFieldLanguage(project.processFramework));
 			$("#projectDetail-built-by").text(common.getFieldLanguage(project.builtBy));
 			

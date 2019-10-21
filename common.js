@@ -246,7 +246,9 @@ var common = (function() {
 			for(var i = 0; i < Object.keys(fields).length; i++) {
 					
 				fieldName = "#" + fields[i].name;
-				$(fieldName).text(getFieldLanguage(fields[i]));
+
+				
+				$(fieldName).html($.parseHTML(getFieldLanguage(fields[i])));
 			}
 		}
 	}
@@ -441,7 +443,8 @@ var common = (function() {
 			for(var i = 0; i < Object.keys(fields).length; i++) {
 					
 				fieldName = "#" + fields[i].name;
-				$(fieldName).text(getFieldLanguage(fields[i]));
+				
+				$(fieldName).html(getFieldLanguage(fields[i]));
 			}
 		}
 	}
@@ -459,7 +462,7 @@ var common = (function() {
 			//Do Nothing images are not different in other languages...
 		}
 		else {
-			$(("#" + getElementId(id))).text(getFieldLanguage(elem));
+			$(("#" + getElementId(id))).html(getFieldLanguage(elem));
 		}	
 	}
 
