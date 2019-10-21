@@ -53,6 +53,114 @@
 	],
 	"projects": [
 		{
+			"projectId": "11k6mfu",
+			"title": 
+			{
+				"nl": "LED-Schoenen",
+				"en": "LED-Shoes"
+			},
+			"year": "2018-2019",
+			"version": "beta-0.1",
+			"category": 
+			{
+				"nl": "diy-project",
+				"en": "diy-project"
+			},
+			"programmingLanguages": "C++",
+			"usedTools": 
+			{
+				"nl": "Arduino IDE, Soldeerbout, Lijmpistool",
+				"en": "Arduino IDE, Soldering Iron, Glue Gun"
+			},
+			"usedMaterials":
+			{
+				"nl": "N/A",
+				"en": "N/A"
+			},
+			"motive": 
+			{
+				"nl": "Project gebouwd uit eigen beweging",
+				"en": "Project built out of self-motion"
+			},
+			"versionControl": 
+			{
+				"nl": "Geen, nog niet beschikbaar",
+				"en": "None, not available yet"
+			},
+			"processFramework": 
+			{
+				"nl": "Geen, dit is een hobby-project met één programmeur",
+				"en": "None, this is a hobby project with one programmer"
+			},
+			"builtBy": 
+			{
+				"nl": "Door mijzelf",
+				"en": "By myself"
+			},
+			"content": [
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Inleiding",
+					"en": "Introduction"
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "Mijn LED schoenen zijn een project waar ik nog aan werk. De schoenen geven licht en kunnen door middel van de controller een vaste serie van patronen weergeven. Nadat de cyclus van patronen voorbij is begint het weer van voor af aan. Ik heb dit project gemaakt omdat ik mijn kennis in het programmeren van hardware uit wilde breiden. Tevens is het resultaat visueel goed te zien waardoor het makkelijker is om uit te leggen met wat voor projecten ik bezig ben.",
+					"en": "My LED shoes are a project I'm still working on. The shoes can display all colours. The controller can make all different kind of patterns with those colours. After the cycle of patterns is over, it starts all over again. I created this project because I wanted to expand my knowledge of programming hardware. The result of my programming is also visible. Which makes it easier to explain what kind of projects I'm working on."
+				},
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Software",
+					"en": "Software"
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "De sofware is een reeks aan C++ functies in één bestand. Voor het aansturen van de LED heb ik gebruik gemaakt van de FastLED library. De meeste functies in het programma zijn functies die een bepaald patroon programmeren van de LED’s. Daarnaast is er een hoofdfunctie die de reeks patroon-functies aanroept die op dat moment weergeven moeten worden. Deze reeks blijft zichzelf steeds herhalen.",
+					"en": "The software consists of C++ functions in one file. I used the fastLED library to control the LED. Most functions in the program are functions that program a certain pattern with the LEDs. Those functions are called from the main function. This series of patterns keeps repeating itself."
+				},
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Hardware",
+					"en": "Hardware"
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "De basis van het projecten zijn een paar schoenen dat ik nog had liggen. Deze zijn nog vrij goed maar hebben enkele beschadigingen. Hierdoor waren ze niet netjes genoeg meer om dagelijks te dragen. Op deze schoenen heb ik met hete lijm LED strips met WS2812B LED er op gelijmd. Vanaf iedere schoen gaat er een ontkoppelbare kabel naar een kastje met de controller. Deze is aan zowel de zijde van de schoen als die van de controller te ontkoppelen. Dit zodat de kabel eventueel gemakkelijk door een broekspijp heen kan. De controller is op het moment nog een relatief groot doosje die in een ruime broekzak of vestzak past. In dit doosje zit enkele bedrading en een Wemos D1, een op de Chinese ESP8266 gebaseerde ontwikkelbordje. Dit ontwikkelbordje heeft onder andere 8 digitale pinnen en wifi mogelijkheden. De indeling van het doosje is niet erg efficient en met wat aandacht is dit dan ook in grote te reduceren. Tot slot heeft het controller doosje een USB kabel die alles van stroom voorziet vanaf bijvoorbeeld een powerbank. Wanneer alle LED wit branden kan het hele systeem maximaal 2A vragen wat het maximale verbruik op 10 watt brengt. Hierom hoeft de powerbank ook niet enorm te zijn aangezien een 10.000 mah powerbank het hele systeem in de praktijk tussen de 2,5 en 3 uur aan weet te houden. ",
+					"en": "The basis of the project is a pair of shoes that I had lying around. These are still pretty good but have some damage. Because of this, they weren't neat enough to wear daily. On these shoes, I  glued LED strips with WS2812B LED. From each shoe, a disconnectable cable goes to a box with the controller. The cable can be disconnected on both the side of the shoe and the side of the controller. This allows the cable to easily pass through a trouser leg if wanted. At the moment, the controller is still a relatively large box that fits in a spacious trouser or vest pocket. This box contains some wiring and a Wemos D1, a development board based on the Chinese ESP8266 microprocessor. This development board has 8 digital pins and wifi connectivity. The layout of the box is not efficient and with some attention, the size can be greatly reduced. Finally, the controller box has a USB cable that supplies everything with power from a power source like a power bank. When all LED's display white, the whole system can demand a maximum of 2A. This brings the maximum power consumption to 10 watts. Therefore the power bank doesn't have to be huge, as a 10,000 mah power bank can keep the whole system running for between 2.5 and 3 hours."
+				},
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Toekomst",
+					"en": "Future"
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "In de toekomst is het de bedoeling een Android app te maken waarmee ik commando’s aan de microcontroller kan geven. Dit kan bijvoorbeeld over wifi door eigen netwerk en een web-api te draaien op de microcontroller. Hierdoor zou ik de patronen door middel van de app aan kunnen passen, of bijvoorbeeld de felheid van het licht moeten kunnen aanpassen. Daarnaast wil ik op hardware gebied proberen het controller-doosje een stuk kleiner te maken nu ik een prototype heb.",
+					"en": "In the future, the intention is to create an Android app which can give commands to the microcontroller. This can be done over wifi by running a hotspot and a web-api on the microcontroller. This would allow adjusting the patterns using the app, or for example to adjust the brightness of the light. I also intend to reduce the controller box in size to fit it more easily in a pocket."
+				}
+			],
+			"pictures": [
+				"",
+				""
+			]
+		},
+		{
 			"projectId": "1fr2vl",
 			"title": 
 			{
