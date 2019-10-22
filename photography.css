@@ -7,52 +7,6 @@
 	padding: 0px;
 }
 
-.photography-container p
-{
-	margin-left: 40px;
-	margin-right: 40px;
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-
-.photography-container h2
-{
-	margin-left: 40px;
-	margin-top: 40px;
-	margin-bottom: 0px;
-	margin-right: 40px;
-	padding: 0px;
-}
-
-.photography-container h3
-{
-	margin-left: 40px;
-	margin-top: 20px;
-	margin-bottom: 0px;
-	margin-right: 40px;
-	padding: 0px;
-}
-
-.photography-panorama
-{
-	margin-left: 40px;
-	margin-right: 40px;
-	margin-top: 10px;
-	margin-bottom: 0px;
-	padding: 0px;
-	width: calc(100% - 80px);
-}
-
-.photography-positionCorrection
-{
-	margin-left: 40px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	padding: 0px;
-	display: inline-block;
-}
-
 #photography-galleryButton
 {
 	margin-left: 40px;

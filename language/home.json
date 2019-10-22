@@ -25,8 +25,68 @@
 		},	
 		{
 			"name": "lang_pageDescription",
-			"nl": "Welkom op deze website. Mijn naam is Arthur van Strien en op deze website is een kijk op mijn projecten te vinden.",
-			"en": "Welcome, this website displays my projects and a story about me."
+			"nl": "Welkom op mijn online portfolio. Ook deel ik hier met enthousiasme projecten en kennis.",
+			"en": "Welcome to my online portfolio. I also share projects and knowledge that I find interesting."
 		}
+	],
+	"content": [
+		{
+			"type": "header2",
+			"class": "",
+			"onClick": "",
+			"nl": "Contact:",
+			"en": "Contact information:"
+		},
+		{
+			"type": "table",
+			"class": "",
+			"onClick": "",
+			"rowHeaders": [
+
+			],
+			"rowData": [
+				[
+					{
+						"nl": "E-mail:",
+						"en": "Email:"
+					},
+					{
+						"nl": "<a href='mailto:arthur@arthurvanstrien.nl' class='shared-content-inlineLinkBlue'>arthur@arthurvanstrien.nl</a>",
+						"en": "<a href='mailto:arthur@arthurvanstrien.nl' class='shared-content-inlineLinkBlue'>arthur@arthurvanstrien.nl</a>"
+					}
+					
+				],
+				[
+					{
+						"nl": "Linkedin:",
+						"en": "Linkedin:"
+					},
+					{
+						"nl": "<a href='https://www.linkedin.com/in/arthur-van-strien-2b7a06158/' class='shared-content-inlineLinkBlue' target='_blank'>Linkedin</a>",
+						"en": "<a href='https://www.linkedin.com/in/arthur-van-strien-2b7a06158/' class='shared-content-inlineLinkBlue' target='_blank'>Linkedin</a>"
+					}
+				],
+								[
+					{
+						"nl": "Github:",
+						"en": "Github:"
+					},
+					{
+						"nl": "<a href='https://github.com/arthurvanstrien' class='shared-content-inlineLinkBlue' target='_blank'>Github</a>",
+						"en": "<a href='https://github.com/arthurvanstrien' class='shared-content-inlineLinkBlue' target='_blank'>Github</a>"
+					}
+				],
+								[
+					{
+						"nl": "Youtube:",
+						"en": "Youtube:"
+					},
+					{
+						"nl": "<a href='https://www.youtube.com/channel/UCOfR0UHPyuNp4WcoqbyF1Zw' class='shared-content-inlineLinkRed' target='_blank'>Youtube</a>",
+						"en": "<a href='https://www.youtube.com/channel/UCOfR0UHPyuNp4WcoqbyF1Zw' class='shared-content-inlineLinkRed' target='_blank'>Youtube</a>"
+					}
+				]
+			]
+		}	
 	]
 }

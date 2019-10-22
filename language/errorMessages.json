@@ -1,17 +1,19 @@
-[
-	{
-		"name": "json-load-failed",
-		"nl": "Er is iets mis gegaan bij het laden van de vertalingen. Herlaad de pagina als het probleem zich blijft voordoen.",
-		"en": "The translations could not be loaded. Unfortunately the page cannot be loaded. Please reload the page if the problem persists."
-	},
-	{
-		"name": "project-id-not-found",
-		"nl": "Het project wat u probeert te weergeven bestaat niet. Controleer in de URL of het juiste project id bevat. Als het project id klopt, dan is het mogelijk dat het project verwijderd is van de website.",
-		"en": "The project with the requested id does not exist. Please check if the URL contains the correct id. If the URL contains the correct id, the project might be removed."
-	},
-	{
-		"name": "something-unexpected-happened",
-		"nl": "Er ging onverwacht iets mis. Herlaad de pagina astublieft, excuses voor het ongemak.",
-		"en": "Something unexpected happened. Please reload the page. Our apologies."
-	}
-]
+{ 
+	"errors": [
+		{
+			"name": "json-load-failed",
+			"nl": "Er is iets mis gegaan bij het laden van de vertalingen. Herlaad de pagina als het probleem zich blijft voordoen.",
+			"en": "The translations could not be loaded. Unfortunately the page cannot be loaded. Please reload the page if the problem persists."
+		},
+		{
+			"name": "project-id-not-found",
+			"nl": "Het project wat u probeert te weergeven bestaat niet. Controleer in de URL of het juiste project id bevat. Als het project id klopt, dan is het mogelijk dat het project verwijderd is van de website.",
+			"en": "The project with the requested id does not exist. Please check if the URL contains the correct id. If the URL contains the correct id, the project might be removed."
+		},
+		{
+			"name": "something-unexpected-happened",
+			"nl": "Er ging onverwacht iets mis. Herlaad de pagina astublieft, excuses voor het ongemak.",
+			"en": "Something unexpected happened. Please reload the page. Our apologies."
+		}
+	]
+}

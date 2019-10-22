@@ -10,6 +10,14 @@
 	padding-right: 0px;
 }
 
+.four-o-four_container h2
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 0px;
+	margin-top: 40px;
+}
+
 .four-o-four_container p
 {
 	margin-left: 40px;
@@ -20,11 +28,11 @@
 
 .four-o-four_container img
 {
-	margin-left: 20%;
+	margin-left: 40%;
 	margin-right: 0px;
 	margin-top: 20px;
 	margin-bottom: 40px;
 	padding: 0px;
-	width: 60%;
+	width: 20%;
 	display: block;
 }
