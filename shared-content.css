@@ -7,6 +7,8 @@
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding: 0px;
+	width: calc(100%-80px);
+	clear: both;
 }
 
 .shared-content-h2
@@ -16,6 +18,8 @@
 	margin-top: 25px;
 	margin-bottom: 10px;
 	padding: 0px;
+	width: calc(100%-80px);
+	clear: both;
 }
 
 .shared-content-h3
