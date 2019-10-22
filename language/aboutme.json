@@ -63,8 +63,8 @@
 						"en": "Email:"
 					},
 					{
-						"nl": "arthur@arthurvanstrien.nl",
-						"en": "arthur@arthurvanstrien.nl"
+						"nl": "<a href='mailto:arthur@arthurvanstrien.nl' class='shared-content-inlineLinkBlue'>arthur@arthurvanstrien.nl</a>",
+						"en": "<a href='mailto:arthur@arthurvanstrien.nl' class='shared-content-inlineLinkBlue'>arthur@arthurvanstrien.nl</a>"
 					}
 					
 				],
@@ -74,8 +74,8 @@
 						"en": "Linkedin:"
 					},
 					{
-						"nl": "https://www.linkedin.com/in/arthur-van-strien-2b7a06158/",
-						"en": "https://www.linkedin.com/in/arthur-van-strien-2b7a06158/"
+						"nl": "<a href='https://www.linkedin.com/in/arthur-van-strien-2b7a06158/' class='shared-content-inlineLinkBlue' target='_blank'>Linkedin</a>",
+						"en": "<a href='https://www.linkedin.com/in/arthur-van-strien-2b7a06158/' class='shared-content-inlineLinkBlue' target='_blank'>Linkedin</a>"
 					}
 				],
 								[
@@ -84,8 +84,8 @@
 						"en": "Github:"
 					},
 					{
-						"nl": "https://github.com/arthurvanstrien",
-						"en": "https://github.com/arthurvanstrien"
+						"nl": "<a href='https://github.com/arthurvanstrien' class='shared-content-inlineLinkBlue' target='_blank'>Github</a>",
+						"en": "<a href='https://github.com/arthurvanstrien' class='shared-content-inlineLinkBlue' target='_blank'>Github</a>"
 					}
 				],
 								[
@@ -94,8 +94,8 @@
 						"en": "Youtube:"
 					},
 					{
-						"nl": "https://www.youtube.com/channel/UCOfR0UHPyuNp4WcoqbyF1Zw ",
-						"en": "https://www.youtube.com/channel/UCOfR0UHPyuNp4WcoqbyF1Zw "
+						"nl": "<a href='https://www.youtube.com/channel/UCOfR0UHPyuNp4WcoqbyF1Zw' class='shared-content-inlineLinkRed' target='_blank'>Youtube</a>",
+						"en": "<a href='https://www.youtube.com/channel/UCOfR0UHPyuNp4WcoqbyF1Zw' class='shared-content-inlineLinkRed' target='_blank'>Youtube</a>"
 					}
 				]
 			]
