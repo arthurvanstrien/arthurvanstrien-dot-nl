@@ -220,6 +220,8 @@
 					"nl": "Dit project is de website waar je nu dit artikel op aan het lezen bent. Ik ben begonnen deze website te maken op een dag in de zomervakantie in 2019. De website is volledig front-end en de logica is geheel gemaakt in Javascript en JQuery. De opbouw en styling van de website is gemaakt met HTML en CSS. Het doel van de website is om te dienen als mijn online portofolio, het delen van hobbymatige interesses en om kennis te delen over technische interesses. Een van de weergegeven hobby’s is fotografie die op de fotografie en galerij pagina te zien is. Een andere hobby, computers, is verspreid over de technische pagina’s te vinden. Andere hobby’s van mij, zoals bijvoorbeeld fietsen, zijn niet te vinden op deze website omdat ik hier gewoon niet zo veel over kan vertellen. ",
 					"en": "This project is the website on which you are reading this article. I started making this website during the summer holidays in 2019. The website is fully front-end and the logic is fully constructed Javascript and JQuery. The construction and styling of the website are made with HTML and CSS. The purpose of the website is to serve as my online portfolio, to share hobby interests and to share knowledge about technical interests. One of the hobbies shown is photography which can be seen on the photography and gallery page. Another hobby, computers, is can be found on the technical pages. Other hobbies of mine, such as cycling, are not interesting to talk about so you won't find them here."
 				},
+				
+				
 				{
 					"type": "header3",
 					"class": "shared-content-h3",
@@ -228,18 +230,32 @@
 					"en": "Website structure"
 				},
 				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRightWrap",
+					"onClick": "",
+					"path": "pic_projects/arthurvanstrienpuntnl-load.png"
+				},
+				{
 					"type": "paragraph",
 					"class": "shared-content-paragraph",
 					"onClick": "",
 					"nl": "Toen ik aan de website begon heb ik besloten dat het wel een uitdaging is de website zo te maken dat er tijdens gebruik geen pagina geladen hoeft te worden. Geen uniek systeem maar nog steeds interessant. De opbouw begint met een HTML bestand die de basis opbouw van de website bevat. Namelijk de titel, het menu en de footer. Vervolgens wordt er door middel van de .load() functie van JQuery een HTML bestand ingeladen in het div element met classe content. Dit bestand bevat geen HTML of Body tags maar puur de HTML die in het middelste witte vlak weergeven wordt. Als de pagina veranderd wordt, wordt deze HTML vervangen door weer nieuwe HTML uit een ander bestand. De titel, het menu en de footer veranderen dus niet en de pagina hoeft niet herladen te worden. Om dit te laten werken heb ik zelf een stuk logica gemaakt wat zorgt dat de juiste HTML ingeladen wordt. Verder is er ook code die de juiste pagina in de URL parameters weergeeft. Hierdoor kan iemand een link naar de website ontvangt direct de juiste pagina openen.",
 					"en": "When I started working on the website I decided that it would be a challenge to make it a single pager. Not a unique system but still interesting. The structure starts with an HTML file that contains the basic structure of the website. Namely the title, the menu and the footer. Next, using the .load() function of JQuery, an HTML file is loaded into the div element with the class content. This file does not contain HTML or Body tags but only the HTML that is displayed in the middle white area. When the page is changed, this HTML will be replaced by new HTML from another file. The title, the menu and the footer don't change and the page doesn't need to be reloaded. To make this work I made a piece of logic which makes sure that the correct HTML is loaded. Further, I had to make the logic that displays the current page in the URL. Otherwise, users would not be able to load the right parts of the website when they received a link."
 				},
+				
+				
 				{
 					"type": "header3",
 					"class": "shared-content-h3",
 					"onClick": "",
 					"nl": "Data opslag",
 					"en": "Data storage"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureThirdRightWrap",
+					"onClick": "",
+					"path": "pic_projects/arthurvanstrienpuntnl-json.png"
 				},
 				{
 					"type": "paragraph",
@@ -262,6 +278,8 @@
 					"nl": "De JSON bestanden slaan alleen teksten op, de afbeeldingen op deze website worden simpel opgeslagen op deze website in mappen. Voor iedere pagina is er een aparte map om afbeeldingen in op te slaan zodat het overzichtelijk blijft. Er is ook een algemene map voor afbeeldingen die op iedere pagina gebruikt worden, hier zijn onder andere de vlaggen te vinden om de talen te wisselen.",
 					"en": "The JSON files only store text content. The images and other files on the website are stored in folders. For each page, there is a separate folder to store images to keep them sorted. There is also a general folder for images that are used on every page, for example, here you can find the flags used to change the languages."
 				},
+				
+				
 				{
 					"type": "header3",
 					"class": "shared-content-h3",
@@ -283,6 +301,8 @@
 					"nl": "Bij het bouwen heb ik een aantal tools gebruikt. Het schrijven van de code heb ik gedaan in Notepad++, deze editor met weinig toeters en bellen gaat terug naar de basis. Er zit geen Git client ingebouwd en het hinten van variabelen namen en functies is zeer beperkt. Toch waren de functies van Notepad++ ruim voldoende en was terug naar de basis gaan eigenlijk ook wel weer even lekker. Als Git client heb ik Git Kraken gebruikt. Ik gebruikte Git Kraken voor de eerste keer toen ik aan deze website begon en dat is ook de reden waarom ik Git Kraken gekozen heb. Hiervoor gebruikte ik vooral SourceTree en deze had zo nu en dan wat bugs. Hierom hadden meerdere medeprogrammeurs mij Git Kraken aangeraden. Ik ben blij dat ik nu de stap genomen heb om deze toch eens te proberen. Git Kraken is heel uitgebreid maar de standaard dingen zoals het maken van branches, comitten en mergen werkt hetzelfde. Wat opviel was het limiet op de commit berichten. Dit was even wennen maar uiteindelijk wel goed want het stimuleert om de berichten kort te houden. Tijdens het ontwikkelen heb ik de website gehost op mijn eigen PC met behulp van de ingebouwde Apache webserver die meegeleverd komt met Xampp. Tot slot heb ik nog Word gebruikt voor het tikken van teksten, Grammarly voor het controleren van de Engelse teksten en Lightroom voor het corrigeren van foto’s en het integreren van een watermerk.",
 					"en": "I used several tools to build the project. Coding was done in Notepad++, this editor with few bells and whistles goes back to basics. There is no Git client built-in and the auto-complete of variable names and functions is very limited. However, the functions of Notepad++ were more than sufficient and I enjoyed going back to the basics. As  Git client I used Git Kraken. This was the first time I used Git Kraken and I choose it because I wanted to know what it was all about. Before this I mainly used SourceTree but it had some bugs from time to time. Therefore, several fellow programmers had recommended Git Kraken to me. I'm glad I took the step to try this one. Git Kraken has a lot of functions but the common things like making branches, committing and merges work the same way. One difference that caught my eye was the shorter commit messages. This took some getting used to, but in the end, it was a good thing because it encourages to keep the messages short. During development, I hosted the website on my PC using the built-in Apache web server that comes with Xampp. Finally, I used Word for writing content, Grammarly for checking the English translations and Lightroom for correcting images and integrating a watermark."
 				},
+				
+				
 				{
 					"type": "header3",
 					"class": "shared-content-h3",
