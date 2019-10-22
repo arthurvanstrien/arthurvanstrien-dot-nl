@@ -23,7 +23,7 @@ body
 	margin-left: 10%;
 	margin-right: 0px;
 	width: 79%;
-	min-height: 100vh;
+	min-height: calc(100vh - 59px);
 	background-color: white;
 }
 
@@ -51,6 +51,15 @@ body
 	margin: 0px;
 }
 
+.contentOverflowStop
+{
+	margin: 0px;
+	padding: 0px;
+	height: 0px;
+	Width: 100%;
+	display: inline-block;
+}
+
 .footer
 {
 	background-color: #00E5EE;
@@ -62,10 +71,10 @@ body
 	margin-bottom: 0px;
 	margin-left: 10%;
 	margin-right: 0px;
-	bottom: 0;
 	width: 75%;
 	position: inherit;
 	text-align: center;
+	display: inline-block;
 }
 
 .menu
@@ -106,9 +115,14 @@ body
 	height: 20px;
 }
 
-.menuItem:hover
+@media (hover: hover) and (pointer: fine) 
 {
-	background-color: #00E5EE;
+	/*Only hover when a device is used that has fine mouse control*/
+	/*Stops buttons from visually staying pressed when a touch screen is used*/
+    .menuItem:hover
+	{
+		background-color: #00E5EE;
+	}
 }
 
 .menuFlags
@@ -184,4 +198,53 @@ body
 	color: red;
 }
 
+/*---Size specific CSS code---------------------------------------------------------------------------------------------------------------------------------*/
+/*NOTE: This MUST be at the END of the file. This because it overwrites the default code. */
+/*In case the media tags wont work in a specific browser, the default style will still be active. */
 
+@media screen and (max-width: 1000px) and (orientation: portrait) 
+{
+	.innerBody
+	{
+		margin-left: 0px;
+		width: 100%;
+	}
+	
+	.footer
+	{
+		margin-left: 0px;
+		width: 96%; /*Footer has 2% padding on all sides, 96% + 4% = 100%*/
+	}
+	
+	
+}
+
+@media screen and (max-width: 1000px) and (orientation: landscape) 
+{
+	.innerBody
+	{
+		margin-left: 5%;
+		width: 89%;
+	}
+	
+	.footer
+	{
+		margin-left: 5%;
+		width: 85%; /*Footer has 2% padding on all sides, 89% + 4% = 89%*/
+	}
+}
+
+@media screen and (max-width: 750px) and (orientation: landscape) 
+{
+	.innerBody
+	{
+		margin-left: 0px;
+		width: 100%;
+	}
+	
+	.footer
+	{
+		margin-left: 0px;
+		width: 96%; /*Footer has 2% padding on all sides, 96% + 4% = 100%*/
+	}
+}

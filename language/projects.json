@@ -1,0 +1,17 @@
+{
+	"tabTitle": {
+		"nl": "Projecten",
+		"en": "Projects"
+	},
+	"title": {
+		"nl": "Projecten",
+		"en": "Projects"
+	},
+	"fields": [
+		{
+			"name": "lang_paragraph-1",
+			"nl": "Iets maken is veel leuker dan spullen doelloos slopen. Daarom ben ik graag aan het knutselen aan projecten. Hier is een overzicht te zien van de projecten die ik gemaakt heb en leuk zijn om te delen. Sommige projecten zijn weekend-projectjes terwijl anderen serieuzere projecten zijn die ik met meerdere mensen gemaakt heb, vaak dan door ook een ontwikkelmethode en versiebeheer te gebruiken. Veel van de projecten wil ik graag delen en bij deze projecten is dan ook een link naar de bijbehorende Github pagina te vinden.",
+			"en": "Making something is much more fun than aimlessly demolishing things. That's why I enjoy tinkering with projects. Here is an overview of the projects I have made and are fun to share. Some projects are weekend projects while others are more serious projects that I have made with several people, often by using a development method and versioning. If available the project has a link to the corresponding Github page."
+		}
+	]
+}

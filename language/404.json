@@ -1,0 +1,22 @@
+{
+	"tabTitle": {
+		"nl": "404 - Pagina niet gevonden",
+		"en": "404 - Page not found"
+	},
+	"title": {
+		"nl": "404 - Pagina niet gevonden",
+		"en": "404 - Page not found"
+	},
+	"fields": [
+		{
+			"name": "lang_header-1",
+			"nl": "Uh-oh, een digitale tornado heeft de pagina opgeslokt.",
+			"en": "Oh no! A digital tornado sucked the page up."
+		},
+		{
+			"name": "lang_paragraph-1",
+			"nl": "De door u opgevraagde pagina is helaas niet gevonden. De pagina heeft nooit bestaan of bestaat helaas niet meer. Druk op de knop home hieronder om naar de homepagina terug te gaan.",
+			"en": "The requested page could not be found. The page never existed or does not exist anymore. Press home below here to go to the homepage."
+		}
+	]
+}

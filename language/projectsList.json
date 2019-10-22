@@ -1,0 +1,414 @@
+{
+	"fields": [
+		{
+			"name": "lang_projectsMenu-overview",
+			"nl": "Overzicht",
+			"en": "Summary"
+		},
+		{
+			"name": "lang_projectsMenu-year",
+			"nl": "Jaar:",
+			"en": "Year:"
+		},
+		{
+			"name": "lang_projectsMenu-version",
+			"nl": "Versie:",
+			"en": "Version:"
+		},
+		{
+			"name": "lang_projectsMenu-category",
+			"nl": "Categorie:",
+			"en": "Category:"
+		},
+		{
+			"name": "lang_projectsMenu-programming-languages",
+			"nl": "Programmeertalen:",
+			"en": "Programming languages:"
+		},
+		{
+			"name": "lang_projectsMenu-used-tools",
+			"nl": "Gebruikte hulpmiddelen:",
+			"en": "Tools used:"
+		},
+		{
+			"name": "lang_projectsMenu-motive",
+			"nl": "Beweegreden:",
+			"en": "Why the project was made:"
+		},
+		{
+			"name": "lang_projectMenu-version-control",
+			"nl": "Versiebeheer:",
+			"en": "Version control:"
+		},
+		{
+			"name": "lang_projectsMenu-process-framework",
+			"nl": "Ontwikkelmethode:",
+			"en": "Process framework:"
+		},
+		{
+			"name": "lang_projectsMenu-built-by",
+			"nl": "Dit project is gemaakt door:",
+			"en": "This project is build by:"
+		}
+	],
+	"projects": [
+		{
+			"projectId": "11k6mfu",
+			"title": 
+			{
+				"nl": "LED-Schoenen",
+				"en": "LED-Shoes"
+			},
+			"year": "2018-2019",
+			"version": "beta-0.1",
+			"category": 
+			{
+				"nl": "diy-project",
+				"en": "diy-project"
+			},
+			"programmingLanguages": "C++",
+			"usedTools": 
+			{
+				"nl": "Arduino IDE, Soldeerbout, Lijmpistool",
+				"en": "Arduino IDE, Soldering Iron, Glue Gun"
+			},
+			"usedMaterials":
+			{
+				"nl": "N/A",
+				"en": "N/A"
+			},
+			"motive": 
+			{
+				"nl": "Project gebouwd uit eigen beweging",
+				"en": "Project built out of self-motion"
+			},
+			"versionControl": 
+			{
+				"nl": "Geen, nog niet beschikbaar",
+				"en": "None, not available yet"
+			},
+			"processFramework": 
+			{
+				"nl": "Geen, dit is een hobby-project met één programmeur",
+				"en": "None, this is a hobby project with one programmer"
+			},
+			"builtBy": 
+			{
+				"nl": "Door mijzelf",
+				"en": "By myself"
+			},
+			"content": [
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Inleiding",
+					"en": "Introduction"
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "Mijn LED schoenen zijn een project waar ik nog aan werk. De schoenen geven licht en kunnen door middel van de controller een vaste serie van patronen weergeven. Nadat de cyclus van patronen voorbij is begint het weer van voor af aan. Ik heb dit project gemaakt omdat ik mijn kennis in het programmeren van hardware uit wilde breiden. Tevens is het resultaat visueel goed te zien waardoor het makkelijker is om uit te leggen met wat voor projecten ik bezig ben.",
+					"en": "My LED shoes are a project I'm still working on. The shoes can display all colours. The controller can make all different kind of patterns with those colours. After the cycle of patterns is over, it starts all over again. I created this project because I wanted to expand my knowledge of programming hardware. The result of my programming is also visible. Which makes it easier to explain what kind of projects I'm working on."
+				},
+				{
+					"type": "youtubeVideo",
+					"id": "shared-content-youtubeVideoHalf",
+					"videoId": "nrIAwvMT4K0"
+				},
+				
+
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Software",
+					"en": "Software"
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "De sofware is een reeks aan C++ functies in één bestand. Voor het aansturen van de LED heb ik gebruik gemaakt van de FastLED library. De meeste functies in het programma zijn functies die een bepaald patroon programmeren van de LED’s. Daarnaast is er een hoofdfunctie die de reeks patroon-functies aanroept die op dat moment weergeven moeten worden. Deze reeks blijft zichzelf steeds herhalen.",
+					"en": "The software consists of C++ functions in one file. I used the fastLED library to control the LED. Most functions in the program are functions that program a certain pattern with the LEDs. Those functions are called from the main function. This series of patterns keeps repeating itself."
+				},
+				
+				
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Hardware",
+					"en": "Hardware"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureQuarterRightWrap",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890557.jpg"
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "De basis van het projecten zijn een paar schoenen dat ik nog had liggen. Deze zijn nog vrij goed maar hebben enkele beschadigingen. Hierdoor waren ze niet netjes genoeg meer om dagelijks te dragen. Op deze schoenen heb ik met hete lijm LED strips met WS2812B LED er op gelijmd. Vanaf iedere schoen gaat er een ontkoppelbare kabel naar een kastje met de controller. Deze is aan zowel de zijde van de schoen als die van de controller te ontkoppelen. Dit zodat de kabel eventueel gemakkelijk door een broekspijp heen kan. De controller is op het moment nog een relatief groot doosje die in een ruime broekzak of vestzak past. In dit doosje zit enkele bedrading en een Wemos D1, een op de Chinese ESP8266 gebaseerde ontwikkelbordje. Dit ontwikkelbordje heeft onder andere 8 digitale pinnen en wifi mogelijkheden. De indeling van het doosje is niet erg efficient en met wat aandacht is dit dan ook in grote te reduceren. Tot slot heeft het controller doosje een USB kabel die alles van stroom voorziet vanaf bijvoorbeeld een powerbank. Wanneer alle LED wit branden kan het hele systeem maximaal 2A vragen wat het maximale verbruik op 10 watt brengt. Hierom hoeft de powerbank ook niet enorm te zijn aangezien een 10.000 mah powerbank het hele systeem in de praktijk tussen de 2,5 en 3 uur aan weet te houden. ",
+					"en": "The basis of the project is a pair of shoes that I had lying around. These are still pretty good but have some damage. Because of this, they weren't neat enough to wear daily. On these shoes, I  glued LED strips with WS2812B LED. From each shoe, a disconnectable cable goes to a box with the controller. The cable can be disconnected on both the side of the shoe and the side of the controller. This allows the cable to easily pass through a trouser leg if wanted. At the moment, the controller is still a relatively large box that fits in a spacious trouser or vest pocket. This box contains some wiring and a Wemos D1, a development board based on the Chinese ESP8266 microprocessor. This development board has 8 digital pins and wifi connectivity. The layout of the box is not efficient and with some attention, the size can be greatly reduced. Finally, the controller box has a USB cable that supplies everything with power from a power source like a power bank. When all LED's display white, the whole system can demand a maximum of 2A. This brings the maximum power consumption to 10 watts. Therefore the power bank doesn't have to be huge, as a 10,000 mah power bank can keep the whole system running for between 2.5 and 3 hours."
+				},
+				
+				
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Toekomst",
+					"en": "Future"
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "In de toekomst is het de bedoeling een Android app te maken waarmee ik commando’s aan de microcontroller kan geven. Dit kan bijvoorbeeld over wifi door eigen netwerk en een web-api te draaien op de microcontroller. Hierdoor zou ik de patronen door middel van de app aan kunnen passen, of bijvoorbeeld de felheid van het licht moeten kunnen aanpassen. Daarnaast wil ik op hardware gebied proberen het controller-doosje een stuk kleiner te maken nu ik een prototype heb.",
+					"en": "In the future, the intention is to create an Android app which can give commands to the microcontroller. This can be done over wifi by running a hotspot and a web-api on the microcontroller. This would allow adjusting the patterns using the app, or for example to adjust the brightness of the light. I also intend to reduce the controller box in size to fit it more easily in a pocket."
+				},
+				
+				
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Beeldengalerij",
+					"en": "Gallery"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890524.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890525.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890526.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890527.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890528.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890529.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890530.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890531.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890532.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890535.jpg"
+				}
+			],
+			"pictures": [
+				"LEDShoes_P1890557.jpg",
+				"LEDShoes_P1890565.jpg",
+				"LEDShoes_P1890563.jpg",
+				"LEDShoes_P1890564.jpg"
+			]
+		},
+		{
+			"projectId": "1fr2vl",
+			"title": 
+			{
+				"nl": "arthurvanstrien.nl",
+				"en": "arthurvanstrien.nl"
+			},
+			"year": "2019",
+			"version": "1.0",
+			"category": 
+			{
+				"nl": "Website",
+				"en": "Website"
+			},
+			"programmingLanguages": "Javascript, JQuery, HTML, CSS",
+			"usedTools": 
+			{
+				"nl": "Notepad++, Adobe Lightroom, Gitkraken, Word, Grammarly",
+				"en": "Notepad++, Adobe Lightroom, Gitkraken, Word, Grammarly"
+			},
+			"usedMaterials":
+			{
+				"nl": "N/A",
+				"en": "N/A"
+			},
+			"motive": 
+			{
+				"nl": "Project gebouwd uit eigen beweging",
+				"en": "Project built out of self-motion"
+			},
+			"versionControl": 
+			{
+				"nl": "Git, te vinden op: <a href='https://github.com/arthurvanstrien/arthurvanstrien-dot-nl' class='shared-content-inlineLinkBlue' target='_blank'>Github</a>",
+				"en": "Git, can be found on: <a href='https://github.com/arthurvanstrien/arthurvanstrien-dot-nl' class='shared-content-inlineLinkBlue' target='_blank'>Github</a>"
+			},
+			"processFramework": 
+			{
+				"nl": "Geen, dit is een hobby-project met één programmeur",
+				"en": "None, this is a hobby project with one programmer"
+			},
+			"builtBy": 
+			{
+				"nl": "Door mijzelf met ontwerp-feedback en illustraties van Sanne Hartmans",
+				"en": "By myself, with design feedback and illustrations made by Sanne Hartmans"
+			},
+			"content": [
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Inleiding",
+					"en": "Introduction"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Dit project is de website waar je nu dit artikel op aan het lezen bent. Ik ben begonnen deze website te maken op een dag in de zomervakantie in 2019. De website is volledig front-end en de logica is geheel gemaakt in Javascript en JQuery. De opbouw en styling van de website is gemaakt met HTML en CSS. Het doel van de website is om te dienen als mijn online portofolio, het delen van hobbymatige interesses en om kennis te delen over technische interesses. Een van de weergegeven hobby’s is fotografie die op de fotografie en galerij pagina te zien is. Een andere hobby, computers, is verspreid over de technische pagina’s te vinden. Andere hobby’s van mij, zoals bijvoorbeeld fietsen, zijn niet te vinden op deze website omdat ik hier gewoon niet zo veel over kan vertellen. ",
+					"en": "This project is the website on which you are reading this article. I started making this website during the summer holidays in 2019. The website is fully front-end and the logic is fully constructed Javascript and JQuery. The construction and styling of the website are made with HTML and CSS. The purpose of the website is to serve as my online portfolio, to share hobby interests and to share knowledge about technical interests. One of the hobbies shown is photography which can be seen on the photography and gallery page. Another hobby, computers, is can be found on the technical pages. Other hobbies of mine, such as cycling, are not interesting to talk about so you won't find them here."
+				},
+				
+				
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Website structuur",
+					"en": "Website structure"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRightWrap",
+					"onClick": "",
+					"path": "pic_projects/arthurvanstrienpuntnl_load.png"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Toen ik aan de website begon heb ik besloten dat het wel een uitdaging is de website zo te maken dat er tijdens gebruik geen pagina geladen hoeft te worden. Geen uniek systeem maar nog steeds interessant. De opbouw begint met een HTML bestand die de basis opbouw van de website bevat. Namelijk de titel, het menu en de footer. Vervolgens wordt er door middel van de .load() functie van JQuery een HTML bestand ingeladen in het div element met classe content. Dit bestand bevat geen HTML of Body tags maar puur de HTML die in het middelste witte vlak weergeven wordt. Als de pagina veranderd wordt, wordt deze HTML vervangen door weer nieuwe HTML uit een ander bestand. De titel, het menu en de footer veranderen dus niet en de pagina hoeft niet herladen te worden. Om dit te laten werken heb ik zelf een stuk logica gemaakt wat zorgt dat de juiste HTML ingeladen wordt. Verder is er ook code die de juiste pagina in de URL parameters weergeeft. Hierdoor kan iemand een link naar de website ontvangt direct de juiste pagina openen.",
+					"en": "When I started working on the website I decided that it would be a challenge to make it a single pager. Not a unique system but still interesting. The structure starts with an HTML file that contains the basic structure of the website. Namely the title, the menu and the footer. Next, using the .load() function of JQuery, an HTML file is loaded into the div element with the class content. This file does not contain HTML or Body tags but only the HTML that is displayed in the middle white area. When the page is changed, this HTML will be replaced by new HTML from another file. The title, the menu and the footer don't change and the page doesn't need to be reloaded. To make this work I made a piece of logic which makes sure that the correct HTML is loaded. Further, I had to make the logic that displays the current page in the URL. Otherwise, users would not be able to load the right parts of the website when they received a link."
+				},
+				
+				
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Data opslag",
+					"en": "Data storage"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureThirdRightWrap",
+					"onClick": "",
+					"path": "pic_projects/arthurvanstrienpuntnl_json.png"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Deze website heeft geen database. Dit omdat ik de tijd wilde besparen om een web-API te bouwen. Ook hoef ik mij dan vervolgens geen zorgen te maken over misbruik van de API resources. Het is mogelijk dat ik in de toekomst alsnog een database en API aan de website koppel, dit zou met het ontwerp van de code niet zo moeilijk moeten zijn. Ik wilde geen reactie systeem op deze website, dit heeft namelijk constant beheer nodig.  Hierom kan de inhoud van de website opgeslagen worden in vaste bestanden. Dit kan in HTML bestanden zijn maar dit is gruwelijk veel werk en dat is ook helemaal niet uitdagend. Daarom heb ik er voor gekozen de inhoud op te slaan in JSON bestanden. Voor iedere pagina is er een apart JSON bestand, enkele pagina's delen een ander bestand samen waardoor er voor die pagina twee bestanden geladen worden (bij de projecten en project-details bijvoorbeeld).",
+					"en": "The website doesn't have a database. This is because I wanted to save the time it would take to build a web API. Also, I don't have to worry about abuse of the API resources. It is possible that in the future I will connect a database and API to the website, this shouldn't be so difficult with the current design of the code. I didn't want a commenting system on this website, because it needs constant management.  With only static content on the website, the data is stored in files. This could have been in HTML files but this is an awful lot of work and is not challenging at all. That's why I chose to save the content in JSON files. For each page, there is a separate JSON file. Some pages share an additional file. For the projects and project details pages share a file with project data."
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Een JSON bestand voor een pagina bevat een aantal vaste elementen: tabTitle, pageTitle, fields en content. Zodra het JSON bestand is opgehaald van de server wordt het aan een functie gegeven die het gaat weergeven. Die functie zal de waarde van tabTitle plaatsen in de browser tab en de waarde van pageTitle in de vaste pagina titel. De fields array is een lijst van objecten. Ieder field object bevat de data van één al aanwezig HTML element op de pagina. De functie zorgt er voor dat de data in het juiste element terecht komt door middel van het gekoppelde ID. Tot slot is er nog de content, dit is ook een array van objecten. Echter HTML waar de inhoud van het content object in moet bestaat nog niet op de pagina. De functie maakt van de content objecten een HTML element met de inhoud en voegt deze toe op d pagina. Ieder object bevat een type en de waarde daarin bepaald wat voor HTML element de inhoud geplaatst wordt. Bijvoorbeeld een element met 'type': 'paragraph' wordt in de HTML een P element. De functie weet de locatie waar de elementen toegevoegd moeten worden te vinden omdat er al één leeg span element staat met een specifiek ID. Hier worden de elementen onder toegevoegd. Tot slot is er nog een belangrijk detail, het meer talen systeem. De objecten in de in het JSON bestand bevatten niet één maar voor iedere taal de waarde. Bijvoorbeeld: nl: [tekst], ieder object wat geladen wordt uit de JSON bestanden wordt aan een functie gegeven die de waarde uit dat object haalt die hoort bij de taal die op dat moment actief is op de website.",
+					"en": "Each JSON page file contains some fixed elements: tabTitle, pageTitle, fields and content. Once the JSON file has been retrieved from the server, it is passed to a function that displays it on the page. That function will place the value of tabTitle in the browser tab and the value of pageTitle in the default title used above each page. The fields array is a list of objects. Each field object contains the data of one already present HTML element on the page. The function ensures that the data ends up in the correct element using the linked ID. Finally, there is the content field, which is also an array of objects. However, the HTML elements in which the content from the content object should be placed don't exist on the page, yet. The function places the object value into an HTML element and adds it to the page. Each object contains a type field and the value in it determines in what kind of HTML element the content will be placed. For example, an element with 'type': 'paragraph' becomes a P element in the HTML. The function is able to find the location on the page because there is already one empty span element with a specific ID on the page. The HTML elements are added below the element with that ID. Finally, there is another interesting detail to point out, the multi-language system. The objects in the JSON file don't contain just one but a value for each language. For example: nl: [text], where nl contains the value in the dutch language. Each object loaded from the JSON files is passed to a function that extracts the value that matches to the language that is currently active on the website."
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "De JSON bestanden slaan alleen teksten op, de afbeeldingen op deze website worden simpel opgeslagen op deze website in mappen. Voor iedere pagina is er een aparte map om afbeeldingen in op te slaan zodat het overzichtelijk blijft. Er is ook een algemene map voor afbeeldingen die op iedere pagina gebruikt worden, hier zijn onder andere de vlaggen te vinden om de talen te wisselen.",
+					"en": "The JSON files only store text content. The images and other files on the website are stored in folders. For each page, there is a separate folder to store images to keep them sorted. There is also a general folder for images that are used on every page, for example, here you can find the flags used to change the languages."
+				},
+				
+				
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Ontwikkeling",
+					"en": "Development"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Toen ik begon met bouwen was het plan om eerst een kleine demonstratie te programmeren. Daaruit zou ik dan de goede ideeën voor de structuur halen en daarmee een nieuwe basis bouwen. Dat plan is niet zo gelopen, na een paar dagen enthousiast programmeren was er al een goede basis en hier heb ik de weken daarna iedere keer weer verder op gebouwd. Vanzelf heeft het project serieuze vormen aangenomen en heb ik, eigenlijk te laat, het project in een versie beheersysteem gezet. Hiervoor heb ik <a href='https://github.com/arthurvanstrien/arthurvanstrien-dot-nl' class='shared-content-inlineLinkBlue' target='_blank'>Github</a> gebruikt.",
+					"en": "When I started writing code, the plan was to first code a small demonstration. The plan was to take the good bits and build a new base structure from that. It did not go as planned, after a few days of enthusiastic programming, there was already a good base. After adding some more code in the weeks that followed it became an actual project. So I decided to keep what I had and put the project in a version control system. Something I should have done much earlier. I used <a href='https://github.com/arthurvanstrien/arthurvanstrien-dot-nl' class='shared-content-inlineLinkBlue' target='_blank'>Github</a> to host the project."
+				},
+				{
+					"type": "paragraph",
+					"class": "",
+					"onClick": "",
+					"nl": "Bij het bouwen heb ik een aantal tools gebruikt. Het schrijven van de code heb ik gedaan in Notepad++, deze editor met weinig toeters en bellen gaat terug naar de basis. Er zit geen Git client ingebouwd en het hinten van variabelen namen en functies is zeer beperkt. Toch waren de functies van Notepad++ ruim voldoende en was terug naar de basis gaan eigenlijk ook wel weer even lekker. Als Git client heb ik Git Kraken gebruikt. Ik gebruikte Git Kraken voor de eerste keer toen ik aan deze website begon en dat is ook de reden waarom ik Git Kraken gekozen heb. Hiervoor gebruikte ik vooral SourceTree en deze had zo nu en dan wat bugs. Hierom hadden meerdere medeprogrammeurs mij Git Kraken aangeraden. Ik ben blij dat ik nu de stap genomen heb om deze toch eens te proberen. Git Kraken is heel uitgebreid maar de standaard dingen zoals het maken van branches, comitten en mergen werkt hetzelfde. Wat opviel was het limiet op de commit berichten. Dit was even wennen maar uiteindelijk wel goed want het stimuleert om de berichten kort te houden. Tijdens het ontwikkelen heb ik de website gehost op mijn eigen PC met behulp van de ingebouwde Apache webserver die meegeleverd komt met Xampp. Tot slot heb ik nog Word gebruikt voor het tikken van teksten, Grammarly voor het controleren van de Engelse teksten en Lightroom voor het corrigeren van foto’s en het integreren van een watermerk.",
+					"en": "I used several tools to build the project. Coding was done in Notepad++, this editor with few bells and whistles goes back to basics. There is no Git client built-in and the auto-complete of variable names and functions is very limited. However, the functions of Notepad++ were more than sufficient and I enjoyed going back to the basics. As  Git client I used Git Kraken. This was the first time I used Git Kraken and I choose it because I wanted to know what it was all about. Before this I mainly used SourceTree but it had some bugs from time to time. Therefore, several fellow programmers had recommended Git Kraken to me. I'm glad I took the step to try this one. Git Kraken has a lot of functions but the common things like making branches, committing and merges work the same way. One difference that caught my eye was the shorter commit messages. This took some getting used to, but in the end, it was a good thing because it encourages to keep the messages short. During development, I hosted the website on my PC using the built-in Apache web server that comes with Xampp. Finally, I used Word for writing content, Grammarly for checking the English translations and Lightroom for correcting images and integrating a watermark."
+				},
+				
+				
+				{
+					"type": "header3",
+					"class": "shared-content-h3",
+					"onClick": "",
+					"nl": "Resultaat",
+					"en": "Result"
+				},
+				{
+					"type": "paragraph",
+					"class": "shared-content-paragraph",
+					"onClick": "",
+					"nl": "Ik ben blij met het resultaat van dit project. De website heeft een naar mijn mening prettige opmaak gekregen en de achterliggende logica maakt onderhoud gemakkelijk. Het talen systeem was ingewikkeld om te maken maar ik ben tevreden met het eindresultaat. Alhoewel het vertalen veel werkt is, is het toevoegen van een extra taal op de website zo gebeurt. Het was een leuk project om te maken en ik heb er veel van geleerd. Dit project is echter nog niet af, er zijn zat plannen om nog meer toe te voegen.  ",
+					"en": "I am pleased with the result of this project. In my opinion, the website has a pleasant layout and the underlying logic makes maintenance easy. The language system was complicated to design and build but I am satisfied with the result. Although translating is a lot of work, adding more languages to the website is done with minor changes. I enjoyed working on it and I learned a lot from it. A website is not really ever finished and there are plenty of plans to add more content. To be continued..."
+				}
+			],
+			"pictures": [
+				"arthurvanstrienpuntnl.png"
+			]
+		}
+	]
+}

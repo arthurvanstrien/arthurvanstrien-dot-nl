@@ -1,0 +1,275 @@
+/*---Below here is the shared styling for the generated HTML elements-------------------------------------------------------------------------------*/
+
+.shared-content-div
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	clear: both;
+}
+
+.shared-content-h2
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	padding: 0px;
+	width: calc(100%-80px);
+	clear: both;
+}
+
+.shared-content-h3
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	padding: 0px;
+	width: calc(100%-80px);
+	clear: both;
+}
+
+.shared-content-paragraph
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 0px;
+	margin-bottom: 12px;
+	padding: 0px;
+}
+
+.shared-content-span
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	display: block;
+}
+
+/*---Styling for the listItem----------------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-listItem
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.shared-content-listItemWrapper
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 20px;
+	maring-bottom: 0px;
+	width: auto;
+}
+
+.shared-content-listItemDash
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	width: 30px;
+	vertical-align: text-top;
+	text-align: center;
+}
+
+/*---Styling for the table--------------------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-table
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.shared-content-table th
+{
+	border-bottom: 1px solid black;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	margin: 0px;
+}
+
+.shared-content-table td
+{
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	margin: 0px;
+}
+
+
+/*---Styling for the pictures-----------------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-pictureWide
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 0px;
+	width: calc(100% - 80px);
+}
+
+.shared-content-pictureHalfLeft
+{
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: calc(49% - 40px);
+	padding: 0px;
+}
+
+.shared-content-pictureHalfRight
+{
+	margin-left: 0px;
+	margin-right: 40px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: calc(49% - 40px);
+	padding: 0px;
+	float: right;
+}
+
+.shared-content-pictureHalfLeftWrap
+{
+	margin-left: 40px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(50% - 65px);
+	padding: 0px;
+	float: left;
+}
+
+.shared-content-pictureHalfRightWrap
+{
+	margin-left: 20px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(50% - 65px);
+	padding: 0px;
+	float: right;
+}
+
+.shared-content-pictureThirdLeftWrap
+{
+	margin-left: 40px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(33% - 65px);
+	padding: 0px;
+	float: left;
+}
+
+.shared-content-pictureThirdRightWrap
+{
+	margin-left: 20px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(33% - 65px);
+	padding: 0px;
+	float: right;
+}
+
+.shared-content-pictureQuarterLeftWrap
+{
+	margin-left: 40px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(25% - 65px);
+	padding: 0px;
+	float: left;
+}
+
+.shared-content-pictureQuarterRightWrap
+{
+	margin-left: 20px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(25% - 65px);
+	padding: 0px;
+	float: right;
+}
+
+
+/*---Styling for the hyperlinks----------------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-inlineLinkRed
+{
+	color: #ff0000;
+	text-decoration: none;
+	margin-left: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.shared-content-inlineLinkRed:hover
+{
+	color: #c70000;
+}
+
+.shared-content-inlineLinkBlue
+{
+	color: #00C5CD;
+	text-decoration: none;
+	margin-left: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.shared-content-inlineLinkBlue:hover
+{
+	color: #00E5EE;
+}
+
+/*---Styling for the youtube videos-------------------------------------------------------------------------------------------------------------------*/
+/*This must be an ID instead of a class because the Youtube frame already has a class for styling*/
+#shared-content-youtubeVideoHalf
+{
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	display: inline-block;
+	width: calc(50% - 61px);
+	height: 350px;
+	padding: 0px;
+	min-width: 300px;
+}
+
+#shared-content-youtubeVideoFull
+{
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	display: inline-block;
+	width: calc(100% - 80px);
+	height: 700px;
+	padding: 0px;
+	min-width: 300px;
+}
