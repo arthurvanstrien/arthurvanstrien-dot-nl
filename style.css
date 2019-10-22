@@ -115,9 +115,14 @@ body
 	height: 20px;
 }
 
-.menuItem:hover
+@media (hover: hover) and (pointer: fine) 
 {
-	background-color: #00E5EE;
+	/*Only hover when a device is used that has fine mouse control*/
+	/*Stops buttons from visually staying pressed when a touch screen is used*/
+    .menuItem:hover
+	{
+		background-color: #00E5EE;
+	}
 }
 
 .menuFlags
@@ -243,4 +248,3 @@ body
 		width: 96%; /*Footer has 2% padding on all sides, 96% + 4% = 100%*/
 	}
 }
-
