@@ -134,6 +134,12 @@
 					"en": "Hardware"
 				},
 				{
+					"type": "image",
+					"class": "shared-content-pictureQuarterRightWrap",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890557.jpg"
+				},
+				{
 					"type": "paragraph",
 					"class": "",
 					"onClick": "",
@@ -153,11 +159,82 @@
 					"onClick": "",
 					"nl": "In de toekomst is het de bedoeling een Android app te maken waarmee ik commando’s aan de microcontroller kan geven. Dit kan bijvoorbeeld over wifi door eigen netwerk en een web-api te draaien op de microcontroller. Hierdoor zou ik de patronen door middel van de app aan kunnen passen, of bijvoorbeeld de felheid van het licht moeten kunnen aanpassen. Daarnaast wil ik op hardware gebied proberen het controller-doosje een stuk kleiner te maken nu ik een prototype heb.",
 					"en": "In the future, the intention is to create an Android app which can give commands to the microcontroller. This can be done over wifi by running a hotspot and a web-api on the microcontroller. This would allow adjusting the patterns using the app, or for example to adjust the brightness of the light. I also intend to reduce the controller box in size to fit it more easily in a pocket."
+				},
+				
+				
+				{
+					"type": "header3",
+					"class": "",
+					"onClick": "",
+					"nl": "Beeldengalerij",
+					"en": "Gallery"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890524.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890525.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890526.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890527.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890528.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890529.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890530.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890531.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfLeft",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890532.jpg"
+				},
+				{
+					"type": "image",
+					"class": "shared-content-pictureHalfRight",
+					"onClick": "",
+					"path": "pic_projects/LEDShoes_P1890535.jpg"
 				}
 			],
 			"pictures": [
-				"",
-				""
+				"LEDShoes_P1890557.jpg",
+				"LEDShoes_P1890565.jpg",
+				"LEDShoes_P1890563.jpg",
+				"LEDShoes_P1890564.jpg"
 			]
 		},
 		{
@@ -233,7 +310,7 @@
 					"type": "image",
 					"class": "shared-content-pictureHalfRightWrap",
 					"onClick": "",
-					"path": "pic_projects/arthurvanstrienpuntnl-load.png"
+					"path": "pic_projects/arthurvanstrienpuntnl_load.png"
 				},
 				{
 					"type": "paragraph",
@@ -255,7 +332,7 @@
 					"type": "image",
 					"class": "shared-content-pictureThirdRightWrap",
 					"onClick": "",
-					"path": "pic_projects/arthurvanstrienpuntnl-json.png"
+					"path": "pic_projects/arthurvanstrienpuntnl_json.png"
 				},
 				{
 					"type": "paragraph",
