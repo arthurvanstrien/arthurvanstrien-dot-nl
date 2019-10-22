@@ -7,7 +7,6 @@
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding: 0px;
-	width: calc(100%-80px);
 	clear: both;
 }
 
@@ -153,8 +152,8 @@
 	margin-left: 40px;
 	margin-right: 20px;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	width: calc(49% - 40px);
+	margin-top: 0px;
+	width: calc(50% - 65px);
 	padding: 0px;
 	float: left;
 }
@@ -164,8 +163,8 @@
 	margin-left: 20px;
 	margin-right: 40px;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	width: calc(49% - 40px);
+	margin-top: 0px;
+	width: calc(50% - 65px);
 	padding: 0px;
 	float: right;
 }
@@ -175,8 +174,8 @@
 	margin-left: 40px;
 	margin-right: 20px;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	width: calc(33% - 40px);
+	margin-top: 0px;
+	width: calc(33% - 65px);
 	padding: 0px;
 	float: left;
 }
@@ -186,8 +185,8 @@
 	margin-left: 20px;
 	margin-right: 40px;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	width: calc(33% - 40px);
+	margin-top: 0px;
+	width: calc(33% - 65px);
 	padding: 0px;
 	float: right;
 }
@@ -197,8 +196,8 @@
 	margin-left: 40px;
 	margin-right: 20px;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	width: calc(25% - 40px);
+	margin-top: 0px;
+	width: calc(25% - 65px);
 	padding: 0px;
 	float: left;
 }
@@ -208,8 +207,8 @@
 	margin-left: 20px;
 	margin-right: 40px;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	width: calc(25% - 40px);
+	margin-top: 0px;
+	width: calc(25% - 65px);
 	padding: 0px;
 	float: right;
 }
