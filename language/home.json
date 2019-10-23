@@ -9,17 +9,17 @@
 	},
 	"fields": [
 		{
-			"name": "lang_menuProjects",
+			"name": "lang_homeMenuProjects",
 			"nl": "Projecten",
 			"en": "Projects"
 		},
 		{
-			"name": "lang_menuPhotography",
+			"name": "lang_homeMenuPhotography",
 			"nl": "Fotografie",
 			"en": "Photography"
 		},
 		{
-			"name": "lang_menuAboutme",
+			"name": "lang_homeMenuAboutme",
 			"nl": "Persoonlijk",
 			"en": "About me"
 		},	
