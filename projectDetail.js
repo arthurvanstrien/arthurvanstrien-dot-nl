@@ -78,7 +78,23 @@ var projectDetail = (function() {
 		
 			var generatedHTML = "";
 			var textContent = project.content;
+			var headers = langFile.headers;
 			
+			//First set the specifications headers:
+			$("#lang_projectsMenu-overview").text(common.getFieldLanguage(headers.overview));
+			$("#lang_projectsMenu-year").text(common.getFieldLanguage(headers.year));
+			$("#lang_projectsMenu-version").text(common.getFieldLanguage(headers.version));
+			$("#lang_projectsMenu-category").text(common.getFieldLanguage(headers.category));
+			$("#lang_projectsMenu-programming-languages").text(common.getFieldLanguage(headers.programmingLanguages));
+			$("#lang_projectsMenu-used-tools").text(common.getFieldLanguage(headers.tools));
+			$("#lang_projectsMenu-used-materials").text(common.getFieldLanguage(headers.usedMaterials));
+			$("#lang_projectsMenu-motive").text(common.getFieldLanguage(headers.motive));
+			$("#lang_projectsMenu-version-control").text(common.getFieldLanguage(headers.versionControl));
+			$("#lang_projectsMenu-process-framework").text(common.getFieldLanguage(headers.processFramework));
+			$("#lang_projectsMenu-built-by").text(common.getFieldLanguage(headers.builtBy));
+			
+			
+			//Secondly set the specifications content:
 			$("#lang_pageTitle").text(common.getFieldLanguage(project.title));
 			$("#projectDetail-year").text(project.year);
 			$("#projectDetail-version").text(project.version);
@@ -97,10 +113,6 @@ var projectDetail = (function() {
 			}
 			
 			$(generatedHTML).insertAfter("#project-text-anker");
-			
-			//Display the varlues from the default fields from the JSON file in the HTML.
-			//THe displayContent function already does that so we dont have to build a custom function here.
-			common.displayContent(langFile);
 		}
 	}
 	
@@ -116,7 +128,23 @@ var projectDetail = (function() {
 			commmon.displayErrorMessage("project-id-not-found");
 		}
 		else {
-		
+			
+			var headers = langFile.headers;
+			
+			//First set the specifications headers:
+			$("#lang_projectsMenu-overview").text(common.getFieldLanguage(headers.overview));
+			$("#lang_projectsMenu-year").text(common.getFieldLanguage(headers.year));
+			$("#lang_projectsMenu-version").text(common.getFieldLanguage(headers.version));
+			$("#lang_projectsMenu-category").text(common.getFieldLanguage(headers.category));
+			$("#lang_projectsMenu-programming-languages").text(common.getFieldLanguage(headers.programmingLanguages));
+			$("#lang_projectsMenu-used-tools").text(common.getFieldLanguage(headers.tools));
+			$("#lang_projectsMenu-used-materials").text(common.getFieldLanguage(headers.usedMaterials));
+			$("#lang_projectsMenu-motive").text(common.getFieldLanguage(headers.motive));
+			$("#lang_projectsMenu-version-control").text(common.getFieldLanguage(headers.versionControl));
+			$("#lang_projectsMenu-process-framework").text(common.getFieldLanguage(headers.processFramework));
+			$("#lang_projectsMenu-built-by").text(common.getFieldLanguage(headers.builtBy));
+			
+			//Secondly set the specifications content:
 			$("#projectDetail-year").text(project.year);
 			$("#projectDetail-version").text(project.version);
 			$("#projectDetail-category").text(common.getFieldLanguage(project.category));
@@ -128,6 +156,7 @@ var projectDetail = (function() {
 			$("#projectDetail-process-framework").text(common.getFieldLanguage(project.processFramework));
 			$("#projectDetail-built-by").text(common.getFieldLanguage(project.builtBy));
 			
+			//Third, change the language from the generated content body:
 			common.displayContent(project);
 		}
 	}

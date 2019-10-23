@@ -559,13 +559,17 @@ var common = (function() {
 		
 		var str = window.location.href;
 		var splitStr = str.split("?");
-		var paramArray = splitStr[1].split("&");
 		
-		for(var i = 0; i < paramArray.length; i++) {
+		if(splitStr.length > 1) {
 			
-			var param = paramArray[i].split("=");
-			if(param[0] == "lang")
-				language = param[1];
+			var paramArray = splitStr[1].split("&");
+		
+			for(var i = 0; i < paramArray.length; i++) {
+				
+				var param = paramArray[i].split("=");
+				if(param[0] == "lang")
+					language = param[1];
+			}
 		}
 		
 		if(language != null)
@@ -580,13 +584,17 @@ var common = (function() {
 		
 		var str = window.location.href;
 		var splitStr = str.split("?");
-		var paramArray = splitStr[1].split("&");
 		
-		for(var i = 0; i < paramArray.length; i++) {
+		if(splitStr.length > 1) {
 			
-			var param = paramArray[i].split("=");
-			if(param[0] == "page")
-				page = param[1];
+			var paramArray = splitStr[1].split("&");
+			
+			for(var i = 0; i < paramArray.length; i++) {
+				
+				var param = paramArray[i].split("=");
+				if(param[0] == "page")
+					page = param[1];
+			}
 		}
 		
 		if(page != null)
@@ -601,13 +609,17 @@ var common = (function() {
 		
 		var str = window.location.href;
 		var splitStr = str.split("?");
-		var paramArray = splitStr[1].split("&");
 		
-		for(var i = 0; i < paramArray.length; i++) {
+		if(splitStr.length  > 1) {
 			
-			var param = paramArray[i].split("=");
-			if(param[0] == "additional")
-				additional = param[1];
+			var paramArray = splitStr[1].split("&");
+			
+			for(var i = 0; i < paramArray.length; i++) {
+				
+				var param = paramArray[i].split("=");
+				if(param[0] == "additional")
+					additional = param[1];
+			}
 		}
 		
 		return additional; //Will return null if additional is not found in the URL as specified.

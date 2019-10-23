@@ -1,56 +1,61 @@
 {
-	"fields": [
+	"headers": {
+		"overview":
 		{
-			"name": "lang_projectsMenu-overview",
 			"nl": "Overzicht",
 			"en": "Summary"
 		},
+		"year":
 		{
-			"name": "lang_projectsMenu-year",
 			"nl": "Jaar:",
 			"en": "Year:"
 		},
+		"version":
 		{
-			"name": "lang_projectsMenu-version",
 			"nl": "Versie:",
 			"en": "Version:"
 		},
+		"category":
 		{
-			"name": "lang_projectsMenu-category",
 			"nl": "Categorie:",
 			"en": "Category:"
 		},
+		"programmingLanguages":
 		{
-			"name": "lang_projectsMenu-programming-languages",
 			"nl": "Programmeertalen:",
 			"en": "Programming languages:"
 		},
+		"tools":
 		{
-			"name": "lang_projectsMenu-used-tools",
 			"nl": "Gebruikte hulpmiddelen:",
 			"en": "Tools used:"
 		},
+		"usedMaterials":
 		{
-			"name": "lang_projectsMenu-motive",
+			"nl": "Gebruikte materialen:",
+			"en": "Materials used:"
+		},
+		"motive":
+		{
 			"nl": "Beweegreden:",
 			"en": "Why the project was made:"
 		},
+		"versionControl":
 		{
-			"name": "lang_projectMenu-version-control",
 			"nl": "Versiebeheer:",
 			"en": "Version control:"
 		},
+		"processFramework":
 		{
-			"name": "lang_projectsMenu-process-framework",
 			"nl": "Ontwikkelmethode:",
 			"en": "Process framework:"
 		},
+		"builtBy":
 		{
-			"name": "lang_projectsMenu-built-by",
 			"nl": "Dit project is gemaakt door:",
 			"en": "This project is build by:"
 		}
-	],
+	},
 	"projects": [
 		{
 			"projectId": "11k6mfu",
