@@ -63,6 +63,8 @@ var projects = (function() {
 		
 		var projects = langFile.project;
 		
+		common.displayContent(langFile);
+		
 		for(var i = 0; i < Object.keys(langFile.projects).length; i++) {
 			
 			var project = langFile.projects[i];
