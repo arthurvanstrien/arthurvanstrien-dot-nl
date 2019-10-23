@@ -68,8 +68,6 @@ var projects = (function() {
 			var project = langFile.projects[i];
 			var categoryId = "#lang_categoryId_" + i;
 			
-			console.log(project.category);
-			
 			$(categoryId).text(common.getFieldLanguage(project.category));
 		}
 	}
