@@ -18,6 +18,8 @@ var projects = (function() {
 		common.setAdditionalLanguageFile(langFile);
 		
 		projectsList = langFile.projects;
+		var yearHeader = common.getFieldLanguage(langFile.headers.year);
+		var categoryHeader = common.getFieldLanguage(langFile.headers.category);
 		
 		for(var i = 0; i < Object.keys(langFile.projects).length; i++) {
 			
@@ -29,8 +31,8 @@ var projects = (function() {
 			html = html + 
 			"<span onClick='projects.gotoProjectDetail(" + i + ")' class='projectsMenu-container'>" + 
 			"<h2 id='lang_project-title'>" + common.getFieldLanguage(project.title) + "</h2>" +
-			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-year'>Year: </span><span>" + project.year + "</span></span>" +
-			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu-category'>Type: </span><span id=" + categoryId + ">" + common.getFieldLanguage(project.category) + "</span></span>";
+			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu_year-" + i + "'>" + yearHeader + "</span><span>" + project.year + "</span></span>" +
+			"<span class='projectsMenu-th'><span class='projectsMenu-td' id='lang_projectsMenu_category-" + i + "'>" + categoryHeader + "</span><span id=" + categoryId + ">" + common.getFieldLanguage(project.category) + "</span></span>";
 
 			var numPictures = Object.keys(project.pictures).length;
 			
@@ -61,13 +63,17 @@ var projects = (function() {
 	
 	var changeLanguage = function(langFile) {
 		
-		var projects = langFile.project;
+		var projects = langFile.projects;
+		var yearHeader = common.getFieldLanguage(langFile.headers.year);
+		var categoryHeader = common.getFieldLanguage(langFile.headers.category);
 		
-		common.displayContent(langFile);
-		
-		for(var i = 0; i < Object.keys(langFile.projects).length; i++) {
+		for(var i = 0; i < Object.keys(projects).length; i++) {
 			
-			var project = langFile.projects[i];
+			//Change the language of the specifications headers:
+			$(("#lang_projectsMenu_year-" + i)).text(yearHeader);
+			$(("#lang_projectsMenu_category-" + i)).text(categoryHeader);
+			
+			var project = projects[i];
 			var categoryId = "#lang_categoryId_" + i;
 			
 			$(categoryId).text(common.getFieldLanguage(project.category));
