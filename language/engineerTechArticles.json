@@ -1,0 +1,33 @@
+{
+	"content": [
+		{
+			"type": "articleGroup",
+			"class": "",
+			"onClick": "",
+			"title": {
+				"nl": "",
+				"en": ""
+			},
+			"content": [
+				{
+					"type": "article",
+					"class": "",
+					"articleId": "",
+					"title": {
+						"nl": "Something",
+						"en": "Something"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"class": "",
+							"onClick": "",
+							"nl": "Paragraph",
+							"en": "Paragraph"
+						}
+					]
+				}
+			]
+		}
+	]
+}
