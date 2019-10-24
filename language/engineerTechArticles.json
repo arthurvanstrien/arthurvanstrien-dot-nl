@@ -5,17 +5,71 @@
 			"class": "",
 			"onClick": "",
 			"title": {
-				"nl": "",
-				"en": ""
+				"nl": "Gereedschappen",
+				"en": "Tools"
 			},
 			"content": [
 				{
 					"type": "article",
 					"class": "",
-					"articleId": "",
+					"articleId": "m3cl9d",
 					"title": {
-						"nl": "Something",
-						"en": "Something"
+						"nl": "Multimeters",
+						"en": "Multimeters"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"class": "",
+							"onClick": "",
+							"nl": "Paragraph",
+							"en": "Paragraph"
+						}
+					]
+				},
+				{
+					"type": "article",
+					"class": "",
+					"articleId": "5brshf",
+					"title": {
+						"nl": "Osciloscopen",
+						"en": "Oscilloscopes"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"class": "",
+							"onClick": "",
+							"nl": "Paragraph",
+							"en": "Paragraph"
+						}
+					]
+				},
+				{
+					"type": "article",
+					"class": "",
+					"articleId": "1a5ad3a",
+					"title": {
+						"nl": "Lijmpistool & Accesoires",
+						"en": "Glue Guns & Accesoires"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"class": "",
+							"onClick": "",
+							"nl": "Paragraph",
+							"en": "Paragraph"
+						}
+					]
+				},
+				{
+					"type": "article",
+					"class": "",
+					"articleId": "j2j9nt",
+					"title": {
+						"nl": "Soldeerbouten / Soldeerstations & Accesoires",
+						"en": "Soldering Irons / Stations & Accesoires"
 					},
 					"content": [
 						{
