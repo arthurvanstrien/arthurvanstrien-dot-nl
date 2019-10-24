@@ -268,18 +268,26 @@ var common = (function() {
 		
 		if(elementType == "div-parent") {
 			
-			elemClass = " class='" + elemClass + "'";
-			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</div>";
+			if(elemClass == null || elemClass == "")
+				elemClass = "";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</div>";
 		}
 		else if(elementType == "span-parent") {
 			
-			elemClass = " class='" + elemClass + "'";
-			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</span>";
+			if(elemClass == null || elemClass == "")
+				elemClass = "";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</span>";
 		}
 		else if(elementType == "div") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-div' ";
+				elemClass = " class='shared-content-div'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -288,7 +296,7 @@ var common = (function() {
 		else if(elementType == "span") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-span' ";
+				elemClass = " class='shared-content-span'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -297,7 +305,7 @@ var common = (function() {
 		else if(elementType == "paragraph") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-paragraph' ";
+				elemClass = " class='shared-content-paragraph'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -306,7 +314,7 @@ var common = (function() {
 		else if(elementType == "image") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-pictureHalfLeft' ";
+				elemClass = " class='shared-content-pictureHalfLeft'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -315,7 +323,7 @@ var common = (function() {
 		else if(elementType == "header1") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-h1' ";
+				elemClass = " class='shared-content-h1'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -324,7 +332,7 @@ var common = (function() {
 		else if(elementType == "header2") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-h2' ";
+				elemClass = " class='shared-content-h2'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -333,7 +341,7 @@ var common = (function() {
 		else if(elementType == "header3") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-h3' ";
+				elemClass = " class='shared-content-h3'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -342,7 +350,7 @@ var common = (function() {
 		else if(elementType == "listItem") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-listItem' ";
+				elemClass = " class='shared-content-listItem'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -351,7 +359,7 @@ var common = (function() {
 		else if(elementType == "table") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-table' ";
+				elemClass = " class='shared-content-table'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
