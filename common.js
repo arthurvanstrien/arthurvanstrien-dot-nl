@@ -179,12 +179,12 @@ var common = (function() {
 				customLanguageFunction = null;
 			});
 		}
-		else if(page == "engineer-tech") {
+		else if(page == "engineerTech") {
 			
 			setURL(page, language, null);
-			$('#content').load("engineer-tech.html", function() {
+			$('#content').load("engineerTech.html", function() {
 				
-				loadPageContent("engineer-tech", "engineer-tech-anchor", null, null);
+				loadPageContent("engineerTech", "engineer-tech-anchor", null, null);
 				customLanguageFunction = null;
 			});
 		}
