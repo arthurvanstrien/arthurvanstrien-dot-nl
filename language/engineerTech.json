@@ -9,13 +9,6 @@
 	},
 	"content": [
 		{
-			"type": "header2",
-			"class": "",
-			"onClick": "",
-			"nl": "SPLAT",
-			"en": "SPLET"
-		},
-		{
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
@@ -23,37 +16,11 @@
 			"en": "This page is under construction, the content is available soonz."
 		},
 		{
-			"type": "nestedMenuLevel",
+			"type": "header1",
 			"class": "",
 			"onClick": "",
-			"content": [
-				{
-					"type": "header2",
-					"class": "",
-					"onClick": "",
-					"nl": "derp",
-					"en": "derp"
-				},
-				{
-					"type": "nestedMenuLink",
-					"class": "",
-					"page": "",
-					"additionalValue": "",
-					"linkText": {
-						"nl": "Something",
-						"en": "Something"
-					}
-				},
-				{
-					"type": "nestedMenuLevel",
-					"class": "",
-					"onClick": "",
-					"content" : [
-					
-						
-					]
-				}
-			]
+			"nl": "Artikelen",
+			"en": "Articles"
 		}
 	]
 }
