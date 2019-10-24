@@ -193,7 +193,7 @@ var common = (function() {
 			setURL(page, language, null);
 			$('#content').load("404.html", function() {
 				
-				loadPageContent(page, "404-anchor", null, null);
+				loadPageContent("404", "404-anchor", null, null);
 				customLanguageFunction = null;
 			});
 		}
