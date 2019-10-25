@@ -39,6 +39,7 @@ var common = (function() {
 	common.displayErrorMessage = function(fieldName) { displayErrorMessage(fieldName); }
 	common.getHTMLElement = function(content, elemCounter) { return getHTMLElement(content, elemCounter); }
 	common.displayContent = function(langFile) { displayContent(langFile); }
+	common.generateAndDisplayContent = function(langFile, idToAppendContentTo) { generateAndDisplayContent(langFile, idToAppendContentTo); }
 	common.getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
 		getJSONFile(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam);
 	}
