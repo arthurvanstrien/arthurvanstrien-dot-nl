@@ -8,7 +8,7 @@ $( document ).ready(function() {
 	window.addEventListener('popstate', function(event) {
 		// The popstate event is fired each time when the current history entry changes.
 		
-		common.changePage(common.getURLPage(), common.getURLLanguage(), common.getURLAdditional());
+		common.changePage(common.getURLPage(), common.getURLAdditional(), null);
 
 	}, false);
 });
