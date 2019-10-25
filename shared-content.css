@@ -59,6 +59,47 @@
 	display: block;
 }
 
+/*---Styling for the article group menu------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-articleGroup
+{
+	display: block;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 0px;
+	
+}
+
+.shared-content-articleGroup h1
+{
+	font-size: 28px;
+}
+
+.shared-content-articleGroup span
+{
+	display: inline-block;
+	border-bottom: 1px solid black;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0px;
+	width: 100%;
+}
+
+.shared-content-articleGroup span:first-of-type
+{
+	border-top: 1px solid black;
+}
+
+.shared-content-articleGroup span:hover
+{
+	cursor: pointer;
+	background-color: #b6fafc;
+}
+
 /*---Styling for the listItem----------------------------------------------------------------------------------------------------------------------*/
 
 .shared-content-listItem

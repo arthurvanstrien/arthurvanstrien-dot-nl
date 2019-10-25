@@ -1,9 +1,12 @@
-.engineer-tech-container
+.engineer-tech-container p 
 {
-	
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-top: 40px;
+	margin-bottom: 0px;
 }
 
-.engineer-tech-container p 
+.engineer-tech-header
 {
 	margin-left: 40px;
 	margin-right: 0px;

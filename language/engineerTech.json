@@ -7,18 +7,14 @@
 		"nl": "Informatica & Techniek",
 		"en": "Technology & Engineering"
 	},
-	"content": [
+	"fields": [
 		{
-			"type": "paragraph",
-			"class": "",
-			"onClick": "",
-			"nl": "Aan deze pagina wordt nog gewerkt, de inhoud komt binnenkort beschikbaarz.",
-			"en": "This page is under construction, the content is available soonz."
+			"name": "lang_paragraph",
+			"nl": "Aan deze pagina wordt nog gewerkt, de inhoud komt binnenkort beschikbaar.",
+			"en": "This page is under construction, the content is available soon."
 		},
 		{
-			"type": "header1",
-			"class": "",
-			"onClick": "",
+			"name": "lang_header",
 			"nl": "Artikelen",
 			"en": "Articles"
 		}
