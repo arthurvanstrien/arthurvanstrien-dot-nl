@@ -163,7 +163,7 @@
 					"class": "",
 					"articleId": "5brshf",
 					"title": {
-						"nl": "Osciloscopen",
+						"nl": "Oscilloscopen",
 						"en": "Oscilloscopes"
 					},
 					"content": [
@@ -171,8 +171,194 @@
 							"type": "paragraph",
 							"class": "",
 							"onClick": "",
-							"nl": "Paragraph",
-							"en": "Paragraph"
+							"nl": "Oscilloscopen zijn een veel ingewikkelder meetinstrument dan een Multimeter. Waar een multimeter alleen kan meten wat de spanning van een signaal is kan de Oscilloscoop de signalen op het scherm weergeven. Dit is ontzettend handig wanneer je signalen wilt programmeren of sensoren moet uitlezen. Er zijn Oscilloscopen van een paar tientjes op de markt maar hier mag je niets van verwachten. Deze scopes zijn leuk om wat signalen ongeveer weer te laten geven en zijn leuk om wat mee te spelen. Wanneer je iets serieus gaat doen moet je een scope hebben die degelijk is. Een 'bugdet' scope is te krijgen vanaf 300 euro. Toch adviseer ik je om dan een scope te kopen van 200 euro meer. Er zijn twee geroemde middenklasse scopen beschikbaar die je voor die 200 euro extra veel meer functies geven (te vinden hieronder).",
+							"en": ""
+						},
+						{
+							"type": "header1",
+							"class": "",
+							"onClick": "",
+							"nl": "Koopadvies",
+							"en": "Purchase Advise"
+						},
+						{
+							"type": "header2",
+							"class": "",
+							"onClick": "",
+							"nl": "DSO-SHELL Digital Oscilloscoop (1MSa/s, 200KHz)",
+							"en": "DSO-SHELL Digital Oscilloscope (1MSa/s, 200KHz)"
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/aliexpressScope-2.png"
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/aliexpressScope-1.png"
+						},
+						{
+							"type": "table",
+							"class": "",
+							"onClick": "",
+							"rowData": [
+								[
+									{
+										"nl": "Prijs:",
+										"en": "Price:"
+									},
+									{
+										"nl": "€20",
+										"en": "€20"
+									}
+											
+								],
+								[
+									{
+										"nl": "Omschrijving:",
+										"en": "Description:"
+									},
+									{
+										"nl": "DIY KIT, bij deze kit moet je alle through-hole componenten zelf solderen. Deze scope is uiteraard niet zo precies als een goede scope maar is wel handig om wat simpele signalen weer te geven. Je krijgt immers waarvoor je betaald. Is ook gewoon leuk om in elkaar te solderen. Komt met montage-gebruiksaanwijzing die met wat nadenken goed te volgen is. Top tip: werkt op 9V maar komt zonder adapter, koop hem dus samen met eem 5 maar 9 volt USB kabel zodat je hem overal kan inpluggen en met een powerbank zelfs als draagbare scope kan gebruiken.",
+										"en": ""
+									}
+								],
+								[
+									{
+										"nl": "Waar te koop?",
+										"en": "Where to buy?"
+									},
+									{
+										"nl": "<a class='shared-content-inlineLinkBlue' href='https://nl.aliexpress.com/item/32878694776.html?spm=a2g0s.9042311.0.0.27424c4dzJd0fl' target='_blank'>Aliexpress Scope</a><a class='shared-content-inlineLinkBlue' href='https://nl.aliexpress.com/item/32737192555.html?spm=a2g0s.9042311.0.0.27424c4dzJd0fl' target='_blank'>Aliexpress 5V naar 9V USB kabel</a>",
+										"en": "<a class='shared-content-inlineLinkBlue' href='https://nl.aliexpress.com/item/32878694776.html?spm=a2g0s.9042311.0.0.27424c4dzJd0fl' target='_blank'>Aliexpress Scope</a><a class='shared-content-inlineLinkBlue' href='https://nl.aliexpress.com/item/32737192555.html?spm=a2g0s.9042311.0.0.27424c4dzJd0fl' target='_blank'>Aliexpress 5V to 9V USB cable</a>"
+									}
+								]
+							]
+						},
+						{
+							"type": "header2",
+							"class": "",
+							"onClick": "",
+							"nl": "Siglent SDS1104X-E (100MHz, 1GS/s)",
+							"en": "Siglent SDS1104X-E (100MHz, 1GS/s)"
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/Siglent_SDS1104X-E.jpg"
+						},
+						{
+							"type": "table",
+							"class": "",
+							"onClick": "",
+							"rowData": [
+								[
+									{
+										"nl": "Prijs:",
+										"en": "Price:"
+									},
+									{
+										"nl": "€520",
+										"en": "€520"
+									}
+											
+								],
+								[
+									{
+										"nl": "Omschrijving:",
+										"en": "Description:"
+									},
+									{
+										"nl": "Scherp geprijsde beginner's scope met 4 kanalen. Komt standaard met de mogelijkheid om seriële signalen te decoderen. De scope heeft een makkelijk te gebruiken webinterface en naar mijn mening een duidelijkere layout dan de Rigol DS1054Z scope. De instellingen in de webinterface hebben naar mijn mening overigens geen meerwaarde, het gemak om een screenshot te downloaden is dat juist wel. Is ook nog voor 165,00 euro uit te breiden met een functiegenerator en voor een smak geld meer, 464,00 euro met een Logic analyser.",
+										"en": ""
+									}
+								],
+								[
+									{
+										"nl": "Waar te koop?",
+										"en": "Where to buy?"
+									},
+									{
+										"nl": "Verschillende winkels in Nederland",
+										"en": ""
+									}
+								],
+								[
+									{
+										"nl": "Meer informatie:",
+										"en": "More information:"
+									},
+									{
+										"nl": "<a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=Kay4Jk2DHuE'>https://www.youtube.com/watch?v=Kay4Jk2DHuE</a> <a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=gUz3KYp_5Tc'>https://www.youtube.com/watch?v=gUz3KYp_5Tc</a> <a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=Cwbwq-AKbPc'>https://www.youtube.com/watch?v=Cwbwq-AKbPc</a>",
+										"en": "<a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=Kay4Jk2DHuE'>https://www.youtube.com/watch?v=Kay4Jk2DHuE</a> <a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=gUz3KYp_5Tc'>https://www.youtube.com/watch?v=gUz3KYp_5Tc</a> <a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=Cwbwq-AKbPc'>https://www.youtube.com/watch?v=Cwbwq-AKbPc</a>"
+									}
+								]
+							]
+						},
+						{
+							"type": "header2",
+							"class": "",
+							"onClick": "",
+							"nl": "Rigol DS1054Z (50MHz, 1GS/s)",
+							"en": "Rigol DS1054Z (50MHz, 1GS/s)"
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/Rigol_ds1054z-1.jpg"
+						},
+						{
+							"type": "table",
+							"class": "",
+							"onClick": "",
+							"rowData": [
+								[
+									{
+										"nl": "Prijs:",
+										"en": "Price:"
+									},
+									{
+										"nl": "€390",
+										"en": "€390"
+									}
+											
+								],
+								[
+									{
+										"nl": "Omschrijving:",
+										"en": "Description:"
+									},
+									{
+										"nl": "Een kwalitatief goede scope die tegen een stootje kan. Wordt daarom ook vaak op scholen gebruikt. Is het instapmodel met 4 aansluitingen van de serie maar op het moment van schrijven staat Rigol het toe dat je de scope kan <a class='shared-content-inlineLinkBlue' target='_blank' href='https://www.instructables.com/id/How-to-Hack-Upgrade-a-Rigol-DS1054Z-Digital-Oscill/'>Hacken</a> en alle bij aankoop vergrendelde functies kan ontgrendelen. Dit model heeft dan weer geen mogelijkheid voor een functiegenerator en daarmee is de hiervoor genoemde scope nog steeds een zeer interessante concurrent.",
+										"en": ""
+									}
+								],
+								[
+									{
+										"nl": "Waar te koop?",
+										"en": "Where to buy?"
+									},
+									{
+										"nl": "Bij verschillende winkels in Nederland.",
+										"en": ""
+									}
+								],
+								[
+									{
+										"nl": "Meer informatie:",
+										"en": "More information:"
+									},
+									{
+										"nl": "<a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=W2qdtQkBKhc'>https://www.youtube.com/watch?v=W2qdtQkBKhc</a> <a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=ETCOhzU1O5A'>https://www.youtube.com/watch?v=ETCOhzU1O5A</a> <a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=kb9P1Am9aFU'>https://www.youtube.com/watch?v=kb9P1Am9aFU</a>",
+										"en": "<a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=W2qdtQkBKhc'>https://www.youtube.com/watch?v=W2qdtQkBKhc</a> <a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=ETCOhzU1O5A'>https://www.youtube.com/watch?v=ETCOhzU1O5A</a> <a class='shared-content-inlineLinkRed' target='_blank' href='https://www.youtube.com/watch?v=kb9P1Am9aFU'>https://www.youtube.com/watch?v=kb9P1Am9aFU</a>"
+									}
+								]
+							]
 						}
 					]
 				},
@@ -189,8 +375,72 @@
 							"type": "paragraph",
 							"class": "",
 							"onClick": "",
-							"nl": "Paragraph",
-							"en": "Paragraph"
+							"nl": "",
+							"en": ""
+						},
+						{
+							"type": "header1",
+							"class": "",
+							"onClick": "",
+							"nl": "Koopadvies",
+							"en": "Purchase Advise"
+						},
+						{
+							"type": "header2",
+							"class": "",
+							"onClick": "",
+							"nl": "",
+							"en": ""
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/.jpg"
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/.jpg"
+						},
+						{
+							"type": "table",
+							"class": "",
+							"onClick": "",
+							"rowData": [
+								[
+									{
+										"nl": "Prijs:",
+										"en": "Price:"
+									},
+									{
+										"nl": "€",
+										"en": "€"
+									}
+											
+								],
+								[
+									{
+										"nl": "Omschrijving:",
+										"en": "Description:"
+									},
+									{
+										"nl": "",
+										"en": ""
+									}
+								],
+								[
+									{
+										"nl": "Waar te koop?",
+										"en": "Where to buy?"
+									},
+									{
+										"nl": "",
+										"en": ""
+									}
+								]
+							]
 						}
 					]
 				},
