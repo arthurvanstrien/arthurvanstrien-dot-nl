@@ -395,6 +395,75 @@ var common = (function() {
 				
 				elem = elem + "<tr>";
 			}
+			
+			elem = elem + "</table>";
+		}
+		else if(elementType == "articleGroup") {
+			//This generates the menu for an article.
+			
+			//0 means no menu is being generated.
+			//The article group is only generated when a menu is made, in case it is 0, we are starting a new menu.
+			//Therefore the level is set to menu level 1. In case it is higher than 0, we generate a higher level.
+			nestedLevel++;
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-articleGroup'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<div" + elemClass + elemOnClick + ">";
+			
+			
+			if(nestedLevel == 1)
+				elem = elem + "<h1" + id + ">" + getFieldLanguage(content.title) + "</h1>";
+			else if(nestedLevel == 2)
+				elem = elem + "<h2" + id + ">" + getFieldLanguage(content.title) + "</h2>";
+			else if(nestedLevel == 3)
+				elem = elem + "<h3" + id + ">" + getFieldLanguage(content.title) + "</h3>";
+			else if(nestedLevel == 4)
+				elem = elem + "<h4" + id + ">" + getFieldLanguage(content.title) + "</h4>";
+			else if(nestedLevel == 5)
+				elem = elem + "<h5" + id + ">" + getFieldLanguage(content.title) + "</h5>";
+			else
+				elem = elem + "<h6" + id + ">" + getFieldLanguage(content.title) + "</h6>";
+			
+			
+			for(var i = 0; i < Object.keys(content.content).length; i++) {
+				
+				elemCounter = elemCounter + "_" + i;
+				elem = elem + getHTMLElement(content.content[i], elemCounter, nestedLevel)
+			}
+			
+			elem = elem + "</div>";
+		}
+		else if(elementType == "article") {
+			
+			if(nestedLevel > 0) {
+				//Generate the link to the article instead of rendering the article.
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-articleLink'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elemOnClick = " onClick='common.changePage(\"article\", \"" + content.articleId + "\", \"" + elemCounter + "\")'";
+				
+				elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content.title) + "</span>";
+			}
+			else {
+				//Generate the article.
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = "class='shared-content-article' ";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				for(var i = 0; i < Object.keys(content.content).length; i++) {
+				
+					counter = elemCounter + "_" + i;
+					elem = elem + getHTMLElement(content.content[i], counter, nestedLevel)
+				}
+			}
 		}
 		else if(elementType == "youtubeVideo") {
 			
@@ -465,7 +534,7 @@ var common = (function() {
 	
 	var displayElement = function(elem, id) {
 			
-		if(elem.type == "div-parent" || elem.type == "span-parent") {
+		if(elem.type == "div-parent" || elem.type == "span-parent" || elem.type == "articleGroup") {
 			
 			for(var j = 0; j < Object.keys(elem.content).length; j++) {
 				
