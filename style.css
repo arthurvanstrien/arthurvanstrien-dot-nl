@@ -161,7 +161,18 @@ body
 	padding: 0px;
 }
 
-#homeButton-container
+.topButton-container
+{
+	width: 100%;
+	border-bottom: 1px solid black;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.bottomButton-container
 {
 	width: 100%;
 	border-top: 1px solid black;
@@ -172,7 +183,7 @@ body
 	padding: 0px;
 }
 
-#homeButton
+.button
 {
 	margin-left: 40px;
 	margin-top: 20px;
@@ -183,9 +194,9 @@ body
 	border: 1px solid black;
 }
 
-#homeButton:hover
+.button:hover
 {
-	background-color: #00E5EE;
+	background-color: #b6fafc;
 	cursor: pointer;
 }
 
