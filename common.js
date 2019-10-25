@@ -237,7 +237,7 @@ var common = (function() {
 			
 			for(var i = 0; i < Object.keys(content).length; i++) {
 				
-				generatedHTML = generatedHTML + getHTMLElement(content[i], i);
+				generatedHTML = generatedHTML + getHTMLElement(content[i], i, 0);
 			}
 			
 			$(generatedHTML).insertAfter("#" + idToAppendContentTo);
@@ -260,7 +260,7 @@ var common = (function() {
 		}
 	}
 	
-	var getHTMLElement = function(content, elemCounter) {
+	var getHTMLElement = function(content, elemCounter, nestedLevel) {
 		
 		var elem = "";
 		var elementType = content.type;
