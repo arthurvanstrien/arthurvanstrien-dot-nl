@@ -13,6 +13,8 @@
 					"type": "article",
 					"class": "",
 					"articleId": "m3cl9d",
+					"lastUpdate": "25-10-2019",
+					"writer": "Arthur van Strien",
 					"title": {
 						"nl": "Multimeters",
 						"en": "Multimeters"
@@ -22,8 +24,137 @@
 							"type": "paragraph",
 							"class": "",
 							"onClick": "",
-							"nl": "Paragraph",
-							"en": "Paragraph"
+							"nl": "De ene multimeter is de andere niet. Het is belangrijk dat je er bij aanschaf op let dat de multimeter bij jouw eisen past. Een uitgebreide uitleg waar je zoal op moet letten wanneer je een multimeter koopt en wat het grote verschil is tussen de dure en goedkope multimeters vind je <a class='shared-content-inlineLinkRed' href='https://www.youtube.com/watch?v=gh1n_ELmpFI&t=1210s' target='_blank'>hier (Youtube)</a>. Maar in het kort: als je echt precisie werk gaat doen dan zal je op zijn minst een middeklasser multimeter aan moeten schaffen. Goedkopere multimeters doen het meestal wel goed maar je moet je multimeter kunnen vertrouwen. Wanneer je multimeter afwijkende waarden geeft, kloppen je berekeningen niet meer. Sommige elektronische componenten hebben lage toleranties en dan kan een afwijking het verschil zijn tussen een kapot en werkend component.",
+							"en": ""
+						},
+						{
+							"type": "paragraph",
+							"class": "",
+							"onClick": "",
+							"nl": "Het merk Fluke is zo’n beetje de heilige graal onder de multimeters maar deze zijn dan ook best wel erg prijzig. De meest basis multimeter van Fluke kost al zo’n 130 euro en heeft nog niet eens alle basis functionaliteiten. ",
+							"en": ""
+						},
+						{
+							"type": "paragraph",
+							"class": "",
+							"onClick": "",
+							"nl": "Er is een soort van vuistregel: Voor meer dan 200 euro begint het professionelere niveau. Voor rond de honderd euro kan je echt een goede allround middenklasser kopen waar je jaren plezier van kan hebben. Voor onder de 50 euro zou ik de multimeter zelf niet in het stopcontact stoppen, gebruik deze alleen voor circuits met een laag voltage. Ook is het mogelijk dat de goedkopere multimeters eerder storingen of afwijkingen krijgen.",
+							"en": ""
+						},
+						{
+							"type": "header1",
+							"class": "",
+							"onClick": "",
+							"nl": "Koopadvies",
+							"en": "Purchase Advise"
+						},
+						{
+							"type": "header2",
+							"class": "",
+							"onClick": "",
+							"nl": "Action Multimeter",
+							"en": "Action Multimeter"
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/actionMultimeter.png"
+						},
+						{
+							"type": "table",
+							"class": "",
+							"onClick": "",
+							"rowData": [
+								[
+									{
+										"nl": "Prijs:",
+										"en": "Price:"
+									},
+									{
+										"nl": "€3,99",
+										"en": "€3,99"
+									}
+											
+								],
+								[
+									{
+										"nl": "Omschrijving:",
+										"en": "Description:"
+									},
+									{
+										"nl": "Een multimeter voor 3x niks waarbij je niet bang hoeft te zijn dat je portemonnee leeg is als je hem opblaast? Zoek niet verder. Geeft het voltage en amperagé voor hobby projecten precies genoeg aan en heeft alle basisfuncties zoals het meten van weerstand. Verwacht er alleen niet meer van en stop hem NOOIT in het stopcontact.",
+										"en": ""
+									}
+								],
+								[
+									{
+										"nl": "Waar te koop?",
+										"en": "Where to buy?"
+									},
+									{
+										"nl": "Op het moment van schrijven bij de Action winkels in Nederland. Anders te verkrijgen bij tal van anderen winkels in Nederland. Waarschijnlijk nog een euro goedkoper te vinden op Aliexpress maar zo goedkoop ben jij toch niet hé?",
+										"en": ""
+									}
+								]
+							]
+						},
+						{
+							"type": "header2",
+							"class": "",
+							"onClick": "",
+							"nl": "Brymen BM235 Multimeter",
+							"en": "Brymen BM235 Multimeter"
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/brymen-bm235-1.jpg"
+						},
+						{
+							"type": "image",
+							"class": "shared-content-pictureThirdLeftWrap",
+							"onClick": "",
+							"path": "pic_engineer-tech/brymen-bm235-2.jpg"
+						},
+						{
+							"type": "table",
+							"class": "",
+							"onClick": "",
+							"rowData": [
+								[
+									{
+										"nl": "Prijs:",
+										"en": "Price:"
+									},
+									{
+										"nl": "€100",
+										"en": "€100"
+									}
+											
+								],
+								[
+									{
+										"nl": "Omschrijving:",
+										"en": "Description:"
+									},
+									{
+										"nl": "Een hele goede middeklasse multimeter voor een wat meer betaalbare prijs? Dan is deze wat je zoekt. Deze multimeter kan je ook veilig in het stopcontact stoppen. Mocht je de zekeringen kapot maken zijn deze makkelijk te vervangen. Werkt op twee AA batterijen die makkelijk te vervangen zijn met een eigen klepje die een ook nog eens een sluiting heeft die niet gauw slijt. Hier kan je dus jaren plezier van hebben. De behuizing is stevig en kan wel tegen een stootje. Deze multimeter is ook wat luxer en heeft een snelle automatische bereik schakeling. Hierdoor hoef je niet meer te selecteren in welk bereik je iets gaat meten, alleen wat nog wat je gaat meten.  Bonus: komt met robuuste temperatuur sensor aan een draad zodat je de temperatuur in ovens en vaten kan meten.",
+										"en": ""
+									}
+								],
+								[
+									{
+										"nl": "Waar te koop?",
+										"en": "Where to buy?"
+									},
+									{
+										"nl": "Op het moment van schrijven bij tal van winkels.",
+										"en": ""
+									}
+								]
+							]
 						}
 					]
 				},
