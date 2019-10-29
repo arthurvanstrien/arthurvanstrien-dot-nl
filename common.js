@@ -701,12 +701,12 @@ var common = (function() {
 		
 		var language = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length > 1) {
+		if(splitURL.length > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 		
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -726,12 +726,12 @@ var common = (function() {
 		
 		var page = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length > 1) {
+		if(splitURL.length > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 			
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -751,12 +751,12 @@ var common = (function() {
 		
 		var additional = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length  > 1) {
+		if(splitURL.length  > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 			
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -773,12 +773,12 @@ var common = (function() {
 		
 		var prev = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length  > 1) {
+		if(splitURL.length  > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 			
 			for(var i = 0; i < paramArray.length; i++) {
 				
