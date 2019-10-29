@@ -402,22 +402,27 @@ var common = (function() {
 				
 				for(var i = 0; i < Object.keys(content.rowHeaders).length; i++) {
 					
-					elem = elem + "<th>" + getFieldLanguage(content.rowHeaders[i]) + "</th>";
+					id = " id='" + getElementId(elemCounter + "_" + i) + "'";
+					elem = elem + "<th" + id + ">" + getFieldLanguage(content.rowHeaders[i]) + "</th>";
 				}
 				
 				elem = elem + "</tr>";
 			}
 			
-			for(var i = 0; i < Object.keys(content.rowData).length; i++) {
-				
-				elem = elem + "<tr>";
-				
-				for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
+			if(content.rowData != null && content.rowData != "") {
+			
+				for(var i = 0; i < Object.keys(content.rowData).length; i++) {
 					
-					elem = elem + "<td>" + getFieldLanguage(content.rowData[i][j]) + "</td>";
+					elem = elem + "<tr>";
+					
+					for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
+						
+						id = " id='" + getElementId(elemCounter + "_" + i + "_" + j) + "'";
+						elem = elem + "<td" + id + ">" + getFieldLanguage(content.rowData[i][j]) + "</td>";
+					}
+					
+					elem = elem + "</tr>";
 				}
-				
-				elem = elem + "<tr>";
 			}
 			
 			elem = elem + "</table>";
@@ -563,6 +568,35 @@ var common = (function() {
 			for(var j = 0; j < Object.keys(elem.content).length; j++) {
 				
 				displayElement(elem.content[j], (id + "_" + j));
+			}
+		}
+		else if(elem.type == "table") {
+			
+			if(elem.rowHeaders != null && elem.rowHeaders != "") { 
+				
+				for(var i = 0; i < Object.keys(elem.rowHeaders).length; i++) {
+					
+					newId = id + "_" + i;
+					$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowHeaders));
+				}
+			}
+			
+			if(elem.rowData != null && elem.rowData != "") {
+			
+				for(var i = 0; i < Object.keys(elem.rowData).length; i++) {
+					
+					for(var j = 0; j < Object.keys(elem.rowData[i]).length; j++) {
+						
+						newId = id + "_" + i + "_" + j;
+						
+						console.log(getElementId(newId));
+						console.log(document.getElementById(getElementId(newId)));
+						
+						console.log(getFieldLanguage(elem.rowData[i][j]));
+						
+						$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowData[i][j]));
+					}
+				}
 			}
 		}
 		else if(elem.type == "image") {
