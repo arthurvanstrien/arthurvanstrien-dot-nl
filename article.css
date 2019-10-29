@@ -1,0 +1,23 @@
+.article-update
+{
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-top: 40px;
+	display: block;
+}
+
+.article-writtenBy
+{
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 40px;
+	margin-bottom: 40px;
+	display: block;
+}
+
+.article-leftSpec
+{
+	width: 150px;
+	display: inline-block;
+}

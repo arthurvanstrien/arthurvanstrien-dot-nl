@@ -1,0 +1,22 @@
+{
+	"tabTitle": {
+		"nl": "Informatica & Techniek",
+		"en": "Technology & Engineering"
+	},
+	"title": {
+		"nl": "Informatica & Techniek",
+		"en": "Technology & Engineering"
+	},
+	"fields": [
+		{
+			"name": "lang_paragraph",
+			"nl": "Op deze pagina is informatie te vinden die gericht is om beginners in de Techniek een beetje op weg te helpen. Vaak heb je voor een simpel project toch een aantal gereedschappen nodig, waar moet je dan op letten bij de aanschaf?",
+			"en": "This page displays information that is aimed at helping beginners going into Technology. Often you need several tools for a simple project, how do you choose the right tools?"
+		},
+		{
+			"name": "lang_header",
+			"nl": "Artikelen",
+			"en": "Articles"
+		}
+	]
+}
