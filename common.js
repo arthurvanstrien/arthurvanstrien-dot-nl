@@ -1,5 +1,5 @@
 
-
+/*
 $( document ).ready(function() {
 	
 	common.firstLoad();
@@ -12,6 +12,7 @@ $( document ).ready(function() {
 
 	}, false);
 });
+*/
 
 var common = (function() {
 	
