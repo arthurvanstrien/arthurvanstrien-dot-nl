@@ -40,6 +40,7 @@ var common = (function() {
 	common.displayErrorMessage = function(fieldName) { displayErrorMessage(fieldName); }
 	common.getHTMLElement = function(content, elemCounter) { return getHTMLElement(content, elemCounter); }
 	common.displayContent = function(langFile) { displayContent(langFile); }
+	common.displayElement = function(elem, counter) { displayElement(elem, counter); }
 	common.generateAndDisplayContent = function(langFile, idToAppendContentTo) { generateAndDisplayContent(langFile, idToAppendContentTo); }
 	common.getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
 		getJSONFile(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam);
@@ -610,7 +611,7 @@ var common = (function() {
 	
 	var displayElement = function(elem, id) {
 			
-		if(elem.type == "div-parent" || elem.type == "span-parent" || elem.type == "articleGroup") {
+		if(elem.type == "div-parent" || elem.type == "span-parent" || elem.type == "articleGroup" || elem.type == "article") {
 			
 			for(var j = 0; j < Object.keys(elem.content).length; j++) {
 				

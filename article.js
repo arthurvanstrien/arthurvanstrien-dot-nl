@@ -122,6 +122,8 @@ var article = (function() {
 			
 			$(document).prop("title", common.getFieldLanguage(article.title));
 			$("#lang_pageTitle").text(common.getFieldLanguage(article.title));
+			
+			common.displayElement(article, 0);
 		}
 	}
 	
