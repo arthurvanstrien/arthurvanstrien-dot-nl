@@ -168,6 +168,8 @@ var common = (function() {
 				
 				if(previousPage == "engineerTech")
 					articleFile = "engineerTechArticles";
+				else if(previousPage == "tools")
+					articleFile = "tools";
 				
 
 				if(articleFile == null)
@@ -214,6 +216,14 @@ var common = (function() {
 				loadPageContent("engineerTech", "engineer-tech-anchor", null, null);
 				loadPageContent("engineerTechArticles", "engineer-tech-anchor", setAdditionalLanguageFile, null);
 				customLanguageFunction = engineerTech.changeLanguage;
+			});
+		}
+		else if(page == "tools") {
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("tools.html", function() {
+				
+				loadPageContent("tools", "tools-anchor", null, null);
 			});
 		}
 		else if(page == "404") {
@@ -467,7 +477,58 @@ var common = (function() {
 		}
 		else if(elementType == "article") {
 			
-			if(nestedLevel > 0) {
+			if(page == "article") {
+				
+				//Generate the article.
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = "class='shared-content-article' ";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				if(typeof content.content != 'undefined') {
+				
+					for(var i = 0; i < Object.keys(content.content).length; i++) {
+					
+						counter = elemCounter + "_" + i;
+						elem = elem + getHTMLElement(content.content[i], counter, nestedLevel)
+					}
+				}
+				
+				
+				if(content.externalFilePath != null && content.externalFilePath != "") {
+					
+					$('#externalFileContent').load(content.externalFilePath, function() {
+				
+						if(typeof content.fields != 'undefined') {
+				
+							for(var i = 0; i < Object.keys(content.fields).length; i++) {
+				
+								fieldName = "#" + fields[i].name;
+				
+								$(fieldName).html(getFieldLanguage(fields[i]));
+							}
+						}
+						
+						var head = document.getElementsByTagName('HEAD')[0];
+						var link = document.createElement('link');
+						
+						link.rel = "stylesheet";
+						link.type = "text/css";
+						link.href = content.externalFileStyle;
+						
+						head.appendChild(link);
+						
+						var script = document.createElement('script');
+						script.type = 'text/javascript';
+						script.src = content.externalScript;    
+
+						head.appendChild(script);
+					});
+				}
+			}
+			else {
+				
 				//Generate the link to the article instead of rendering the article.
 				
 				if(elemClass == "" || elemClass == null)
@@ -478,20 +539,6 @@ var common = (function() {
 				elemOnClick = " onClick='common.changePage(\"article\", \"" + content.articleId + "\", \"" + elemCounter + "\")'";
 				
 				elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content.title) + "</span>";
-			}
-			else {
-				//Generate the article.
-				
-				if(elemClass == "" || elemClass == null)
-					elemClass = "class='shared-content-article' ";
-				else
-					elemClass = " class='" + elemClass + "'";
-				
-				for(var i = 0; i < Object.keys(content.content).length; i++) {
-				
-					counter = elemCounter + "_" + i;
-					elem = elem + getHTMLElement(content.content[i], counter, nestedLevel)
-				}
 			}
 		}
 		else if(elementType == "youtubeVideo") {

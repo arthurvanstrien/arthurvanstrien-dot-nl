@@ -34,9 +34,6 @@ var article = (function() {
 	
 	var display = function(langFile, idToAppendContentTo) {
 		
-		console.log("Display Article Function Called");
-		
-		
 		var article = null;
 		var articlePositionString = null;
 		
@@ -76,7 +73,7 @@ var article = (function() {
 			}
 			
 			loadedArticle = article;
-			common.generateAndDisplayContent(article, idToAppendContentTo);
+			$(common.getHTMLElement(article, 0)).insertAfter("#" + idToAppendContentTo);
 		}
 	}
 	
@@ -125,8 +122,6 @@ var article = (function() {
 			
 			$(document).prop("title", common.getFieldLanguage(article.title));
 			$("#lang_pageTitle").text(common.getFieldLanguage(article.title));
-			
-			common.displayContent(article);
 		}
 	}
 	
