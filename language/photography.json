@@ -9,7 +9,12 @@
 	},
 	"fields": [
 		{
-			"name": "lang_title-gallery",
+			"name": "lang_galleryTitle",
+			"nl": "Beeldengalerij",
+			"en": "Gallery"
+		},
+		{
+			"name": "lang_galleryButton",
 			"nl": "Beeldengalerij",
 			"en": "Gallery"
 		}
