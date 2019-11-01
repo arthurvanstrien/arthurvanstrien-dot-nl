@@ -1,19 +1,4 @@
 
-/*
-$( document ).ready(function() {
-	
-	common.firstLoad();
-	
-	//This event listener detects an URL change when for example the browser back button is pressed.
-	window.addEventListener('popstate', function(event) {
-		// The popstate event is fired each time when the current history entry changes.
-		
-		common.changePage(common.getURLPage(), common.getURLAdditional(), null);
-
-	}, false);
-});
-*/
-
 var common = (function() {
 	
 	var page;
@@ -60,6 +45,15 @@ var common = (function() {
 	//Below here are import private functions used extensively in this javascript file.
 	
 	var firstLoad = function() {
+		
+		//WARNING: The firstLoad function must only be called ONCE!
+		
+		window.addEventListener('popstate', function(event) {
+			// The popstate event is fired each time when the current history entry changes.
+			
+			common.changePage(common.getURLPage(), common.getURLAdditional(), null);
+
+		}, false);
 		
 		//Call the functions that get the language and page from the URL or return their default values.
 		language = getURLLanguage();
