@@ -126,6 +126,8 @@ var common = (function() {
 		
 		if(page == "home") {
 			
+			setAdditionalLanguageFile(null);
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("home.html", function() {
 				
@@ -134,6 +136,8 @@ var common = (function() {
 			});
 		}
 		else if(page == "projects") {
+			
+			setAdditionalLanguageFile(null);
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("projects.html", function() {
@@ -178,6 +182,8 @@ var common = (function() {
 		}
 		else if(page == "photography") {
 			
+			setAdditionalLanguageFile(null);
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("photography.html", function() {
 				
@@ -186,6 +192,8 @@ var common = (function() {
 			});
 		}
 		else if(page == "aboutme") {
+			
+			setAdditionalLanguageFile(null);
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("aboutme.html", function() {
@@ -196,6 +204,8 @@ var common = (function() {
 		}
 		else if(page == "gallery") {
 			
+			setAdditionalLanguageFile(null);
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("gallery.html", function() {
 			
@@ -204,6 +214,8 @@ var common = (function() {
 			});
 		}
 		else if(page == "engineerTech") {
+			
+			setAdditionalLanguageFile(null);
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("engineerTech.html", function() {
@@ -215,13 +227,17 @@ var common = (function() {
 		}
 		else if(page == "tools") {
 			
+			setAdditionalLanguageFile(null);
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("tools.html", function() {
 				
-				loadPageContent("tools", "tools-anchor", null, null);
+				loadPageContent("tools", "tools-anchor", setAdditionalLanguageFile, null);
 			});
 		}
 		else if(page == "404") {
+			
+			setAdditionalLanguageFile(null);
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("404.html", function() {
