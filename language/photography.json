@@ -50,13 +50,13 @@
 			"type": "image",
 			"class": "shared-content-pictureHalfLeft",
 			"onClick": "",
-			"path": "pic_photography/unedited-1.jpg"
+			"path": "pic_photography/P1790856-2.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureHalfRight",
 			"onClick": "",
-			"path": "pic_photography/edited-1.jpg"
+			"path": "pic_photography/P1790856-1.jpg"
 		},
 		{
 			"type": "image",
@@ -98,31 +98,31 @@
 			"type": "image",
 			"class": "shared-content-pictureWide",
 			"onClick": "",
-			"path": "pic_photography/panorama-2.jpg"
+			"path": "pic_photography/P1720292-Pano.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureWide",
 			"onClick": "",
-			"path": "pic_photography/panorama-4.jpg"
+			"path": "pic_photography/P1730986-Pano.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureHalfLeft",
 			"onClick": "",
-			"path": "pic_photography/panorama-3.jpg"
+			"path": "pic_photography/P1730883-Pano.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureHalfRight",
 			"onClick": "",
-			"path": "pic_photography/panorama-1.jpg"
+			"path": "pic_photography/P1860724-Pano.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureWide",
 			"onClick": "",
-			"path": "pic_photography/panorama-5.jpg"
+			"path": "pic_photography/P1720387-Pano.jpg"
 		},
 		
 		
@@ -181,7 +181,7 @@
 			"type": "image",
 			"class": "shared-content-pictureHalfLeftWrap",
 			"onClick": "",
-			"path": "pic_photography/camera.jpg"
+			"path": "pic_photography/20190821_141341.jpg"
 		},
 		{
 			"type": "paragraph",
