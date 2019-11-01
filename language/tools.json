@@ -1,0 +1,43 @@
+{
+	"tabTitle": {
+		"nl": "Gereedschap",
+		"en": "Tools"
+	},
+	"title": {
+		"nl": "Gereedschap",
+		"en": "Tools"
+	},
+	"content": [
+		{
+			"type": "articleGroup",
+			"class": "",
+			"onClick": "",
+			"title": {
+				"nl": "Algemeen",
+				"en": "Common"
+			},
+			"content": [
+				{
+					"type": "article",
+					"class": "",
+					"articleId": "12off6m",
+					"lastUpdate": "25-10-2019",
+					"writer": "Arthur van Strien",
+					"externalFilePath": "tools/hashgenerator.html",
+					"externalFileStyle": "tools/hashgenerator.css",
+					"externalScript": "tools/hashgenerator.js",
+					"title": {
+						"nl": "Unieke ID Generator",
+						"en": "Unique ID Generator"
+					},
+					"content": [
+
+					],
+					"fields": [
+					
+					]
+				}
+			]
+		}
+	]
+}
