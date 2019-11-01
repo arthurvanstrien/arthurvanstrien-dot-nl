@@ -220,7 +220,7 @@
 			"type": "image",
 			"class": "shared-content-pictureHalfRight",
 			"onClick": "",
-			"path": "pic_gallery/P1420466.jpg"
+			"path": "pic_gallery/P1420467.jpg"
 		},
 		{
 			"type": "image",
@@ -341,6 +341,150 @@
 			"class": "shared-content-pictureHalfRight",
 			"onClick": "",
 			"path": "pic_gallery/P1870118.jpg"
+		},
+		
+		
+		
+		{
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_gallery/DSCF0320.jpg"
+		},
+		
+		
+		
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/P1890438.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/DSCF6950.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/DSCF6976.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/P1890435.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/P1890379.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/DSCF2416.jpg"
+		},
+		
+		
+		
+		{
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_gallery/DSCF5345.jpg"
+		},
+		
+		
+		
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/DSCF5744.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/DSCF8763.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/DSCF3942.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/P1090107.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/P1420294.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/P1490979.jpg"
+		},
+		
+		
+		
+		{
+			"type": "image",
+			"class": "shared-content-pictureWide",
+			"onClick": "",
+			"path": "pic_gallery/P1790805-Pano.jpg"
+		},
+		
+		
+		
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/DSCF3141.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/DSCF7002.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/DSCF7970.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/P1090139.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfLeft",
+			"onClick": "",
+			"path": "pic_gallery/DSCF4252.jpg"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureHalfRight",
+			"onClick": "",
+			"path": "pic_gallery/DSCF1441.jpg"
 		}
 	]
 }
