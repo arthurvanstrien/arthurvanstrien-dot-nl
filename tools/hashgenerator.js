@@ -2,13 +2,10 @@ function makeHash() {
 	
 	var date = new Date();
 	
-	log("Starting hash");
 	var toHash = document.getElementById("hashField").value;
 	toHash = toHash + date.getTime();
-	log("To Hash: " + toHash);
 	var hashed = toHash.hashCode();
-	log("Result: " + hashed);
-	
+
 	var hex = hashed.toString(32);
 	
 	$("#hashResult").val(hashed);
@@ -41,15 +38,10 @@ String.prototype.hashCode = function() {
         hash = hash & hash; // Convert to 32bit integer
     }
 	
-	log(hash);
-	
 	if(hash < 0) {
 		
-		log("below 0");
 		hash = -hash;
 	}
-	
-	log(hash);
 	
     return hash;
 }
@@ -57,8 +49,6 @@ String.prototype.hashCode = function() {
 async function showShortMessage(elementId, timeInSeconds) {
 	
 	$("#" + elementId).text("Succesfully copied!");
-	
-	log("message shown");
 	
 	await timeOut((timeInSeconds * 1000), clearElement, elementId);	
 }
@@ -76,9 +66,4 @@ async function timeOut(milliseconds, functionAfter, parameter) {
 function clearElement(elementId) {
 		
 	$("#" + elementId).empty();
-}
-
-function log(text) {
-	
-	console.log(text);
 }
