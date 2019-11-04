@@ -70,6 +70,9 @@ var common = (function() {
 		//Call the function that makes sure the footer always displays the current year.
 		//I just don't want to update the website the first day of every year just to change the year in the footer.
 		updateFooterYear();
+		
+		//Get the version number from the version number file. 
+		getJSONFile("website_version", updateWebsiteVersion, null, null, null);
 	}
 
 	var getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
@@ -860,6 +863,12 @@ var common = (function() {
 		
 		var date = new Date();
 		$("#year_footer").text(date.getFullYear().toString());
+	}
+	
+	var updateWebsiteVersion = function(langFile) {
+		
+		console.log(langFile.version);
+		$("#lang_version").text(langFile.version);
 	}
 
 	var log = function(text) {
