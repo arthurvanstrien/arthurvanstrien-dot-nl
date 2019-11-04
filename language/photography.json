@@ -9,7 +9,12 @@
 	},
 	"fields": [
 		{
-			"name": "lang_title-gallery",
+			"name": "lang_galleryTitle",
+			"nl": "Beeldengalerij",
+			"en": "Gallery"
+		},
+		{
+			"name": "lang_galleryButton",
 			"nl": "Beeldengalerij",
 			"en": "Gallery"
 		}
@@ -50,13 +55,13 @@
 			"type": "image",
 			"class": "shared-content-pictureHalfLeft",
 			"onClick": "",
-			"path": "pic_photography/unedited-1.jpg"
+			"path": "pic_photography/P1790856-2.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureHalfRight",
 			"onClick": "",
-			"path": "pic_photography/edited-1.jpg"
+			"path": "pic_photography/P1790856-1.jpg"
 		},
 		{
 			"type": "image",
@@ -98,31 +103,31 @@
 			"type": "image",
 			"class": "shared-content-pictureWide",
 			"onClick": "",
-			"path": "pic_photography/panorama-2.jpg"
+			"path": "pic_photography/P1720292-Pano.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureWide",
 			"onClick": "",
-			"path": "pic_photography/panorama-4.jpg"
+			"path": "pic_photography/P1730986-Pano.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureHalfLeft",
 			"onClick": "",
-			"path": "pic_photography/panorama-3.jpg"
+			"path": "pic_photography/P1730883-Pano.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureHalfRight",
 			"onClick": "",
-			"path": "pic_photography/panorama-1.jpg"
+			"path": "pic_photography/P1860724-Pano.jpg"
 		},
 		{
 			"type": "image",
 			"class": "shared-content-pictureWide",
 			"onClick": "",
-			"path": "pic_photography/panorama-5.jpg"
+			"path": "pic_photography/P1720387-Pano.jpg"
 		},
 		
 		
@@ -181,7 +186,7 @@
 			"type": "image",
 			"class": "shared-content-pictureHalfLeftWrap",
 			"onClick": "",
-			"path": "pic_photography/camera.jpg"
+			"path": "pic_photography/20190821_141341.jpg"
 		},
 		{
 			"type": "paragraph",
@@ -194,14 +199,14 @@
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
-			"nl": "Ook was de Lumix G7 een interessante koop door het aanbod met relatief goede kitlenzen. Namelijk de  14-42mm f3.5-5.6 en de 45-150mm f4.0-5.6. Toen ik de camera kocht was ik nog student en dit was het maximale van mijn budget. Als ik voor een Fullframe camera had gekozen had ik nieuw waarschijnlijk niet eens budget gehad voor lenzen en tweedehands misschien maar één lens gehad. De camera heeft een uitstekende prijs kwaliteit verhouding. Voor deze prijs krijg je een camera die foto’s kan nemen in RAW formaat met resolutie van 4592x3448, dit is meer dan een 4K / UHD scherm en ook zat om foto’s uitvergroot aan de muur te hangen. Mocht ik een keer een foto heel groot op willen hangen, dan kan ik altijd een paar foto’s aan elkaar plakken. Het constant nemen van hogere resolutie foto’s zou ook op den duur veel te veel opslagruimte in gaan nemen. De camera heeft ook uitstekende video capaciteiten en kan video opnemen in 4K met 30 beelden per seconde of 1080p full HD met 60 beelden per seconde. Tevens is het mogelijk een externe microfoon met 3,5mm jack aan te sluiten. Hierdoor zijn deze camera en zijn grote broer de GH4 ook zeer populair onder Youtubers. Uiteraard heeft de camera de mogelijkheid om in standen als manueel te fotograferen / filmen en geeft volle controle over de apertuur, sluitertijd en focus. Tot slot maakt wordt het afgemaakt met een draai en klapbaar touch-screen wat bijvoorbeeld het focus punt wijzigen zeer makkelijk maakt. Dit alles maakt de camera zeer geschikt voor verschillende taken, van vakantiefoto’s tot een elevator pitch, deze camera kan het. ",
+			"nl": "Ook was de Lumix G7 een interessante koop door het aanbod met relatief goede kitlenzen. Namelijk de  14-42mm f3.5-5.6 en de 45-150mm f4.0-5.6. Toen ik de camera kocht was ik nog student en dit was het maximale van mijn budget. Als ik voor een Fullframe camera had gekozen had ik nieuw waarschijnlijk niet eens budget gehad voor lenzen en tweedehands misschien maar één lens gehad. De camera heeft een uitstekende prijs kwaliteit verhouding. Voor deze prijs krijg je een camera die foto’s kan nemen in RAW formaat met resolutie van 4592x3448, dit is meer dan een 4K / UHD scherm en ook zat om foto’s uitvergroot aan de muur te hangen. Mocht ik een keer een foto heel groot op willen hangen, dan kan ik altijd een paar foto’s aan elkaar plakken. Het constant nemen van hogere resolutie foto’s zou ook op den duur veel te veel opslagruimte in gaan nemen. De camera heeft ook uitstekende video capaciteiten en kan video opnemen in 4K met 30 beelden per seconde of 1080p full HD met 60 beelden per seconde. Tevens is het mogelijk een externe microfoon met 3,5mm jack aan te sluiten. Hierdoor zijn deze camera en zijn grote broer de GH4 ook zeer populair onder Youtubers. Uiteraard heeft de camera de mogelijkheid om in standen als manueel te fotograferen / filmen en geeft volle controle over de apertuur, sluitertijd en focus. Tot slot wordt het afgemaakt met een draai- en klapbaar touch-screen wat bijvoorbeeld het focus punt wijzigen zeer makkelijk maakt. Dit alles maakt de camera zeer geschikt voor verschillende taken, van vakantiefoto’s tot een elevator pitch, deze camera kan het. ",
 			"en": "Another reason I choose the Lumix G7 is because of its price-performance ratio. I bought the G7 with two excellent kit lenses, the 14-42mm f3.5-5.6 and the 45-150mm f4.0-5.6. If I had bought a full-frame camera at the time with the same budget, I wouldn't had money to spare for lenses at all. Second-Hand full-frame cameras are still price and for my budget, I wouldn't able to afford a body with two lenses either. But it doesn't stop there. This camera can take pictures in RAW format with a maximum resolution of 4592x3448, this is higher than the resolution of a 4K or UHD screen. This is ample for a medium-size image on the wall. And for the few occasions when this amount is not enough, I can always merge multiple pictures together. Besides, you are going to use a lot more storage fast when the resolution is higher. Further, the G7 has excellent video recording capabilities. It can record in 4k with 30 frames per second and 60 frames per second in 1080p full HD. Therefore the G7 and its big brother the GH4 are very popular among YouTubers. The amazing thing is that it doesn't compromise on the photography capabilities for its video capabilities. The G7 has a manual mode and full control over the aperture, shutter speed and focus. The finishing touch is its fold and tilt touch screen that makes changing the focus point a simple tap. From holiday photography to recording an elevator pitch, this camera can do it."
 		},
 		{
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
-			"nl": "Maar als deze camera dan zo geweldig is, waarom heeft niet iedere fotograaf zo’n Lumix G7 of andere camera van het Micro-Four-Thirds platform? Er is inderdaad een addertje onder het gras, de Micro-Four-Thirds sensor is fysiek kleiner dan die van een full-frame camera. Dit heeft een één echt nadeel, een kleinere sensor betekend minder oppervlakte om licht op te nemen. Hoewel deze camera verbluffend goed is bij weinig licht zal een goede full-frame camera altijd winnen dankzij zijn grotere sensor oppervlakte. Micro-Four-Thirds sensoren zijn hier een kantelpunt, als je een kleinere sensor kiest dan Micro-Four-Thirds gaan de kwaliteiten bij weinig licht hard omlaag maar bij Micro-Four-Thirds is de sensor nog net groot genoeg om zonder problemen een mooie zonsondergang te fotograferen. ",
+			"nl": "Maar als deze camera dan zo geweldig is, waarom heeft niet iedere fotograaf zo’n Lumix G7 of andere camera van het Micro-Four-Thirds platform? Er is inderdaad een addertje onder het gras, de Micro-Four-Thirds sensor is fysiek kleiner dan die van een full-frame camera. Dit heeft één echt nadeel, een kleinere sensor betekent minder oppervlakte om licht op te nemen. Hoewel deze camera verbluffend goed is bij weinig licht zal een goede full-frame camera altijd winnen dankzij zijn grotere sensor oppervlakte. Micro-Four-Thirds sensoren zijn hier een kantelpunt, als je een kleinere sensor kiest dan Micro-Four-Thirds gaan de kwaliteiten bij weinig licht hard omlaag maar bij Micro-Four-Thirds is de sensor nog net groot genoeg om zonder problemen een mooie zonsondergang te fotograferen. ",
 			"en": "But if this camera is so great, why doesn't every photographer use it? Well, there is a bit of a twist. The Micro-Four-Thirds sensor is physically smaller than a full-frame sensor. This has one, but critical downside, it has less surface to collect light on. The low light results of this camera are excellent though, but it will never win from a good full-frame sensor camera. The size of the Micro-Four-Thirds sensor is at the edge of a tipping point. When you go any smaller the low light performance drops significantly, but Micro-Four-Thirds is still big enough to capture a sunset without trouble."
 		},
 		{
@@ -230,7 +235,7 @@
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
-			"nl": "Er zijn mensen die dit nog veel beter uit kunnen leggen dan ik en er zijn genoeg artikelen en video’s op het internet te vinden. Echter nu we het effect van de cropfactor begrijpen kunnen we ook kijken naar de nadelen en voordelen. Mocht je namelijk een close-up foto van een gebouw willen nemen dan is het lastiger het gebouw in beeld te krijgen met Micro-Four-Thirds camera. Als een full-frame camera met een 25mm lens het gebouw net in beeld zou krijgen, een maat die nog vrij standaard is bij betaalbare kitlenzen, dan heb je bij de Micro-Four-Thirds camera al een 12,5 mm lens nodig om hetzelfde beeld te krijgen. Een 12,5 mm lens of een lens die bijvoorbeeld 12-24mm is zijn geen standaard kit-lens maten en het kost vaak aardig wat geld om een extra lens te kopen die zo ver kan uitzoomen. De cropfactor heeft dus een nadeel bij uitzoomen. Daar staat dan weer tegenover dat het een groot voordeel heeft bij inzoomen. Stel je voor dat je een foto neemt met een full-frame camera met een 300mm lens. Deze lens heeft best wat geld gekost en is al aardig groot en zwaar. De kitlens die bij de Lumix G7 komt gaat tot 150mm en gedraagt zicht dus als een 300mm lens. Kortom, de kitlens bij de Lumix G7 kan dus al dezelfde foto maken dan de dure 300mm full-frame lens. Wil je nog verder zoomen, dan wordt het voordeel alleen nog maar groter. Een 300mm lens is namelijk nog best goed betaalbaar en een 400mm breekt de bank nog niet helemaal. Daarboven ga je enorme bedragen neertellen voor lenzen. Met het Micro-Four-Thirds platform kan je dus vrij betaalbaar 700mm of 800mm ver zoomen terwijl je bij een full-frame lens van 700 of 800mm een erg dure en zware lens in handen hebt. Helemaal perfect is het niet. Er moet rekening mee gehouden worden dat de full-frame lenzen meer licht doorlaten. Hierdoor is een kortere sluitertijd mogelijk wat bij bewegende objecten en matige lichtomstandigheden een groot verschil kan maken. ",
+			"nl": "Er zijn mensen die dit nog veel beter uit kunnen leggen dan ik en er zijn genoeg artikelen en video’s op het internet te vinden. Echter nu we het effect van de cropfactor begrijpen kunnen we ook kijken naar de nadelen en voordelen. Mocht je namelijk een close-up foto van een gebouw willen nemen dan is het lastiger het gebouw in beeld te krijgen met Micro-Four-Thirds camera. Als een full-frame camera met een 25mm lens het gebouw net in beeld zou krijgen, een maat die nog vaal voorkomt bij betaalbare kitlenzen, dan heb je bij de Micro-Four-Thirds camera al een 12,5 mm lens nodig om hetzelfde beeld te krijgen. Een 12,5 mm lens of een lens die bijvoorbeeld 12-24mm is zijn geen standaard kit-lens maten en het kost vaak aardig wat geld om een extra lens te kopen die zo ver kan uitzoomen. De cropfactor heeft dus een nadeel bij uitzoomen. Daar staat dan weer tegenover dat het een groot voordeel heeft bij inzoomen. Stel je voor dat je een foto neemt met een full-frame camera met een 300mm lens. Deze lens heeft best wat geld gekost en is al aardig groot en zwaar. De kitlens die bij de Lumix G7 komt gaat tot 150mm en gedraagt zich dus als een 300mm lens. Kortom, de kitlens bij de Lumix G7 kan dus al dezelfde foto maken als de dure 300mm full-frame lens. Wil je nog verder zoomen, dan wordt het voordeel alleen nog maar groter. Een 300mm lens is namelijk nog best goed betaalbaar en een 400mm breekt de bank nog niet helemaal. Daarboven ga je enorme bedragen neertellen voor lenzen. Met het Micro-Four-Thirds platform kan je dus vrij betaalbaar 700mm of 800mm ver zoomen terwijl je bij een full-frame lens van 700 of 800mm een erg dure en zware lens in handen hebt. Helemaal perfect is het niet. Er moet rekening mee gehouden worden dat de full-frame lenzen meer licht doorlaten. Hierdoor is een kortere sluitertijd mogelijk wat bij bewegende objecten en matige lichtomstandigheden een groot verschil kan maken. ",
 			"en": "There are a lot of experts that know a lot more about this or that can explain this even better. But now we know how the effect works, we can look to the advantage and disadvantage. The disadvantage that the Micro-Four-Thirds by two crop factor has is that it is harder to get a large object on close range into view. For example, a 50mm lens, which is a commonly used size, needs to be as small as 25mm on Micro-Four-Thirds. When you go any size smaller the price of a lens goes up fast. Full frame lenses are commonly more expensive than Micro-Four-Thirds but the uncommon lens sizes are still more expensive. However, if your goal is to zoom in on your object on a budget, Micro-Four-Thirds might be what you are looking for. The crop factor doubles the zoom remember? That makes the big advantage of the Micro-Four-Thirds crop factor. For example, an affordable 150mm lens behaves like a more expensive 300mm lens. And the more expensive, still below 500$ 300mm lens behaves like a several 1000$ full-frame lens. There is a notable difference however, the Full-frame lenses are a lot heavier but let trough more light than their Micro-Four-Thirds alternatives. The amount of light that goes through the lens impacts the shutter speed in low light situations. This can make a large difference when shooting photographs of moving targets in the morning or evening."
 		},
 		
@@ -245,7 +250,7 @@
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
-			"nl": "Iedereen moet zijn eigen afweging maken of de cropfactor een probleem is voor zijn of haar doeleinden. Zelf vind ik dat het Micro-Four-Thirds platform en mijn Lumix G7 mij een ontzettend goede prijs-kwaliteit verhouding hebben gegeven en zou deze ook zeker aanraden aan anderen. Als budget geen restrictie was had ik nog steeds voor het Micro-Four-Thirds platform en de Lumix G7 gegaan. Het hebben van een lichtere camera en lenzen bij wandelingen voor mij een groot voordeel is. Ook is het mogelijk om lichtsterke lenzen van het full-frame platform van Canon door middel van een actieve adapter aan het Micro-Four-Thirds platform te koppelen. Een kleine, lichtgewicht, Micro-Four-Thirds lens kan andersom niet aan een camera van het Canon full-frame platform gekoppeld worden. Tot slot valt er over de bouwkwaliteit niets te klagen aangezien mijn Lumix G7 al op vele (berg) wandelingen aan mijn schouder heeft gehangen en tot nu toe nog stevig in elkaar zit.",
+			"nl": "Iedereen moet zijn eigen afweging maken of de cropfactor een probleem is voor zijn of haar doeleinden. Zelf vind ik dat het Micro-Four-Thirds platform en mijn Lumix G7 mij een ontzettend goede prijs-kwaliteit verhouding hebben gegeven en zou deze ook zeker aanraden aan anderen. Als budget geen restrictie was, had ik nog steeds voor het Micro-Four-Thirds platform en de Lumix G7 gekozen. Het hebben van een lichtere camera en lenzen is voor mij bij wandelingen een groot voordeel. Ook is het mogelijk om lichtsterke lenzen van het full-frame platform van Canon door middel van een actieve adapter aan het Micro-Four-Thirds platform te koppelen. Een kleine, lichtgewicht, Micro-Four-Thirds lens kan andersom niet aan een camera van het Canon full-frame platform gekoppeld worden. Tot slot valt er over de bouwkwaliteit niets te klagen aangezien mijn Lumix G7 al op vele (berg) wandelingen aan mijn schouder heeft gehangen en tot nu toe nog stevig in elkaar zit.",
 			"en": "I can't tell you what you should buy and neither if the crop factor is going to benefit your needs or not. My conclusion is that the Micro-Four-Thirds platform with my Lumix G7 has provided me with excellent value for money. Therefore I like to recommend the platform even when you have a large budget. This at first because the platform is very portable but also because of its flexibility. You can't put the small lenses from the Micro-Four-Thirds platform on a full-frame platform from for example Canon. However, the other way around, you can connect Canon full-frame platform lenses with their excellent light capacity on the Micro-Four-Thirds platform trough an active adapter. At last, I like to point out that the 'cheap' Micro-Four-Thirds platform does not hand in on the build quality."
 		}
 	]

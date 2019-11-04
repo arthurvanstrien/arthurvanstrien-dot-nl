@@ -26,7 +26,7 @@ var article = (function() {
 		else {
 			
 			if(additionalLanguageFile == "" || additionalLanguageFile == null)
-				common.getJSONFile(articlesFileName, article.display, idToAppendContentTo, null, null);
+				common.getJSONFile(articlesFileName, article.display, idToAppendContentTo, common.setAdditionalLanguageFile, null);
 			else 
 				display(additionalLanguageFile, idToAppendContentTo);
 		}

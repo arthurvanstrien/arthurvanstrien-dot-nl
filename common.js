@@ -1,19 +1,4 @@
 
-/*
-$( document ).ready(function() {
-	
-	common.firstLoad();
-	
-	//This event listener detects an URL change when for example the browser back button is pressed.
-	window.addEventListener('popstate', function(event) {
-		// The popstate event is fired each time when the current history entry changes.
-		
-		common.changePage(common.getURLPage(), common.getURLAdditional(), null);
-
-	}, false);
-});
-*/
-
 var common = (function() {
 	
 	var page;
@@ -61,6 +46,15 @@ var common = (function() {
 	
 	var firstLoad = function() {
 		
+		//WARNING: The firstLoad function must only be called ONCE!
+		
+		window.addEventListener('popstate', function(event) {
+			// The popstate event is fired each time when the current history entry changes.
+			
+			common.changePage(common.getURLPage(), common.getURLAdditional(), null);
+
+		}, false);
+		
 		//Call the functions that get the language and page from the URL or return their default values.
 		language = getURLLanguage();
 		page = getURLPrev(); //The changePage function always sets the page variable as the previouspage.
@@ -76,6 +70,9 @@ var common = (function() {
 		//Call the function that makes sure the footer always displays the current year.
 		//I just don't want to update the website the first day of every year just to change the year in the footer.
 		updateFooterYear();
+		
+		//Get the version number from the version number file. 
+		getJSONFile("website_version", updateWebsiteVersion, null, null, null);
 	}
 
 	var getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
@@ -132,6 +129,8 @@ var common = (function() {
 		
 		if(page == "home") {
 			
+			setAdditionalLanguageFile(null);
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("home.html", function() {
 				
@@ -140,6 +139,8 @@ var common = (function() {
 			});
 		}
 		else if(page == "projects") {
+			
+			setAdditionalLanguageFile(null);
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("projects.html", function() {
@@ -184,6 +185,8 @@ var common = (function() {
 		}
 		else if(page == "photography") {
 			
+			setAdditionalLanguageFile(null);
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("photography.html", function() {
 				
@@ -192,6 +195,8 @@ var common = (function() {
 			});
 		}
 		else if(page == "aboutme") {
+			
+			setAdditionalLanguageFile(null);
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("aboutme.html", function() {
@@ -202,6 +207,8 @@ var common = (function() {
 		}
 		else if(page == "gallery") {
 			
+			setAdditionalLanguageFile(null);
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("gallery.html", function() {
 			
@@ -210,6 +217,8 @@ var common = (function() {
 			});
 		}
 		else if(page == "engineerTech") {
+			
+			setAdditionalLanguageFile(null);
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("engineerTech.html", function() {
@@ -221,13 +230,17 @@ var common = (function() {
 		}
 		else if(page == "tools") {
 			
+			setAdditionalLanguageFile(null);
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("tools.html", function() {
 				
-				loadPageContent("tools", "tools-anchor", null, null);
+				loadPageContent("tools", "tools-anchor", setAdditionalLanguageFile, null);
 			});
 		}
 		else if(page == "404") {
+			
+			setAdditionalLanguageFile(null);
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("404.html", function() {
@@ -749,12 +762,12 @@ var common = (function() {
 		
 		var language = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length > 1) {
+		if(splitURL.length > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 		
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -774,12 +787,12 @@ var common = (function() {
 		
 		var page = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length > 1) {
+		if(splitURL.length > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 			
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -799,12 +812,12 @@ var common = (function() {
 		
 		var additional = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length  > 1) {
+		if(splitURL.length  > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 			
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -821,12 +834,12 @@ var common = (function() {
 		
 		var prev = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length  > 1) {
+		if(splitURL.length  > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 			
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -850,6 +863,12 @@ var common = (function() {
 		
 		var date = new Date();
 		$("#year_footer").text(date.getFullYear().toString());
+	}
+	
+	var updateWebsiteVersion = function(langFile) {
+		
+		console.log(langFile.version);
+		$("#lang_version").text(langFile.version);
 	}
 
 	var log = function(text) {
