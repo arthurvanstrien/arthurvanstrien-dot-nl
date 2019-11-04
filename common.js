@@ -1,20 +1,7 @@
 
-var page;
-$( document ).ready(function() {
-	
-	common.firstLoad();
-	
-	//This event listener detects an URL change when for example the browser back button is pressed.
-	window.addEventListener('popstate', function(event) {
-		// The popstate event is fired each time when the current history entry changes.
-		
-		common.changePage(common.getURLPage(), common.getURLLanguage(), common.getURLAdditional());
-
-	}, false);
-});
-
 var common = (function() {
 	
+	var page;
 	var language;
 	var languageFile;
 	var commonLanguageFile;
@@ -24,6 +11,7 @@ var common = (function() {
 	var defaultPage = "home";
 	var defaultLanguage = "nl";
 	var errorLoopDetection = false;
+	var previousPage;
 	
 	//This variable will contain the public methods that are returned and can be accessed.
 	var common = {};
@@ -37,6 +25,8 @@ var common = (function() {
 	common.displayErrorMessage = function(fieldName) { displayErrorMessage(fieldName); }
 	common.getHTMLElement = function(content, elemCounter) { return getHTMLElement(content, elemCounter); }
 	common.displayContent = function(langFile) { displayContent(langFile); }
+	common.displayElement = function(elem, counter) { displayElement(elem, counter); }
+	common.generateAndDisplayContent = function(langFile, idToAppendContentTo) { generateAndDisplayContent(langFile, idToAppendContentTo); }
 	common.getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
 		getJSONFile(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam);
 	}
@@ -46,8 +36,8 @@ var common = (function() {
 	
 	common.getURLPage = function() { return getURLPage(); }
 	common.getURLLanguage = function() { return getURLLanguage(); }
+	common.getURLPrev = function() { return getURLPrev(); }
 	common.getURLAdditional = function() { return getURLAdditional(); }
-	
 	
 	
 	
@@ -56,13 +46,22 @@ var common = (function() {
 	
 	var firstLoad = function() {
 		
+		//WARNING: The firstLoad function must only be called ONCE!
+		
+		window.addEventListener('popstate', function(event) {
+			// The popstate event is fired each time when the current history entry changes.
+			
+			common.changePage(common.getURLPage(), common.getURLAdditional(), null);
+
+		}, false);
+		
 		//Call the functions that get the language and page from the URL or return their default values.
 		language = getURLLanguage();
-		page = getURLPage();
+		page = getURLPrev(); //The changePage function always sets the page variable as the previouspage.
 		
 		//The change page must be run before other functions.
 		//When the page is set, the URL is also changed.
-		changePage(page, getURLAdditional(), null);
+		changePage(getURLPage(), getURLAdditional(), null);
 		
 		//Get the universal language files that are used on every page.
 		getJSONFile("common", setCommonLanguageFile, null, displayContent, null);
@@ -71,6 +70,9 @@ var common = (function() {
 		//Call the function that makes sure the footer always displays the current year.
 		//I just don't want to update the website the first day of every year just to change the year in the footer.
 		updateFooterYear();
+		
+		//Get the version number from the version number file. 
+		getJSONFile("website_version", updateWebsiteVersion, null, null, null);
 	}
 
 	var getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
@@ -122,11 +124,14 @@ var common = (function() {
 	
 	var changePage = function(newPage, additionalURLParam, additionalData) {
 		
+		previousPage = page;
 		page = newPage;
 		
 		if(page == "home") {
 			
-			setURL(page, language, null);
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
 			$('#content').load("home.html", function() {
 				
 				loadPageContent("home", "home-anchor", null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
@@ -135,7 +140,9 @@ var common = (function() {
 		}
 		else if(page == "projects") {
 			
-			setURL(page, language, null);
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
 			$('#content').load("projects.html", function() {
 				
 				loadPageContent("projects", "projects-anchor", null, null); 
@@ -145,16 +152,42 @@ var common = (function() {
 		}
 		else if(page == "projectDetail") {
 			
-			setURL(page, language, additionalURLParam);
+			setURL(page, previousPage, language, additionalURLParam);
 			$('#content').load("projectDetail.html", function() {
 				
 				loadPageContent("projectDetail", "projectDetail-anchor", projectDetail.load, additionalData);
 				customLanguageFunction = projectDetail.changeLanguage;
 			});
 		}
+		else if(page == "article")
+		{
+			var articleFile = null;
+			
+			setURL(page, previousPage, language, additionalURLParam);
+			$('#content').load("article.html", function() {
+				
+				loadPageContent("article", "article-anchor", null, null);
+				
+				if(previousPage == "engineerTech")
+					articleFile = "engineerTechArticles";
+				else if(previousPage == "tools")
+					articleFile = "tools";
+				
+
+				if(articleFile == null)
+					changePage("404", null, null);
+				else {
+					
+					article.load(articleFile, "article-anchor", additionalData);
+					customLanguageFunction = article.changeLanguage;
+				}
+			});
+		}
 		else if(page == "photography") {
 			
-			setURL(page, language, null);
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
 			$('#content').load("photography.html", function() {
 				
 				loadPageContent("photography", "photography-anchor", null, null);
@@ -163,7 +196,9 @@ var common = (function() {
 		}
 		else if(page == "aboutme") {
 			
-			setURL(page, language, null);
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
 			$('#content').load("aboutme.html", function() {
 				
 				loadPageContent("aboutme", "aboutme-anchor", null, null);
@@ -172,28 +207,45 @@ var common = (function() {
 		}
 		else if(page == "gallery") {
 			
-			setURL(page, language, null);
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
 			$('#content').load("gallery.html", function() {
 			
 				loadPageContent("gallery", "gallery-anchor", null, null);
 				customLanguageFunction = null;
 			});
 		}
-		else if(page == "engineer-tech") {
+		else if(page == "engineerTech") {
 			
-			setURL(page, language, null);
-			$('#content').load("engineer-tech.html", function() {
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("engineerTech.html", function() {
 				
-				loadPageContent("engineer-tech", "engineer-tech-anchor", null, null);
-				customLanguageFunction = null;
+				loadPageContent("engineerTech", "engineer-tech-anchor", null, null);
+				loadPageContent("engineerTechArticles", "engineer-tech-anchor", setAdditionalLanguageFile, null);
+				customLanguageFunction = engineerTech.changeLanguage;
+			});
+		}
+		else if(page == "tools") {
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("tools.html", function() {
+				
+				loadPageContent("tools", "tools-anchor", setAdditionalLanguageFile, null);
 			});
 		}
 		else if(page == "404") {
 			
-			setURL(page, language, null);
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
 			$('#content').load("404.html", function() {
 				
-				loadPageContent(page, "404-anchor", null, null);
+				loadPageContent("404", "404-anchor", null, null);
 				customLanguageFunction = null;
 			});
 		}
@@ -202,6 +254,9 @@ var common = (function() {
 			changePage("404", null, null);
 		}
 	}
+	
+	
+	
 	
 	//The function loadPageContent is made to load the content in the default JSON file that belongs to the page.
 	//This function can not be used to load additional JSON files with content.
@@ -230,7 +285,7 @@ var common = (function() {
 			
 			for(var i = 0; i < Object.keys(content).length; i++) {
 				
-				generatedHTML = generatedHTML + getHTMLElement(content[i], i);
+				generatedHTML = generatedHTML + getHTMLElement(content[i], i, 0);
 			}
 			
 			$(generatedHTML).insertAfter("#" + idToAppendContentTo);
@@ -253,7 +308,7 @@ var common = (function() {
 		}
 	}
 	
-	var getHTMLElement = function(content, elemCounter) {
+	var getHTMLElement = function(content, elemCounter, nestedLevel) {
 		
 		var elem = "";
 		var elementType = content.type;
@@ -268,18 +323,26 @@ var common = (function() {
 		
 		if(elementType == "div-parent") {
 			
-			elemClass = " class='" + elemClass + "'";
-			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</div>";
+			if(elemClass == null || elemClass == "")
+				elemClass = "";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</div>";
 		}
 		else if(elementType == "span-parent") {
 			
-			elemClass = " class='" + elemClass + "'";
-			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</span>";
+			if(elemClass == null || elemClass == "")
+				elemClass = "";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</span>";
 		}
 		else if(elementType == "div") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-div' ";
+				elemClass = " class='shared-content-div'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -288,7 +351,7 @@ var common = (function() {
 		else if(elementType == "span") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-span' ";
+				elemClass = " class='shared-content-span'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -297,7 +360,7 @@ var common = (function() {
 		else if(elementType == "paragraph") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-paragraph' ";
+				elemClass = " class='shared-content-paragraph'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -306,7 +369,7 @@ var common = (function() {
 		else if(elementType == "image") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-pictureHalfLeft' ";
+				elemClass = " class='shared-content-pictureHalfLeft'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -315,7 +378,7 @@ var common = (function() {
 		else if(elementType == "header1") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-h1' ";
+				elemClass = " class='shared-content-h1'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -324,7 +387,7 @@ var common = (function() {
 		else if(elementType == "header2") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-h2' ";
+				elemClass = " class='shared-content-h2'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -333,7 +396,7 @@ var common = (function() {
 		else if(elementType == "header3") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-h3' ";
+				elemClass = " class='shared-content-h3'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -342,7 +405,7 @@ var common = (function() {
 		else if(elementType == "listItem") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-listItem' ";
+				elemClass = " class='shared-content-listItem'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -351,7 +414,7 @@ var common = (function() {
 		else if(elementType == "table") {
 			
 			if(elemClass == "" || elemClass == null)
-				elemClass = "class='shared-content-table' ";
+				elemClass = " class='shared-content-table'";
 			else
 				elemClass = " class='" + elemClass + "'";
 			
@@ -363,22 +426,133 @@ var common = (function() {
 				
 				for(var i = 0; i < Object.keys(content.rowHeaders).length; i++) {
 					
-					elem = elem + "<th>" + getFieldLanguage(content.rowHeaders[i]) + "</th>";
+					id = " id='" + getElementId(elemCounter + "_" + i) + "'";
+					elem = elem + "<th" + id + ">" + getFieldLanguage(content.rowHeaders[i]) + "</th>";
 				}
 				
 				elem = elem + "</tr>";
 			}
 			
-			for(var i = 0; i < Object.keys(content.rowData).length; i++) {
-				
-				elem = elem + "<tr>";
-				
-				for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
+			if(content.rowData != null && content.rowData != "") {
+			
+				for(var i = 0; i < Object.keys(content.rowData).length; i++) {
 					
-					elem = elem + "<td>" + getFieldLanguage(content.rowData[i][j]) + "</td>";
+					elem = elem + "<tr>";
+					
+					for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
+						
+						id = " id='" + getElementId(elemCounter + "_" + i + "_" + j) + "'";
+						elem = elem + "<td" + id + ">" + getFieldLanguage(content.rowData[i][j]) + "</td>";
+					}
+					
+					elem = elem + "</tr>";
+				}
+			}
+			
+			elem = elem + "</table>";
+		}
+		else if(elementType == "articleGroup") {
+			//This generates the menu for an article.
+			
+			//0 means no menu is being generated.
+			//The article group is only generated when a menu is made, in case it is 0, we are starting a new menu.
+			//Therefore the level is set to menu level 1. In case it is higher than 0, we generate a higher level.
+			nestedLevel++;
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-articleGroup'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<div" + elemClass + elemOnClick + ">";
+			
+			
+			if(nestedLevel == 1)
+				elem = elem + "<h1" + id + ">" + getFieldLanguage(content.title) + "</h1>";
+			else if(nestedLevel == 2)
+				elem = elem + "<h2" + id + ">" + getFieldLanguage(content.title) + "</h2>";
+			else if(nestedLevel == 3)
+				elem = elem + "<h3" + id + ">" + getFieldLanguage(content.title) + "</h3>";
+			else if(nestedLevel == 4)
+				elem = elem + "<h4" + id + ">" + getFieldLanguage(content.title) + "</h4>";
+			else if(nestedLevel == 5)
+				elem = elem + "<h5" + id + ">" + getFieldLanguage(content.title) + "</h5>";
+			else
+				elem = elem + "<h6" + id + ">" + getFieldLanguage(content.title) + "</h6>";
+			
+			
+			for(var i = 0; i < Object.keys(content.content).length; i++) {
+				
+				elemCounter = elemCounter + "_" + i;
+				elem = elem + getHTMLElement(content.content[i], elemCounter, nestedLevel)
+			}
+			
+			elem = elem + "</div>";
+		}
+		else if(elementType == "article") {
+			
+			if(page == "article") {
+				
+				//Generate the article.
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = "class='shared-content-article' ";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				if(typeof content.content != 'undefined') {
+				
+					for(var i = 0; i < Object.keys(content.content).length; i++) {
+					
+						counter = elemCounter + "_" + i;
+						elem = elem + getHTMLElement(content.content[i], counter, nestedLevel)
+					}
 				}
 				
-				elem = elem + "<tr>";
+				
+				if(content.externalFilePath != null && content.externalFilePath != "") {
+					
+					$('#externalFileContent').load(content.externalFilePath, function() {
+				
+						if(typeof content.fields != 'undefined') {
+				
+							for(var i = 0; i < Object.keys(content.fields).length; i++) {
+				
+								fieldName = "#" + fields[i].name;
+				
+								$(fieldName).html(getFieldLanguage(fields[i]));
+							}
+						}
+						
+						var head = document.getElementsByTagName('HEAD')[0];
+						var link = document.createElement('link');
+						
+						link.rel = "stylesheet";
+						link.type = "text/css";
+						link.href = content.externalFileStyle;
+						
+						head.appendChild(link);
+						
+						var script = document.createElement('script');
+						script.type = 'text/javascript';
+						script.src = content.externalScript;    
+
+						head.appendChild(script);
+					});
+				}
+			}
+			else {
+				
+				//Generate the link to the article instead of rendering the article.
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-articleLink'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elemOnClick = " onClick='common.changePage(\"article\", \"" + content.articleId + "\", \"" + elemCounter + "\")'";
+				
+				elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content.title) + "</span>";
 			}
 		}
 		else if(elementType == "youtubeVideo") {
@@ -413,8 +587,7 @@ var common = (function() {
 	
 	
 	
-	
-	
+		
 	/*---Functions for displaying the content WITHOUT rendering elements first---------------------------------------------------------------------*/
 	//This functions should be used when the page HTML is already generated or the page is build from existing elements that are not -
 	//generated by javascript code first.
@@ -451,11 +624,40 @@ var common = (function() {
 	
 	var displayElement = function(elem, id) {
 			
-		if(elem.type == "div-parent" || elem.type == "span-parent") {
+		if(elem.type == "div-parent" || elem.type == "span-parent" || elem.type == "articleGroup" || elem.type == "article") {
 			
 			for(var j = 0; j < Object.keys(elem.content).length; j++) {
 				
 				displayElement(elem.content[j], (id + "_" + j));
+			}
+		}
+		else if(elem.type == "table") {
+			
+			if(elem.rowHeaders != null && elem.rowHeaders != "") { 
+				
+				for(var i = 0; i < Object.keys(elem.rowHeaders).length; i++) {
+					
+					newId = id + "_" + i;
+					$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowHeaders));
+				}
+			}
+			
+			if(elem.rowData != null && elem.rowData != "") {
+			
+				for(var i = 0; i < Object.keys(elem.rowData).length; i++) {
+					
+					for(var j = 0; j < Object.keys(elem.rowData[i]).length; j++) {
+						
+						newId = id + "_" + i + "_" + j;
+						
+						console.log(getElementId(newId));
+						console.log(document.getElementById(getElementId(newId)));
+						
+						console.log(getFieldLanguage(elem.rowData[i][j]));
+						
+						$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowData[i][j]));
+					}
+				}
 			}
 		}
 		else if(elem.type == "image") {
@@ -485,7 +687,7 @@ var common = (function() {
 			customLanguageFunction(additionalLanguageFile);
 		}
 		
-		setURL(page, language, getURLAdditional());
+		setURL(page, previousPage, language, getURLAdditional());
 	}
 	
 	//This function gets the selected language from the field in the JSON. 
@@ -531,38 +733,41 @@ var common = (function() {
 	/*---Functions for changing or getting parameters in the URL-----------------------------------------------------------------------------------*/
 	//The functions below update the parameters in the URL or get the values from the parameters in the URL en return them.
 	
-	var setURL = function(page, lang, additional) {
+	var setURL = function(page, previousPage, lang, additional) {
 		
 		var url = window.location.href;
 		
-		/*if(getURLPage() == page && getURLLanguage() == lang && getURLAdditional() == additional) {
+		if(getURLPage() == page && getURLPrev == previousPage && getURLLanguage() == lang && getURLAdditional() == additional) {
 			
 			//Do nothing, the URL is already the same URL as the new URL.
 			//This can happen when the browser back and forward buttons are used because they already change the URL.
 		}
-		else {*/
+		else {
 		
 			var baseUrl = url.split("?")[0];
 			
 			url = baseUrl + "?lang=" + lang + "&page=" + page;
 			
+			if(previousPage != null && previousPage != "")
+				url = url + "&prev=" + previousPage;
+			
 			if(additional != null)
 				url = url + "&additional=" + additional;
 			
 			history.pushState("Page", page, url);
-		//}
+		}
 	}
 	
 	var getURLLanguage = function() {
 		
 		var language = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length > 1) {
+		if(splitURL.length > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 		
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -582,12 +787,12 @@ var common = (function() {
 		
 		var page = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length > 1) {
+		if(splitURL.length > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 			
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -607,12 +812,12 @@ var common = (function() {
 		
 		var additional = null;
 		
-		var str = window.location.href;
-		var splitStr = str.split("?");
+		var url = window.location.href;
+		var splitURL = url.split("?");
 		
-		if(splitStr.length  > 1) {
+		if(splitURL.length  > 1) {
 			
-			var paramArray = splitStr[1].split("&");
+			var paramArray = splitURL[1].split("&");
 			
 			for(var i = 0; i < paramArray.length; i++) {
 				
@@ -625,7 +830,29 @@ var common = (function() {
 		return additional; //Will return null if additional is not found in the URL as specified.
 	}
 
-
+	var getURLPrev = function() {
+		
+		var prev = null;
+		
+		var url = window.location.href;
+		var splitURL = url.split("?");
+		
+		if(splitURL.length  > 1) {
+			
+			var paramArray = splitURL[1].split("&");
+			
+			for(var i = 0; i < paramArray.length; i++) {
+				
+				var param = paramArray[i].split("=");
+				if(param[0] == "prev")
+					prev = param[1];
+			}
+		}
+		
+		return prev;
+	}
+	
+	
 
 
 	/*---Other functions---------------------------------------------------------------------------------------------------------------------------*/
@@ -636,6 +863,12 @@ var common = (function() {
 		
 		var date = new Date();
 		$("#year_footer").text(date.getFullYear().toString());
+	}
+	
+	var updateWebsiteVersion = function(langFile) {
+		
+		console.log(langFile.version);
+		$("#lang_version").text(langFile.version);
 	}
 
 	var log = function(text) {

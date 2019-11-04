@@ -1,0 +1,19 @@
+{ 
+	"fields": [
+		{
+			"name": "lang_backButtonBottom",
+			"nl": "Terug naar artikelen",
+			"en": "Back to articles overview"
+		},
+		{
+			"name": "lang_articleUpdate",
+			"nl": "Laatst bijgewerkt: ",
+			"en": "Last updated: "
+		},
+		{
+			"name": "lang_articleWrittenBy",
+			"nl": "Geschreven door: ",
+			"en": "Written bij: "
+		}
+	]
+}

@@ -1,4 +1,4 @@
-.container
+.hashGeneratorContainer
 {
 	margin-top: 40px;
 	margin-left: 40px;
@@ -6,18 +6,18 @@
 	margin-bottom: 0px;
 }
 
-span
+.hashGeneratorContainer span
 {
 	display: block;
 	height: 20px;
 }
 
-input
+.hashGeneratorContainer input
 {
 	width: 50%;
 }
 
-button
+.hashGeneratorContainer button
 {
 	display: block;
 	margin-top: 10px;

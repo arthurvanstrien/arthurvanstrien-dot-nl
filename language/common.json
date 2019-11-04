@@ -1,9 +1,14 @@
 {
 	"fields": [
 		{
-			"name": "lang_footer",
-			"nl": "arthurvanstrien.nl versie 1.1, gemaakt door Arthur van Strien",
-			"en": "arthurvanstrien.nl version 1.1, build by Arthur van Strien"
+			"name": "lang_footer-1",
+			"nl": "arthurvanstrien.nl versie",
+			"en": "arthurvanstrien.nl version"
+		},
+		{
+			"name": "lang_footer-2",
+			"nl": "gemaakt door Arthur van Strien",
+			"en": "build by Arthur van Strien"
 		},
 		{
 			"name": "lang_menuHome",
@@ -29,6 +34,11 @@
 			"name": "lang_menuEngineerTech",
 			"nl": "Techniek & Informatica",
 			"en": "Engineering & Technology"
+		},
+		{
+			"name": "lang_menuTools",
+			"nl": "Gereedschap",
+			"en": "Tools"
 		},
 		{
 			"name": "lang_menuAboutme",

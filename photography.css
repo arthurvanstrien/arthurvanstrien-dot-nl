@@ -7,20 +7,3 @@
 	padding: 0px;
 }
 
-#photography-galleryButton
-{
-	margin-left: 40px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-right: 20px;
-	padding: 10px;
-	display: inline-block;
-	border: 1px solid black;
-}
-
-#photography-galleryButton:hover
-{
-	background-color: #00E5EE;
-	cursor: pointer;
-}
-

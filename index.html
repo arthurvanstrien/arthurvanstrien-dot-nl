@@ -11,14 +11,11 @@
 		<link rel="stylesheet" type="text/css" href="photography.css">
 		<link rel="stylesheet" type="text/css" href="aboutme.css">
 		<link rel="stylesheet" type="text/css" href="gallery.css">
-		<link rel="stylesheet" type="text/css" href="engineer-tech.css">
+		<link rel="stylesheet" type="text/css" href="engineerTech.css">
 		<link rel="stylesheet" type="text/css" href="404.css">
+		<link rel="stylesheet" type="text/css" href="article.css">
 		
-		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="common.js"></script>
-		<script type="text/javascript" src="projects.js"></script>
-		<script type="text/javascript" src="projectDetail.js"></script>
-		<script type="text/javascript" src="engineer-tech.js"></script>
+		<link rel="icon" href="pic_common/logo_128.png">
 		
 		<title>Home</title>
 	</head>
@@ -27,12 +24,15 @@
 		<div class="innerBody">
 			
 			<div class="menu">
+				<img id="menu_logo" onClick="common.changePage('home')" src="pic_common/logo_128.png" />
+				
 				<div class="menuItems">
 					<span class="menuItem" id="lang_menuHome" onClick="common.changePage('home')">Home</span>
 					<span class="menuItem" id="lang_menuProjects" onClick="common.changePage('projects')">Projecten</span>
 					<span class="menuItem" id="lang_menuPhotography" onClick="common.changePage('photography')">Fotografie</span>
 					<span class="menuItem" id="lang_menuGallery" onClick="common.changePage('gallery')">Afbeeldingen Galerij</span>
-					<span class="menuItem" id="lang_menuEngineerTech" onClick="common.changePage('engineer-tech')">Techniek en Informatica</span>
+					<span class="menuItem" id="lang_menuEngineerTech" onClick="common.changePage('engineerTech')">Techniek en Informatica</span>
+					<span class="menuItem" id="lang_menuTools" onClick="common.changePage('tools')">Tools</span>
 					<span class="menuItem" id="lang_menuAboutme" onClick="common.changePage('aboutme')">Persoonlijk</span>
 				</div>
 				
@@ -51,7 +51,21 @@
 		</div>
 
 		<div class="footer">
-			<span id="lang_footer">arthurvanstrien.nl versie 1, door Arthur van Strien</span><span>, </span><span id="year_footer">2019</span>
+			<span id="lang_footer-1">arthurvanstrien.nl versie</span><span> </span>
+			<span id="lang_version"></span><span>, </span>
+			<span id="lang_footer-2">door Arthur van Strien</span><span>, </span>
+			<span id="year_footer">2019</span>
 		</div>
+		
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="common.js"></script>
+		<script type="text/javascript" src="projects.js"></script>
+		<script type="text/javascript" src="projectDetail.js"></script>
+		<script type="text/javascript" src="engineerTech.js"></script>
+		<script type="text/javascript" src="article.js"></script>
+		
+		<script language="javascript">
+			common.firstLoad();
+		</script>
 	</body>
 </html>
