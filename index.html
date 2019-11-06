@@ -57,15 +57,57 @@
 			<span id="year_footer">2019</span>
 		</div>
 		
+
 		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="common.js"></script>
-		<script type="text/javascript" src="projects.js"></script>
-		<script type="text/javascript" src="projectDetail.js"></script>
-		<script type="text/javascript" src="engineerTech.js"></script>
-		<script type="text/javascript" src="article.js"></script>
 		
 		<script language="javascript">
-			common.firstLoad();
+			
+			var scriptFiles = ["common", "projects", "projectDetail", "engineerTech", "article"];
+			var numberLoaded = 0;
+			var scriptFilesLength = scriptFiles.length;
+			
+			$.ajax({ 
+			url:  'website_version.json', 
+			dataType: 'json', async: true, dataType: 'json', 
+			success: function (file) { 
+				console.log("Website version retrieved.");
+				
+				version = file.version;
+				
+				for(var i = 0; i < scriptFilesLength; i++) {
+					
+					var scriptFile = scriptFiles[i];
+				
+					var script = document.createElement('script');
+					script.onload = function (iterator) {
+						
+						numberLoaded++;
+						
+						if(checkIfAllLoaded())
+							common.firstLoad(version);
+					};
+					script.src = scriptFile + ".js?v=" + version;
+
+					document.head.appendChild(script);
+				}
+			
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				console.log("The version is unknown!!! This might cause problems!!!");
+				console.log(jqXHR);
+				console.log(textStatus);
+				console.log(errorThrown);
+			}
+			});
+			
+			function checkIfAllLoaded() {
+	
+				if(scriptFilesLength == numberLoaded)
+					return true;
+				else
+					return false;
+			}
+			
 		</script>
 	</body>
 </html>
