@@ -12,12 +12,13 @@ var common = (function() {
 	var defaultLanguage = "nl";
 	var errorLoopDetection = false;
 	var previousPage;
+	var versionNumber;
 	
 	//This variable will contain the public methods that are returned and can be accessed.
 	var common = {};
 	
 	/*--ALL public methods in common:------------------------------------------------------------*/
-	common.firstLoad = function() { firstLoad(); }
+	common.firstLoad = function(versionNumb) { firstLoad(versionNumb); }
 	common.changePage = function(newPage, additionalURLParam, additionalData) { changePage(newPage, additionalURLParam, additionalData); }
 	common.changeLanguage = function(lang) { changeLanguage(lang); }
 	common.getFieldLanguage = function(field) { return getFieldLanguage(field); }
@@ -44,9 +45,11 @@ var common = (function() {
 	/*--Important functions that are commonly used-------------------------------------------------------------------------------------------------*/
 	//Below here are import private functions used extensively in this javascript file.
 	
-	var firstLoad = function() {
+	var firstLoad = function(versionNumb) {
 		
 		//WARNING: The firstLoad function must only be called ONCE!
+		
+		versionNumber = versionNumb;
 		
 		window.addEventListener('popstate', function(event) {
 			// The popstate event is fired each time when the current history entry changes.
@@ -70,15 +73,13 @@ var common = (function() {
 		//Call the function that makes sure the footer always displays the current year.
 		//I just don't want to update the website the first day of every year just to change the year in the footer.
 		updateFooterYear();
-		
-		//Get the version number from the version number file. 
-		getJSONFile("website_version", updateWebsiteVersion, null, null, null);
+		updateWebsiteVersion(versionNumb);
 	}
 
 	var getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
 		
 		$.ajax({ 
-		url:  'language/' +  jsonFileName + '.json', 
+		url:  'language/' +  jsonFileName + '.json?v=' + versionNumber, 
 		dataType: 'json', async: true, dataType: 'json', 
 		success: function (file) { 
 			log("language file: " + jsonFileName + " retrieved.");
@@ -865,10 +866,9 @@ var common = (function() {
 		$("#year_footer").text(date.getFullYear().toString());
 	}
 	
-	var updateWebsiteVersion = function(langFile) {
+	var updateWebsiteVersion = function(versionNumb) {
 		
-		console.log(langFile.version);
-		$("#lang_version").text(langFile.version);
+		$("#lang_version").text(versionNumb);
 	}
 
 	var log = function(text) {
