@@ -1,20 +1,7 @@
 
-var page;
-$( document ).ready(function() {
-	
-	common.firstLoad();
-	
-	//This event listener detects an URL change when for example the browser back button is pressed.
-	window.addEventListener('popstate', function(event) {
-		// The popstate event is fired each time when the current history entry changes.
-		
-		common.changePage(common.getURLPage(), common.getURLLanguage(), common.getURLAdditional());
-
-	}, false);
-});
-
 var common = (function() {
 	
+	var page;
 	var language;
 	var languageFile;
 	var commonLanguageFile;
@@ -23,19 +10,24 @@ var common = (function() {
 	var errorMessagesLanguageFile;
 	var defaultPage = "home";
 	var defaultLanguage = "nl";
+	var errorLoopDetection = false;
+	var previousPage;
+	var versionNumber;
 	
 	//This variable will contain the public methods that are returned and can be accessed.
 	var common = {};
 	
 	/*--ALL public methods in common:------------------------------------------------------------*/
-	common.firstLoad = function() { firstLoad(); }
+	common.firstLoad = function(versionNumb) { firstLoad(versionNumb); }
 	common.changePage = function(newPage, additionalURLParam, additionalData) { changePage(newPage, additionalURLParam, additionalData); }
 	common.changeLanguage = function(lang) { changeLanguage(lang); }
 	common.getFieldLanguage = function(field) { return getFieldLanguage(field); }
 	common.log = function(text) { log(text); }
-	common.displayErrorMessage = function(file, fieldName) { displayErrorMessage(file, fieldName); }
+	common.displayErrorMessage = function(fieldName) { displayErrorMessage(fieldName); }
 	common.getHTMLElement = function(content, elemCounter) { return getHTMLElement(content, elemCounter); }
 	common.displayContent = function(langFile) { displayContent(langFile); }
+	common.displayElement = function(elem, counter) { displayElement(elem, counter); }
+	common.generateAndDisplayContent = function(langFile, idToAppendContentTo) { generateAndDisplayContent(langFile, idToAppendContentTo); }
 	common.getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
 		getJSONFile(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam);
 	}
@@ -45,23 +37,34 @@ var common = (function() {
 	
 	common.getURLPage = function() { return getURLPage(); }
 	common.getURLLanguage = function() { return getURLLanguage(); }
+	common.getURLPrev = function() { return getURLPrev(); }
 	common.getURLAdditional = function() { return getURLAdditional(); }
-	
 	
 	
 	
 	/*--Important functions that are commonly used-------------------------------------------------------------------------------------------------*/
 	//Below here are import private functions used extensively in this javascript file.
 	
-	var firstLoad = function() {
+	var firstLoad = function(versionNumb) {
+		
+		//WARNING: The firstLoad function must only be called ONCE!
+		
+		versionNumber = versionNumb;
+		
+		window.addEventListener('popstate', function(event) {
+			// The popstate event is fired each time when the current history entry changes.
+			
+			common.changePage(common.getURLPage(), common.getURLAdditional(), null);
+
+		}, false);
 		
 		//Call the functions that get the language and page from the URL or return their default values.
 		language = getURLLanguage();
-		page = getURLPage();
+		page = getURLPrev(); //The changePage function always sets the page variable as the previouspage.
 		
 		//The change page must be run before other functions.
 		//When the page is set, the URL is also changed.
-		changePage(page, getURLAdditional(), null);
+		changePage(getURLPage(), getURLAdditional(), null);
 		
 		//Get the universal language files that are used on every page.
 		getJSONFile("common", setCommonLanguageFile, null, displayContent, null);
@@ -70,12 +73,13 @@ var common = (function() {
 		//Call the function that makes sure the footer always displays the current year.
 		//I just don't want to update the website the first day of every year just to change the year in the footer.
 		updateFooterYear();
+		updateWebsiteVersion(versionNumb);
 	}
 
 	var getJSONFile = function(jsonFileName, funcToCall, funcToCallOptionalParam, optionalFuncToCall, optionalFuncToCallOptionalParam) {
 		
 		$.ajax({ 
-		url:  'language/' +  jsonFileName + '.json', 
+		url:  'language/' +  jsonFileName + '.json?v=' + versionNumber, 
 		dataType: 'json', async: true, dataType: 'json', 
 		success: function (file) { 
 			log("language file: " + jsonFileName + " retrieved.");
@@ -91,7 +95,7 @@ var common = (function() {
 			log(textStatus);
 			log(errorThrown);
 			
-			displayErrorMessage(errorMessagesLanguageFile, "json-load-failed");
+			displayErrorMessage("json-load-failed");
 		}
 		});
 	}
@@ -121,58 +125,139 @@ var common = (function() {
 	
 	var changePage = function(newPage, additionalURLParam, additionalData) {
 		
+		previousPage = page;
 		page = newPage;
 		
 		if(page == "home") {
-			setURL(page, language, null);
-			$('#content').load("home.html");
-			loadPageContent("home", "home-anchor", null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
-			customLanguageFunction = null;
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("home.html", function() {
+				
+				loadPageContent("home", "home-anchor", null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
+				customLanguageFunction = null;
+			});
 		}
 		else if(page == "projects") {
-			setURL(page, language, null);
-			$('#content').load("projects.html");
-			loadPageContent("projects", "projects-anchor", null, null); 
-			getJSONFile("projectsList", projects.load, null, null, null); //pass the loadProjects function to call after the JSON has loaded.
-			customLanguageFunction = projects.changeLanguage;
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("projects.html", function() {
+				
+				loadPageContent("projects", "projects-anchor", null, null); 
+				getJSONFile("projectsList", projects.load, null, null, null); //pass the loadProjects function to call after the JSON has loaded.
+				customLanguageFunction = projects.changeLanguage;
+			});
 		}
 		else if(page == "projectDetail") {
-			setURL(page, language, additionalURLParam);
-			$('#content').load("projectDetail.html");
-			loadPageContent("projectDetail", "projectDetail-anchor", projectDetail.load, additionalData);
-			customLanguageFunction = projectDetail.changeLanguage;
+			
+			setURL(page, previousPage, language, additionalURLParam);
+			$('#content').load("projectDetail.html", function() {
+				
+				loadPageContent("projectDetail", "projectDetail-anchor", projectDetail.load, additionalData);
+				customLanguageFunction = projectDetail.changeLanguage;
+			});
+		}
+		else if(page == "article")
+		{
+			var articleFile = null;
+			
+			setURL(page, previousPage, language, additionalURLParam);
+			$('#content').load("article.html", function() {
+				
+				loadPageContent("article", "article-anchor", null, null);
+				
+				if(previousPage == "engineerTech")
+					articleFile = "engineerTechArticles";
+				else if(previousPage == "tools")
+					articleFile = "tools";
+				
+
+				if(articleFile == null)
+					changePage("404", null, null);
+				else {
+					
+					article.load(articleFile, "article-anchor", additionalData);
+					customLanguageFunction = article.changeLanguage;
+				}
+			});
 		}
 		else if(page == "photography") {
-			setURL(page, language, null);
-			$('#content').load("photography.html");
-			loadPageContent("photography", "photography-anchor", null, null);
-			customLanguageFunction = null;
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("photography.html", function() {
+				
+				loadPageContent("photography", "photography-anchor", null, null);
+				customLanguageFunction = null;
+			});
 		}
 		else if(page == "aboutme") {
-			setURL(page, language, null);
-			$('#content').load("aboutme.html");
-			loadPageContent("aboutme", "aboutme-anchor", null, null);
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("aboutme.html", function() {
+				
+				loadPageContent("aboutme", "aboutme-anchor", null, null);
+				customLanguageFunction = null;
+			});
 		}
 		else if(page == "gallery") {
-			setURL(page, language, null);
-			$('#content').load("gallery.html");
-			loadPageContent("gallery", "gallery-anchor", null, null);
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("gallery.html", function() {
+			
+				loadPageContent("gallery", "gallery-anchor", null, null);
+				customLanguageFunction = null;
+			});
 		}
-		else if(page == "engineer-tech") {
-			setURL(page, language, null);
-			$('#content').load("engineer-tech.html");
-			loadPageContent("engineer-tech", "engineer-tech-anchor", null, null);
+		else if(page == "engineerTech") {
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("engineerTech.html", function() {
+				
+				loadPageContent("engineerTech", "engineer-tech-anchor", null, null);
+				loadPageContent("engineerTechArticles", "engineer-tech-anchor", setAdditionalLanguageFile, null);
+				customLanguageFunction = engineerTech.changeLanguage;
+			});
+		}
+		else if(page == "tools") {
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("tools.html", function() {
+				
+				loadPageContent("tools", "tools-anchor", setAdditionalLanguageFile, null);
+			});
 		}
 		else if(page == "404") {
-			setURL(page, language, null);
-			$('#content').load("404.html");
-			loadPageContent(page, "404-anchor", null, null);
+			
+			setAdditionalLanguageFile(null);
+			
+			setURL(page, previousPage, language, null);
+			$('#content').load("404.html", function() {
+				
+				loadPageContent("404", "404-anchor", null, null);
+				customLanguageFunction = null;
+			});
 		}
 		else
 		{
 			changePage("404", null, null);
 		}
 	}
+	
+	
+	
 	
 	//The function loadPageContent is made to load the content in the default JSON file that belongs to the page.
 	//This function can not be used to load additional JSON files with content.
@@ -201,7 +286,7 @@ var common = (function() {
 			
 			for(var i = 0; i < Object.keys(content).length; i++) {
 				
-				generatedHTML = generatedHTML + getHTMLElement(content[i], i);
+				generatedHTML = generatedHTML + getHTMLElement(content[i], i, 0);
 			}
 			
 			$(generatedHTML).insertAfter("#" + idToAppendContentTo);
@@ -217,12 +302,14 @@ var common = (function() {
 			for(var i = 0; i < Object.keys(fields).length; i++) {
 					
 				fieldName = "#" + fields[i].name;
-				$(fieldName).text(getFieldLanguage(fields[i]));
+
+				
+				$(fieldName).html($.parseHTML(getFieldLanguage(fields[i])));
 			}
 		}
 	}
 	
-	var getHTMLElement = function(content, elemCounter) {
+	var getHTMLElement = function(content, elemCounter, nestedLevel) {
 		
 		var elem = "";
 		var elementType = content.type;
@@ -231,31 +318,244 @@ var common = (function() {
 		
 		var id = " id='" + getElementId(elemCounter) + "'";
 		
-		if(elemClass != "")
-			elemClass = " class='" + elemClass + "'";
-		
 		if(elemOnClick != "")
 			elemOnClick = " onClick='" + elemOnClick + "'";
 		
 		
-		if(elementType == "div-parent")
-			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</div>";
-		else if(elementType == "span-parent")
-			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter) + "</span>";
-		else if(elementType == "div")
+		if(elementType == "div-parent") {
+			
+			if(elemClass == null || elemClass == "")
+				elemClass = "";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</div>";
+		}
+		else if(elementType == "span-parent") {
+			
+			if(elemClass == null || elemClass == "")
+				elemClass = "";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</span>";
+		}
+		else if(elementType == "div") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-div'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
 			elem = "<div" + id + "'" + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</div>";
-		else if(elementType == "span")
+		}
+		else if(elementType == "span") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-span'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
 			elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
-		else if(elementType == "paragraph")
+		}
+		else if(elementType == "paragraph") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-paragraph'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
 			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
-		else if(elementType == "image")
+		}
+		else if(elementType == "image") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-pictureHalfLeft'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
 			elem = "<img" + elemClass + elemOnClick + " src='" + content.path + "'/>";
-		else if(elementType == "header1")
+		}
+		else if(elementType == "header1") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-h1'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
 			elem = "<h1" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
-		else if(elementType == "header2")
+		}
+		else if(elementType == "header2") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-h2'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
 			elem = "<h2" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
-		else if(elementType == "header3")
+		}
+		else if(elementType == "header3") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-h3'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
 			elem = "<h3" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
+		}
+		else if(elementType == "listItem") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-listItem'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<table class='shared-content-listItemWrapper'><tr><td class='shared-content-listItemDash'>-</td><td" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</td></tr></table>";
+		}
+		else if(elementType == "table") {
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-table'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<table " + elemClass + elemOnClick + ">";
+			
+			if(content.rowHeaders != null && content.rowHeaders != "") {
+				
+				elem = elem + "<tr>"; 
+				
+				for(var i = 0; i < Object.keys(content.rowHeaders).length; i++) {
+					
+					id = " id='" + getElementId(elemCounter + "_" + i) + "'";
+					elem = elem + "<th" + id + ">" + getFieldLanguage(content.rowHeaders[i]) + "</th>";
+				}
+				
+				elem = elem + "</tr>";
+			}
+			
+			if(content.rowData != null && content.rowData != "") {
+			
+				for(var i = 0; i < Object.keys(content.rowData).length; i++) {
+					
+					elem = elem + "<tr>";
+					
+					for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
+						
+						id = " id='" + getElementId(elemCounter + "_" + i + "_" + j) + "'";
+						elem = elem + "<td" + id + ">" + getFieldLanguage(content.rowData[i][j]) + "</td>";
+					}
+					
+					elem = elem + "</tr>";
+				}
+			}
+			
+			elem = elem + "</table>";
+		}
+		else if(elementType == "articleGroup") {
+			//This generates the menu for an article.
+			
+			//0 means no menu is being generated.
+			//The article group is only generated when a menu is made, in case it is 0, we are starting a new menu.
+			//Therefore the level is set to menu level 1. In case it is higher than 0, we generate a higher level.
+			nestedLevel++;
+			
+			if(elemClass == "" || elemClass == null)
+				elemClass = " class='shared-content-articleGroup'";
+			else
+				elemClass = " class='" + elemClass + "'";
+			
+			elem = "<div" + elemClass + elemOnClick + ">";
+			
+			
+			if(nestedLevel == 1)
+				elem = elem + "<h1" + id + ">" + getFieldLanguage(content.title) + "</h1>";
+			else if(nestedLevel == 2)
+				elem = elem + "<h2" + id + ">" + getFieldLanguage(content.title) + "</h2>";
+			else if(nestedLevel == 3)
+				elem = elem + "<h3" + id + ">" + getFieldLanguage(content.title) + "</h3>";
+			else if(nestedLevel == 4)
+				elem = elem + "<h4" + id + ">" + getFieldLanguage(content.title) + "</h4>";
+			else if(nestedLevel == 5)
+				elem = elem + "<h5" + id + ">" + getFieldLanguage(content.title) + "</h5>";
+			else
+				elem = elem + "<h6" + id + ">" + getFieldLanguage(content.title) + "</h6>";
+			
+			
+			for(var i = 0; i < Object.keys(content.content).length; i++) {
+				
+				elemCounter = elemCounter + "_" + i;
+				elem = elem + getHTMLElement(content.content[i], elemCounter, nestedLevel)
+			}
+			
+			elem = elem + "</div>";
+		}
+		else if(elementType == "article") {
+			
+			if(page == "article") {
+				
+				//Generate the article.
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = "class='shared-content-article' ";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				if(typeof content.content != 'undefined') {
+				
+					for(var i = 0; i < Object.keys(content.content).length; i++) {
+					
+						counter = elemCounter + "_" + i;
+						elem = elem + getHTMLElement(content.content[i], counter, nestedLevel)
+					}
+				}
+				
+				
+				if(content.externalFilePath != null && content.externalFilePath != "") {
+					
+					$('#externalFileContent').load(content.externalFilePath, function() {
+				
+						if(typeof content.fields != 'undefined') {
+				
+							for(var i = 0; i < Object.keys(content.fields).length; i++) {
+				
+								fieldName = "#" + fields[i].name;
+				
+								$(fieldName).html(getFieldLanguage(fields[i]));
+							}
+						}
+						
+						var head = document.getElementsByTagName('HEAD')[0];
+						var link = document.createElement('link');
+						
+						link.rel = "stylesheet";
+						link.type = "text/css";
+						link.href = content.externalFileStyle;
+						
+						head.appendChild(link);
+						
+						var script = document.createElement('script');
+						script.type = 'text/javascript';
+						script.src = content.externalScript;    
+
+						head.appendChild(script);
+					});
+				}
+			}
+			else {
+				
+				//Generate the link to the article instead of rendering the article.
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-articleLink'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elemOnClick = " onClick='common.changePage(\"article\", \"" + content.articleId + "\", \"" + elemCounter + "\")'";
+				
+				elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content.title) + "</span>";
+			}
+		}
 		else if(elementType == "youtubeVideo") {
 			
 			var id = "id='" + content.id + "'";
@@ -288,8 +588,7 @@ var common = (function() {
 	
 	
 	
-	
-	
+		
 	/*---Functions for displaying the content WITHOUT rendering elements first---------------------------------------------------------------------*/
 	//This functions should be used when the page HTML is already generated or the page is build from existing elements that are not -
 	//generated by javascript code first.
@@ -318,25 +617,55 @@ var common = (function() {
 			for(var i = 0; i < Object.keys(fields).length; i++) {
 					
 				fieldName = "#" + fields[i].name;
-				$(fieldName).text(getFieldLanguage(fields[i]));
+				
+				$(fieldName).html(getFieldLanguage(fields[i]));
 			}
 		}
 	}
 	
 	var displayElement = function(elem, id) {
 			
-		if(elem.type == "div-parent" || elem.type == "span-parent") {
+		if(elem.type == "div-parent" || elem.type == "span-parent" || elem.type == "articleGroup" || elem.type == "article") {
 			
 			for(var j = 0; j < Object.keys(elem.content).length; j++) {
 				
 				displayElement(elem.content[j], (id + "_" + j));
 			}
 		}
+		else if(elem.type == "table") {
+			
+			if(elem.rowHeaders != null && elem.rowHeaders != "") { 
+				
+				for(var i = 0; i < Object.keys(elem.rowHeaders).length; i++) {
+					
+					newId = id + "_" + i;
+					$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowHeaders));
+				}
+			}
+			
+			if(elem.rowData != null && elem.rowData != "") {
+			
+				for(var i = 0; i < Object.keys(elem.rowData).length; i++) {
+					
+					for(var j = 0; j < Object.keys(elem.rowData[i]).length; j++) {
+						
+						newId = id + "_" + i + "_" + j;
+						
+						console.log(getElementId(newId));
+						console.log(document.getElementById(getElementId(newId)));
+						
+						console.log(getFieldLanguage(elem.rowData[i][j]));
+						
+						$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowData[i][j]));
+					}
+				}
+			}
+		}
 		else if(elem.type == "image") {
 			//Do Nothing images are not different in other languages...
 		}
 		else {
-			$(("#" + getElementId(id))).text(getFieldLanguage(elem));
+			$(("#" + getElementId(id))).html(getFieldLanguage(elem));
 		}	
 	}
 
@@ -359,7 +688,7 @@ var common = (function() {
 			customLanguageFunction(additionalLanguageFile);
 		}
 		
-		setURL(page, language, getURLAdditional());
+		setURL(page, previousPage, language, getURLAdditional());
 	}
 	
 	//This function gets the selected language from the field in the JSON. 
@@ -368,7 +697,7 @@ var common = (function() {
 		
 		if(field == 'undefined' || field == null) {
 			
-			displayErrorMessage(errorMessageLanguageFile, "something-unexpected-happened");
+			displayErrorMessage("something-unexpected-happened");
 		}
 		else {
 			
@@ -395,7 +724,7 @@ var common = (function() {
 	
 	//The functions below are setters for the shared variables that contain the language files that are used on every page.
 	var setCommonLanguageFile = function(langFile) { commonLanguageFile = langFile; }
-	var setErrorMessagesLanguageFile = function(langFile) { errorMessageLanguageFile = langFile; }
+	var setErrorMessagesLanguageFile = function(langFile) { errorMessagesLanguageFile = langFile; }
 	var setAdditionalLanguageFile = function(langFile) { additionalLanguageFile = langFile; }
 	var getAdditionalLanguageFile = function() { return additionalLanguageFile; }
 	
@@ -405,64 +734,126 @@ var common = (function() {
 	/*---Functions for changing or getting parameters in the URL-----------------------------------------------------------------------------------*/
 	//The functions below update the parameters in the URL or get the values from the parameters in the URL en return them.
 	
-	var setURL = function(page, lang, additional) {
+	var setURL = function(page, previousPage, lang, additional) {
 		
-		var url = new URL(window.location.href);
+		var url = window.location.href;
 		
-		if(getURLPage() == page && getURLLanguage() == lang && getURLAdditional() == additional) {
+		if(getURLPage() == page && getURLPrev == previousPage && getURLLanguage() == lang && getURLAdditional() == additional) {
 			
 			//Do nothing, the URL is already the same URL as the new URL.
 			//This can happen when the browser back and forward buttons are used because they already change the URL.
 		}
 		else {
 		
-			url.searchParams.delete("lang");
-			url.searchParams.delete("page");
+			var baseUrl = url.split("?")[0];
 			
-			if(url.searchParams.get("additional"))
-				url.searchParams.delete("additional");
+			url = baseUrl + "?lang=" + lang + "&page=" + page;
 			
-			url.searchParams.append("lang", lang);
-			url.searchParams.append("page", page);
+			if(previousPage != null && previousPage != "")
+				url = url + "&prev=" + previousPage;
 			
 			if(additional != null)
-				url.searchParams.append("additional", additional);
+				url = url + "&additional=" + additional;
 			
 			history.pushState("Page", page, url);
 		}
 	}
 	
 	var getURLLanguage = function() {
-			
-		var url = new URL(window.location.href);
 		
-		if(url.searchParams.get("language"))
-			return url.searchParams.get("language");
+		var language = null;
+		
+		var url = window.location.href;
+		var splitURL = url.split("?");
+		
+		if(splitURL.length > 1) {
+			
+			var paramArray = splitURL[1].split("&");
+		
+			for(var i = 0; i < paramArray.length; i++) {
+				
+				var param = paramArray[i].split("=");
+				if(param[0] == "lang")
+					language = param[1];
+			}
+		}
+		
+		if(language != null)
+			return language;
 		else
 			return defaultLanguage;
 	}
 	
 	var getURLPage = function() {
-			
-		var url = new URL(window.location.href);
 		
-		if(url.searchParams.get("page"))
-			return url.searchParams.get("page");
+		var page = null;
+		
+		var url = window.location.href;
+		var splitURL = url.split("?");
+		
+		if(splitURL.length > 1) {
+			
+			var paramArray = splitURL[1].split("&");
+			
+			for(var i = 0; i < paramArray.length; i++) {
+				
+				var param = paramArray[i].split("=");
+				if(param[0] == "page")
+					page = param[1];
+			}
+		}
+		
+		if(page != null)
+			return page;
 		else
 			return defaultPage;
 	}
 
 	var getURLAdditional = function() {
-			
-		var url = new URL(window.location.href);
 		
-		if(url.searchParams.get("additional"))
-			return url.searchParams.get("additional");
-		else
-			return null;
+		var additional = null;
+		
+		var url = window.location.href;
+		var splitURL = url.split("?");
+		
+		if(splitURL.length  > 1) {
+			
+			var paramArray = splitURL[1].split("&");
+			
+			for(var i = 0; i < paramArray.length; i++) {
+				
+				var param = paramArray[i].split("=");
+				if(param[0] == "additional")
+					additional = param[1];
+			}
+		}
+		
+		return additional; //Will return null if additional is not found in the URL as specified.
 	}
 
-
+	var getURLPrev = function() {
+		
+		var prev = null;
+		
+		var url = window.location.href;
+		var splitURL = url.split("?");
+		
+		if(splitURL.length  > 1) {
+			
+			var paramArray = splitURL[1].split("&");
+			
+			for(var i = 0; i < paramArray.length; i++) {
+				
+				var param = paramArray[i].split("=");
+				if(param[0] == "prev")
+					prev = param[1];
+			}
+		}
+		
+		return prev;
+	}
+	
+	
 
 
 	/*---Other functions---------------------------------------------------------------------------------------------------------------------------*/
@@ -474,47 +865,59 @@ var common = (function() {
 		var date = new Date();
 		$("#year_footer").text(date.getFullYear().toString());
 	}
+	
+	var updateWebsiteVersion = function(versionNumb) {
+		
+		$("#lang_version").text(versionNumb);
+	}
 
 	var log = function(text) {
 		
 		console.log(text);
 	}
 
-	var displayErrorMessage = function(file, fieldName) {
+	var displayErrorMessage = function(fieldName) {
 		
 		log("ERROR: " + fieldName);
-		/*
-		errorMessagesLanguageFile = file;
-		
-		log("fieldname: " + fieldName);
 		
 		var message;
+		var match = false;
 		
-		if(typeof errorMessagesLanguageFile === 'object') {
+		if(errorMessagesLanguageFile != null && errorMessagesLanguageFile != "") {
 			
-			var match = false;
-			
-			for(var i = 0; i < Object.keys(errorMessagesLanguageFile).length; i++) {
+			for(var i = 0; i < Object.keys(errorMessagesLanguageFile.errors).length; i++) {
 				
-				if(errorMessageLanguageFile.i.name == fieldName) {
-					log("FieldJson: " +  errorMessageLanguageFile.i.name);
-					message = getYearString(errorMessagesLanguageFile.i);
+				if(errorMessagesLanguageFile.errors[i].name == fieldName) {
+					message = getFieldLanguage(errorMessagesLanguageFile.errors[i]);
 					match = true;
 				}
 			}
-			
-			if(match == false)
-				log("Error message not found. Something went wrong but the error could not be displayed.");
 		}
 		else {
 			
-			log("Empty so get file");
 			getJSONFile("errorMessages", displayErrorMessage, fieldName, null, null);
 		}
 		
+		if(match == false)
+			message = "Something went wrong, if this happens again, please contact the administator at arthur@arthurvanstrien.nl";
+		
 		$("#content").html("<p id='errorMessage'>" + message + "</p>");
 		log(message);
-		*/
+	}
+	
+	var errorMessagesFileLoaded = function(errorMessagesLanguageFile, fieldName) {
+		
+		errorMessagesLanguageFile = errorMessagesLanguageFile;
+		
+		if(errorLoopDetection == false) {
+			
+			errorLoopDetection = true;
+			//Try again after displaying the previous load failed.
+			displayErrorMessage(fieldName);
+			
+			//Reset when displaying was succesfull.
+			errorLoopDetection = false;
+		}
 	}
 	
 	

@@ -1,12 +1,37 @@
 /*---Below here is the shared styling for the generated HTML elements------------------------------------------------------------------------------*/
 
+.shared-content-div
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	clear: both;
+}
+
+.shared-content-h1
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	padding: 0px;
+	display: inline-block;
+	width: calc(100% - 80px);
+	clear: both;
+}
+
 .shared-content-h2
 {
 	margin-left: 40px;
 	margin-right: 40px;
-	margin-top: 25px;
+	margin-top: 30px;
 	margin-bottom: 10px;
 	padding: 0px;
+	display: inline-block;
+	width: calc(100% - 80px);
+	clear: both;
 }
 
 .shared-content-h3
@@ -16,6 +41,9 @@
 	margin-top: 30px;
 	margin-bottom: 10px;
 	padding: 0px;
+	display: inline-block;
+	width: calc(100% - 80px);
+	clear: both;
 }
 
 .shared-content-paragraph
@@ -37,7 +65,115 @@
 	display: block;
 }
 
-/*---Styling for the pictures-----------------------------------------------------------------------------------------------------------------------*/
+/*---Styling for the article group menu------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-articleGroup
+{
+	display: block;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 0px;
+	
+}
+
+.shared-content-articleGroup h1
+{
+	font-size: 28px;
+}
+
+.shared-content-articleGroup span
+{
+	display: inline-block;
+	border-bottom: 1px solid black;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0px;
+	width: 100%;
+}
+
+.shared-content-articleGroup span:first-of-type
+{
+	border-top: 1px solid black;
+}
+
+.shared-content-articleGroup span:hover
+{
+	cursor: pointer;
+	background-color: #b6fafc;
+}
+
+/*---Styling for the listItem----------------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-listItem
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.shared-content-listItemWrapper
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	width: auto;
+}
+
+.shared-content-listItemDash
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	width: 30px;
+	vertical-align: text-top;
+	text-align: center;
+}
+
+/*---Styling for the table-------------------------------------------------------------------------------------------------------------------------*/
+
+.shared-content-table
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	display: inline-block;
+	width: calc(100% - 80px);
+	clear: both;
+}
+
+.shared-content-table th
+{
+	border-bottom: 1px solid black;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	margin: 0px;
+}
+
+.shared-content-table td
+{
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+
+/*---Styling for the pictures----------------------------------------------------------------------------------------------------------------------*/
 
 .shared-content-pictureWide
 {
@@ -75,8 +211,8 @@
 	margin-left: 40px;
 	margin-right: 20px;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	width: calc(49% - 40px);
+	margin-top: 0px;
+	width: calc(50% - 65px);
 	padding: 0px;
 	float: left;
 }
@@ -86,13 +222,58 @@
 	margin-left: 20px;
 	margin-right: 40px;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	width: calc(49% - 40px);
+	margin-top: 0px;
+	width: calc(50% - 65px);
 	padding: 0px;
 	float: right;
 }
 
-/*---Styling for the hyperlinks----------------------------------------------------------------------------------------------------------------------*/
+.shared-content-pictureThirdLeftWrap
+{
+	margin-left: 40px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(33% - 65px);
+	padding: 0px;
+	float: left;
+}
+
+.shared-content-pictureThirdRightWrap
+{
+	margin-left: 20px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(33% - 65px);
+	padding: 0px;
+	float: right;
+}
+
+.shared-content-pictureQuarterLeftWrap
+{
+	margin-left: 40px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(25% - 65px);
+	padding: 0px;
+	float: left;
+}
+
+.shared-content-pictureQuarterRightWrap
+{
+	margin-left: 20px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	width: calc(25% - 65px);
+	padding: 0px;
+	float: right;
+}
+
+
+/*---Styling for the hyperlinks--------------------------------------------------------------------------------------------------------------------*/
 
 .shared-content-inlineLinkRed
 {
@@ -110,7 +291,23 @@
 	color: #c70000;
 }
 
-/*---Styling for the youtube videos-------------------------------------------------------------------------------------------------------------------*/
+.shared-content-inlineLinkBlue
+{
+	color: #00C5CD;
+	text-decoration: none;
+	margin-left: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.shared-content-inlineLinkBlue:hover
+{
+	color: #00E5EE;
+}
+
+/*---Styling for the youtube videos----------------------------------------------------------------------------------------------------------------*/
 /*This must be an ID instead of a class because the Youtube frame already has a class for styling*/
 #shared-content-youtubeVideoHalf
 {
