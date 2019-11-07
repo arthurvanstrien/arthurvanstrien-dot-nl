@@ -132,6 +132,9 @@ var common = (function() {
 			
 			setAdditionalLanguageFile(null);
 			
+			if (!$("link[href='home.css']").length)
+				$('<link href="home.css" rel="stylesheet">').appendTo("head");
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("home.html", function() {
 				
@@ -143,6 +146,8 @@ var common = (function() {
 			
 			setAdditionalLanguageFile(null);
 			
+			if (!$("link[href='projects.css']").length)
+				$('<link href="projects.css" rel="stylesheet">').appendTo("head");
 			setURL(page, previousPage, language, null);
 			$('#content').load("projects.html", function() {
 				
@@ -153,6 +158,8 @@ var common = (function() {
 		}
 		else if(page == "projectDetail") {
 			
+			if (!$("link[href='projectDetail.css']").length)
+				$('<link href="projectDetail.css" rel="stylesheet">').appendTo("head");
 			setURL(page, previousPage, language, additionalURLParam);
 			$('#content').load("projectDetail.html", function() {
 				
@@ -164,6 +171,8 @@ var common = (function() {
 		{
 			var articleFile = null;
 			
+			if (!$("link[href='article.css']").length)
+				$('<link href="article.css" rel="stylesheet">').appendTo("head");
 			setURL(page, previousPage, language, additionalURLParam);
 			$('#content').load("article.html", function() {
 				
@@ -188,6 +197,9 @@ var common = (function() {
 			
 			setAdditionalLanguageFile(null);
 			
+			if (!$("link[href='photography.css']").length)
+				$('<link href="photography.css" rel="stylesheet">').appendTo("head");
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("photography.html", function() {
 				
@@ -198,6 +210,9 @@ var common = (function() {
 		else if(page == "aboutme") {
 			
 			setAdditionalLanguageFile(null);
+			
+			if (!$("link[href='aboutme.css']").length)
+				$('<link href="aboutme.css" rel="stylesheet">').appendTo("head");
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("aboutme.html", function() {
@@ -210,6 +225,9 @@ var common = (function() {
 			
 			setAdditionalLanguageFile(null);
 			
+			if (!$("link[href='gallery.css']").length)
+				$('<link href="gallery.css" rel="stylesheet">').appendTo("head");
+			
 			setURL(page, previousPage, language, null);
 			$('#content').load("gallery.html", function() {
 			
@@ -221,6 +239,8 @@ var common = (function() {
 			
 			setAdditionalLanguageFile(null);
 			
+			if (!$("link[href='engineerTech.css']").length)
+				$('<link href="engineerTech.css" rel="stylesheet">').appendTo("head");
 			setURL(page, previousPage, language, null);
 			$('#content').load("engineerTech.html", function() {
 				
@@ -242,6 +262,9 @@ var common = (function() {
 		else if(page == "404") {
 			
 			setAdditionalLanguageFile(null);
+			
+			if (!$("link[href='404.css']").length)
+				$('<link href="404.css" rel="stylesheet">').appendTo("head");
 			
 			setURL(page, previousPage, language, null);
 			$('#content').load("404.html", function() {
@@ -870,7 +893,7 @@ var common = (function() {
 		
 		$("#lang_version").text(versionNumb);
 	}
-
+	
 	var log = function(text) {
 		
 		console.log(text);
