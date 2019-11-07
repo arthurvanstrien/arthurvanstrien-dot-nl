@@ -65,6 +65,12 @@
 			var scriptFiles = ["common", "projects", "projectDetail", "engineerTech", "article"];
 			var numberLoaded = 0;
 			var scriptFilesLength = scriptFiles.length;
+			var head = document.head;
+			
+			$.ajaxSetup({
+				
+				cache: true
+			});
 			
 			$.ajax({ 
 			url:  'website_version.json', 
@@ -77,18 +83,22 @@
 				for(var i = 0; i < scriptFilesLength; i++) {
 					
 					var scriptFile = scriptFiles[i];
-				
-					var script = document.createElement('script');
-					script.onload = function (iterator) {
-						
-						numberLoaded++;
-						
-						if(checkIfAllLoaded())
-							common.firstLoad(version);
-					};
-					script.src = scriptFile + ".js?v=" + version;
-
-					document.head.appendChild(script);
+					
+					$.getScript(scriptFile + ".js")
+						.done(function(script, textStatus) {
+							
+							numberLoaded++;
+							
+							if(checkIfAllLoaded())
+								common.firstLoad(version);
+						})
+						.fail(function(jqxhr, settings, errorThrown) {
+							
+							console.log("ERROR: SCRIPT FILE COULD NOT BE LOADED!!!");
+							console.log(jqXHR);
+							console.log(settings);
+							console.log(errorThrown);					
+					});
 				}
 			
 			},
