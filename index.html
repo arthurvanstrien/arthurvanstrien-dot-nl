@@ -69,9 +69,7 @@
 				
 				version = file.version;
 				
-				for(var i = 0; i < scriptFilesLength; i++) {
-					
-					var scriptFile = scriptFiles[i];
+				scriptFiles.forEach(function(scriptFile) {
 					
 					$.getScript(scriptFile + ".js")
 						.done(function(script, textStatus) {
@@ -88,7 +86,7 @@
 							console.log(settings);
 							console.log(errorThrown);					
 					});
-				}
+				});
 			
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
