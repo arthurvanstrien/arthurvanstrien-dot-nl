@@ -128,154 +128,166 @@ var common = (function() {
 		previousPage = page;
 		page = newPage;
 		
-		if(page == "home") {
+		switch(page) {
+			case "home":
 			
-			setAdditionalLanguageFile(null);
-			
-			if (!$("link[href='home.css']").length)
-				$('<link href="home.css" rel="stylesheet">').appendTo("head");
-			
-			setURL(page, previousPage, language, null);
-			$('#content').load("home.html", function() {
+				setAdditionalLanguageFile(null);
 				
-				loadPageContent("home", "home-anchor", null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
-				customLanguageFunction = null;
-			});
-		}
-		else if(page == "projects") {
-			
-			setAdditionalLanguageFile(null);
-			
-			if (!$("link[href='projects.css']").length)
-				$('<link href="projects.css" rel="stylesheet">').appendTo("head");
-			setURL(page, previousPage, language, null);
-			$('#content').load("projects.html", function() {
+				if (!$("link[href='home.css']").length)
+					$('<link href="home.css" rel="stylesheet">').appendTo("head");
 				
-				loadPageContent("projects", "projects-anchor", null, null); 
-				getJSONFile("projectsList", projects.load, null, null, null); //pass the loadProjects function to call after the JSON has loaded.
-				customLanguageFunction = projects.changeLanguage;
-			});
-		}
-		else if(page == "projectDetail") {
-			
-			if (!$("link[href='projectDetail.css']").length)
-				$('<link href="projectDetail.css" rel="stylesheet">').appendTo("head");
-			setURL(page, previousPage, language, additionalURLParam);
-			$('#content').load("projectDetail.html", function() {
-				
-				loadPageContent("projectDetail", "projectDetail-anchor", projectDetail.load, additionalData);
-				customLanguageFunction = projectDetail.changeLanguage;
-			});
-		}
-		else if(page == "article")
-		{
-			var articleFile = null;
-			
-			if (!$("link[href='article.css']").length)
-				$('<link href="article.css" rel="stylesheet">').appendTo("head");
-			setURL(page, previousPage, language, additionalURLParam);
-			$('#content').load("article.html", function() {
-				
-				loadPageContent("article", "article-anchor", null, null);
-				
-				if(previousPage == "engineerTech")
-					articleFile = "engineerTechArticles";
-				else if(previousPage == "tools")
-					articleFile = "tools";
-				
-
-				if(articleFile == null)
-					changePage("404", null, null);
-				else {
+				setURL(page, previousPage, language, null);
+				$('#content').load("home.html", function() {
 					
-					article.load(articleFile, "article-anchor", additionalData);
-					customLanguageFunction = article.changeLanguage;
-				}
-			});
-		}
-		else if(page == "photography") {
-			
-			setAdditionalLanguageFile(null);
-			
-			if (!$("link[href='photography.css']").length)
-				$('<link href="photography.css" rel="stylesheet">').appendTo("head");
-			
-			setURL(page, previousPage, language, null);
-			$('#content').load("photography.html", function() {
+					loadPageContent("home", "home-anchor", null, null); //Get the language file that belongs to this page with an optional JS function executed when loaded.
+					customLanguageFunction = null;
+				});
+				break;
+		
+			case "projects":
 				
-				loadPageContent("photography", "photography-anchor", null, null);
-				customLanguageFunction = null;
-			});
-		}
-		else if(page == "aboutme") {
-			
-			setAdditionalLanguageFile(null);
-			
-			if (!$("link[href='aboutme.css']").length)
-				$('<link href="aboutme.css" rel="stylesheet">').appendTo("head");
-			
-			setURL(page, previousPage, language, null);
-			$('#content').load("aboutme.html", function() {
+				setAdditionalLanguageFile(null);
 				
-				loadPageContent("aboutme", "aboutme-anchor", null, null);
-				customLanguageFunction = null;
-			});
-		}
-		else if(page == "gallery") {
-			
-			setAdditionalLanguageFile(null);
-			
-			if (!$("link[href='gallery.css']").length)
-				$('<link href="gallery.css" rel="stylesheet">').appendTo("head");
-			
-			setURL(page, previousPage, language, null);
-			$('#content').load("gallery.html", function() {
-			
-				loadPageContent("gallery", "gallery-anchor", null, null);
-				customLanguageFunction = null;
-			});
-		}
-		else if(page == "engineerTech") {
-			
-			setAdditionalLanguageFile(null);
-			
-			if (!$("link[href='engineerTech.css']").length)
-				$('<link href="engineerTech.css" rel="stylesheet">').appendTo("head");
-			setURL(page, previousPage, language, null);
-			$('#content').load("engineerTech.html", function() {
+				if (!$("link[href='projects.css']").length)
+					$('<link href="projects.css" rel="stylesheet">').appendTo("head");
+				setURL(page, previousPage, language, null);
+				$('#content').load("projects.html", function() {
+					
+					loadPageContent("projects", "projects-anchor", null, null); 
+					getJSONFile("projectsList", projects.load, null, null, null); //pass the loadProjects function to call after the JSON has loaded.
+					customLanguageFunction = projects.changeLanguage;
+				});
+				break;
+
+			case "projectDetail":
 				
-				loadPageContent("engineerTech", "engineer-tech-anchor", null, null);
-				loadPageContent("engineerTechArticles", "engineer-tech-anchor", setAdditionalLanguageFile, null);
-				customLanguageFunction = engineerTech.changeLanguage;
-			});
-		}
-		else if(page == "tools") {
+				if (!$("link[href='projectDetail.css']").length)
+					$('<link href="projectDetail.css" rel="stylesheet">').appendTo("head");
+				setURL(page, previousPage, language, additionalURLParam);
+				$('#content').load("projectDetail.html", function() {
+					
+					loadPageContent("projectDetail", "projectDetail-anchor", projectDetail.load, additionalData);
+					customLanguageFunction = projectDetail.changeLanguage;
+				});
+				break;
+
+			case "article":
 			
-			setAdditionalLanguageFile(null);
-			
-			setURL(page, previousPage, language, null);
-			$('#content').load("tools.html", function() {
+				var articleFile = null;
 				
-				loadPageContent("tools", "tools-anchor", setAdditionalLanguageFile, null);
-			});
-		}
-		else if(page == "404") {
-			
-			setAdditionalLanguageFile(null);
-			
-			if (!$("link[href='404.css']").length)
-				$('<link href="404.css" rel="stylesheet">').appendTo("head");
-			
-			setURL(page, previousPage, language, null);
-			$('#content').load("404.html", function() {
+				if (!$("link[href='article.css']").length)
+					$('<link href="article.css" rel="stylesheet">').appendTo("head");
+				setURL(page, previousPage, language, additionalURLParam);
+				$('#content').load("article.html", function() {
+					
+					loadPageContent("article", "article-anchor", null, null);
+					
+					if(previousPage == "engineerTech")
+						articleFile = "engineerTechArticles";
+					else if(previousPage == "tools")
+						articleFile = "tools";
+					
+
+					if(articleFile == null)
+						changePage("404", null, null);
+					else {
+						
+						article.load(articleFile, "article-anchor", additionalData);
+						customLanguageFunction = article.changeLanguage;
+					}
+				});
+				break;
+
+			case "photography": 
 				
-				loadPageContent("404", "404-anchor", null, null);
-				customLanguageFunction = null;
-			});
-		}
-		else
-		{
-			changePage("404", null, null);
+				setAdditionalLanguageFile(null);
+				
+				if (!$("link[href='photography.css']").length)
+					$('<link href="photography.css" rel="stylesheet">').appendTo("head");
+				
+				setURL(page, previousPage, language, null);
+				$('#content').load("photography.html", function() {
+					
+					loadPageContent("photography", "photography-anchor", null, null);
+					customLanguageFunction = null;
+				});
+				break;
+
+			case "aboutme":
+				
+				setAdditionalLanguageFile(null);
+				
+				if (!$("link[href='aboutme.css']").length)
+					$('<link href="aboutme.css" rel="stylesheet">').appendTo("head");
+				
+				setURL(page, previousPage, language, null);
+				$('#content').load("aboutme.html", function() {
+					
+					loadPageContent("aboutme", "aboutme-anchor", null, null);
+					customLanguageFunction = null;
+				});
+				break;
+
+			case "gallery":
+				
+				setAdditionalLanguageFile(null);
+				
+				if (!$("link[href='gallery.css']").length)
+					$('<link href="gallery.css" rel="stylesheet">').appendTo("head");
+				
+				setURL(page, previousPage, language, null);
+				$('#content').load("gallery.html", function() {
+				
+					loadPageContent("gallery", "gallery-anchor", null, null);
+					customLanguageFunction = null;
+				});
+				break;
+
+			case "engineerTech":
+				
+				setAdditionalLanguageFile(null);
+				
+				if (!$("link[href='engineerTech.css']").length)
+					$('<link href="engineerTech.css" rel="stylesheet">').appendTo("head");
+				setURL(page, previousPage, language, null);
+				$('#content').load("engineerTech.html", function() {
+					
+					loadPageContent("engineerTech", "engineer-tech-anchor", null, null);
+					loadPageContent("engineerTechArticles", "engineer-tech-anchor", setAdditionalLanguageFile, null);
+					customLanguageFunction = engineerTech.changeLanguage;
+				});
+				break;
+
+			case "tools":
+				
+				setAdditionalLanguageFile(null);
+				
+				setURL(page, previousPage, language, null);
+				$('#content').load("tools.html", function() {
+					
+					loadPageContent("tools", "tools-anchor", setAdditionalLanguageFile, null);
+				});
+				break;
+
+			case "404":
+				
+				setAdditionalLanguageFile(null);
+				
+				if (!$("link[href='404.css']").length)
+					$('<link href="404.css" rel="stylesheet">').appendTo("head");
+				
+				setURL(page, previousPage, language, null);
+				$('#content').load("404.html", function() {
+					
+					loadPageContent("404", "404-anchor", null, null);
+					customLanguageFunction = null;
+				});
+				break;
+
+			default:
+			
+				changePage("404", null, null);
+				break;
 		}
 	}
 	
@@ -344,247 +356,288 @@ var common = (function() {
 		if(elemOnClick != "")
 			elemOnClick = " onClick='" + elemOnClick + "'";
 		
-		
-		if(elementType == "div-parent") {
+		switch(elementType) {
 			
-			if(elemClass == null || elemClass == "")
-				elemClass = "";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</div>";
-		}
-		else if(elementType == "span-parent") {
-			
-			if(elemClass == null || elemClass == "")
-				elemClass = "";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</span>";
-		}
-		else if(elementType == "div") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-div'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<div" + id + "'" + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</div>";
-		}
-		else if(elementType == "span") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-span'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
-		}
-		else if(elementType == "paragraph") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-paragraph'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
-		}
-		else if(elementType == "image") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-pictureHalfLeft'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<img" + elemClass + elemOnClick + " src='" + content.path + "'/>";
-		}
-		else if(elementType == "header1") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-h1'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<h1" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
-		}
-		else if(elementType == "header2") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-h2'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<h2" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
-		}
-		else if(elementType == "header3") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-h3'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<h3" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
-		}
-		else if(elementType == "listItem") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-listItem'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<table class='shared-content-listItemWrapper'><tr><td class='shared-content-listItemDash'>-</td><td" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</td></tr></table>";
-		}
-		else if(elementType == "table") {
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-table'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<table " + elemClass + elemOnClick + ">";
-			
-			if(content.rowHeaders != null && content.rowHeaders != "") {
+			case "div-parent":
 				
-				elem = elem + "<tr>"; 
+				if(elemClass == null || elemClass == "")
+					elemClass = "";
+				else
+					elemClass = " class='" + elemClass + "'";
 				
-				for(var i = 0; i < Object.keys(content.rowHeaders).length; i++) {
-					
-					id = " id='" + getElementId(elemCounter + "_" + i) + "'";
-					elem = elem + "<th" + id + ">" + getFieldLanguage(content.rowHeaders[i]) + "</th>";
-				}
+				elem = "<div" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</div>";
 				
-				elem = elem + "</tr>";
-			}
-			
-			if(content.rowData != null && content.rowData != "") {
-			
-				for(var i = 0; i < Object.keys(content.rowData).length; i++) {
+				break;
+
+			case "span-parent":
+				
+				if(elemClass == null || elemClass == "")
+					elemClass = "";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<span" + id + elemClass + elemOnClick + ">" + getNestedElements(content, elemCounter, nestedLevel) + "</span>";
+				
+				break;
+
+			case "div": 
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-div'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<div" + id + "'" + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</div>";
+				
+				break;
+
+			case "span":
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-span'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</span>";
+				
+				break;
+
+			case "paragraph":
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-paragraph'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<p" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</p>";
+				
+				break;
+
+			case "image":
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-pictureHalfLeft'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<img" + elemClass + elemOnClick + " src='" + content.path + "'/>";
+				
+				break;
+
+			case "header1":
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-h1'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<h1" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h1>";
+				
+				break;
+
+			case "header2":
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-h2'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<h2" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h2>";
+				
+				break;
+
+			case "header3":
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-h3'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<h3" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</h3>";
+				
+				break;
+
+			case "listItem":
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-listItem'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<table class='shared-content-listItemWrapper'><tr><td class='shared-content-listItemDash'>-</td><td" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</td></tr></table>";
+				
+				break;
+
+			case "table":
+				
+				if(elemClass == "" || elemClass == null)
+					elemClass = " class='shared-content-table'";
+				else
+					elemClass = " class='" + elemClass + "'";
+				
+				elem = "<table " + elemClass + elemOnClick + ">";
+				
+				if(content.rowHeaders != null && content.rowHeaders != "") {
 					
-					elem = elem + "<tr>";
+					elem = elem + "<tr>"; 
 					
-					for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
+					for(var i = 0; i < Object.keys(content.rowHeaders).length; i++) {
 						
-						id = " id='" + getElementId(elemCounter + "_" + i + "_" + j) + "'";
-						elem = elem + "<td" + id + ">" + getFieldLanguage(content.rowData[i][j]) + "</td>";
+						id = " id='" + getElementId(elemCounter + "_" + i) + "'";
+						elem = elem + "<th" + id + ">" + getFieldLanguage(content.rowHeaders[i]) + "</th>";
 					}
 					
 					elem = elem + "</tr>";
 				}
-			}
-			
-			elem = elem + "</table>";
-		}
-		else if(elementType == "articleGroup") {
-			//This generates the menu for an article.
-			
-			//0 means no menu is being generated.
-			//The article group is only generated when a menu is made, in case it is 0, we are starting a new menu.
-			//Therefore the level is set to menu level 1. In case it is higher than 0, we generate a higher level.
-			nestedLevel++;
-			
-			if(elemClass == "" || elemClass == null)
-				elemClass = " class='shared-content-articleGroup'";
-			else
-				elemClass = " class='" + elemClass + "'";
-			
-			elem = "<div" + elemClass + elemOnClick + ">";
-			
-			
-			if(nestedLevel == 1)
-				elem = elem + "<h1" + id + ">" + getFieldLanguage(content.title) + "</h1>";
-			else if(nestedLevel == 2)
-				elem = elem + "<h2" + id + ">" + getFieldLanguage(content.title) + "</h2>";
-			else if(nestedLevel == 3)
-				elem = elem + "<h3" + id + ">" + getFieldLanguage(content.title) + "</h3>";
-			else if(nestedLevel == 4)
-				elem = elem + "<h4" + id + ">" + getFieldLanguage(content.title) + "</h4>";
-			else if(nestedLevel == 5)
-				elem = elem + "<h5" + id + ">" + getFieldLanguage(content.title) + "</h5>";
-			else
-				elem = elem + "<h6" + id + ">" + getFieldLanguage(content.title) + "</h6>";
-			
-			
-			for(var i = 0; i < Object.keys(content.content).length; i++) {
 				
-				elemCounter = elemCounter + "_" + i;
-				elem = elem + getHTMLElement(content.content[i], elemCounter, nestedLevel)
-			}
-			
-			elem = elem + "</div>";
-		}
-		else if(elementType == "article") {
-			
-			if(page == "article") {
+				if(content.rowData != null && content.rowData != "") {
 				
-				//Generate the article.
-				
-				if(elemClass == "" || elemClass == null)
-					elemClass = "class='shared-content-article' ";
-				else
-					elemClass = " class='" + elemClass + "'";
-				
-				if(typeof content.content != 'undefined') {
-				
-					for(var i = 0; i < Object.keys(content.content).length; i++) {
-					
-						counter = elemCounter + "_" + i;
-						elem = elem + getHTMLElement(content.content[i], counter, nestedLevel)
+					for(var i = 0; i < Object.keys(content.rowData).length; i++) {
+						
+						elem = elem + "<tr>";
+						
+						for(var j = 0; j < Object.keys(content.rowData[i]).length; j++) {
+							
+							id = " id='" + getElementId(elemCounter + "_" + i + "_" + j) + "'";
+							elem = elem + "<td" + id + ">" + getFieldLanguage(content.rowData[i][j]) + "</td>";
+						}
+						
+						elem = elem + "</tr>";
 					}
 				}
 				
+				elem = elem + "</table>";
 				
-				if(content.externalFilePath != null && content.externalFilePath != "") {
-					
-					$('#externalFileContent').load(content.externalFilePath, function() {
-				
-						if(typeof content.fields != 'undefined') {
-				
-							for(var i = 0; i < Object.keys(content.fields).length; i++) {
-				
-								fieldName = "#" + fields[i].name;
-				
-								$(fieldName).html(getFieldLanguage(fields[i]));
-							}
-						}
-						
-						var head = document.getElementsByTagName('HEAD')[0];
-						var link = document.createElement('link');
-						
-						link.rel = "stylesheet";
-						link.type = "text/css";
-						link.href = content.externalFileStyle;
-						
-						head.appendChild(link);
-						
-						var script = document.createElement('script');
-						script.type = 'text/javascript';
-						script.src = content.externalScript;    
+				break;
 
-						head.appendChild(script);
-					});
-				}
-			}
-			else {
+			case "articleGroup":
+				//This generates the menu for an article.
 				
-				//Generate the link to the article instead of rendering the article.
+				//0 means no menu is being generated.
+				//The article group is only generated when a menu is made, in case it is 0, we are starting a new menu.
+				//Therefore the level is set to menu level 1. In case it is higher than 0, we generate a higher level.
+				nestedLevel++;
 				
 				if(elemClass == "" || elemClass == null)
-					elemClass = " class='shared-content-articleLink'";
+					elemClass = " class='shared-content-articleGroup'";
 				else
 					elemClass = " class='" + elemClass + "'";
 				
-				elemOnClick = " onClick='common.changePage(\"article\", \"" + content.articleId + "\", \"" + elemCounter + "\")'";
+				elem = "<div" + elemClass + elemOnClick + ">";
 				
-				elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content.title) + "</span>";
-			}
-		}
-		else if(elementType == "youtubeVideo") {
-			
-			var id = "id='" + content.id + "'";
-			var youtubeSource = "src='https://www.youtube-nocookie.com/embed/" + content.videoId + "?controls=0'";
-			var youtubeSettings = "allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'";
-			elem = "<iframe " + id + " " + youtubeSource + " frameborder='0' " + youtubeSettings + " allowfullscreen></iframe>";
+				switch(nestedLevel) {
+					
+					case 1:
+						elem = elem + "<h1" + id + ">" + getFieldLanguage(content.title) + "</h1>";
+						break;
+						
+					case 2:
+						elem = elem + "<h2" + id + ">" + getFieldLanguage(content.title) + "</h2>";
+						break;
+						
+					case 3:
+						elem = elem + "<h3" + id + ">" + getFieldLanguage(content.title) + "</h3>";
+						break;
+						
+					case 4:
+						elem = elem + "<h4" + id + ">" + getFieldLanguage(content.title) + "</h4>";
+						break;
+						
+					case 5:
+						elem = elem + "<h5" + id + ">" + getFieldLanguage(content.title) + "</h5>";
+						break;
+						
+					default:
+						elem = elem + "<h6" + id + ">" + getFieldLanguage(content.title) + "</h6>";
+						break;
+				}
+				
+				for(var i = 0; i < Object.keys(content.content).length; i++) {
+					
+					elemCounter = elemCounter + "_" + i;
+					elem = elem + getHTMLElement(content.content[i], elemCounter, nestedLevel)
+				}
+				
+				elem = elem + "</div>";
+				
+				break;
+
+			case "article":
+				
+				if(page == "article") {
+					
+					//Generate the article.
+					
+					if(elemClass == "" || elemClass == null)
+						elemClass = "class='shared-content-article' ";
+					else
+						elemClass = " class='" + elemClass + "'";
+					
+					if(typeof content.content != 'undefined') {
+					
+						for(var i = 0; i < Object.keys(content.content).length; i++) {
+						
+							counter = elemCounter + "_" + i;
+							elem = elem + getHTMLElement(content.content[i], counter, nestedLevel)
+						}
+					}
+					
+					
+					if(content.externalFilePath != null && content.externalFilePath != "") {
+						
+						$('#externalFileContent').load(content.externalFilePath, function() {
+					
+							if(typeof content.fields != 'undefined') {
+					
+								for(var i = 0; i < Object.keys(content.fields).length; i++) {
+					
+									fieldName = "#" + fields[i].name;
+					
+									$(fieldName).html(getFieldLanguage(fields[i]));
+								}
+							}
+							
+							var head = document.getElementsByTagName('HEAD')[0];
+							var link = document.createElement('link');
+							
+							link.rel = "stylesheet";
+							link.type = "text/css";
+							link.href = content.externalFileStyle;
+							
+							head.appendChild(link);
+							
+							var script = document.createElement('script');
+							script.type = 'text/javascript';
+							script.src = content.externalScript;    
+
+							head.appendChild(script);
+						});
+					}
+				}
+				else {
+					
+					//Generate the link to the article instead of rendering the article.
+					
+					if(elemClass == "" || elemClass == null)
+						elemClass = " class='shared-content-articleLink'";
+					else
+						elemClass = " class='" + elemClass + "'";
+					
+					elemOnClick = " onClick='common.changePage(\"article\", \"" + content.articleId + "\", \"" + elemCounter + "\")'";
+					
+					elem = "<span" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content.title) + "</span>";
+				}
+				
+				break;
+
+			case "youtubeVideo":
+				
+				var id = "id='" + content.id + "'";
+				var youtubeSource = "src='https://www.youtube-nocookie.com/embed/" + content.videoId + "?controls=0'";
+				var youtubeSettings = "allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'";
+				elem = "<iframe " + id + " " + youtubeSource + " frameborder='0' " + youtubeSettings + " allowfullscreen></iframe>";
+				
+				break;
 		}
 		
 		return elem;
@@ -647,49 +700,65 @@ var common = (function() {
 	}
 	
 	var displayElement = function(elem, id) {
+		
+		var type = elem.type;
+		
+		switch (type) {
 			
-		if(elem.type == "div-parent" || elem.type == "span-parent" || elem.type == "articleGroup" || elem.type == "article") {
-			
-			for(var j = 0; j < Object.keys(elem.content).length; j++) {
-				
-				displayElement(elem.content[j], (id + "_" + j));
-			}
-		}
-		else if(elem.type == "table") {
-			
-			if(elem.rowHeaders != null && elem.rowHeaders != "") { 
-				
-				for(var i = 0; i < Object.keys(elem.rowHeaders).length; i++) {
+			case "div-parent":
+			case "span-parent":
+			case "articleGroup":
+			case "article":
+
+				for(var j = 0; j < Object.keys(elem.content).length; j++) {
 					
-					newId = id + "_" + i;
-					$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowHeaders));
+					displayElement(elem.content[j], (id + "_" + j));
 				}
-			}
-			
-			if(elem.rowData != null && elem.rowData != "") {
-			
-				for(var i = 0; i < Object.keys(elem.rowData).length; i++) {
+				
+				break;
+
+			case "table":
+				
+				if(elem.rowHeaders != null && elem.rowHeaders != "") { 
 					
-					for(var j = 0; j < Object.keys(elem.rowData[i]).length; j++) {
+					for(var i = 0; i < Object.keys(elem.rowHeaders).length; i++) {
 						
-						newId = id + "_" + i + "_" + j;
-						
-						console.log(getElementId(newId));
-						console.log(document.getElementById(getElementId(newId)));
-						
-						console.log(getFieldLanguage(elem.rowData[i][j]));
-						
-						$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowData[i][j]));
+						newId = id + "_" + i;
+						$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowHeaders));
 					}
 				}
-			}
+				
+				if(elem.rowData != null && elem.rowData != "") {
+				
+					for(var i = 0; i < Object.keys(elem.rowData).length; i++) {
+						
+						for(var j = 0; j < Object.keys(elem.rowData[i]).length; j++) {
+							
+							newId = id + "_" + i + "_" + j;
+							
+							console.log(getElementId(newId));
+							console.log(document.getElementById(getElementId(newId)));
+							
+							console.log(getFieldLanguage(elem.rowData[i][j]));
+							
+							$(("#" + getElementId(newId))).text(getFieldLanguage(elem.rowData[i][j]));
+						}
+					}
+				}
+				
+				break;
+
+			case "image":
+				//Do Nothing images are not different in other languages...
+				
+				break;
+
+			default: 
+			
+				$(("#" + getElementId(id))).html(getFieldLanguage(elem));
+				
+				break;
 		}
-		else if(elem.type == "image") {
-			//Do Nothing images are not different in other languages...
-		}
-		else {
-			$(("#" + getElementId(id))).html(getFieldLanguage(elem));
-		}	
 	}
 
 
@@ -724,23 +793,31 @@ var common = (function() {
 		}
 		else {
 			
-			if(language == "nl") {
+			switch(language) {
+			
+				case "nl":
+					
+					if(field.nl == "")
+						return "Er is op dit moment geen Nederlandse vertaling beschikbaar.";
+					else
+						return field.nl;
+					
+					break;
+
+				case "en":
+					
+					if(field.en == "")
+						return "There is currently no English translation available.";
+					else
+						return field.en;
+					
+					break;
+
+				default:
 				
-				if(field.nl == "")
-					return "Er is op dit moment geen Nederlandse vertaling beschikbaar.";
-				else
-					return field.nl;
-			}
-			else if(language == "en") {
-				
-				if(field.en == "")
-					return "There is currently no English translation available.";
-				else
-					return field.en;
-			}
-			else {
-				log("ERROR: loading the requested language. The requested language does not exist! Loading default language instead.");
-				changeLanguage(defaultLanguage);
+					log("ERROR: loading the requested language. The requested language does not exist! Loading default language instead.");
+					changeLanguage(defaultLanguage);
+					break;
 			}
 		}
 	}
