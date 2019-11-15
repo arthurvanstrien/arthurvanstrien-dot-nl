@@ -9,12 +9,6 @@
 	},
 	"content": [
 		{
-			"type": "image",
-			"class": "shared-content-pictureThirdRightWrap",
-			"onClick": "",
-			"path": "pic_aboutme/P1870745.jpg"
-		},
-		{
 			"type": "paragraph",
 			"class": "",
 			"onClick": "",
@@ -22,11 +16,17 @@
 			"en": "My name is Arthur van Strien. I have a broad interest in technology, from software to hydraulic engineering works. As a programmer, I am professionally involved in my hobby. In my spare time I am also busy with photography (see the photography page), travelling and cycling. I like to do crafts, from woodworking to soldering. With these skills I create a practical solution for every project."
 		},
 		{
-			"type": "paragraph",
+			"type": "header2",
 			"class": "",
 			"onClick": "",
-			"nl": "Om van mijn ICT hobby een beroep te maken heb ik twee opleidingen gevolgd:",
-			"en": "I followed two training courses to turn my ICT hobby into my profession:"
+			"nl": "Opleidingen:",
+			"en": "Education:"
+		},
+		{
+			"type": "image",
+			"class": "shared-content-pictureThirdRightWrap",
+			"onClick": "",
+			"path": "pic_aboutme/P1870745.jpg"
 		},
 		{
 			"type": "listItem",
@@ -43,7 +43,80 @@
 			"en": "Applied Computer Science (HBO-Bachelor / University of Applied Sciences-Undergraduate): During this course, I started to study programming at the hardware level. Further, I broadened my knowledge about the processes used by developing software in teams. I did not finish the course, but I did not forget what I learned and still use this knowledge for professional and personal projects. That's why this website contains a lot of information related to Applied Computer Science."
 		},
 		{
-			"type": "header3",
+			"type": "header2",
+			"class": "",
+			"onClick": "",
+			"nl": "Vaardigheden:",
+			"en": "Skills:"
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Talen: Nederlands, Engels",
+			"en": "Languages: Dutch, English"
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Programmeertalen: C#, PHP, Javascript / JQuery, Java, HTML5, CSS3, SQL, Asp.net",
+			"en": "Programming Languages: C#, PHP, Javascript / JQuery, Java, HTML5, CSS3, SQL, Asp.net"
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Programmeertalen (beginner): C, C++ momenteel door middel van cursus mijn niveau hierin aan het verhogen.",
+			"en": "Programming Languages (beginner): C, C++ At the moment, I am following a course to improve my level in these languages."
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Handvaardigheden: Solderen, Hete lucht solderen, verder in het algemeen handig met een hamer / zaag / steeksleutel.",
+			"en": "Manual Skills: Soldering, Hot air soldering, further generally useful with a hammer / saw / spanner."
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Communicatieve vaardigheden: Ik ben in staat om op een professionele en nette manier te communiceren met klanten en collega's. Daarbij kan ik mijn keuze in technische termen aanpassen op het technische niveau van de klant of collega. Verder gevorderd in het ontvangen en geven van feedback en in staat verschillende rollen aan te nemen bij een vergadering.",
+			"en": "Communication skills: I can communicate professionally and neatly with customers and colleagues. I can adapt my choice in technical terms to the technical level of the customer or colleague. Further advanced in receiving and giving feedback and able to take on different roles in a meeting."
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Projectmanagement: Ervaring met agile ontwikelmethoden zoals Scrum en lessen gehad in Extreme Programming en de watervalmethode. Enkele jaren ervaring met het documenteren van API's en projecten. Beginner in het gebruik van UML.",
+			"en": "Project management: Experience with agile development methods such as Scrum and followed lessons in Extreme Programming and the waterfall model. Several years of experience in documenting APIs and projects. Beginner in the use of UML."
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Gereedschappen / Tools: Visual Studio, Android Studio, IntelliJ, SourceTree, GitKraken, Postman, Word, Github, Trello, Grammarly, Fiddler, Wireshark, Adobe Lightroom",
+			"en": "Tools: Visual Studio, Android Studio, IntelliJ, SourceTree, GitKraken, Postman, Word, Github, Trello, Grammarly, Fiddler, Wireshark, Adobe Lighroom"
+		},
+		{
+			"type": "listItem",
+			"class": "",
+			"onClick": "",
+			"nl": "Andere vaardigheden: Ik ben in staat om computers te assembleren, aan te passen en te repareren. Ook kan ik daarbij het benodigde besturingssysteem installeren en de software gebruiksklaar maken. Verder kan ik ook advies geven over het upgraden van systemen en ben ik in staat om kleine (thuis) netwerken aan te leggen.",
+			"en": "Other skills: I can assemble, modify and repair computers. This includes the installation of the operating system and making the software of the system ready for use.  I can also advise on system upgrades and I can build and maintain small (home) networks."
+		},
+		{
+			"type": "lineSpace"
+		},
+		{
+			"type": "paragraph",
+			"class": "",
+			"onClick": "",
+			"nl": "Wanneer ik alle bovenstaande vaardigheden combineer stelt dat mij in staat om prototypes van producten te maken. Dit houd in: ontwerpen en schrijven van de software, het bouwen van de hardware en het controleren en testen van het resultaat. Eventuele gevonden gebreken kan ik dan op professionele manier documenteren en zorgen dat deze gecorrigeerd worden.",
+			"en": "All the above skills combined enable me to make prototypes of products. This includes: designing and writing the software, building the hardware and checking and testing the result. If any defects are found, I can professionally document them and make sure they are corrected."
+		},
+		{
+			"type": "header2",
 			"class": "",
 			"onClick": "",
 			"nl": "Contact:",
