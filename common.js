@@ -467,6 +467,13 @@ var common = (function() {
 				elem = "<table class='shared-content-listItemWrapper'><tr><td class='shared-content-listItemDash'>-</td><td" + id + elemClass + elemOnClick + ">" + getFieldLanguage(content) + "</td></tr></table>";
 				
 				break;
+				
+			case "lineSpace":
+			
+				elemClass = "shared-content-lineSpace";
+				elem = "<span class=" + elemClass + "></span>";
+				
+				break;
 
 			case "table":
 				
