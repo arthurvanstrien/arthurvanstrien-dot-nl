@@ -65,6 +65,12 @@
 	display: block;
 }
 
+.shared-content-lineSpace
+{
+	padding: 10px;
+	margin: 0px;
+}
+
 /*---Styling for the article group menu------------------------------------------------------------------------------------------------------------*/
 
 .shared-content-articleGroup
